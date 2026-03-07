@@ -1,57 +1,123 @@
+/* Catppuccin Mocha Palette */
+:root {
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+    --text: #cdd6f4;
+    --subtext: #a6adc8;
+    --mauve: #cba6f7; /* الأرجواني للعناوين */
+    --blue: #89b4fa;  /* الأزرق للروابط */
+    --green: #a6e3a1; /* الأخضر للأزرار */
+    --surface0: #313244; /* لون خلفية الكروت */
+    --lavender: #b4befe;
+}
+
 body {
-    font-family: monospace;
-    background: #0d1117;
-    color: #c9d1d9;
+    font-family: 'JetBrains Mono', monospace; /* خط برمجي احترافي */
+    background-color: var(--base);
+    color: var(--text);
     margin: 0;
+    line-height: 1.6;
 }
 
 header {
     text-align: center;
-    padding: 40px;
-    background: #161b22;
+    padding: 60px 20px;
+    background-color: var(--mantle);
+    border-bottom: 2px solid var(--mauve);
+}
+
+header h1 {
+    color: var(--mauve);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+header p {
+    color: var(--subtext);
+    font-size: 1.1rem;
 }
 
 nav {
     text-align: center;
     padding: 15px;
-    background: #21262d;
+    background-color: var(--crust);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
-    color: #58a6ff;
+    color: var(--blue);
     margin: 0 15px;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--lavender);
+    text-decoration: underline;
 }
 
 section {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     padding: 40px 20px;
 }
 
+h2 {
+    color: var(--mauve);
+    border-bottom: 1px solid var(--surface0);
+    padding-bottom: 10px;
+}
+
 .project {
-    background: #161b22;
-    padding: 15px;
-    margin-top: 15px;
+    background-color: var(--surface0);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.project:hover {
+    border-color: var(--mauve);
+    transform: translateY(-5px);
+}
+
+.project h3 {
+    margin-top: 0;
+    color: var(--blue);
+}
+
+.project p {
+    color: var(--subtext);
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--green);
+    color: var(--crust);
+    text-decoration: none;
     border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    background-color: var(--blue);
+    color: var(--crust);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #161b22;
-}
-.project a{
-display:inline-block;
-margin-top:10px;
-padding:6px 12px;
-background:#238636;
-color:white;
-text-decoration:none;
-border-radius:6px;
-font-size:14px;
-}
-
-.project a:hover{
-background:#2ea043;
+    padding: 30px;
+    background-color: var(--mantle);
+    color: var(--subtext);
+    font-size: 0.9rem;
+    margin-top: 50px;
 }
