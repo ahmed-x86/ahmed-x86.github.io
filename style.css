@@ -6,15 +6,15 @@
     --crust: #11111b;
     --text: #cdd6f4;
     --subtext: #a6adc8;
-    --mauve: #cba6f7; /* الأرجواني للعناوين */
-    --blue: #89b4fa;  /* الأزرق للروابط */
-    --green: #a6e3a1; /* الأخضر للأزرار */
-    --surface0: #313244; /* لون خلفية الكروت */
+    --mauve: #cba6f7;
+    --blue: #89b4fa;
+    --green: #a6e3a1;
+    --surface0: #313244;
     --lavender: #b4befe;
 }
 
 body {
-    font-family: 'JetBrains Mono', monospace; /* خط برمجي احترافي */
+    font-family: 'JetBrains Mono', monospace;
     background-color: var(--base);
     color: var(--text);
     margin: 0;
@@ -73,13 +73,23 @@ h2 {
     padding-bottom: 10px;
 }
 
+/* --- التعديلات الجديدة للشبكة --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* يقسم المساحة لعمودين متساويين */
+    gap: 20px; /* المسافة بين الكروت */
+    margin-top: 20px;
+}
+
 .project {
     background-color: var(--surface0);
     padding: 20px;
-    margin-top: 20px;
     border-radius: 12px;
     border: 1px solid transparent;
     transition: 0.3s;
+    /* لجعل الزر ينزل لأسفل الكارت دائماً إذا كان النص قصيراً */
+    display: flex;
+    flex-direction: column;
 }
 
 .project:hover {
@@ -92,11 +102,25 @@ h2 {
     color: var(--blue);
 }
 
-.project p {
-    color: var(--subtext);
+/* تنسيق الروابط العادية داخل العناوين */
+.project h3 a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.project a {
+.project h3 a:hover {
+    color: var(--lavender);
+    text-decoration: underline;
+}
+
+.project p {
+    color: var(--subtext);
+    flex-grow: 1; /* يجعل النص يأخذ المساحة المتبقية لدفع الزر للأسفل */
+}
+
+/* تعديل هنا: تم تطبيق التصميم على الازرار فقط التي تحمل class="btn" */
+.project a.btn {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 16px;
@@ -107,9 +131,10 @@ h2 {
     font-weight: bold;
     font-size: 14px;
     transition: 0.3s;
+    align-self: flex-start; /* لكي لا يتمدد الزر بعرض الكارت كله */
 }
 
-.project a:hover {
+.project a.btn:hover {
     background-color: var(--blue);
     color: var(--crust);
 }
