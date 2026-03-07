@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallpapers Gallery | Ahmed x86</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    /* إعدادات شبكة الصور لتكون متجاوبة */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    /* ضبط حجم الصور حتى لا تأخذ المساحة الكاملة بدقتها الأصلية */
+    .gallery-grid img {
+        width: 100%;
+        height: 180px; /* توحيد الارتفاع لكل الصور */
+        object-fit: cover; /* قص ذكي لمنع تشوه الصورة */
+        object-position: center;
+        border-radius: 8px;
+        border: 2px solid var(--surface0);
+        transition: 0.3s ease-in-out;
+        background-color: var(--surface0);
+    }
+
+    /* تأثير التحريك عند تمرير الماوس */
+    .gallery-grid img:hover {
+        border-color: var(--mauve);
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🖼️ Wallpapers Gallery</h1>
+<p>A curated collection of minimalist and high-resolution wallpapers for Linux ricing and desktops.</p>
+</header>
+
+<nav>
+<a href="index.html">← Back to Home</a>
+<a href="https://github.com/ahmed-x86" target="_blank">GitHub</a>
+</nav>
+
+<section>
+
+<h2>My Collection</h2>
+
+<p>
+Here are some of my favorite wallpapers used in my custom Arch Linux setups. 
+Click on any image to view it in full resolution.
+</p>
+
+<div class="gallery-grid">
+    <a href="wallpaper/034-pier.png" target="_blank"><img src="wallpaper/034-pier.png" alt="034-pier" loading="lazy"></a>
+    <a href="wallpaper/1.png" target="_blank"><img src="wallpaper/1.png" alt="1" loading="lazy"></a>
+    <a href="wallpaper/2.png" target="_blank"><img src="wallpaper/2.png" alt="2" loading="lazy"></a>
+    <a href="wallpaper/3.png" target="_blank"><img src="wallpaper/3.png" alt="3" loading="lazy"></a>
+    <a href="wallpaper/4.png" target="_blank"><img src="wallpaper/4.png" alt="4" loading="lazy"></a>
+    <a href="wallpaper/4K_Mountain_Lake_Wallpaper.jpeg" target="_blank"><img src="wallpaper/4K_Mountain_Lake_Wallpaper.jpeg" alt="4K Mountain Lake" loading="lazy"></a>
+    <a href="wallpaper/5.png" target="_blank"><img src="wallpaper/5.png" alt="5" loading="lazy"></a>
+    <a href="wallpaper/6.png" target="_blank"><img src="wallpaper/6.png" alt="6" loading="lazy"></a>
+    <a href="wallpaper/7.png" target="_blank"><img src="wallpaper/7.png" alt="7" loading="lazy"></a>
+    <a href="wallpaper/8.png" target="_blank"><img src="wallpaper/8.png" alt="8" loading="lazy"></a>
+    <a href="wallpaper/a_street_with_houses_and_power_lines.png" target="_blank"><img src="wallpaper/a_street_with_houses_and_power_lines.png" alt="Street with houses" loading="lazy"></a>
+    <a href="wallpaper/Arch_Linux_4K_Minimalist_Wallpaper.png" target="_blank"><img src="wallpaper/Arch_Linux_4K_Minimalist_Wallpaper.png" alt="Arch Linux Minimalist" loading="lazy"></a>
+    <a href="wallpaper/arch_linux_blue_and_green_wallpaper_by_moonditto_d_by_solecrush_dgkfi71.png" target="_blank"><img src="wallpaper/arch_linux_blue_and_green_wallpaper_by_moonditto_d_by_solecrush_dgkfi71.png" alt="Arch Linux Blue Green" loading="lazy"></a>
+    <a href="wallpaper/arch_linux_bw_wallpaper_by_thales_img_d2yl9ul.png" target="_blank"><img src="wallpaper/arch_linux_bw_wallpaper_by_thales_img_d2yl9ul.png" alt="Arch Linux BW" loading="lazy"></a>
+    <a href="wallpaper/Arch_Linux_Synthwave_4K_Wallpaper.png" target="_blank"><img src="wallpaper/Arch_Linux_Synthwave_4K_Wallpaper.png" alt="Arch Linux Synthwave" loading="lazy"></a>
+</div>
+
+<div class="pagination">
+    <a href="wallpaper.html" class="active">Page 1</a>
+    <a href="wallpaper_2.html">Page 2</a>
+    <a href="wallpaper_3.html">Page 3</a>
+</div>
+
+
+</section>
+
+<footer>
+<p>© 2026 Ahmed x86

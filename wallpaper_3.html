@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallpapers Gallery - Page 3 | Ahmed x86</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 180px; 
+        object-fit: cover; 
+        object-position: center;
+        border-radius: 8px;
+        border: 2px solid var(--surface0);
+        transition: 0.3s ease-in-out;
+        background-color: var(--surface0);
+    }
+
+    .gallery-grid img:hover {
+        border-color: var(--mauve);
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .pagination a {
+        padding: 10px 20px;
+        background-color: var(--surface0);
+        color: var(--blue);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .pagination a:hover {
+        background-color: var(--mauve);
+        color: var(--crust);
+    }
+
+    .pagination a.active {
+        background-color: var(--green);
+        color: var(--crust);
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🖼️ Wallpapers Gallery</h1>
+<p>Page 3 - The final part of my curated collection.</p>
+</header>
+
+<nav>
+<a href="index.html">← Back to Home</a>
+<a href="https://github.com/ahmed-x86" target="_blank">GitHub</a>
+</nav>
+
+<section>
+
+<h2>My Collection</h2>
+
+<p>
+Here are the remaining wallpapers from my Arch Linux setup.
+Click on any image to view it in full resolution.
+</p>
+
+<div class="gallery-grid">
+    <a href="wallpaper/wallpaperflare.com_wallpaper(4).jpg" target="_blank"><img src="wallpaper/wallpaperflare.com_wallpaper(4).jpg" alt="Wallpaper Flare 4" loading="lazy"></a>
+    <a href="wallpaper/wallpaperflare.com_wallpaper(6).png" target="_blank"><img src="wallpaper/wallpaperflare.com_wallpaper(6).png" alt="Wallpaper Flare 6" loading="lazy"></a>
+    <a href="wallpaper/wallpaperflare.com_wallpaper(9).png" target="_blank"><img src="wallpaper/wallpaperflare.com_wallpaper(9).png" alt="Wallpaper Flare 9" loading="lazy"></a>
+    <a href="wallpaper/wallpaperflare.com_wallpaper-2.jpg" target="_blank"><img src="wallpaper/wallpaperflare.com_wallpaper-2.jpg" alt="Wallpaper Flare -2" loading="lazy"></a>
+    <a href="wallpaper/wallpaperflare.com_wallpaper.jpg" target="_blank"><img src="wallpaper/wallpaperflare.com_wallpaper.jpg" alt="Wallpaper Flare" loading="lazy"></a>
+    <a href="wallpaper/wallpaperflare.com_wallpaper_(1).jpg" target="_blank"><img src="wallpaper/wallpaperflare.com_wallpaper_(1).jpg" alt="Wallpaper Flare 1" loading="lazy"></a>
+    <a href="wallpaper/wallpaperflare.com_wallpaper_(2).jpg" target="_blank"><img src="wallpaper/wallpaperflare.com_wallpaper_(2).jpg" alt="Wallpaper Flare 2" loading="lazy"></a>
+    <a href="wallpaper/windows-7-x-arch-linux-fi-1920x1080.jpg" target="_blank"><img src="wallpaper/windows-7-x-arch-linux-fi-1920x1080.jpg" alt="Windows 7 x Arch Linux" loading="lazy"></a>
+</div>
+
+<div class="pagination">
+    <a href="wallpaper.html">Page 1</a>
+    <a href="wallpaper_2.html">Page 2</a>
+    <a href="wallpaper_3.html" class="active">Page 3</a>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+</body>
+</html>
