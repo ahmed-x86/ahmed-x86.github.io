@@ -14,11 +14,11 @@
         margin-top: 20px;
     }
 
-    /* ضبط حجم الصور حتى لا تأخذ المساحة الكاملة بدقتها الأصلية */
+    /* ضبط حجم الصور وتوحيد شكلها */
     .gallery-grid img {
         width: 100%;
-        height: 180px; /* توحيد الارتفاع لكل الصور */
-        object-fit: cover; /* قص ذكي لمنع تشوه الصورة */
+        height: 180px; 
+        object-fit: cover; 
         object-position: center;
         border-radius: 8px;
         border: 2px solid var(--surface0);
@@ -26,11 +26,39 @@
         background-color: var(--surface0);
     }
 
-    /* تأثير التحريك عند تمرير الماوس */
+    /* تأثيرات التمرير (Hover) */
     .gallery-grid img:hover {
         border-color: var(--mauve);
         transform: scale(1.02);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* تنسيق أزرار التنقل بين الصفحات */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .pagination a {
+        padding: 10px 20px;
+        background-color: var(--surface0);
+        color: var(--blue);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .pagination a:hover {
+        background-color: var(--mauve);
+        color: var(--crust);
+    }
+
+    .pagination a.active {
+        background-color: var(--green);
+        color: var(--crust);
     }
 </style>
 </head>
@@ -80,8 +108,11 @@ Click on any image to view it in full resolution.
     <a href="wallpaper_3.html">Page 3</a>
 </div>
 
-
 </section>
 
 <footer>
-<p>© 2026 Ahmed x86
+<p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+</body>
+</html>
