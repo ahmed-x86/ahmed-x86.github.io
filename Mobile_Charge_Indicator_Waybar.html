@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Charge Indicator | Ahmed x86</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>📱 Mobile Charge Indicator for Waybar</h1>
+<p>A lightweight script that shows your phone battery in Waybar</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank">GitHub</a>
+</nav>
+
+<section>
+
+<h2>About</h2>
+
+<p>
+A sleek and lightweight script that displays your mobile phone battery status
+directly in <b>Waybar</b> using <b>KDE Connect</b>.
+</p>
+
+<img
+src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png"
+style="width:70%;display:block;margin:auto;margin-top:20px;margin-bottom:20px;"
+>
+
+<h2>Features</h2>
+
+<ul>
+<li>Auto detection of connected phone ID</li>
+<li>Dynamic battery colors (Normal / Warning / Critical)</li>
+<li>Charging indicator icon</li>
+<li>Click module to ping your phone</li>
+</ul>
+
+<h2>Prerequisites</h2>
+
+<ul>
+<li>kdeconnect</li>
+<li>waybar</li>
+<li>Nerd Font (JetBrains Mono Nerd Font recommended)</li>
+</ul>
+
+<h2>Installation</h2>
+
+<h3>Step 1</h3>
+
+<pre>
+cd mobile_charge_indicator_waybar
+</pre>
+
+<h3>Step 2</h3>
+
+<pre>
+chmod +x install.sh
+</pre>
+
+<h3>Step 3</h3>
+
+<pre>
+./install.sh
+</pre>
+
+<p>
+The script will automatically copy <b>mobile.sh</b> to:
+</p>
+
+<pre>
+~/.config/waybar/scripts/
+</pre>
+
+<h2>Waybar Configuration</h2>
+
+Add this module to your Waybar config:
+
+<pre>
+"custom/mobile": {
+    "format": "{text}",
+    "exec": "~/.config/waybar/scripts/mobile.sh",
+    "interval": 30,
+    "return-type": "json",
+    "on-click": "~/.config/waybar/scripts/mobile.sh --ping"
+}
+</pre>
+
+<h2>Waybar Style</h2>
+
+Add this CSS to your Waybar style file:
+
+<pre>
+#custom-mobile {
+    font-family: "JetBrains Mono Nerd", monospace;
+    font-size: 14px;
+    padding: 0 6px;
+    margin-left: 4px;
+}
+
+#custom-mobile.critical {
+    color: #f07178;
+}
+
+#custom-mobile.warning {
+    color: #f2cd66;
+}
+
+#custom-mobile.normal {
+    color: #c3e88d;
+}
+</pre>
+
+<h2>Usage</h2>
+
+<p>
+Restart Waybar and your phone battery level will appear on the bar.
+Click the module anytime to ping your phone.
+</p>
+
+<h2>Notes</h2>
+
+<ul>
+<li>KDE Connect daemon must be running</li>
+<li>Your phone must be paired</li>
+<li>Tested on Arch Linux with Waybar</li>
+</ul>
+
+<h2>Support</h2>
+
+<p>
+If you find this useful, consider giving the project a ⭐ on GitHub.
+</p>
+
+<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank">
+View GitHub Repository
+</a>
+
+</section>
+
+<footer>
+<p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+</body>
+</html>
