@@ -5,6 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hyprland Dotfiles | Ahmed x86</title>
 <link rel="stylesheet" href="style.css">
+<style>
+   
+    pre {
+        background-color: var(--crust);
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+        border: 1px solid var(--surface0);
+        margin-bottom: 20px;
+    }
+    code {
+        color: var(--green);
+        font-family: 'JetBrains Mono', monospace;
+    }
+    
+    
+    .gallery img {
+        border-radius: 8px;
+        border: 1px solid var(--surface0);
+        transition: 0.3s ease-in-out;
+    }
+    .gallery img:hover {
+        border-color: var(--mauve);
+        transform: scale(1.02);
+    }
+
+    
+    .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+</style>
 </head>
 
 <body>
@@ -15,8 +48,8 @@
 </header>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="https://github.com/ahmed-x86/hyprland_dotfiles" target="_blank">GitHub</a>
+<a href="index.html">← Back to Home</a>
+<a href="https://github.com/ahmed-x86/hyprland_dotfiles" target="_blank">GitHub Repo</a>
 </nav>
 
 <section>
@@ -58,64 +91,67 @@ the Catppuccin color palette.
 
 <h2>Waybar Modules</h2>
 
-<h3>Left Modules</h3>
-<ul>
-<li>Power Menu</li>
-<li>GitHub Activity Heatmap</li>
-<li>Workspace Switcher</li>
-<li>Idle Inhibitor</li>
-<li>System Updates</li>
-</ul>
+<div class="modules-grid">
+    <div>
+        <h3>Left Modules</h3>
+        <ul>
+        <li>Power Menu</li>
+        <li>GitHub Activity Heatmap</li>
+        <li>Workspace Switcher</li>
+        <li>Idle Inhibitor</li>
+        <li>System Updates</li>
+        </ul>
+    </div>
 
-<h3>Center Modules</h3>
-<ul>
-<li>Color Picker</li>
-<li>Hijri Calendar</li>
-<li>Clock</li>
-<li>Privacy Dots</li>
-<li>System Tray</li>
-</ul>
+    <div>
+        <h3>Center Modules</h3>
+        <ul>
+        <li>Color Picker</li>
+        <li>Hijri Calendar</li>
+        <li>Clock</li>
+        <li>Privacy Dots</li>
+        <li>System Tray</li>
+        </ul>
+    </div>
 
-<h3>Right Modules</h3>
-<ul>
-<li>Media Controls</li>
-<li>Keyboard Layout Indicator</li>
-<li>Bluetooth</li>
-<li>Network Status</li>
-<li>Battery</li>
-<li>Power Profiles</li>
-<li>Volume</li>
-<li>Microphone</li>
-<li>Notification Center</li>
-</ul>
+    <div>
+        <h3>Right Modules</h3>
+        <ul>
+        <li>Media Controls</li>
+        <li>Keyboard Layout Indicator</li>
+        <li>Bluetooth</li>
+        <li>Network Status</li>
+        <li>Battery</li>
+        <li>Power Profiles</li>
+        <li>Volume</li>
+        <li>Microphone</li>
+        <li>Notification Center</li>
+        </ul>
+    </div>
+</div>
 
 <h2>Installation</h2>
 
 <h3>Online Install</h3>
 
-<pre>
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/online-install.sh)"
-</pre>
+<pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/online-install.sh)"</code></pre>
 
 <h3>Offline Install</h3>
 
-<pre>
-git clone https://github.com/ahmed-x86/hyprland_dotfiles
+<pre><code>git clone https://github.com/ahmed-x86/hyprland_dotfiles
 cd hyprland_dotfiles
-
 chmod +x *
-./main.sh
-</pre>
+./main.sh</code></pre>
 
 <h2>Gallery</h2>
 
-<div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+<div class="gallery" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
 
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_10-21-48.png" width="45%">
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_17-03-54.png" width="45%">
+<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_10-21-48.png" width="45%" alt="Screenshot 1">
+<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_17-03-54.png" width="45%" alt="Screenshot 2">
 
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_19-22-20.png" width="45%">
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_19-23-34.png" width="45%">
+<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_19-22-20.png" width="45%" alt="Screenshot 3">
+<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_19-23-34.png" width="45%" alt="Screenshot 4">
 
 </div>
 

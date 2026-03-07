@@ -5,6 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobile Charge Indicator | Ahmed x86</title>
 <link rel="stylesheet" href="style.css">
+<style>
+    /* تنسيقات الأكواد (Terminal Style) */
+    pre {
+        background-color: var(--crust);
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+        border: 1px solid var(--surface0);
+        margin-bottom: 20px;
+    }
+    code {
+        color: var(--green);
+        font-family: 'JetBrains Mono', monospace;
+    }
+    
+    /* تنسيق الصورة لتناسب الستايل */
+    .hero-img {
+        width: 70%;
+        display: block;
+        margin: 20px auto;
+        border-radius: 8px;
+        border: 1px solid var(--surface0);
+        transition: 0.3s ease-in-out;
+    }
+    .hero-img:hover {
+        border-color: var(--mauve);
+        transform: scale(1.02);
+    }
+
+    /* تنسيق الزرار السفلي */
+    .btn-link {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: var(--green);
+        color: var(--crust);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    .btn-link:hover {
+        background-color: var(--blue);
+        color: var(--crust);
+    }
+</style>
 </head>
 
 <body>
@@ -15,8 +62,8 @@
 </header>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank">GitHub</a>
+<a href="index.html">← Back to Home</a>
+<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank">GitHub Repo</a>
 </nav>
 
 <section>
@@ -28,10 +75,7 @@ A sleek and lightweight script that displays your mobile phone battery status
 directly in <b>Waybar</b> using <b>KDE Connect</b>.
 </p>
 
-<img
-src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png"
-style="width:70%;display:block;margin:auto;margin-top:20px;margin-bottom:20px;"
->
+<img src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png" class="hero-img" alt="Mobile Charge Indicator Preview">
 
 <h2>Features</h2>
 
@@ -52,52 +96,35 @@ style="width:70%;display:block;margin:auto;margin-top:20px;margin-bottom:20px;"
 
 <h2>Installation</h2>
 
-<h3>Step 1</h3>
+<p>Run the following commands in your terminal to install the script:</p>
 
-<pre>
-cd mobile_charge_indicator_waybar
-</pre>
-
-<h3>Step 2</h3>
-
-<pre>
+<pre><code>cd mobile_charge_indicator_waybar
 chmod +x install.sh
-</pre>
-
-<h3>Step 3</h3>
-
-<pre>
-./install.sh
-</pre>
+./install.sh</code></pre>
 
 <p>
 The script will automatically copy <b>mobile.sh</b> to:
 </p>
 
-<pre>
-~/.config/waybar/scripts/
-</pre>
+<pre><code>~/.config/waybar/scripts/</code></pre>
 
 <h2>Waybar Configuration</h2>
 
-Add this module to your Waybar config:
+<p>Add this module to your Waybar config:</p>
 
-<pre>
-"custom/mobile": {
+<pre><code>"custom/mobile": {
     "format": "{text}",
     "exec": "~/.config/waybar/scripts/mobile.sh",
     "interval": 30,
     "return-type": "json",
     "on-click": "~/.config/waybar/scripts/mobile.sh --ping"
-}
-</pre>
+}</code></pre>
 
 <h2>Waybar Style</h2>
 
-Add this CSS to your Waybar style file:
+<p>Add this CSS to your Waybar style file:</p>
 
-<pre>
-#custom-mobile {
+<pre><code>#custom-mobile {
     font-family: "JetBrains Mono Nerd", monospace;
     font-size: 14px;
     padding: 0 6px;
@@ -114,8 +141,7 @@ Add this CSS to your Waybar style file:
 
 #custom-mobile.normal {
     color: #c3e88d;
-}
-</pre>
+}</code></pre>
 
 <h2>Usage</h2>
 
@@ -138,7 +164,7 @@ Click the module anytime to ping your phone.
 If you find this useful, consider giving the project a ⭐ on GitHub.
 </p>
 
-<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank">
+<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn-link">
 View GitHub Repository
 </a>
 
