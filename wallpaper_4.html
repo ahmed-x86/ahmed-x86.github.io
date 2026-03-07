@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallpapers Gallery - Page 4 | Ahmed x86</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 180px; 
+        object-fit: cover; 
+        object-position: center;
+        border-radius: 8px;
+        border: 2px solid var(--surface0);
+        transition: 0.3s ease-in-out;
+        background-color: var(--surface0);
+    }
+
+    .gallery-grid img:hover {
+        border-color: var(--mauve);
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* تنسيق أزرار التنقل بين الصفحات */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .pagination a {
+        padding: 8px 16px;
+        background-color: var(--surface0);
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s ease;
+        border: 1px solid transparent;
+    }
+
+    .pagination a:hover:not(.disabled) {
+        border-color: var(--mauve);
+        color: var(--mauve);
+        transform: translateY(-2px);
+    }
+
+    .pagination a.active {
+        background-color: var(--mauve);
+        color: var(--base);
+    }
+
+    .pagination a.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🖼️ Wallpapers Gallery</h1>
+<p>Page 4 - The final part of my curated collection.</p>
+</header>
+
+<nav>
+<a href="index.html">← Back to Home</a>
+<a href="https://github.com/ahmed-x86" target="_blank">GitHub</a>
+</nav>
+
+<section>
+
+<h2>My Collection</h2>
+
+<p>
+Here are the remaining wallpapers from my Arch Linux setup.
+Click on any image to view it in full resolution.
+</p>
+
+<div class="gallery-grid">
+    <a href="wallpaper/RDT_20260207_1053302241183526178160606.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053302241183526178160606.jpg" alt="Wallpaper 1" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1053354251299360051147427.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053354251299360051147427.jpg" alt="Wallpaper 2" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1053401754444126319203074.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053401754444126319203074.jpg" alt="Wallpaper 3" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1053461522571758782863049.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053461522571758782863049.jpg" alt="Wallpaper 4" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1053498602155505484547774.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053498602155505484547774.jpg" alt="Wallpaper 5" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1053536012998271035239270.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053536012998271035239270.jpg" alt="Wallpaper 6" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1053573556573142281640362.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053573556573142281640362.jpg" alt="Wallpaper 7" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1053595522361857089613256.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1053595522361857089613256.jpg" alt="Wallpaper 8" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1054038248550277760113173.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1054038248550277760113173.jpg" alt="Wallpaper 9" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1054249014722687687479762.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1054249014722687687479762.jpg" alt="Wallpaper 10" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_105435442293107731582946.jpg" target="_blank"><img src="wallpaper/RDT_20260207_105435442293107731582946.jpg" alt="Wallpaper 11" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1054393893239055860134119.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1054393893239055860134119.jpg" alt="Wallpaper 12" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1054455855447271972426346.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1054455855447271972426346.jpg" alt="Wallpaper 13" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1054481653832530401228160.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1054481653832530401228160.jpg" alt="Wallpaper 14" loading="lazy"></a>
+    <a href="wallpaper/RDT_20260207_1055014805471989091073203.jpg" target="_blank"><img src="wallpaper/RDT_20260207_1055014805471989091073203.jpg" alt="Wallpaper 15" loading="lazy"></a>
+</div>
+
+<div class="pagination">
+    <a href="wallpaper_3.html">&laquo; Prev</a>
+    <a href="wallpaper.html">1</a>
+    <a href="wallpaper_2.html">2</a>
+    <a href="wallpaper_3.html">3</a>
+    <a href="wallpaper_4.html" class="active">4</a>
+    <a href="#" class="disabled">Next &raquo;</a>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+</body>
+</html>
