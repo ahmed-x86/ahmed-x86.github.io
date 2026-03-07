@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM Environment - Ahmed x86</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for this page to keep it neat */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .badges img {
+            border-radius: 4px;
+        }
+        pre {
+            background-color: var(--crust);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--surface0);
+            margin-bottom: 20px;
+        }
+        code {
+            color: var(--green);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .note {
+            background-color: var(--surface0);
+            padding: 15px;
+            border-left: 4px solid var(--mauve);
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Assembly Development Environment 🚀</h1>
+    <p>An all-in-one repository designed to kickstart your Assembly (ASM) development.</p>
+</header>
+
+<nav>
+    <a href="index.html">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/asm" target="_blank">GitHub Repo</a>
+</nav>
+
+<section id="project-details">
+    
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Windows_10-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 10">
+        <img src="https://img.shields.io/badge/Windows_11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 11">
+        <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
+        <img src="https://img.shields.io/badge/Manjaro-35BF5C?style=for-the-badge&logo=manjaro&logoColor=white" alt="Manjaro">
+        <img src="https://img.shields.io/badge/CachyOS-0080FF?style=for-the-badge&logo=arch-linux&logoColor=white" alt="CachyOS">
+        <img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian">
+        <img src="https://img.shields.io/badge/Ubuntu-E9433F?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu">
+        <img src="https://img.shields.io/badge/Linux_Mint-87CF3E?style=for-the-badge&logo=linux-mint&logoColor=white" alt="Linux Mint">
+        <img src="https://img.shields.io/badge/Zorin_OS-0CC0DF?style=for-the-badge&logo=zorin-os&logoColor=white" alt="ZorinOS">
+        <img src="https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white" alt="Fedora">
+        <img src="https://img.shields.io/badge/Nobara-750000?style=for-the-badge&logo=fedora&logoColor=white" alt="Nobara">
+        <img src="https://img.shields.io/badge/Kali_Linux-557CF2?style=for-the-badge&logo=kali-linux&logoColor=white" alt="Kali Linux">
+        <img src="https://img.shields.io/badge/Parrot_OS-36C5CC?style=for-the-badge&logo=parrot-security&logoColor=white" alt="Parrot OS">
+        <img src="https://img.shields.io/badge/Gentoo-54487A?style=for-the-badge&logo=gentoo&logoColor=white" alt="Gentoo">
+        <img src="https://img.shields.io/badge/Void_Linux-47841F?style=for-the-badge&logo=void-linux&logoColor=white" alt="Void Linux">
+        <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code">
+        <img src="https://img.shields.io/badge/Bazzit-525865?style=for-the-badge&logo=fedora&logoColor=white" alt="Bazzit">
+        <img src="https://img.shields.io/badge/Peppermint_OS-E11221?style=for-the-badge&logo=peppermint&logoColor=white" alt="Peppermint">
+        <img src="https://img.shields.io/badge/Puppy_Linux-B22222?style=for-the-badge&logo=linux&logoColor=white" alt="Puppy Linux">
+        <img src="https://img.shields.io/badge/openSUSE-73BA48?style=for-the-badge&logo=opensuse&logoColor=white" alt="openSUSE">
+        <img src="https://img.shields.io/badge/Alpine_Linux-0D597F?style=for-the-badge&logo=alpine-linux&logoColor=white" alt="Alpine Linux">
+    </div>
+
+    <p style="text-align: center; color: var(--subtext);">
+        This environment provides out-of-the-box support for Linux x64 and Windows (x86/x64), featuring pre-configured VS Code settings for a seamless workflow.
+    </p>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>🛠️ Quick Installation</h2>
+    <p>Choose your weapon (Operating System) and run the corresponding command to configure your environment immediately:</p>
+
+    <h3>🐧 Linux (One-Line Installer)</h3>
+    <p>Supports Arch, Debian/Ubuntu, Fedora, and their derivatives.</p>
+    <pre><code>bash <(curl -sSL https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-linux.sh)</code></pre>
+
+    <h3>🪟 Windows (PowerShell Installer)</h3>
+    <p>Optimized for Windows 10 & 11 via PowerShell.</p>
+    <pre><code>irm https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-windows.ps1 | iex</code></pre>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>🏗️ Manual Setup (Local)</h2>
+    <p>If you prefer to clone the repository and run the scripts locally:</p>
+
+    <h3>For Linux:</h3>
+    <pre><code>git clone https://github.com/ahmed-x86/asm.git
+cp -r asm/. .
+chmod +x install-linux.sh
+./install-linux.sh</code></pre>
+
+    <h3>For Windows:</h3>
+    <pre><code>git clone https://github.com/ahmed-x86/asm.git
+xcopy /E /I /Y asm\* .
+.\install-windows.ps1</code></pre>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>✨ Key Features</h2>
+    <ul>
+        <li><strong>Dual-Platform Support:</strong> Native installers for both Windows and Linux, ensuring your dev environment is consistent everywhere.</li>
+        <li><strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut <code>(Ctrl+Shift+P)</code>.</li>
+        <li><strong>Smart Dependency Management:</strong>
+            <ul>
+                <li><strong>On Linux:</strong> Automatically detects your package manager <code>(pacman, apt, dnf)</code> and installs <code>NASM</code>, <code>GCC</code>, and <code>GDB</code>.</li>
+                <li><strong>On Windows:</strong> Sets up NASM and required build tools automatically.</li>
+            </ul>
+        </li>
+        <li><strong>Cross-Compilation:</strong> Ready-to-use toolchains to compile and test Windows binaries directly from Linux using Wine and MinGW.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note for Arch Users:</strong> Because "I use Arch btw" shouldn't mean spending three hours on config. We've got you covered. 😎
+    </div>
+
+    <h2>💡 What's New?</h2>
+    <ul>
+        <li><strong>Windows Native Support:</strong> Added a dedicated PowerShell script for one-click setup on Windows.</li>
+        <li><strong>Improved Toolchain:</strong> Better handling of environment variables for NASM on both platforms.</li>
+    </ul>
+
+    <p style="text-align: center; margin-top: 50px; font-weight: bold; color: var(--blue);">
+        > i use arch btw
+    </p>
+
+</section>
+
+<footer>
+    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+</body>
+</html>
