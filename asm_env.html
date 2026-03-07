@@ -53,6 +53,7 @@
 <section id="project-details">
     
     <div class="badges">
+        <img src="https://img.shields.io/badge/Windows_7-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 7">
         <img src="https://img.shields.io/badge/Windows_10-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 10">
         <img src="https://img.shields.io/badge/Windows_11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 11">
         <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
@@ -90,8 +91,10 @@
     <pre><code>bash <(curl -sSL https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-linux.sh)</code></pre>
 
     <h3>🪟 Windows (PowerShell Installer)</h3>
-    <p>Optimized for Windows 10 & 11 via PowerShell.</p>
+    <p>Optimized for Windows 10 & 11 via PowerShell:</p>
     <pre><code>irm https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-windows.ps1 | iex</code></pre>
+    <p>For Legacy Windows 7:</p>
+    <pre><code>irm https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-windows7.ps1 | iex</code></pre>
 
     <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
 
@@ -106,21 +109,25 @@ chmod +x install-linux.sh
 
     <h3>For Windows:</h3>
     <pre><code>git clone https://github.com/ahmed-x86/asm.git
-xcopy /E /I /Y asm\* .
-.\install-windows.ps1</code></pre>
+cd asm
+# For Win 10/11:
+.\install-windows.ps1
+# For Win 7:
+.\install-windows7.ps1</code></pre>
 
     <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
 
     <h2>✨ Key Features</h2>
     <ul>
         <li><strong>Dual-Platform Support:</strong> Native installers for both Windows and Linux, ensuring your dev environment is consistent everywhere.</li>
-        <li><strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut <code>(Ctrl+Shift+P)</code>.</li>
+        <li><strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut <code>(Ctrl+Shift+B)</code>.</li>
         <li><strong>Smart Dependency Management:</strong>
             <ul>
                 <li><strong>On Linux:</strong> Automatically detects your package manager <code>(pacman, apt, dnf)</code> and installs <code>NASM</code>, <code>GCC</code>, and <code>GDB</code>.</li>
                 <li><strong>On Windows:</strong> Sets up NASM and required build tools automatically.</li>
             </ul>
         </li>
+        <li><strong>Legacy Support:</strong> Special installer for Windows 7 to ensure assembly development isn't limited by OS version.</li>
         <li><strong>Cross-Compilation:</strong> Ready-to-use toolchains to compile and test Windows binaries directly from Linux using Wine and MinGW.</li>
     </ul>
 
