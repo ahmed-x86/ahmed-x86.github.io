@@ -6,32 +6,59 @@
 <title>Hyprland Dotfiles | Ahmed x86</title>
 <link rel="stylesheet" href="style.css">
 <style>
-   
+    /* تعديلات الـ Code Blocks عشان تناسب زرار النسخ */
+    .code-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
     pre {
         background-color: var(--crust);
         padding: 15px;
+        padding-top: 35px; /* مسافة عشان الزرار مياكلش الكود */
         border-radius: 8px;
         overflow-x: auto;
         border: 1px solid var(--surface0);
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
+    
     code {
         color: var(--green);
         font-family: 'JetBrains Mono', monospace;
     }
+
+    /* ستايل زرار النسخ */
+    .copy-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: var(--surface1, #45475a);
+        color: var(--text, #cdd6f4);
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
     
+    .copy-btn:hover {
+        background-color: var(--mauve, #cba6f7);
+        color: var(--crust, #11111b);
+    }
     
     .gallery img {
         border-radius: 8px;
         border: 1px solid var(--surface0);
         transition: 0.3s ease-in-out;
     }
+    
     .gallery img:hover {
         border-color: var(--mauve);
         transform: scale(1.02);
     }
 
-    
     .modules-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -39,17 +66,18 @@
     }
 </style>
 
-    <meta name="description" content="Ahmed x86 - Linux Enthusiast and Cyber Security Student.">
+    <meta name="description" content="A minimal, highly customized, and functional Hyprland setup on Arch Linux featuring the Catppuccin color palette.">
     <meta name="author" content="Ahmed x86">
-    <meta property="og:title" content="Ahmed x86 | Portfolio">
-    <meta property="og:description" content="Linux Enthusiast • Cyber Security Student.">
+    <meta property="og:title" content="My Hyprland Dotfiles | Ahmed x86">
+    <meta property="og:description" content="Explore my personal Hyprland configuration for Arch Linux. Focuses on productivity, aesthetics, and a clean workflow.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png">
-    <meta property="og:url" content="https://ahmed-x86.github.io/">
+    <meta property="og:url" content="https://ahmed-x86.github.io/hyprland_dotfiles.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ahmed x86 | Portfolio">
-    <meta name="twitter:description" content="Linux Enthusiast • Cyber Security Student.">
+    <meta name="twitter:title" content="My Hyprland Dotfiles | Ahmed x86">
+    <meta name="twitter:description" content="Explore my personal Hyprland configuration for Arch Linux. Fast, lightweight, and Catppuccin-themed.">
     <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
+    
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
 </head>
 
@@ -173,6 +201,44 @@ chmod +x *
 <footer>
 <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const codeBlocks = document.querySelectorAll("pre");
+
+        codeBlocks.forEach((pre) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "code-wrapper";
+            
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            const copyBtn = document.createElement("button");
+            copyBtn.className = "copy-btn";
+            copyBtn.innerText = "Copy";
+            
+            wrapper.appendChild(copyBtn);
+
+            copyBtn.addEventListener("click", async () => {
+                const codeText = pre.querySelector("code").innerText;
+                try {
+                    await navigator.clipboard.writeText(codeText);
+                    copyBtn.innerText = "Copied!";
+                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
+                    copyBtn.style.color = "var(--crust, #11111b)";
+                    
+                    setTimeout(() => {
+                        copyBtn.innerText = "Copy";
+                        copyBtn.style.backgroundColor = "";
+                        copyBtn.style.color = "";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
