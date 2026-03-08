@@ -17,18 +17,46 @@
         .badges img {
             border-radius: 4px;
         }
+        
+        /* تعديلات الـ Code Blocks عشان تناسب زرار النسخ */
+        .code-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
         pre {
             background-color: var(--crust);
             padding: 15px;
+            padding-top: 35px; /* مسافة عشان الزرار مياكلش الكود */
             border-radius: 8px;
             overflow-x: auto;
             border: 1px solid var(--surface0);
-            margin-bottom: 20px;
+            margin-bottom: 0; /* تم نقل المارجن للـ wrapper */
         }
         code {
             color: var(--green);
             font-family: 'JetBrains Mono', monospace;
         }
+        
+        /* ستايل زرار النسخ */
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--surface1, #45475a);
+            color: var(--text, #cdd6f4);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        .copy-btn:hover {
+            background-color: var(--mauve, #cba6f7);
+            color: var(--crust, #11111b);
+        }
+
         .note {
             background-color: var(--surface0);
             padding: 15px;
@@ -38,17 +66,18 @@
         }
     </style>
 
-    <meta name="description" content="Ahmed x86 - Linux Enthusiast and Cyber Security Student.">
+    <meta name="description" content="An all-in-one Assembly (ASM) development environment. Features native installers for Linux and Windows, smart dependency management, and pre-configured VS Code integration.">
     <meta name="author" content="Ahmed x86">
-    <meta property="og:title" content="Ahmed x86 | Portfolio">
-    <meta property="og:description" content="Linux Enthusiast • Cyber Security Student.">
+    <meta property="og:title" content="ASM Development Environment | Ahmed x86">
+    <meta property="og:description" content="Kickstart your Assembly development with out-of-the-box support for Linux & Windows, featuring seamless VS Code integration.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png">
-    <meta property="og:url" content="https://ahmed-x86.github.io/">
+    <meta property="og:url" content="https://ahmed-x86.github.io/asm_env.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ahmed x86 | Portfolio">
-    <meta name="twitter:description" content="Linux Enthusiast • Cyber Security Student.">
+    <meta name="twitter:title" content="Assembly Setup for VS Code | Ahmed x86">
+    <meta name="twitter:description" content="One-click ASM environment setup for Linux and Windows! Includes pre-configured VS Code settings, NASM, GCC, and GDB.">
     <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
+    
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
 </head>
 <body>
@@ -133,7 +162,7 @@ cd asm
     <h2>✨ Key Features</h2>
     <ul>
         <li><strong>Dual-Platform Support:</strong> Native installers for both Windows and Linux, ensuring your dev environment is consistent everywhere.</li>
-        <li><strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut <code>(Ctrl+Shift+B)</code>.</li>
+        <li><strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut <code>(Ctrl+Shift+P)</code>.</li>
         <li><strong>Smart Dependency Management:</strong>
             <ul>
                 <li><strong>On Linux:</strong> Automatically detects your package manager <code>(pacman, apt, dnf)</code> and installs <code>NASM</code>, <code>GCC</code>, and <code>GDB</code>.</li>
@@ -163,6 +192,49 @@ cd asm
 <footer>
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const codeBlocks = document.querySelectorAll("pre");
+
+        codeBlocks.forEach((pre) => {
+            // عمل حاوية (Wrapper) عشان نظبط الزرار فوق الكود
+            const wrapper = document.createElement("div");
+            wrapper.className = "code-wrapper";
+            
+            // نقل الـ pre لداخل الحاوية
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            // إنشاء زر النسخ
+            const copyBtn = document.createElement("button");
+            copyBtn.className = "copy-btn";
+            copyBtn.innerText = "Copy";
+            
+            wrapper.appendChild(copyBtn);
+
+            // تفعيل وظيفة النسخ عند الضغط
+            copyBtn.addEventListener("click", async () => {
+                const codeText = pre.querySelector("code").innerText;
+                try {
+                    await navigator.clipboard.writeText(codeText);
+                    copyBtn.innerText = "Copied!";
+                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
+                    copyBtn.style.color = "var(--crust, #11111b)";
+                    
+                    // إرجاع الزرار لشكله الطبيعي بعد ثانيتين
+                    setTimeout(() => {
+                        copyBtn.innerText = "Copy";
+                        copyBtn.style.backgroundColor = "";
+                        copyBtn.style.color = "";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
