@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallpapers Gallery - Page 5 | Ahmed x86</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 180px; 
+        object-fit: cover; 
+        object-position: center;
+        border-radius: 8px;
+        border: 2px solid var(--surface0);
+        transition: 0.3s ease-in-out;
+        background-color: var(--surface0);
+    }
+
+    .gallery-grid img:hover {
+        border-color: var(--mauve);
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* تنسيق أزرار التنقل بين الصفحات */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .pagination a {
+        padding: 8px 16px;
+        background-color: var(--surface0);
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s ease;
+        border: 1px solid transparent;
+    }
+
+    .pagination a:hover:not(.disabled) {
+        border-color: var(--mauve);
+        color: var(--mauve);
+        transform: translateY(-2px);
+    }
+
+    .pagination a.active {
+        background-color: var(--mauve);
+        color: var(--base);
+    }
+
+    .pagination a.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🖼️ Wallpapers Gallery</h1>
+<p>Page 5 - Royal wallpapers from my Arch Linux setup.</p>
+</header>
+
+<nav>
+<a href="index.html">← Back to Home</a>
+<a href="https://github.com/ahmed-x86" target="_blank">GitHub</a>
+</nav>
+
+<section>
+
+<h2>My Collection</h2>
+
+<p>
+Here are the new royal wallpapers from my Hyprland dotfiles.
+Click on any image to view it in full resolution.
+</p>
+
+<div class="gallery-grid">
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/anime-red-supra-cherry-blossoms-desktop-wallpaper.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/anime-red-supra-cherry-blossoms-desktop-wallpaper.jpg" alt="Wallpaper 1" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/arch-linux-purple-mountain-4k-wallpaper.jpeg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/arch-linux-purple-mountain-4k-wallpaper.jpeg" alt="Wallpaper 2" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/arch-linux-wallpaper-4k.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/arch-linux-wallpaper-4k.png" alt="Wallpaper 3" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/astronaut.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/astronaut.png" alt="Wallpaper 4" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/audi-r8-dusk-mountain-road-desktop-wallpaper.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/audi-r8-dusk-mountain-road-desktop-wallpaper.jpg" alt="Wallpaper 5" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/bridge-sea-middle-mountains.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/bridge-sea-middle-mountains.jpg" alt="Wallpaper 6" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/deep-forest-with-wooden-stairs.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/deep-forest-with-wooden-stairs.png" alt="Wallpaper 7" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/eclipse.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/eclipse.jpg" alt="Wallpaper 8" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/fishing.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/fishing.png" alt="Wallpaper 9" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/flying-comets-clouds.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/flying-comets-clouds.jpg" alt="Wallpaper 10" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/galaxy-waves.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/galaxy-waves.jpg" alt="Wallpaper 11" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/girl-stars.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/girl-stars.png" alt="Wallpaper 12" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68b0cf5f88de0.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68b0cf5f88de0.png" alt="Wallpaper 13" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68bbdab92048c.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68bbdab92048c.jpg" alt="Wallpaper 14" loading="lazy">
+    </a>
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68c6d854a4598.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68c6d854a4598.jpg" alt="Wallpaper 15" loading="lazy">
+    </a>
+</div>
+
+<div class="pagination">
+    <a href="wallpaper_4.html">&laquo; Prev</a>
+    <a href="wallpaper.html">1</a>
+    <a href="wallpaper_2.html">2</a>
+    <a href="wallpaper_3.html">3</a>
+    <a href="wallpaper_4.html">4</a>
+    <a href="wallpaper_5.html" class="active">5</a>
+    <a href="wallpaper_6.html">6</a>
+    <a href="wallpaper_7.html">7</a>
+    <a href="wallpaper_6.html">Next &raquo;</a>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+</body>
+</html>
