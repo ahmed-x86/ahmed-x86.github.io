@@ -6,21 +6,47 @@
 <title>Mobile Charge Indicator | Ahmed x86</title>
 <link rel="stylesheet" href="style.css">
 <style>
-    /* تنسيقات الأكواد (Terminal Style) */
+    /* Code Blocks Styles */
+    .code-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+    }
     pre {
         background-color: var(--crust);
         padding: 15px;
+        padding-top: 40px; /* Space for the copy button */
         border-radius: 8px;
         overflow-x: auto;
         border: 1px solid var(--surface0);
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
     code {
         color: var(--green);
         font-family: 'JetBrains Mono', monospace;
     }
     
-    /* تنسيق الصورة لتناسب الستايل */
+    /* Copy Button Styles */
+    .copy-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: var(--surface1, #45475a);
+        color: var(--text, #cdd6f4);
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        z-index: 10;
+    }
+    .copy-btn:hover {
+        background-color: var(--mauve, #cba6f7);
+        color: var(--crust, #11111b);
+    }
+
+    /* Image Styling */
     .hero-img {
         width: 70%;
         display: block;
@@ -34,7 +60,7 @@
         transform: scale(1.02);
     }
 
-    /* تنسيق الزرار السفلي */
+    /* Action Button */
     .btn-link {
         display: inline-block;
         margin-top: 15px;
@@ -82,7 +108,6 @@
 <section>
 
 <h2>About</h2>
-
 <p>
 A sleek and lightweight script that displays your mobile phone battery status
 directly in <b>Waybar</b> using <b>KDE Connect</b>.
@@ -91,7 +116,6 @@ directly in <b>Waybar</b> using <b>KDE Connect</b>.
 <img src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png" class="hero-img" alt="Mobile Charge Indicator Preview">
 
 <h2>Features</h2>
-
 <ul>
 <li>Auto detection of connected phone ID</li>
 <li>Dynamic battery colors (Normal / Warning / Critical)</li>
@@ -99,32 +123,17 @@ directly in <b>Waybar</b> using <b>KDE Connect</b>.
 <li>Click module to ping your phone</li>
 </ul>
 
-<h2>Prerequisites</h2>
-
-<ul>
-<li>kdeconnect</li>
-<li>waybar</li>
-<li>Nerd Font (JetBrains Mono Nerd Font recommended)</li>
-</ul>
-
 <h2>Installation</h2>
-
 <p>Run the following commands in your terminal to install the script:</p>
 
 <pre><code>cd mobile_charge_indicator_waybar
 chmod +x install.sh
 ./install.sh</code></pre>
 
-<p>
-The script will automatically copy <b>mobile.sh</b> to:
-</p>
-
+<p>The script will automatically copy <b>mobile.sh</b> to:</p>
 <pre><code>~/.config/waybar/scripts/</code></pre>
 
 <h2>Waybar Configuration</h2>
-
-<p>Add this module to your Waybar config:</p>
-
 <pre><code>"custom/mobile": {
     "format": "{text}",
     "exec": "~/.config/waybar/scripts/mobile.sh",
@@ -134,9 +143,6 @@ The script will automatically copy <b>mobile.sh</b> to:
 }</code></pre>
 
 <h2>Waybar Style</h2>
-
-<p>Add this CSS to your Waybar style file:</p>
-
 <pre><code>#custom-mobile {
     font-family: "JetBrains Mono Nerd", monospace;
     font-size: 14px;
@@ -156,27 +162,6 @@ The script will automatically copy <b>mobile.sh</b> to:
     color: #c3e88d;
 }</code></pre>
 
-<h2>Usage</h2>
-
-<p>
-Restart Waybar and your phone battery level will appear on the bar.
-Click the module anytime to ping your phone.
-</p>
-
-<h2>Notes</h2>
-
-<ul>
-<li>KDE Connect daemon must be running</li>
-<li>Your phone must be paired</li>
-<li>Tested on Arch Linux with Waybar</li>
-</ul>
-
-<h2>Support</h2>
-
-<p>
-If you find this useful, consider giving the project a ⭐ on GitHub.
-</p>
-
 <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn-link">
 View GitHub Repository
 </a>
@@ -186,6 +171,44 @@ View GitHub Repository
 <footer>
 <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const codeBlocks = document.querySelectorAll("pre");
+
+        codeBlocks.forEach((pre) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "code-wrapper";
+            
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            const copyBtn = document.createElement("button");
+            copyBtn.className = "copy-btn";
+            copyBtn.innerText = "Copy";
+            
+            wrapper.appendChild(copyBtn);
+
+            copyBtn.addEventListener("click", async () => {
+                const codeText = pre.innerText;
+                try {
+                    await navigator.clipboard.writeText(codeText);
+                    copyBtn.innerText = "Copied!";
+                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
+                    copyBtn.style.color = "var(--crust, #11111b)";
+                    
+                    setTimeout(() => {
+                        copyBtn.innerText = "Copy";
+                        copyBtn.style.backgroundColor = "";
+                        copyBtn.style.color = "";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
