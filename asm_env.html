@@ -198,11 +198,11 @@ cd asm
         const codeBlocks = document.querySelectorAll("pre");
 
         codeBlocks.forEach((pre) => {
-            // عمل حاوية (Wrapper) عشان نظبط الزرار فوق الكود
+            
             const wrapper = document.createElement("div");
             wrapper.className = "code-wrapper";
             
-            // نقل الـ pre لداخل الحاوية
+            
             pre.parentNode.insertBefore(wrapper, pre);
             wrapper.appendChild(pre);
 
@@ -213,7 +213,7 @@ cd asm
             
             wrapper.appendChild(copyBtn);
 
-            // تفعيل وظيفة النسخ عند الضغط
+            
             copyBtn.addEventListener("click", async () => {
                 const codeText = pre.querySelector("code").innerText;
                 try {
@@ -222,7 +222,7 @@ cd asm
                     copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
                     copyBtn.style.color = "var(--crust, #11111b)";
                     
-                    // إرجاع الزرار لشكله الطبيعي بعد ثانيتين
+                    
                     setTimeout(() => {
                         copyBtn.innerText = "Copy";
                         copyBtn.style.backgroundColor = "";
