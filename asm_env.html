@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASM Environment - Ahmed x86</title>
+
+    <title>Ahmed x86 | Assembly (ASM) for VS Code & VSCodium</title>
+    <meta name="description" content="Turn VS Code and VSCodium into a full Assembly (ASM) IDE. Get extension-like out-of-the-box support for Linux and Windows with Ahmed x86's ASM environment.">
+    <meta name="keywords" content="Ahmed x86, Assembly, ASM, VS Code, VSCodium, Extension, IDE, Run Assembly in VS Code, NASM, GCC, Debugging">
+    <meta name="author" content="Ahmed x86">
+
+    <meta property="og:title" content="Ahmed x86 | Run Assembly in VS Code & VSCodium">
+    <meta property="og:description" content="Transform your editor into a fully functional Assembly IDE. Extension-like setup for Windows & Linux with pre-configured debugging.">
+    <meta property="og:image" content="https://github.com/ahmed-x86.png">
+    <meta property="og:url" content="https://ahmed-x86.github.io/asm_env.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahmed x86 | Assembly Setup for VS Code">
+    <meta name="twitter:description" content="One-click setup to run and debug Assembly (ASM) natively in VS Code and VSCodium. Works on Linux & Windows!">
+    <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
+    
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ahmed x86 ASM Environment",
+      "operatingSystem": "Linux, Windows",
+      "applicationCategory": "DeveloperApplication",
+      "description": "An extension-like setup to run and debug Assembly language in VS Code and VSCodium.",
+      "author": {
+        "@type": "Person",
+        "name": "Ahmed x86"
+      },
+      "url": "https://ahmed-x86.github.io/asm_env.html",
+      "keywords": "Ahmed x86, Assembly, VS Code, VSCodium, Extension"
+    }
+    </script>
+
     <style>
         /* Specific styles for this page to keep it neat */
         .badges {
@@ -17,7 +52,6 @@
         .badges img {
             border-radius: 4px;
         }
-        
         
         .code-wrapper {
             position: relative;
@@ -36,7 +70,6 @@
             color: var(--green);
             font-family: 'JetBrains Mono', monospace;
         }
-        
         
         .copy-btn {
             position: absolute;
@@ -65,26 +98,12 @@
             margin: 20px 0;
         }
     </style>
-
-    <meta name="description" content="An all-in-one Assembly (ASM) development environment. Features native installers for Linux and Windows, smart dependency management, and pre-configured VS Code integration.">
-    <meta name="author" content="Ahmed x86">
-    <meta property="og:title" content="ASM Development Environment | Ahmed x86">
-    <meta property="og:description" content="Kickstart your Assembly development with out-of-the-box support for Linux & Windows, featuring seamless VS Code integration.">
-    <meta property="og:image" content="https://github.com/ahmed-x86.png">
-    <meta property="og:url" content="https://ahmed-x86.github.io/asm_env.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Assembly Setup for VS Code | Ahmed x86">
-    <meta name="twitter:description" content="One-click ASM environment setup for Linux and Windows! Includes pre-configured VS Code settings, NASM, GCC, and GDB.">
-    <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
-    
-    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
 </head>
 <body>
 
 <header>
-    <h1>Assembly Development Environment 🚀</h1>
-    <p>An all-in-one repository designed to kickstart your Assembly (ASM) development.</p>
+    <h1>Ahmed x86 - Assembly for VS Code & VSCodium 🚀</h1>
+    <p>Transform your favorite editor into a fully functional Assembly (ASM) IDE with this extension-like setup.</p>
 </header>
 
 <nav>
@@ -95,38 +114,23 @@
 <section id="project-details">
     
     <div class="badges">
-        <img src="https://img.shields.io/badge/Windows_7-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 7">
-        <img src="https://img.shields.io/badge/Windows_10-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 10">
-        <img src="https://img.shields.io/badge/Windows_11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 11">
-        <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
-        <img src="https://img.shields.io/badge/Manjaro-35BF5C?style=for-the-badge&logo=manjaro&logoColor=white" alt="Manjaro">
-        <img src="https://img.shields.io/badge/CachyOS-0080FF?style=for-the-badge&logo=arch-linux&logoColor=white" alt="CachyOS">
-        <img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian">
-        <img src="https://img.shields.io/badge/Ubuntu-E9433F?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu">
-        <img src="https://img.shields.io/badge/Linux_Mint-87CF3E?style=for-the-badge&logo=linux-mint&logoColor=white" alt="Linux Mint">
-        <img src="https://img.shields.io/badge/Zorin_OS-0CC0DF?style=for-the-badge&logo=zorin-os&logoColor=white" alt="ZorinOS">
-        <img src="https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white" alt="Fedora">
-        <img src="https://img.shields.io/badge/Nobara-750000?style=for-the-badge&logo=fedora&logoColor=white" alt="Nobara">
-        <img src="https://img.shields.io/badge/Kali_Linux-557CF2?style=for-the-badge&logo=kali-linux&logoColor=white" alt="Kali Linux">
-        <img src="https://img.shields.io/badge/Parrot_OS-36C5CC?style=for-the-badge&logo=parrot-security&logoColor=white" alt="Parrot OS">
-        <img src="https://img.shields.io/badge/Gentoo-54487A?style=for-the-badge&logo=gentoo&logoColor=white" alt="Gentoo">
-        <img src="https://img.shields.io/badge/Void_Linux-47841F?style=for-the-badge&logo=void-linux&logoColor=white" alt="Void Linux">
         <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code">
-        <img src="https://img.shields.io/badge/Bazzit-525865?style=for-the-badge&logo=fedora&logoColor=white" alt="Bazzit">
-        <img src="https://img.shields.io/badge/Peppermint_OS-E11221?style=for-the-badge&logo=peppermint&logoColor=white" alt="Peppermint">
-        <img src="https://img.shields.io/badge/Puppy_Linux-B22222?style=for-the-badge&logo=linux&logoColor=white" alt="Puppy Linux">
-        <img src="https://img.shields.io/badge/openSUSE-73BA48?style=for-the-badge&logo=opensuse&logoColor=white" alt="openSUSE">
-        <img src="https://img.shields.io/badge/Alpine_Linux-0D597F?style=for-the-badge&logo=alpine-linux&logoColor=white" alt="Alpine Linux">
+        <img src="https://img.shields.io/badge/VSCodium-2F80ED?style=for-the-badge&logo=vscodium&logoColor=white" alt="VSCodium">
+        <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
+        <img src="https://img.shields.io/badge/Windows_11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 11">
+        <img src="https://img.shields.io/badge/Windows_10-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 10">
+        <img src="https://img.shields.io/badge/Ubuntu-E9433F?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu">
+        <img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian">
     </div>
 
     <p style="text-align: center; color: var(--subtext);">
-        This environment provides out-of-the-box support for Linux x64 and Windows (x86/x64), featuring pre-configured VS Code settings for a seamless workflow.
+        Plug-and-play environment that adds native Assembly support to VS Code and VSCodium on both Linux and Windows.
     </p>
 
     <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
 
     <h2>🛠️ Quick Installation</h2>
-    <p>Choose your weapon (Operating System) and run the corresponding command to configure your environment immediately:</p>
+    <p>Run the corresponding command to configure your editor and install dependencies instantly:</p>
 
     <h3>🐧 Linux (One-Line Installer)</h3>
     <p>Supports Arch, Debian/Ubuntu, Fedora, and their derivatives.</p>
@@ -140,48 +144,22 @@
 
     <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
 
-    <h2>🏗️ Manual Setup (Local)</h2>
-    <p>If you prefer to clone the repository and run the scripts locally:</p>
-
-    <h3>For Linux:</h3>
-    <pre><code>git clone https://github.com/ahmed-x86/asm.git
-cp -r asm/. .
-chmod +x install-linux.sh
-./install-linux.sh</code></pre>
-
-    <h3>For Windows:</h3>
-    <pre><code>git clone https://github.com/ahmed-x86/asm.git
-cd asm
-# For Win 10/11:
-.\install-windows.ps1
-# For Win 7:
-.\install-windows7.ps1</code></pre>
-
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
-
     <h2>✨ Key Features</h2>
     <ul>
+        <li><strong>Extension-Like Integration:</strong> Transforms VS Code and VSCodium seamlessly. Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build, run, and debug your code with a single shortcut <code>(Ctrl+Shift+B / F5)</code>.</li>
         <li><strong>Dual-Platform Support:</strong> Native installers for both Windows and Linux, ensuring your dev environment is consistent everywhere.</li>
-        <li><strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut <code>(Ctrl+Shift+P)</code>.</li>
         <li><strong>Smart Dependency Management:</strong>
             <ul>
-                <li><strong>On Linux:</strong> Automatically detects your package manager <code>(pacman, apt, dnf)</code> and installs <code>NASM</code>, <code>GCC</code>, and <code>GDB</code>.</li>
+                <li><strong>On Linux:</strong> Automatically detects your package manager and installs <code>NASM</code>, <code>GCC</code>, and <code>GDB</code>.</li>
                 <li><strong>On Windows:</strong> Sets up NASM and required build tools automatically.</li>
             </ul>
         </li>
-        <li><strong>Legacy Support:</strong> Special installer for Windows 7 to ensure assembly development isn't limited by OS version.</li>
         <li><strong>Cross-Compilation:</strong> Ready-to-use toolchains to compile and test Windows binaries directly from Linux using Wine and MinGW.</li>
     </ul>
 
     <div class="note">
-        <strong>Note for Arch Users:</strong> Because "I use Arch btw" shouldn't mean spending three hours on config. We've got you covered. 😎
+        <strong>Note for Arch Users:</strong> Because "I use Arch btw" shouldn't mean spending three hours configuring VS Code tasks. We've got you covered. 😎
     </div>
-
-    <h2>💡 What's New?</h2>
-    <ul>
-        <li><strong>Windows Native Support:</strong> Added a dedicated PowerShell script for one-click setup on Windows.</li>
-        <li><strong>Improved Toolchain:</strong> Better handling of environment variables for NASM on both platforms.</li>
-    </ul>
 
     <p style="text-align: center; margin-top: 50px; font-weight: bold; color: var(--blue);">
         > i use arch btw
@@ -198,22 +176,18 @@ cd asm
         const codeBlocks = document.querySelectorAll("pre");
 
         codeBlocks.forEach((pre) => {
-            
             const wrapper = document.createElement("div");
             wrapper.className = "code-wrapper";
-            
             
             pre.parentNode.insertBefore(wrapper, pre);
             wrapper.appendChild(pre);
 
-            
             const copyBtn = document.createElement("button");
             copyBtn.className = "copy-btn";
             copyBtn.innerText = "Copy";
             
             wrapper.appendChild(copyBtn);
 
-            
             copyBtn.addEventListener("click", async () => {
                 const codeText = pre.querySelector("code").innerText;
                 try {
@@ -221,7 +195,6 @@ cd asm
                     copyBtn.innerText = "Copied!";
                     copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
                     copyBtn.style.color = "var(--crust, #11111b)";
-                    
                     
                     setTimeout(() => {
                         copyBtn.innerText = "Copy";
