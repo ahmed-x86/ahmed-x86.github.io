@@ -9,19 +9,18 @@
     <meta name="keywords" content="Ahmed x86, ahmedx86, Linux Enthusiast, Cyber Security Student, Arch Linux, Hyprland Dotfiles, Assembly Environment, VS Code ASM, Waybar Scripts, Linux Ricing, Developer Portfolio, Open Source">
     <meta name="author" content="Ahmed x86">
 
-    <meta property="og:site_name" content="Ahmed x86"> <meta property="og:title" content="Ahmed x86 | Portfolio & Projects">
+    <meta property="og:site_name" content="Ahmed x86"> 
+    <meta property="og:title" content="Ahmed x86 | Portfolio & Projects">
     <meta property="og:description" content="Linux Enthusiast • Cyber Security Student. Check out my open-source projects, Assembly setup, and Arch Linux rices.">
-    <meta property="og:image" content="https://github.com/ahmed-x86.png">
-    <meta property="og:url" content="https://ahmed-x86.github.io/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/150000000?v=4"> <meta property="og:url" content="https://ahmed-x86.github.io/">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ahmed x86 | Portfolio">
     <meta name="twitter:description" content="Linux Enthusiast • Cyber Security Student. Check out my projects, custom scripts, and Arch Linux dotfiles.">
-    <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/150000000?v=4">
     
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
-    
     <link rel="stylesheet" href="style.css">
 
     <script type="application/ld+json">
@@ -54,7 +53,7 @@
 <body>
 
 <header>
-    <img src="https://github.com/ahmed-x86.png" alt="Ahmed x86 Profile Picture" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #a6e3a1; margin-bottom: 15px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+    <img src="https://avatars.githubusercontent.com/ahmed-x86" alt="Ahmed x86 Profile Picture" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #a6e3a1; margin-bottom: 15px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
     
     <h1>Ahmed x86</h1>
     <p>Linux Enthusiast • Cyber Security Student</p>
@@ -80,32 +79,20 @@
     <h2>My Projects</h2>
 
     <div class="projects-grid">
-
         <div class="project">
-            <h3>
-                <a href="asm_env.html">ASM Development Environment</a>
-            </h3>
+            <h3><a href="asm_env.html">ASM Development Environment</a></h3>
             <p>An extension-like setup to run and debug Assembly natively on VS Code and VSCodium for Linux and Windows.</p>
             <a href="https://github.com/ahmed-x86/asm" target="_blank" class="btn">View Repository</a>
         </div>
 
         <div class="project">
-            <h3>
-                <a href="hyprland_dotfiles.html">Hyprland Dotfiles</a>
-            </h3>
-            <p>
-                My personal Hyprland configuration.  
-                Focused on productivity, tiling workflow, and a clean, aesthetic Arch Linux setup.
-            </p>
+            <h3><a href="hyprland_dotfiles.html">Hyprland Dotfiles</a></h3>
+            <p>My personal Hyprland configuration. Focused on productivity, tiling workflow, and a clean, aesthetic Arch Linux setup.</p>
             <a href="https://github.com/ahmed-x86/dotfiles" target="_blank" class="btn">View Repository</a>
         </div>
 
         <div class="project">
-            <h3>
-                <a href="Mobile_Charge_Indicator_Waybar.html">
-                    Waybar Mobile Charge Indicator
-                </a>
-            </h3>
+            <h3><a href="Mobile_Charge_Indicator_Waybar.html">Waybar Mobile Charge Indicator</a></h3>
             <p>A lightweight bash script to show your Android mobile battery status in Waybar via KDE Connect.</p>
             <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn">View Repository</a>
         </div>
@@ -115,18 +102,14 @@
             <p>A collection of bash scripts to automate daily tasks and improve the Arch Linux desktop workflow.</p>
             <a href="https://github.com/ahmed-x86/my_scripts" target="_blank" class="btn">View Repository</a>
         </div>
-
     </div>
 </section>
 
 <section id="wallpapers-section">
     <h2>Wallpapers</h2>
-
     <div class="projects-grid">
         <div class="project">
-            <h3>
-                <a href="wallpaper.html">Wallpapers Gallery</a>
-            </h3>
+            <h3><a href="wallpaper.html">Wallpapers Gallery</a></h3>
             <p>A curated collection of 4K, minimalist, and aesthetic wallpapers perfectly suited for Linux ricing, Arch Linux, and Hyprland setups.</p>
             <a href="wallpaper.html" class="btn">Browse Wallpapers</a>
         </div>
@@ -136,6 +119,56 @@
 <footer>
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
+
+<button id="feedbackBtn" class="feedback-btn">Feedback</button>
+<div id="feedbackModal" class="modal-overlay">
+    <div class="modal-content">
+        <span id="closeModal" class="close-btn">&times;</span>
+        <form id="feedbackForm">
+            <h3 style="margin-top: 0; color: var(--mauve);">Send us your Feedback</h3>
+            <p style="margin-bottom: 15px; font-size: 14px; color: var(--subtext);">We value your opinion (kinda).</p>
+            <input type="text" placeholder="Your Name" required class="form-input">
+            <input type="email" placeholder="Your Email" required class="form-input">
+            <textarea placeholder="Describe your issue..." rows="4" required class="form-input"></textarea>
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+        <div id="trashMessage" style="display: none; text-align: center; padding: 20px 0;">
+            <h2 style="font-size: 50px; margin-bottom: 15px; margin-top: 0;">🗑️</h2>
+            <p style="color: var(--text); font-size: 18px; font-weight: bold; line-height: 1.6;">
+                لقد تم استقبال ردك وسيتم إرساله للمطور حتى يرميه في سلة الزبالة في أسرع وقت.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const feedbackBtn = document.getElementById("feedbackBtn");
+        const modal = document.getElementById("feedbackModal");
+        const closeBtn = document.getElementById("closeModal");
+        const form = document.getElementById("feedbackForm");
+        const trashMsg = document.getElementById("trashMessage");
+
+        feedbackBtn.addEventListener("click", () => { modal.style.display = "block"; });
+
+        const resetModal = () => {
+            modal.style.display = "none";
+            setTimeout(() => {
+                form.style.display = "block";
+                trashMsg.style.display = "none";
+                form.reset();
+            }, 300);
+        };
+
+        closeBtn.addEventListener("click", resetModal);
+        window.addEventListener("click", (e) => { if (e.target === modal) resetModal(); });
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            form.style.display = "none";
+            trashMsg.style.display = "block";
+        });
+    });
+</script>
 
 </body>
 </html>
