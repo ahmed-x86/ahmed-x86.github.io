@@ -3,8 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Charge Indicator | Ahmed x86</title>
+
+<title>Ahmed x86 | Mobile Charge Indicator for Waybar</title>
+<meta name="description" content="Show your phone's battery status directly in Waybar using KDE Connect. A lightweight bash script by Ahmed x86 for Hyprland, Sway, and Wayland environments.">
+<meta name="keywords" content="Ahmed x86, Waybar, Mobile Charge Indicator, KDE Connect, Linux battery status, Arch Linux, Hyprland, Sway, Custom Waybar Module, Bash script, Wayland, Status bar, Android battery Linux, Linux Customization, Dotfiles, Waybar Widgets">
+<meta name="author" content="Ahmed x86">
+
+<meta property="og:title" content="Ahmed x86 | Waybar Mobile Charge Indicator">
+<meta property="og:description" content="Display your mobile phone battery status in Waybar using KDE Connect. Lightweight, features dynamic colors, and ping capabilities.">
+<meta property="og:image" content="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png">
+<meta property="og:url" content="https://ahmed-x86.github.io/Mobile_Charge_Indicator_Waybar.html">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ahmed x86 | Waybar Mobile Charge Indicator">
+<meta name="twitter:description" content="A sleek, lightweight custom module for Waybar to show Android battery status via KDE Connect on Linux.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png">
+
+<link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ahmed x86 Mobile Charge Indicator for Waybar",
+  "operatingSystem": "Linux",
+  "applicationCategory": "DesktopEnhancementApplication",
+  "description": "A custom Waybar module and bash script to display Android phone battery status using KDE Connect.",
+  "author": {
+    "@type": "Person",
+    "name": "Ahmed x86"
+  },
+  "url": "https://ahmed-x86.github.io/Mobile_Charge_Indicator_Waybar.html",
+  "keywords": "Waybar, KDE Connect, Linux, Bash, Custom Module"
+}
+</script>
+
 <style>
     /* Code Blocks Styles */
     .code-wrapper {
@@ -78,26 +113,13 @@
         color: var(--crust);
     }
 </style>
-
-    <meta name="description" content="Ahmed x86 - Linux Enthusiast and Cyber Security Student.">
-    <meta name="author" content="Ahmed x86">
-    <meta property="og:title" content="Ahmed x86 | Portfolio">
-    <meta property="og:description" content="Linux Enthusiast • Cyber Security Student.">
-    <meta property="og:image" content="https://github.com/ahmed-x86.png">
-    <meta property="og:url" content="https://ahmed-x86.github.io/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ahmed x86 | Portfolio">
-    <meta name="twitter:description" content="Linux Enthusiast • Cyber Security Student.">
-    <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
-    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
 </head>
 
 <body>
 
 <header>
-<h1>📱 Mobile Charge Indicator for Waybar</h1>
-<p>A lightweight script that shows your phone battery in Waybar</p>
+<h1>Ahmed x86 - Mobile Charge Indicator for Waybar 📱</h1>
+<p>A lightweight bash script that shows your phone battery in Waybar using KDE Connect.</p>
 </header>
 
 <nav>
@@ -110,10 +132,10 @@
 <h2>About</h2>
 <p>
 A sleek and lightweight script that displays your mobile phone battery status
-directly in <b>Waybar</b> using <b>KDE Connect</b>.
+directly in <b>Waybar</b> using <b>KDE Connect</b>. Perfect for Hyprland and Sway users.
 </p>
 
-<img src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png" class="hero-img" alt="Mobile Charge Indicator Preview">
+<img src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png" class="hero-img" alt="Waybar Mobile Charge Indicator Preview by Ahmed x86">
 
 <h2>Features</h2>
 <ul>
@@ -190,7 +212,7 @@ View GitHub Repository
             wrapper.appendChild(copyBtn);
 
             copyBtn.addEventListener("click", async () => {
-                const codeText = pre.innerText;
+                const codeText = pre.innerText.replace("Copy\n", ""); // تأكدت إن كلمة زرار النسخ متتنسخش مع الكود
                 try {
                     await navigator.clipboard.writeText(codeText);
                     copyBtn.innerText = "Copied!";
