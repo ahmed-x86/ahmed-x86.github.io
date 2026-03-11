@@ -94,6 +94,12 @@
         </div>
 
         <div class="project">
+            <h3><a href="gh_radar.html">gh-radar for Waybar</a></h3>
+            <p>A dynamic and interactive Waybar module that monitors your GitHub activity in real-time with an animated ticker, sound alerts, and avatar notifications.</p>
+            <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn">View Repository</a>
+        </div>
+
+        <div class="project">
             <h3><a href="waybar_hijri_calendar.html">Waybar Hijri Calendar</a></h3>
             <p>A stable Python script for an RTL-fixed, dynamic Hijri calendar in Waybar with zero dependencies.</p>
             <a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank" class="btn">View Repository</a>
@@ -153,7 +159,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         
         // ==========================================
-        // Auth Logic (تغيير الزر لاسم المستخدم)
+        // Auth Logic
         // ==========================================
         const authLink = document.querySelector('.auth-link');
         const savedUser = localStorage.getItem('arch_user');
@@ -174,7 +180,7 @@
         }
 
         // ==========================================
-        // Feedback Modal Logic (الكود الخاص بك)
+        // Feedback Modal Logic
         // ==========================================
         const feedbackBtn = document.getElementById("feedbackBtn");
         const modal = document.getElementById("feedbackModal");
