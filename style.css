@@ -27,10 +27,28 @@ body {
 
 /* Header & Typography */
 header {
+    position: relative; /* تم إضافة هذا السطر */
     text-align: center;
     padding: 60px 20px;
     background-color: var(--mantle);
     border-bottom: 2px solid var(--mauve);
+}
+
+/* التنسيق الخاص برابط تسجيل الدخول */
+.auth-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--mauve);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.auth-link:hover {
+    color: var(--lavender);
+    text-decoration: underline;
 }
 
 header h1 {
@@ -309,6 +327,13 @@ footer {
         font-size: 2rem;
     }
     
+    /* Adjust Auth Link for mobile */
+    .auth-link {
+        top: 15px;
+        right: 15px;
+        font-size: 0.85rem;
+    }
+
     nav {
         display: flex;
         flex-wrap: wrap;
