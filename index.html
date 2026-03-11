@@ -145,6 +145,31 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+        
+        // ==========================================
+        // Auth Logic (تغيير الزر لاسم المستخدم)
+        // ==========================================
+        const authLink = document.querySelector('.auth-link');
+        const savedUser = localStorage.getItem('arch_user');
+
+        if (savedUser && authLink) {
+            authLink.textContent = `~/${savedUser}`;
+            authLink.style.color = "var(--green)";
+            authLink.href = "#"; 
+            authLink.title = "Click to Logout (exit)";
+
+            authLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                if(confirm(`Do you want to terminate session for '${savedUser}'? (Logout)`)) {
+                    localStorage.removeItem('arch_user');
+                    window.location.reload(); 
+                }
+            });
+        }
+
+        // ==========================================
+        // Feedback Modal Logic (الكود الخاص بك)
+        // ==========================================
         const feedbackBtn = document.getElementById("feedbackBtn");
         const modal = document.getElementById("feedbackModal");
         const closeBtn = document.getElementById("closeModal");

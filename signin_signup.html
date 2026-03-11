@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication | Ahmed x86</title>
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-container">
+        <a href="index.html" class="back-link">← cd /home/</a>
+
+        <div class="auth-tabs">
+            <button id="tab-signin" class="auth-tab active">Sign In</button>
+            <button id="tab-signup" class="auth-tab">Sign Up</button>
+        </div>
+
+        <form id="form-signin" class="auth-form">
+            <h2 style="margin-top: 0; font-size: 1.5rem;">Welcome Back, Root!</h2>
+            <p style="color: var(--subtext); font-size: 0.9rem; margin-bottom: 20px;">Enter your credentials to access the system.</p>
+            
+            <input type="text" placeholder="Username or IP" required class="form-input">
+            <input type="password" placeholder="Password" required class="form-input">
+            
+            <button type="submit" class="submit-btn" style="background-color: var(--mauve);">Execute Login</button>
+        </form>
+
+        <form id="form-signup" class="auth-form" style="display: none;">
+            <h2 style="margin-top: 0; font-size: 1.5rem;">Create a Session</h2>
+            <p style="color: var(--subtext); font-size: 0.9rem; margin-bottom: 20px;">Register a new user in the sudoers file.</p>
+            
+            <input type="text" placeholder="Desired Username" required class="form-input">
+            <input type="email" placeholder="Email Address" required class="form-input">
+            <input type="password" placeholder="Secure Password" required class="form-input">
+            
+            <button type="submit" class="submit-btn">Generate User</button>
+        </form>
+    </div>
+
+    <script>
+        const tabSignin = document.getElementById('tab-signin');
+        const tabSignup = document.getElementById('tab-signup');
+        const formSignin = document.getElementById('form-signin');
+        const formSignup = document.getElementById('form-signup');
+
+        // التبديل بين النموذجين
+        tabSignin.addEventListener('click', () => {
+            tabSignin.classList.add('active');
+            tabSignup.classList.remove('active');
+            formSignin.style.display = 'block';
+            formSignup.style.display = 'none';
+        });
+
+        tabSignup.addEventListener('click', () => {
+            tabSignup.classList.add('active');
+            tabSignin.classList.remove('active');
+            formSignup.style.display = 'block';
+            formSignin.style.display = 'none';
+        });
+
+        // التعامل مع تسجيل الدخول
+        formSignin.addEventListener('submit', (e) => {
+            e.preventDefault(); // منع إعادة تحميل الصفحة
+            // جلب اسم المستخدم من الحقل الأول
+            const username = formSignin.querySelector('input[type="text"]').value;
+            // حفظ الاسم في المتصفح
+            localStorage.setItem('arch_user', username);
+            // التوجيه للصفحة الرئيسية
+            window.location.href = 'index.html';
+        });
+
+        // التعامل مع إنشاء حساب
+        formSignup.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // جلب اسم المستخدم من الحقل الأول
+            const newUsername = formSignup.querySelector('input[type="text"]').value;
+            // حفظ الاسم في المتصفح
+            localStorage.setItem('arch_user', newUsername);
+            // التوجيه للصفحة الرئيسية
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

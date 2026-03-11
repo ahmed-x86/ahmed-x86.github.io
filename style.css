@@ -313,6 +313,74 @@ footer {
 
 .submit-btn:hover { background-color: var(--blue); }
 
+/* =========================================
+   Authentication Page Styles
+   ========================================= */
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* يجعل الصفحة تأخذ طول الشاشة بالكامل */
+    margin: 0;
+    background-color: var(--crust); /* لون خلفية أغمق قليلاً للتركيز على المربع */
+}
+
+.auth-container {
+    background-color: var(--base);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--surface0);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 400px; /* عرض مناسب للمربع */
+    box-sizing: border-box;
+    animation: slideDown 0.4s ease-out; /* استخدام نفس حركة الأنيميشن السابقة */
+}
+
+.back-link {
+    color: var(--subtext);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 25px;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: var(--green);
+    transform: translateX(-5px); /* حركة خفيفة لليسار عند التمرير */
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--surface0);
+}
+
+.auth-tab {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--subtext);
+    padding: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.auth-tab.active {
+    color: var(--mauve);
+    border-bottom: 2px solid var(--mauve);
+    margin-bottom: -2px; /* لتغطية الخط السفلي للـ container */
+}
+
+.auth-tab:hover:not(.active) {
+    color: var(--text);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .projects-grid {
