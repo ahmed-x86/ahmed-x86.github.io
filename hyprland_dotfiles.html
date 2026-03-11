@@ -15,51 +15,30 @@
 <meta property="og:url" content="https://ahmed-x86.github.io/hyprland_dotfiles.html">
 <meta property="og:type" content="website">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ahmed x86 | Hyprland Dotfiles">
-<meta name="twitter:description" content="Explore my personal Hyprland configuration for Arch Linux. Fast, lightweight, and Catppuccin-themed.">
-<meta name="twitter:image" content="https://github.com/ahmed-x86.png">
-
 <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
 <link rel="stylesheet" href="style.css">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Ahmed x86 Hyprland Dotfiles",
-  "author": {
-    "@type": "Person",
-    "name": "Ahmed x86"
-  },
-  "url": "https://ahmed-x86.github.io/hyprland_dotfiles.html",
-  "keywords": "Hyprland, Arch Linux, Dotfiles, Waybar, Ahmed x86"
-}
-</script>
-
 <style>
-    /* تعديلات الـ Code Blocks عشان تناسب زرار النسخ */
     .code-wrapper {
         position: relative;
         margin-bottom: 20px;
     }
     
     pre {
-        background-color: var(--crust);
+        background-color: var(--crust, #11111b);
         padding: 15px;
         padding-top: 35px; 
         border-radius: 8px;
         overflow-x: auto;
-        border: 1px solid var(--surface0);
+        border: 1px solid var(--surface0, #313244);
         margin-bottom: 0;
     }
     
     code {
-        color: var(--green);
+        color: var(--green, #a6e3a1);
         font-family: 'JetBrains Mono', monospace;
     }
 
-    /* ستايل زرار النسخ */
     .copy-btn {
         position: absolute;
         top: 8px;
@@ -82,20 +61,23 @@
     
     .gallery img {
         border-radius: 8px;
-        border: 1px solid var(--surface0);
+        border: 1px solid var(--surface0, #313244);
         transition: 0.3s ease-in-out;
     }
     
     .gallery img:hover {
-        border-color: var(--mauve);
+        border-color: var(--mauve, #cba6f7);
         transform: scale(1.02);
     }
 
     .modules-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
     }
+
+    a { color: var(--mauve, #cba6f7); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 </style>
 </head>
 
@@ -114,48 +96,33 @@
 <section>
 
 <h2>About</h2>
-
-<p>
-Welcome to my personal <b>Hyprland</b> configuration (dotfiles).
-This setup focuses on productivity, aesthetics, and a clean workflow using
-the Catppuccin color palette.
-</p>
-
-<h2>Features</h2>
-
-<ul>
-<li>Fast & Lightweight Arch Linux setup</li>
-<li>Hyprland Wayland compositor</li>
-<li>Catppuccin themed environment</li>
-<li>Advanced Waybar configuration</li>
-<li>Smooth window animations</li>
-</ul>
+<p>Welcome to my personal <b>Hyprland</b> configuration. Designed for aesthetics and performance using the Catppuccin color palette.</p>
 
 <h2>Software & Tools</h2>
-
-<ul>
-<li>Hyprland</li>
-<li>Waybar</li>
-<li>Zsh</li>
-<li>Kitty Terminal</li>
-<li>Rofi (Wayland)</li>
-<li>SwayNC</li>
-<li>SwayOSD</li>
-<li>wlogout</li>
-<li>Cava</li>
-<li>nwg-look</li>
-<li>Catppuccin Theme</li>
-<li>swww Wallpaper Manager</li>
-</ul>
+<div style="columns: 2; -webkit-columns: 2; -moz-columns: 2;">
+    <ul>
+    <li><a href="https://hyprland.org/" target="_blank">Hyprland</a></li>
+    <li><a href="https://github.com/Alexays/Waybar" target="_blank">Waybar</a></li>
+    <li><a href="https://www.zsh.org/" target="_blank">Zsh</a></li>
+    <li><a href="https://sw.kovidgoyal.net/kitty/" target="_blank">Kitty Terminal</a></li>
+    <li><a href="https://github.com/lbonn/rofi-wayland" target="_blank">Rofi (Wayland)</a></li>
+    <li><a href="https://github.com/ErikReider/SwayNotificationCenter" target="_blank">SwayNC</a></li>
+    <li><a href="https://github.com/ErikReider/SwayOSD" target="_blank">SwayOSD</a></li>
+    <li><a href="https://github.com/ArtsyMacaw/wlogout" target="_blank">wlogout</a></li>
+    <li><a href="https://github.com/karlstav/cava" target="_blank">Cava</a></li>
+    <li><a href="https://github.com/nwg-piotr/nwg-look" target="_blank">nwg-look</a></li>
+    <li><a href="https://github.com/catppuccin/catppuccin" target="_blank">Catppuccin Theme</a></li>
+    <li><a href="https://github.com/LGFae/swww" target="_blank">swww Manager</a></li>
+    </ul>
+</div>
 
 <h2>Waybar Modules</h2>
-
 <div class="modules-grid">
     <div>
         <h3>Left Modules</h3>
         <ul>
-        <li>Power Menu</li>
-        <li>GitHub Activity Heatmap</li>
+        <li>Power Menu (wlogout)</li>
+        <li><a href="https://github.com/ad1822/weekly-github-waybar-module/tree/dev" target="_blank">GitHub Activity Heatmap</a></li>
         <li>Workspace Switcher</li>
         <li>Idle Inhibitor</li>
         <li>System Updates</li>
@@ -166,9 +133,9 @@ the Catppuccin color palette.
         <h3>Center Modules</h3>
         <ul>
         <li>Color Picker</li>
-        <li>Hijri Calendar</li>
+        <li><a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank">Hijri Calendar</a> (For Muslims)</li>
         <li>Clock</li>
-        <li>Privacy Dots</li>
+        <li><a href="https://github.com/alvaniss/privacy-dots" target="_blank">Privacy Dots</a></li>
         <li>System Tray</li>
         </ul>
     </div>
@@ -177,41 +144,36 @@ the Catppuccin color palette.
         <h3>Right Modules</h3>
         <ul>
         <li>Media Controls</li>
-        <li>Keyboard Layout Indicator</li>
-        <li>Bluetooth</li>
-        <li>Network Status</li>
-        <li>Battery</li>
-        <li>Power Profiles</li>
-        <li>Volume</li>
-        <li>Microphone</li>
-        <li>Notification Center</li>
+        <li>Keyboard Layout</li>
+        <li>Bluetooth & Network</li>
+        <li>Battery & Power Profiles</li>
+        <li>Volume & Mic</li>
+        <li>Notification Toggle</li>
         </ul>
     </div>
 </div>
 
 <h2>Installation</h2>
 
-<h3>Online Install</h3>
+<h3>Online Install (Fastest)</h3>
+<div class="code-wrapper">
+<pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/online-install.sh)"</code></pre>
+</div>
 
-<pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/online-install.sh)"</code></pre>
-
-<h3>Offline Install</h3>
-
+<h3>Offline Install (Manual)</h3>
+<div class="code-wrapper">
 <pre><code>git clone https://github.com/ahmed-x86/hyprland_dotfiles
 cd hyprland_dotfiles
 chmod +x *
 ./main.sh</code></pre>
+</div>
 
 <h2>Gallery</h2>
-
 <div class="gallery" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
-
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_10-21-48.png" width="45%" alt="Ahmed x86 Hyprland Setup 1">
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_17-03-54.png" width="45%" alt="Ahmed x86 Hyprland Setup 2">
-
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_19-22-20.png" width="45%" alt="Ahmed x86 Hyprland Setup 3">
-<img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/screenshot_2026-02-07_19-23-34.png" width="45%" alt="Ahmed x86 Hyprland Setup 4">
-
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_10-21-48.png" width="45%" alt="Screenshot 1">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_17-03-54.png" width="45%" alt="Screenshot 2">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-22-20.png" width="45%" alt="Screenshot 3">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-23-34.png" width="45%" alt="Screenshot 4">
 </div>
 
 </section>
@@ -223,36 +185,17 @@ chmod +x *
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const codeBlocks = document.querySelectorAll("pre");
-
         codeBlocks.forEach((pre) => {
-            const wrapper = document.createElement("div");
-            wrapper.className = "code-wrapper";
-            
-            pre.parentNode.insertBefore(wrapper, pre);
-            wrapper.appendChild(pre);
-
             const copyBtn = document.createElement("button");
             copyBtn.className = "copy-btn";
             copyBtn.innerText = "Copy";
-            
-            wrapper.appendChild(copyBtn);
+            pre.parentNode.appendChild(copyBtn);
 
             copyBtn.addEventListener("click", async () => {
                 const codeText = pre.querySelector("code").innerText;
-                try {
-                    await navigator.clipboard.writeText(codeText);
-                    copyBtn.innerText = "Copied!";
-                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
-                    copyBtn.style.color = "var(--crust, #11111b)";
-                    
-                    setTimeout(() => {
-                        copyBtn.innerText = "Copy";
-                        copyBtn.style.backgroundColor = "";
-                        copyBtn.style.color = "";
-                    }, 2000);
-                } catch (err) {
-                    console.error("Failed to copy!", err);
-                }
+                await navigator.clipboard.writeText(codeText);
+                copyBtn.innerText = "Copied!";
+                setTimeout(() => { copyBtn.innerText = "Copy"; }, 2000);
             });
         });
     });

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed x86 | Waybar Hijri Calendar 🌙</title>
+    <meta name="description" content="A stable, Python-based Hijri calendar for Waybar. Featuring RTL alignment fixes, dynamic tooltips, and zero dependencies. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, Waybar, Hijri Calendar, Python, Linux, Arch Linux, Hyprland, Wayland, Custom Module, RTL fix">
+    <meta name="author" content="Ahmed x86">
+
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .badges img {
+            border-radius: 4px;
+        }
+
+        .code-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: var(--crust);
+            padding: 15px;
+            padding-top: 40px; 
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--surface0);
+            margin-bottom: 0;
+        }
+        code {
+            color: var(--green);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--surface1, #45475a);
+            color: var(--text, #cdd6f4);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            z-index: 10;
+        }
+        .copy-btn:hover {
+            background-color: var(--mauve, #cba6f7);
+            color: var(--crust, #11111b);
+        }
+
+        .hero-img {
+            width: 75%;
+            display: block;
+            margin: 30px auto;
+            border-radius: 8px;
+            border: 1px solid var(--surface0);
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .hero-img:hover {
+            border-color: var(--mauve);
+            transform: scale(1.02);
+        }
+
+        .note {
+            background-color: var(--surface0);
+            padding: 15px;
+            border-left: 4px solid var(--mauve);
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Ahmed x86 - Waybar Hijri Calendar 🌙</h1>
+    <p>A stable Python script for an RTL-fixed, dynamic Hijri calendar in Waybar.</p>
+</header>
+
+<nav>
+    <a href="index.html">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank">GitHub Repo</a>
+</nav>
+
+<section>
+
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/Waybar-292D3E?style=for-the-badge&logo=linux&logoColor=white" alt="Waybar">
+        <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
+        <img src="https://img.shields.io/badge/Hyprland-004450?style=for-the-badge&logo=hyprland&logoColor=white" alt="Hyprland">
+    </div>
+
+    <h2>About</h2>
+    <p>
+        The most stable Hijri calendar module for <b>Waybar</b>. It solves the common Pango RTL alignment issues 
+        by using a smart English header strategy, ensuring the calendar grid remains perfectly consistent 
+        on Hyprland and Sway.
+    </p>
+
+    <img src="screenshot_full_2026-03-11_10-38-13.png" class="hero-img" alt="Waybar Hijri Calendar Preview by Ahmed x86">
+
+    <h2>Features</h2>
+    <ul>
+        <li>Zero External Dependencies (Pure Python).</li>
+        <li>Automatic 1st-of-month calculation for accurate grids.</li>
+        <li>RTL/LTR fix for perfect Pango rendering.</li>
+        <li>Dynamic tooltips with full date and day of the week.</li>
+    </ul>
+
+    <h2>Installation</h2>
+    <p>Deploy the script directly using this command:</p>
+    <pre><code>mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py</code></pre>
+
+    <h2>Waybar Configuration</h2>
+    <pre><code>"custom/hijri": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/hijri_waybar.py",
+    "interval": 3600,
+    "return-type": "json",
+    "tooltip": true
+}</code></pre>
+
+    <h2>Waybar style.css</h2>
+    <pre><code>.custom-hijri {
+    color: #f9e2af;          
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+.custom-hijri:hover {
+    color: #fab387;          
+}</code></pre>
+
+    <div class="note">
+        <strong>Arch Tip:</strong> Using Python instead of Bash for Waybar modules provides better error handling and prevents the bar from hanging during API calls.
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const codeBlocks = document.querySelectorAll("pre");
+
+        codeBlocks.forEach((pre) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "code-wrapper";
+            
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            const copyBtn = document.createElement("button");
+            copyBtn.className = "copy-btn";
+            copyBtn.innerText = "Copy";
+            
+            wrapper.appendChild(copyBtn);
+
+            copyBtn.addEventListener("click", async () => {
+                const codeText = pre.querySelector("code").innerText;
+                try {
+                    await navigator.clipboard.writeText(codeText);
+                    copyBtn.innerText = "Copied!";
+                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
+                    copyBtn.style.color = "var(--crust, #11111b)";
+                    
+                    setTimeout(() => {
+                        copyBtn.innerText = "Copy";
+                        copyBtn.style.backgroundColor = "";
+                        copyBtn.style.color = "";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
