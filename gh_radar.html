@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed x86 | gh-radar: Dynamic GitHub Monitor for Waybar</title>
+    <meta name="description" content="A dynamic and interactive Waybar module that monitors your GitHub activity in real-time. Features an animated ticker, sound alerts, and avatar notifications.">
+    <meta name="keywords" content="Ahmed x86, GitHub, Waybar, Linux, Arch Linux, Hyprland, Python, GitHub Radar, Ticker, Notifications">
+    <meta name="author" content="Ahmed x86">
+
+    <meta property="og:title" content="Ahmed x86 | gh-radar for Waybar">
+    <meta property="og:description" content="Bring your GitHub to Waybar! A real-time radar with an animated ticker, sound alerts, and avatar notifications.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif">
+    <meta property="og:url" content="https://ahmed-x86.github.io/gh_radar.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahmed x86 | gh-radar for Waybar">
+    <meta name="twitter:description" content="Never miss a push again. A dynamic GitHub monitor for Waybar with animations and sound.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif">
+    
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "gh-radar",
+      "operatingSystem": "Linux",
+      "applicationCategory": "DesktopEnhancement",
+      "description": "A dynamic and interactive Waybar module that monitors GitHub activity with an animated ticker.",
+      "author": {
+        "@type": "Person",
+        "name": "Ahmed x86"
+      },
+      "url": "https://ahmed-x86.github.io/gh_radar.html",
+      "keywords": "Waybar, GitHub, Linux, Hyprland, Script"
+    }
+    </script>
+
+    <style>
+        /* Specific styles for this page */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .badges img {
+            border-radius: 4px;
+        }
+
+        /* GIF Effects */
+        .demo-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .demo-gif {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--surface0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .demo-gif:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* Glow matching Catppuccin mauve */
+            border-color: var(--mauve);
+        }
+        .demo-caption {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: var(--subtext);
+            font-style: italic;
+        }
+        
+        /* Code blocks */
+        .code-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: var(--crust);
+            padding: 15px;
+            padding-top: 35px; 
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--surface0);
+            margin-bottom: 0; 
+        }
+        code {
+            color: var(--green);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--surface1, #45475a);
+            color: var(--text, #cdd6f4);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        .copy-btn:hover {
+            background-color: var(--mauve, #cba6f7);
+            color: var(--crust, #11111b);
+        }
+
+        .note {
+            background-color: var(--surface0);
+            padding: 15px;
+            border-left: 4px solid var(--mauve);
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ahmed x86 - gh-radar for Waybar 📡</h1>
+    <p>A dynamic and interactive Waybar module that monitors your GitHub activity in real-time.</p>
+</header>
+
+<nav>
+    <a href="index.html">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/gh-radar" target="_blank">GitHub Repo</a>
+</nav>
+
+<section id="project-details">
+    
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/Waybar-333333?style=for-the-badge&logo=wayland&logoColor=white" alt="Waybar">
+        <img src="https://img.shields.io/badge/GitHub_API-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub API">
+        <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
+    </div>
+
+    <div class="demo-container">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif" alt="gh-radar in action" class="demo-gif">
+        <div class="demo-caption">Watch gh-radar's animated ticker and notifications in action!</div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>✨ Key Features</h2>
+    <ul>
+        <li><strong>Animated Ticker:</strong> Waybar text changes dynamically when a new push occurs. It shows the branch and commit message, then the repository name, and finally returns to your username.</li>
+        <li><strong>Audio Alerts:</strong> Plays a retro notification sound instantly upon detecting a new push.</li>
+        <li><strong>Avatar Notifications:</strong> Sends a native desktop notification containing the committer's actual GitHub avatar and commit details.</li>
+        <li><strong>Interactive Buttons:</strong> Left-click to open your GitHub profile, Right-click to open notifications directly from Waybar.</li>
+        <li><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits and keep network usage near zero when idle.</li>
+    </ul>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>🛠️ Installation & Setup</h2>
+    
+    <h3>1. Clone & Copy Files</h3>
+    <pre><code>git clone https://github.com/ahmed-x86/gh-radar.git
+cd gh-radar
+
+# Copy sound to your config
+cp -r sounds ~/.config/
+
+# Setup Waybar scripts directory
+mkdir -p ~/.config/waybar/scripts
+cp github_radar.py ~/.config/waybar/scripts/
+chmod +x ~/.config/waybar/scripts/github_radar.py</code></pre>
+
+    <h3>2. Add Your Credentials (.env)</h3>
+    <p>Create a <code>.env</code> file to authenticate with GitHub:</p>
+    <pre><code>nano ~/.config/waybar/scripts/.env</code></pre>
+    <p>Add the following (replace with your info):</p>
+    <pre><code>GITHUB_USERNAME=ahmed-x86
+GITHUB_PAT=your_personal_access_token_here</code></pre>
+
+    <h3>3. Waybar Configuration</h3>
+    <p>Add this module to your <code>config.jsonc</code> (e.g., in <code>modules-right</code>):</p>
+    <pre><code>"custom/github-radar": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "python3 -u ~/.config/waybar/scripts/github_radar.py",
+    "on-click": "xdg-open https://github.com/ahmed-x86",
+    "on-click-right": "xdg-open https://github.com/notifications",
+    "restart-interval": 20
+}</code></pre>
+
+    <h3>4. Waybar Styling</h3>
+    <p>Make it look authentic by adding this to your <code>style.css</code>:</p>
+    <pre><code>#custom-github-radar {
+    background-color: #24292e;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 4px 5px;
+    font-weight: bold;
+    border: 1px solid #444c56;
+    transition: all 0.3s ease;
+}
+
+#custom-github-radar:hover {
+    background-color: #2ea043;
+    color: #ffffff;
+    border-color: #2ea043;
+}</code></pre>
+
+    <div class="note">
+        <strong>Dependencies:</strong> Ensure you have <code>requests</code> and <code>python-dotenv</code> installed via pip. The script uses <code>mpv</code> or <code>paplay</code> for sounds.
+    </div>
+
+    <p style="text-align: center; margin-top: 50px; font-weight: bold; color: var(--blue);">
+        > i rice my desktop btw
+    </p>
+
+</section>
+
+<footer>
+    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const codeBlocks = document.querySelectorAll("pre");
+
+        codeBlocks.forEach((pre) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "code-wrapper";
+            
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            const copyBtn = document.createElement("button");
+            copyBtn.className = "copy-btn";
+            copyBtn.innerText = "Copy";
+            
+            wrapper.appendChild(copyBtn);
+
+            copyBtn.addEventListener("click", async () => {
+                const codeText = pre.querySelector("code").innerText;
+                try {
+                    await navigator.clipboard.writeText(codeText);
+                    copyBtn.innerText = "Copied!";
+                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
+                    copyBtn.style.color = "var(--crust, #11111b)";
+                    
+                    setTimeout(() => {
+                        copyBtn.innerText = "Copy";
+                        copyBtn.style.backgroundColor = "";
+                        copyBtn.style.color = "";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
