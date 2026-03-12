@@ -13,6 +13,14 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* المتغيرات اللونية الخاصة بـ Catppuccin للوهج */
+        :root {
+            --mauve: #cba6f7;
+            --surface0: #313244;
+            --crust: #11111b;
+            --green: #a6e3a1;
+        }
+
         .badges {
             display: flex;
             flex-wrap: wrap;
@@ -62,18 +70,22 @@
             color: var(--crust, #11111b);
         }
 
-        .hero-img {
+        /* --- تطبيق تأثير الوهج والطفو الجديد --- */
+        .effect-image {
             width: 75%;
             display: block;
             margin: 30px auto;
-            border-radius: 8px;
-            border: 1px solid var(--surface0);
-            transition: 0.3s ease-in-out;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-radius: 12px;
+            border: 2px solid var(--surface0);
+            background-color: var(--crust);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
-        .hero-img:hover {
+
+        .effect-image:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* وهج بنفسجي ناعم */
             border-color: var(--mauve);
-            transform: scale(1.02);
         }
 
         .note {
@@ -114,7 +126,7 @@
         on Hyprland and Sway.
     </p>
 
-    <img src="screenshot_full_2026-03-11_10-38-13.png" class="hero-img" alt="Waybar Hijri Calendar Preview by Ahmed x86">
+    <img src="screenshot_full_2026-03-11_10-38-13.png" class="effect-image" alt="Waybar Hijri Calendar Preview by Ahmed x86">
 
     <h2>Features</h2>
     <ul>
