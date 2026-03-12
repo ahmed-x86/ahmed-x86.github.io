@@ -41,6 +41,16 @@
 </script>
 
 <style>
+    /* المتغيرات اللونية Catppuccin */
+    :root {
+        --mauve: #cba6f7;
+        --surface0: #313244;
+        --crust: #11111b;
+        --green: #a6e3a1;
+        --blue: #89b4fa;
+        --text: #cdd6f4;
+    }
+
     /* Code Blocks Styles */
     .code-wrapper {
         position: relative;
@@ -49,7 +59,7 @@
     pre {
         background-color: var(--crust);
         padding: 15px;
-        padding-top: 40px; /* Space for the copy button */
+        padding-top: 40px; 
         border-radius: 8px;
         overflow-x: auto;
         border: 1px solid var(--surface0);
@@ -66,7 +76,7 @@
         top: 8px;
         right: 8px;
         background-color: var(--surface1, #45475a);
-        color: var(--text, #cdd6f4);
+        color: var(--text);
         border: none;
         border-radius: 5px;
         padding: 5px 10px;
@@ -77,40 +87,46 @@
         z-index: 10;
     }
     .copy-btn:hover {
-        background-color: var(--mauve, #cba6f7);
-        color: var(--crust, #11111b);
+        background-color: var(--mauve);
+        color: var(--crust);
+        box-shadow: 0 0 15px rgba(203, 166, 247, 0.4);
     }
 
-    /* Image Styling */
+    /* --- تطبيق تأثير الوهج والطفو على الصورة --- */
     .hero-img {
         width: 70%;
         display: block;
-        margin: 20px auto;
-        border-radius: 8px;
-        border: 1px solid var(--surface0);
-        transition: 0.3s ease-in-out;
+        margin: 30px auto;
+        border-radius: 12px;
+        border: 2px solid var(--surface0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
     .hero-img:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* وهج بنفسجي ناعم */
         border-color: var(--mauve);
-        transform: scale(1.02);
     }
 
-    /* Action Button */
+    /* --- تطبيق التأثير على زر الأكشن --- */
     .btn-link {
         display: inline-block;
         margin-top: 15px;
-        padding: 10px 20px;
+        padding: 12px 24px;
         background-color: var(--green);
         color: var(--crust);
         text-decoration: none;
         border-radius: 8px;
         font-weight: bold;
         font-size: 15px;
-        transition: 0.3s;
+        transition: 0.3s ease;
+        box-shadow: 0 4px 15px rgba(166, 227, 161, 0.2);
     }
     .btn-link:hover {
         background-color: var(--blue);
         color: var(--crust);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(137, 180, 250, 0.3);
     }
 </style>
 </head>
@@ -148,14 +164,19 @@ directly in <b>Waybar</b> using <b>KDE Connect</b>. Perfect for Hyprland and Swa
 <h2>Installation</h2>
 <p>Run the following commands in your terminal to install the script:</p>
 
+<div class="code-wrapper">
 <pre><code>cd mobile_charge_indicator_waybar
 chmod +x install.sh
 ./install.sh</code></pre>
+</div>
 
 <p>The script will automatically copy <b>mobile.sh</b> to:</p>
+<div class="code-wrapper">
 <pre><code>~/.config/waybar/scripts/</code></pre>
+</div>
 
 <h2>Waybar Configuration</h2>
+<div class="code-wrapper">
 <pre><code>"custom/mobile": {
     "format": "{text}",
     "exec": "~/.config/waybar/scripts/mobile.sh",
@@ -163,8 +184,10 @@ chmod +x install.sh
     "return-type": "json",
     "on-click": "~/.config/waybar/scripts/mobile.sh --ping"
 }</code></pre>
+</div>
 
 <h2>Waybar Style</h2>
+<div class="code-wrapper">
 <pre><code>#custom-mobile {
     font-family: "JetBrains Mono Nerd", monospace;
     font-size: 14px;
@@ -183,10 +206,13 @@ chmod +x install.sh
 #custom-mobile.normal {
     color: #c3e88d;
 }</code></pre>
+</div>
 
-<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn-link">
-View GitHub Repository
-</a>
+<div style="text-align: center; margin-top: 30px;">
+    <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn-link">
+    View GitHub Repository
+    </a>
+</div>
 
 </section>
 
@@ -199,12 +225,8 @@ View GitHub Repository
         const codeBlocks = document.querySelectorAll("pre");
 
         codeBlocks.forEach((pre) => {
-            const wrapper = document.createElement("div");
-            wrapper.className = "code-wrapper";
+            const wrapper = pre.closest('.code-wrapper') || pre.parentNode;
             
-            pre.parentNode.insertBefore(wrapper, pre);
-            wrapper.appendChild(pre);
-
             const copyBtn = document.createElement("button");
             copyBtn.className = "copy-btn";
             copyBtn.innerText = "Copy";
@@ -212,12 +234,12 @@ View GitHub Repository
             wrapper.appendChild(copyBtn);
 
             copyBtn.addEventListener("click", async () => {
-                const codeText = pre.innerText.replace("Copy\n", ""); // تأكدت إن كلمة زرار النسخ متتنسخش مع الكود
+                const codeText = pre.innerText;
                 try {
                     await navigator.clipboard.writeText(codeText);
                     copyBtn.innerText = "Copied!";
-                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
-                    copyBtn.style.color = "var(--crust, #11111b)";
+                    copyBtn.style.backgroundColor = "var(--green)";
+                    copyBtn.style.color = "var(--crust)";
                     
                     setTimeout(() => {
                         copyBtn.innerText = "Copy";
