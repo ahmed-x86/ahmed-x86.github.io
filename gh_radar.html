@@ -53,20 +53,21 @@
             border-radius: 4px;
         }
 
-        /* GIF Effects */
+        /* Video Effects */
         .demo-container {
             text-align: center;
             margin: 40px 0;
         }
-        .demo-gif {
+        .demo-video {
             max-width: 100%;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             border: 2px solid var(--surface0);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            outline: none;
         }
-        .demo-gif:hover {
+        .demo-video:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* Glow matching Catppuccin mauve */
             border-color: var(--mauve);
@@ -164,7 +165,10 @@
     </div>
 
     <div class="demo-container">
-        <img src="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif" alt="gh-radar in action" class="demo-gif">
+        <video class="demo-video" autoplay loop muted playsinline controls>
+            <source src="demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="demo-caption">Watch gh-radar's animated ticker and notifications in action!</div>
     </div>
 
