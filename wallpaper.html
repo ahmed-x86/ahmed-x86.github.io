@@ -38,6 +38,85 @@
 }
 </script>
 
+<style>
+    /* المتغيرات اللونية Catppuccin */
+    :root {
+        --mauve: #cba6f7;
+        --surface0: #313244;
+        --crust: #11111b;
+        --base: #1e1e2e;
+        --text: #cdd6f4;
+        --blue: #89b4fa;
+    }
+
+    /* تحسين شبكة المعرض */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 20px 0;
+    }
+
+    .gallery-grid a {
+        text-decoration: none;
+        display: block;
+    }
+
+    /* --- خلطة الوهج والطفو للصور --- */
+    .gallery-grid img {
+        width: 100%;
+        height: 180px; /* توحيد ارتفاع المعاينة */
+        object-fit: cover; /* لضمان عدم تمدد الصورة */
+        border-radius: 12px;
+        border: 2px solid var(--surface0);
+        background-color: var(--crust);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-grid img:hover {
+        transform: translateY(-8px) scale(1.03);
+        border-color: var(--mauve);
+        box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* الوهج البنفسجي */
+    }
+
+    /* تحسين أزرار التنقل Pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+
+    .pagination a {
+        padding: 8px 16px;
+        background-color: var(--surface0);
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        border: 1px solid transparent;
+    }
+
+    .pagination a:hover:not(.disabled) {
+        background-color: var(--mauve);
+        color: var(--crust);
+        transform: translateY(-2px);
+    }
+
+    .pagination a.active {
+        background-color: var(--mauve);
+        color: var(--crust);
+        border-color: var(--mauve);
+    }
+
+    .pagination a.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>
 </head>
 
 <body>
