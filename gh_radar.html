@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | gh-radar: Dynamic GitHub Monitor for Waybar</title>
-    <meta name="description" content="A dynamic and interactive Waybar module that monitors your GitHub activity in real-time. Features an animated ticker, sound alerts, and avatar notifications.">
-    <meta name="keywords" content="Ahmed x86, GitHub, Waybar, Linux, Arch Linux, Hyprland, Python, GitHub Radar, Ticker, Notifications">
+    <meta name="description" content="A dynamic and interactive Waybar module that monitors your GitHub activity in real-time. Features an animated ticker, sound alerts, manual refresh, and avatar notifications.">
+    <meta name="keywords" content="Ahmed x86, GitHub, Waybar, Linux, Arch Linux, Hyprland, Python, GitHub Radar, Ticker, Notifications, Ricing, Catppuccin, Dracula">
     <meta name="author" content="Ahmed x86">
 
     <meta property="og:title" content="Ahmed x86 | gh-radar for Waybar">
@@ -123,6 +123,23 @@
             border-radius: 4px;
             margin: 20px 0;
         }
+
+        details {
+            background-color: var(--base);
+            border: 1px solid var(--surface0);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--blue);
+            padding: 5px 0;
+        }
+        details pre {
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -159,7 +176,9 @@
         <li><strong>Audio Alerts:</strong> Plays a retro notification sound instantly upon detecting a new push.</li>
         <li><strong>Avatar Notifications:</strong> Sends a native desktop notification containing the committer's actual GitHub avatar and commit details.</li>
         <li><strong>Interactive Buttons:</strong> Left-click to open your GitHub profile, Right-click to open notifications directly from Waybar.</li>
-        <li><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits and keep network usage near zero when idle.</li>
+        <li><strong>Manual Refresh (New!):</strong> Middle-click the module to instantly fetch the latest updates using Linux signals (<code>SIGUSR1</code>).</li>
+        <li><strong>Smart Resource Management:</strong> Dynamic polling intervals (10s when active, 60s when idle) or a complete Sleep Mode (<code>-t 0</code>) to save battery and bandwidth.</li>
+        <li><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits.</li>
     </ul>
 
     <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
@@ -182,24 +201,57 @@ chmod +x ~/.config/waybar/scripts/github_radar.py</code></pre>
     <p>Create a <code>.env</code> file to authenticate with GitHub:</p>
     <pre><code>nano ~/.config/waybar/scripts/.env</code></pre>
     <p>Add the following (replace with your info):</p>
-    <pre><code>GITHUB_USERNAME=ahmed-x86
+    <pre><code>GITHUB_USERNAME=your_github_username
 GITHUB_PAT=your_personal_access_token_here</code></pre>
 
-    <h3>3. Waybar Configuration</h3>
-    <p>Add this module to your <code>config.jsonc</code> (e.g., in <code>modules-right</code>):</p>
+    <h3>3. Install Dependencies</h3>
+    <p>Depending on your Linux distribution, install the required Python libraries. You also need an audio player (<code>mpv</code> or <code>paplay</code>) and a notification daemon (<code>libnotify</code>).</p>
+    
+    <p><strong>For Arch Linux / Manjaro:</strong></p>
+    <pre><code>sudo pacman -S python-requests python-dotenv</code></pre>
+    
+    <p><strong>For Ubuntu / Debian (or using pip):</strong></p>
+    <pre><code>pip install requests python-dotenv</code></pre>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>⚙️ Usage & Arguments</h2>
+    <p>The script supports arguments to customize its behavior:</p>
+    <ul>
+        <li><code>my_repos_only</code>: Only triggers alerts for repositories you own (ignores activity from other repos you watch/star).</li>
+        <li><code>-t 0</code>: <strong>Manual Mode</strong>. The script will not poll GitHub automatically. It will sleep completely until you middle-click the Waybar module.</li>
+    </ul>
+    <pre><code># Examples:
+github_radar.py                    # Tracks everything, dynamic polling
+github_radar.py my_repos_only      # Tracks only your repos, dynamic polling
+github_radar.py -t 0               # Tracks everything, manual refresh ONLY
+github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY</code></pre>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>🖥️ Waybar Configuration</h2>
+
+    <h3>1. Module Configuration (<code>config.jsonc</code>)</h3>
+    <p>Add this module to your Waybar config file (under <code>modules-left</code>, <code>modules-center</code>, or <code>modules-right</code>):</p>
     <pre><code>"custom/github-radar": {
     "format": "{}",
     "return-type": "json",
-    "exec": "python3 -u ~/.config/waybar/scripts/github_radar.py",
+    "exec": "~/.config/waybar/scripts/github_radar.py my_repos_only", // Add '-t 0' here if you want manual mode
     "on-click": "xdg-open https://github.com/ahmed-x86",
     "on-click-right": "xdg-open https://github.com/notifications",
-    "restart-interval": 20
+    "on-click-middle": "pkill -USR1 -f github_radar.py", // Sends the refresh signal
+    "restart-interval": 0 // Set to 0 because the script runs its own background loop
 }</code></pre>
+    <p><em>(Note: Change <code>ahmed-x86</code> to your actual GitHub username in the <code>on-click</code> URL).</em></p>
 
-    <h3>4. Waybar Styling</h3>
-    <p>Make it look authentic by adding this to your <code>style.css</code>:</p>
-    <pre><code>#custom-github-radar {
-    background-color: #24292e;
+    <h3>2. Styling (<code>style.css</code>)</h3>
+    <p>Choose the theme that matches your current Waybar setup and add it to your <code>style.css</code>.</p>
+
+    <details>
+        <summary>1. Default (GitHub Dark)</summary>
+        <pre><code>/* GitHub Radar - Default Theme */
+#custom-github-radar {
+    background-color: #24292e; /* Dark GitHub background */
     color: #ffffff;
     border-radius: 10px;
     padding: 0px 10px;
@@ -210,13 +262,56 @@ GITHUB_PAT=your_personal_access_token_here</code></pre>
 }
 
 #custom-github-radar:hover {
-    background-color: #2ea043;
+    background-color: #2ea043; /* GitHub green */
     color: #ffffff;
     border-color: #2ea043;
 }</code></pre>
+    </details>
+
+    <details>
+        <summary>2. Catppuccin (Mocha)</summary>
+        <pre><code>/* GitHub Radar - Catppuccin Mocha Theme */
+#custom-github-radar {
+    background-color: #1e1e2e; /* Base */
+    color: #cdd6f4; /* Text */
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 4px 5px;
+    font-weight: bold;
+    border: 1px solid #313244; /* Surface0 */
+    transition: all 0.3s ease;
+}
+
+#custom-github-radar:hover {
+    background-color: #a6e3a1; /* Green */
+    color: #11111b; /* Crust for contrast */
+    border-color: #a6e3a1;
+}</code></pre>
+    </details>
+
+    <details>
+        <summary>3. Dracula</summary>
+        <pre><code>/* GitHub Radar - Dracula Theme */
+#custom-github-radar {
+    background-color: #282a36; /* Background */
+    color: #f8f8f2; /* Foreground */
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 4px 5px;
+    font-weight: bold;
+    border: 1px solid #44475a; /* Selection */
+    transition: all 0.3s ease;
+}
+
+#custom-github-radar:hover {
+    background-color: #50fa7b; /* Green */
+    color: #282a36; /* Background for contrast */
+    border-color: #50fa7b;
+}</code></pre>
+    </details>
 
     <div class="note">
-        <strong>Dependencies:</strong> Ensure you have <code>requests</code> and <code>python-dotenv</code> installed via pip. The script uses <code>mpv</code> or <code>paplay</code> for sounds.
+        <strong>Restart Waybar:</strong> Apply the changes by restarting Waybar using <code>killall waybar && waybar & disown</code>.
     </div>
 
     <p style="text-align: center; margin-top: 50px; font-weight: bold; color: var(--blue);">
