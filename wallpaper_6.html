@@ -37,6 +37,83 @@
 }
 </script>
 
+<style>
+    /* المتغيرات اللونية Catppuccin */
+    :root {
+        --mauve: #cba6f7;
+        --surface0: #313244;
+        --crust: #11111b;
+        --text: #cdd6f4;
+    }
+
+    /* تحسين شبكة المعرض */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 20px 0;
+    }
+
+    .gallery-grid a {
+        text-decoration: none;
+        display: block;
+    }
+
+    /* --- خلطة الوهج والطفو للصور --- */
+    .gallery-grid img {
+        width: 100%;
+        height: 180px; 
+        object-fit: cover; 
+        border-radius: 12px;
+        border: 2px solid var(--surface0);
+        background-color: var(--crust);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-grid img:hover {
+        transform: translateY(-8px) scale(1.03);
+        border-color: var(--mauve);
+        box-shadow: 0 15px 45px rgba(203, 166, 247, 0.3); /* وهج بنفسجي أقوى قليلاً للنيون */
+    }
+
+    /* تحسين أزرار التنقل Pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+
+    .pagination a {
+        padding: 8px 16px;
+        background-color: var(--surface0);
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        border: 1px solid transparent;
+    }
+
+    .pagination a:hover:not(.disabled) {
+        background-color: var(--mauve);
+        color: var(--crust);
+        transform: translateY(-2px);
+    }
+
+    .pagination a.active {
+        background-color: var(--mauve);
+        color: var(--crust);
+        border-color: var(--mauve);
+    }
+
+    .pagination a.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>
 </head>
 
 <body>
@@ -61,14 +138,14 @@ Click on any image to view it in full resolution.
 </p>
 
 <div class="gallery-grid">
-    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68c30207267cb.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68c30207267cb.jpg" alt="Ahmed x86 Abstract Hyprland Wallpaper" loading="lazy">
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_6c30207267cb.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_6c30207267cb.jpg" alt="Ahmed x86 Abstract Hyprland Wallpaper" loading="lazy">
     </a>
-    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68ceb61e95348_(1).jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68ceb61e95348_(1).jpg" alt="Ahmed x86 Curated Desktop Background" loading="lazy">
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_6ceb61e95348_(1).jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_6ceb61e95348_(1).jpg" alt="Ahmed x86 Curated Desktop Background" loading="lazy">
     </a>
-    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68ceb798e318c.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_68ceb798e318c.jpg" alt="Ahmed x86 Minimalist Linux Desktop Wallpaper" loading="lazy">
+    <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_6ceb798e318c.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_6ceb798e318c.jpg" alt="Ahmed x86 Minimalist Linux Desktop Wallpaper" loading="lazy">
     </a>
     <a href="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_8850a966ef05441a95bf75ec27c4d429_683c799da9a0d.jpg" target="_blank">
         <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/Wallpapers/hd_8850a966ef05441a95bf75ec27c4d429_683c799da9a0d.jpg" alt="Ahmed x86 Aesthetic Ricing Wallpaper" loading="lazy">
