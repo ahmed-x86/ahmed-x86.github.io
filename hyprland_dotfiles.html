@@ -19,23 +19,32 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+    /* المتغيرات اللونية Catppuccin */
+    :root {
+        --mauve: #cba6f7;
+        --surface0: #313244;
+        --crust: #11111b;
+        --green: #a6e3a1;
+        --text: #cdd6f4;
+    }
+
     .code-wrapper {
         position: relative;
         margin-bottom: 20px;
     }
     
     pre {
-        background-color: var(--crust, #11111b);
+        background-color: var(--crust);
         padding: 15px;
         padding-top: 35px; 
         border-radius: 8px;
         overflow-x: auto;
-        border: 1px solid var(--surface0, #313244);
+        border: 1px solid var(--surface0);
         margin-bottom: 0;
     }
     
     code {
-        color: var(--green, #a6e3a1);
+        color: var(--green);
         font-family: 'JetBrains Mono', monospace;
     }
 
@@ -44,7 +53,7 @@
         top: 8px;
         right: 8px;
         background-color: var(--surface1, #45475a);
-        color: var(--text, #cdd6f4);
+        color: var(--text);
         border: none;
         border-radius: 5px;
         padding: 5px 10px;
@@ -55,19 +64,23 @@
     }
     
     .copy-btn:hover {
-        background-color: var(--mauve, #cba6f7);
-        color: var(--crust, #11111b);
+        background-color: var(--mauve);
+        color: var(--crust);
+        box-shadow: 0 0 15px rgba(203, 166, 247, 0.4);
     }
     
+    /* --- تطبيق تأثير الوهج والطفو على المعرض --- */
     .gallery img {
-        border-radius: 8px;
-        border: 1px solid var(--surface0, #313244);
-        transition: 0.3s ease-in-out;
+        border-radius: 12px;
+        border: 2px solid var(--surface0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
     
     .gallery img:hover {
-        border-color: var(--mauve, #cba6f7);
-        transform: scale(1.02);
+        transform: translateY(-8px) scale(1.03);
+        border-color: var(--mauve);
+        box-shadow: 0 15px 45px rgba(203, 166, 247, 0.25); /* الوهج البنفسجي */
     }
 
     .modules-grid {
@@ -76,8 +89,8 @@
         gap: 20px;
     }
 
-    a { color: var(--mauve, #cba6f7); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { color: var(--mauve); text-decoration: none; transition: 0.2s; }
+    a:hover { text-decoration: underline; opacity: 0.8; }
 </style>
 </head>
 
@@ -170,10 +183,10 @@ chmod +x *
 
 <h2>Gallery</h2>
 <div class="gallery" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_10-21-48.png" width="45%" alt="Screenshot 1">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_17-03-54.png" width="45%" alt="Screenshot 2">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-22-20.png" width="45%" alt="Screenshot 3">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-23-34.png" width="45%" alt="Screenshot 4">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_10-21-48.png" width="45%" alt="Desktop Overview">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_17-03-54.png" width="45%" alt="Terminal and TUI">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-22-20.png" width="45%" alt="App Launcher">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-23-34.png" width="45%" alt="Notification Center">
 </div>
 
 </section>
@@ -186,16 +199,32 @@ chmod +x *
     document.addEventListener("DOMContentLoaded", () => {
         const codeBlocks = document.querySelectorAll("pre");
         codeBlocks.forEach((pre) => {
+            const wrapper = pre.parentElement; // استخدام wrapper الموجود في HTML
             const copyBtn = document.createElement("button");
             copyBtn.className = "copy-btn";
             copyBtn.innerText = "Copy";
-            pre.parentNode.appendChild(copyBtn);
+            
+            // إضافة الزر داخل الـ wrapper لضمان التموضع الصحيح
+            if (wrapper.classList.contains('code-wrapper')) {
+                wrapper.appendChild(copyBtn);
+            }
 
             copyBtn.addEventListener("click", async () => {
-                const codeText = pre.querySelector("code").innerText;
-                await navigator.clipboard.writeText(codeText);
-                copyBtn.innerText = "Copied!";
-                setTimeout(() => { copyBtn.innerText = "Copy"; }, 2000);
+                const codeText = pre.innerText;
+                try {
+                    await navigator.clipboard.writeText(codeText);
+                    copyBtn.innerText = "Copied!";
+                    copyBtn.style.backgroundColor = "var(--green)";
+                    copyBtn.style.color = "var(--crust)";
+                    
+                    setTimeout(() => { 
+                        copyBtn.innerText = "Copy"; 
+                        copyBtn.style.backgroundColor = "";
+                        copyBtn.style.color = "";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
             });
         });
     });
