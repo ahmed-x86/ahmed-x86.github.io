@@ -73,39 +73,7 @@
         </form>
     </div>
 
-    <script>
-        const tabSignin = document.getElementById('tab-signin');
-        const tabSignup = document.getElementById('tab-signup');
-        const formSignin = document.getElementById('form-signin');
-        const formSignup = document.getElementById('form-signup');
+    <script src="main.js"></script>
 
-        tabSignin.addEventListener('click', () => {
-            tabSignin.classList.add('active');
-            tabSignup.classList.remove('active');
-            formSignin.style.display = 'block';
-            formSignup.style.display = 'none';
-        });
-
-        tabSignup.addEventListener('click', () => {
-            tabSignup.classList.add('active');
-            tabSignin.classList.remove('active');
-            formSignup.style.display = 'block';
-            formSignin.style.display = 'none';
-        });
-
-        formSignin.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const username = formSignin.querySelector('input[type="text"]').value;
-            localStorage.setItem('arch_user', username);
-            window.location.href = 'index.html';
-        });
-
-        formSignup.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const newUsername = formSignup.querySelector('input[type="text"]').value;
-            localStorage.setItem('arch_user', newUsername);
-            window.location.href = 'index.html';
-        });
-    </script>
 </body>
 </html>
