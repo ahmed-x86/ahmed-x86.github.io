@@ -5,45 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | Waybar Hijri Calendar 🌙</title>
-    <meta name="description" content="A stable, offline-capable Python Hijri calendar for Waybar. Featuring authentic Islamic events, dynamic tooltips, RTL alignment fixes, and zero dependencies. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, Waybar, Hijri Calendar, Islamic Calendar, Python Script, Linux Customization, Arch Linux, Hyprland, Sway, Wayland, Custom Module, RTL fix, Pango rendering, Offline Caching, Desktop Widget">
+    <meta name="description" content="A stable, multi-language Python Hijri calendar for Waybar. Featuring authentic Islamic events, dynamic tooltips, and RTL alignment fixes. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, Waybar, Hijri Calendar, Multi-language Hijri, Islamic Calendar, Python Script, Linux Customization, Arch Linux, Hyprland, Sway, Wayland, RTL fix, Pango rendering, Offline Caching">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
     <meta property="og:title" content="Ahmed x86 | Waybar Hijri Calendar 🌙">
-    <meta property="og:description" content="The most stable Hijri calendar module for Waybar. Pure Python, offline caching, perfectly aligned RTL grids, and authentic Sunnah reminders.">
+    <meta property="og:description" content="The most stable Multi-language Hijri calendar module for Waybar. Pure Python, offline caching, and perfectly aligned grids.">
     <meta property="og:image" content="https://ahmed-x86.github.io/screenshot_full_2026-03-11_10-38-13.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/waybar_hijri_calendar.html">
     <meta property="og:type" content="article">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Waybar Hijri Calendar 🌙 by Ahmed x86">
-    <meta name="twitter:description" content="A stable, Python-based Hijri calendar for Waybar with RTL fixes, offline caching, and Islamic events. No dependencies required!">
-    <meta name="twitter:image" content="https://ahmed-x86.github.io/screenshot_full_2026-03-11_10-38-13.png">
-    
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareSourceCode",
-      "name": "Waybar Hijri Calendar",
-      "author": {
-        "@type": "Person",
-        "name": "Ahmed x86",
-        "url": "https://ahmed-x86.github.io/"
-      },
-      "description": "A stable, offline-capable Python Hijri calendar script for Waybar featuring RTL fixes and Islamic events.",
-      "programmingLanguage": "Python",
-      "operatingSystem": "Linux",
-      "codeRepository": "https://github.com/ahmed-x86/waybar_hijri_calendar"
-    }
-    </script>
-
     <style>
-        /* المتغيرات اللونية الخاصة بـ Catppuccin */
         :root {
             --mauve: #cba6f7;
             --surface0: #313244;
@@ -51,6 +28,7 @@
             --green: #a6e3a1;
             --blue: #89b4fa;
             --subtext: #a6adc8;
+            --red: #f38ba8;
         }
 
         .badges {
@@ -60,15 +38,9 @@
             margin: 20px 0;
             justify-content: center;
         }
-        .badges img {
-            border-radius: 4px;
-        }
+        .badges img { border-radius: 4px; }
 
-        /* تنسيق الأكواد والنسخ */
-        .code-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-        }
+        .code-wrapper { position: relative; margin-bottom: 20px; }
         pre {
             background-color: var(--crust);
             padding: 15px;
@@ -78,17 +50,14 @@
             border: 1px solid var(--surface0);
             margin-bottom: 0;
         }
-        code {
-            color: var(--green);
-            font-family: 'JetBrains Mono', monospace;
-        }
+        code { color: var(--green); font-family: 'JetBrains Mono', monospace; }
         
         .copy-btn {
             position: absolute;
             top: 8px;
             right: 8px;
-            background-color: var(--surface1, #45475a);
-            color: var(--text, #cdd6f4);
+            background-color: #45475a;
+            color: #cdd6f4;
             border: none;
             border-radius: 5px;
             padding: 5px 10px;
@@ -98,12 +67,8 @@
             transition: 0.2s ease-in-out;
             z-index: 10;
         }
-        .copy-btn:hover {
-            background-color: var(--mauve, #cba6f7);
-            color: var(--crust, #11111b);
-        }
+        .copy-btn:hover { background-color: var(--mauve); color: var(--crust); }
 
-        /* تأثير الصورة */
         .effect-image {
             width: 75%;
             display: block;
@@ -111,7 +76,7 @@
             border-radius: 12px;
             border: 2px solid var(--surface0);
             background-color: var(--crust);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
         .effect-image:hover {
@@ -120,32 +85,42 @@
             border-color: var(--mauve);
         }
 
-        /* التنسيقات الإضافية للقوائم والملحوظات */
         .note {
             background-color: var(--surface0);
             padding: 15px;
             border-left: 4px solid var(--mauve);
             border-radius: 4px;
             margin: 20px 0;
-            line-height: 1.6;
         }
 
+        .warning {
+            border-left: 4px solid var(--red);
+            background-color: rgba(243, 139, 168, 0.1);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        /* تنسيق جدول اللغات */
+        .lang-table-container { overflow-x: auto; margin: 20px 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--crust);
+            border-radius: 8px;
+            border: 1px solid var(--surface0);
+        }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--surface0); }
+        th { background-color: var(--surface0); color: var(--mauve); }
+
         details {
-            background-color: var(--base, #1e1e2e);
+            background-color: #1e1e2e;
             border: 1px solid var(--surface0);
             border-radius: 8px;
             padding: 10px;
             margin-bottom: 10px;
         }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--blue);
-            padding: 5px 0;
-        }
-        details pre {
-            margin-top: 15px;
-        }
+        summary { font-weight: bold; cursor: pointer; color: var(--blue); padding: 5px 0; }
     </style>
 </head>
 
@@ -153,7 +128,7 @@
 
 <header>
     <h1>Ahmed x86 - Waybar Hijri Calendar 🌙</h1>
-    <p>A stable, offline-capable Python script for an RTL-fixed, dynamic Hijri calendar in Waybar.</p>
+    <p>A stable, multi-language, offline-capable Hijri calendar for Linux status bars.</p>
 </header>
 
 <nav>
@@ -165,41 +140,70 @@
 
     <div class="badges">
         <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/I18n-Multi--lang-cba6f7?style=for-the-badge" alt="I18n">
         <img src="https://img.shields.io/badge/Waybar-292D3E?style=for-the-badge&logo=linux&logoColor=white" alt="Waybar">
         <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
-        <img src="https://img.shields.io/badge/Hyprland-004450?style=for-the-badge&logo=hyprland&logoColor=white" alt="Hyprland">
     </div>
 
     <h2>About</h2>
     <p>
-        The most stable Hijri calendar module for <b>Waybar</b>. It solves the common Pango RTL alignment issues 
-        by using a smart English header strategy, ensuring the calendar grid remains perfectly consistent 
-        on Hyprland and Sway.
+        This module provides an accurate Hijri calendar with <b>Multi-language support</b>. It intelligently solves Pango's RTL alignment bugs by utilizing localized headers and monospace formatting, ensuring a pixel-perfect grid in your tooltips.
     </p>
 
     <img src="screenshot_full_2026-03-11_10-38-13.png" class="effect-image" alt="Waybar Hijri Calendar Preview">
 
     <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
 
+    <h2>🌐 Supported Languages</h2>
+    <p>Switch language using the <code>-lang</code> flag in your configuration:</p>
+    
+    <div class="lang-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Flag</th>
+                    <th>Language</th>
+                    <th>Headers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>-lang ar</code></td><td>Arabic (Default)</td><td>Su Mo Tu...</td></tr>
+                <tr><td><code>-lang en</code></td><td>English</td><td>Su Mo Tu We Th Fr Sa</td></tr>
+                <tr><td><code>-lang fr</code></td><td>French</td><td>Di Lu Ma Me Je Ve Sa</td></tr>
+                <tr><td><code>-lang de</code></td><td>German</td><td>So Mo Di Mi Do Fr Sa</td></tr>
+                <tr><td><code>-lang it</code></td><td>Italian</td><td>Do Lu Ma Me Gi Ve Sa</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
     <h2>✨ Key Features</h2>
     <ul>
-        <li><strong>Dynamic Month Length:</strong> Accurately calculates 29 or 30 days based on the actual Hijri month.</li>
-        <li><strong>Offline Caching:</strong> Fetches data once per month and stores it locally for zero-lag performance.</li>
-        <li><strong>Authentic Islamic Events:</strong> Displays Sunnah reminders (White Days, Ashura, Eids, Arafah) in tooltips.</li>
-        <li><strong>Zero Dependencies:</strong> Pure Python, no extra packages needed.</li>
-        <li><strong>RTL Fix:</strong> Perfect Pango rendering for right-to-left languages.</li>
+        <li><strong>Multi-language Support:</strong> Choose between Arabic, English, French, German, or Italian.</li>
+        <li><strong>Dynamic Month Length:</strong> Accurately handles 29/30 day months based on Hijri data.</li>
+        <li><strong>Offline Caching:</strong> Fetches data once per month for zero-lag performance.</li>
+        <li><strong>Authentic Islamic Events:</strong> Sunnah reminders like Ramadan, Eids, and White Days.</li>
+        <li><strong>Zero Dependencies:</strong> Pure Python script with minimal system footprint.</li>
     </ul>
 
     <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
 
-    <h2>🛠️ Installation</h2>
+    <h2>🛠️ Installation & Update</h2>
     <p>Deploy the script directly using this command:</p>
     <pre><code>mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py</code></pre>
 
+    <div class="warning">
+        <strong>⚠️ Crucial Update Step:</strong> If you are upgrading from an older version, you <b>must</b> clear the old cache file to apply the new format:
+        <br><br>
+        <code>rm ~/.cache/waybar_hijri_cache.json</code>
+    </div>
+
     <h2>🖥️ Waybar Configuration</h2>
+    <p>Add the following to your <code>config.jsonc</code> (change the lang flag to your preference):</p>
     <pre><code>"custom/hijri": {
     "format": "{}",
-    "exec": "~/.config/waybar/scripts/hijri_waybar.py",
+    "exec": "~/.config/waybar/scripts/hijri_waybar.py -lang ar",
     "interval": 3600,
     "return-type": "json",
     "tooltip": true
@@ -292,42 +296,34 @@
 </section>
 
 <footer>
-    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+    <p>© 2026 Ahmed x86 • Developed for the Linux Community ❄️</p>
 </footer>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const codeBlocks = document.querySelectorAll("pre");
-
         codeBlocks.forEach((pre) => {
             const wrapper = document.createElement("div");
             wrapper.className = "code-wrapper";
-            
             pre.parentNode.insertBefore(wrapper, pre);
             wrapper.appendChild(pre);
-
             const copyBtn = document.createElement("button");
             copyBtn.className = "copy-btn";
             copyBtn.innerText = "Copy";
-            
             wrapper.appendChild(copyBtn);
-
             copyBtn.addEventListener("click", async () => {
-                const codeText = pre.querySelector("code").innerText;
+                const codeText = pre.innerText;
                 try {
                     await navigator.clipboard.writeText(codeText);
                     copyBtn.innerText = "Copied!";
-                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
-                    copyBtn.style.color = "var(--crust, #11111b)";
-                    
+                    copyBtn.style.backgroundColor = "var(--green)";
+                    copyBtn.style.color = "var(--crust)";
                     setTimeout(() => {
                         copyBtn.innerText = "Copy";
                         copyBtn.style.backgroundColor = "";
                         copyBtn.style.color = "";
                     }, 2000);
-                } catch (err) {
-                    console.error("Failed to copy!", err);
-                }
+                } catch (err) { console.error("Failed to copy!", err); }
             });
         });
     });
