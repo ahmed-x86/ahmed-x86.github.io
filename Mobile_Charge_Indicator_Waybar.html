@@ -233,39 +233,7 @@ chmod +x install.sh
 <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const codeBlocks = document.querySelectorAll("pre");
-
-        codeBlocks.forEach((pre) => {
-            const wrapper = pre.closest('.code-wrapper') || pre.parentNode;
-            
-            const copyBtn = document.createElement("button");
-            copyBtn.className = "copy-btn";
-            copyBtn.innerText = "Copy";
-            
-            wrapper.appendChild(copyBtn);
-
-            copyBtn.addEventListener("click", async () => {
-                const codeText = pre.innerText;
-                try {
-                    await navigator.clipboard.writeText(codeText);
-                    copyBtn.innerText = "Copied!";
-                    copyBtn.style.backgroundColor = "var(--green)";
-                    copyBtn.style.color = "var(--crust)";
-                    
-                    setTimeout(() => {
-                        copyBtn.innerText = "Copy";
-                        copyBtn.style.backgroundColor = "";
-                        copyBtn.style.color = "";
-                    }, 2000);
-                } catch (err) {
-                    console.error("Failed to copy!", err);
-                }
-            });
-        });
-    });
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>
