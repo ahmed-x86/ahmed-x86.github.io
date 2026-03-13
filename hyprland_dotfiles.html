@@ -4,19 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ahmed x86 | Hyprland Dotfiles</title>
-<meta name="description" content="Download and explore Ahmed x86's custom Hyprland dotfiles. A minimal, highly customized, and functional setup on Arch Linux featuring the Catppuccin color palette.">
-<meta name="keywords" content="Ahmed x86, Hyprland, Dotfiles, Arch Linux, Waybar, Linux Customization, Catppuccin">
+<title>Ahmed x86 | Ultimate Hyprland Dotfiles for Arch Linux</title>
+<meta name="description" content="Get the ultimate Hyprland dotfiles setup by Ahmed x86. A highly customized, Catppuccin-themed minimal Arch Linux rice with Waybar, Kitty, and automated install scripts.">
+<meta name="keywords" content="Ahmed x86, ahmedx86, Hyprland dotfiles, Arch Linux ricing, Waybar config, Catppuccin theme, Linux customization, SwayNC, Rofi Wayland, swayOSD, WM setup, Linux desktop aesthetic, UnixPorn">
 <meta name="author" content="Ahmed x86">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://ahmed-x86.github.io/hyprland_dotfiles.html">
 
-<meta property="og:title" content="Ahmed x86 | Hyprland Dotfiles">
-<meta property="og:description" content="Explore my personal Hyprland configuration for Arch Linux. Focuses on productivity, aesthetics, and a clean workflow.">
-<meta property="og:image" content="https://github.com/ahmed-x86.png">
+<meta property="og:site_name" content="Ahmed x86 Portfolio">
+<meta property="og:title" content="Ahmed x86 | Ultimate Hyprland Dotfiles">
+<meta property="og:description" content="Explore my personal Hyprland configuration for Arch Linux. Focuses on productivity, aesthetics, and a clean workflow featuring the Catppuccin theme.">
+<meta property="og:image" content="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_10-21-48.png"> <meta property="og:image:alt" content="Ahmed x86 Hyprland Arch Linux Desktop Overview">
 <meta property="og:url" content="https://ahmed-x86.github.io/hyprland_dotfiles.html">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ahmed x86 | Hyprland Dotfiles 🍙">
+<meta name="twitter:description" content="A minimal, highly customized, and functional Hyprland setup on Arch Linux. Automated installation included!">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_10-21-48.png">
 
 <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Ahmed x86 Hyprland Dotfiles",
+  "description": "A minimal, highly customized, and functional Hyprland setup on Arch Linux featuring the Catppuccin color palette and custom Waybar modules.",
+  "author": {
+    "@type": "Person",
+    "name": "Ahmed x86",
+    "url": "https://ahmed-x86.github.io/"
+  },
+  "url": "https://ahmed-x86.github.io/hyprland_dotfiles.html",
+  "codeRepository": "https://github.com/ahmed-x86/hyprland_dotfiles",
+  "programmingLanguage": ["Shell", "CSS", "JSON", "Lua"],
+  "keywords": "Hyprland, Dotfiles, Arch Linux, Waybar"
+}
+</script>
 
 <style>
     /* المتغيرات اللونية Catppuccin */
@@ -61,6 +87,7 @@
         font-weight: bold;
         cursor: pointer;
         transition: 0.2s ease-in-out;
+        z-index: 10;
     }
     
     .copy-btn:hover {
@@ -199,12 +226,11 @@ chmod +x *
     document.addEventListener("DOMContentLoaded", () => {
         const codeBlocks = document.querySelectorAll("pre");
         codeBlocks.forEach((pre) => {
-            const wrapper = pre.parentElement; // استخدام wrapper الموجود في HTML
+            const wrapper = pre.parentElement; 
             const copyBtn = document.createElement("button");
             copyBtn.className = "copy-btn";
             copyBtn.innerText = "Copy";
             
-            // إضافة الزر داخل الـ wrapper لضمان التموضع الصحيح
             if (wrapper.classList.contains('code-wrapper')) {
                 wrapper.appendChild(copyBtn);
             }
