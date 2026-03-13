@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | Waybar Hijri Calendar 🌙</title>
-    <meta name="description" content="A stable, Python-based Hijri calendar for Waybar. Featuring RTL alignment fixes, dynamic tooltips, and zero dependencies. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, Waybar, Hijri Calendar, Python, Linux, Arch Linux, Hyprland, Wayland, Custom Module, RTL fix">
+    <meta name="description" content="A stable, offline-capable Python Hijri calendar for Waybar. Featuring authentic Islamic events, dynamic tooltips, and zero dependencies. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, Waybar, Hijri Calendar, Python, Linux, Arch Linux, Hyprland, Wayland, Custom Module, RTL fix, Offline Caching">
     <meta name="author" content="Ahmed x86">
 
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
@@ -84,7 +84,7 @@
 
         .effect-image:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* وهج بنفسجي ناعم */
+            box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25);
             border-color: var(--mauve);
         }
 
@@ -94,6 +94,13 @@
             border-left: 4px solid var(--mauve);
             border-radius: 4px;
             margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        h3.theme-title {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: var(--mauve);
         }
     </style>
 </head>
@@ -102,7 +109,7 @@
 
 <header>
     <h1>Ahmed x86 - Waybar Hijri Calendar 🌙</h1>
-    <p>A stable Python script for an RTL-fixed, dynamic Hijri calendar in Waybar.</p>
+    <p>A stable, offline-capable Python script for an RTL-fixed, dynamic Hijri calendar in Waybar.</p>
 </header>
 
 <nav>
@@ -128,12 +135,13 @@
 
     <img src="screenshot_full_2026-03-11_10-38-13.png" class="effect-image" alt="Waybar Hijri Calendar Preview by Ahmed x86">
 
-    <h2>Features</h2>
+    <h2>✨ Features</h2>
     <ul>
-        <li>Zero External Dependencies (Pure Python).</li>
-        <li>Automatic 1st-of-month calculation for accurate grids.</li>
-        <li>RTL/LTR fix for perfect Pango rendering.</li>
-        <li>Dynamic tooltips with full date and day of the week.</li>
+        <li><strong>Dynamic Month Length:</strong> Accurately calculates 29 or 30 days based on the actual Hijri month.</li>
+        <li><strong>Offline Caching:</strong> Fetches data once per month and stores it locally for zero-lag performance and offline support.</li>
+        <li><strong>Authentic Islamic Events:</strong> Displays reminders for authentic Sunnah occasions in the tooltip (e.g., White Days, Ashura, Eids, Arafah).</li>
+        <li><strong>Zero Dependencies:</strong> Pure Python, no extra packages needed.</li>
+        <li><strong>RTL Fix:</strong> Perfect Pango rendering for right-to-left languages.</li>
     </ul>
 
     <h2>Installation</h2>
@@ -149,20 +157,66 @@
     "tooltip": true
 }</code></pre>
 
-    <h2>Waybar style.css</h2>
-    <pre><code>.custom-hijri {
+    <h2>🎨 Styling (Themes)</h2>
+    <p>Choose your favorite theme and add it to your Waybar <code>style.css</code>:</p>
+
+    <h3 class="theme-title">☕ Catppuccin</h3>
+    <pre><code>#custom-hijri {
     color: #f9e2af;          
     font-weight: bold;
     font-size: 14px;
     padding: 0 8px;
 }
-
-.custom-hijri:hover {
+#custom-hijri:hover {
     color: #fab387;          
 }</code></pre>
 
+    <h3 class="theme-title">🧛 Dracula</h3>
+    <pre><code>#custom-hijri {
+    color: #bd93f9;          
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+}
+#custom-hijri:hover {
+    color: #ff79c6;          
+}</code></pre>
+
+    <h3 class="theme-title">❄️ Nord</h3>
+    <pre><code>#custom-hijri {
+    color: #88C0D0;          
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+}
+#custom-hijri:hover {
+    color: #81A1C1;          
+}</code></pre>
+
+    <h3 class="theme-title">📦 Gruvbox</h3>
+    <pre><code>#custom-hijri {
+    color: #fabd2f;          
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+}
+#custom-hijri:hover {
+    color: #fe8019;          
+}</code></pre>
+
+    <h3 class="theme-title">🌃 Tokyo Night</h3>
+    <pre><code>#custom-hijri {
+    color: #7aa2f7;          
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+}
+#custom-hijri:hover {
+    color: #bb9af7;          
+}</code></pre>
+
     <div class="note">
-        <strong>Arch Tip:</strong> Using Python instead of Bash for Waybar modules provides better error handling and prevents the bar from hanging during API calls.
+        <strong>💡 Performance Tip:</strong> The script now caches the entire month locally at <code>~/.cache/waybar_hijri_cache.json</code>. This means it only makes one API call per month, keeping your system ultra-fast and your Waybar functional even without an internet connection!
     </div>
 
 </section>
