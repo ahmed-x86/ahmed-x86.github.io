@@ -8,16 +8,20 @@
     <meta name="description" content="A stable, offline-capable Python Hijri calendar for Waybar. Featuring authentic Islamic events, dynamic tooltips, RTL alignment fixes, and zero dependencies. Built by Ahmed x86.">
     <meta name="keywords" content="Ahmed x86, ahmedx86, Waybar, Hijri Calendar, Islamic Calendar, Python Script, Linux Customization, Arch Linux, Hyprland, Sway, Wayland, Custom Module, RTL fix, Pango rendering, Offline Caching, Desktop Widget">
     <meta name="author" content="Ahmed x86">
-    <meta name="robots" content="index, follow"> <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
     <meta property="og:title" content="Ahmed x86 | Waybar Hijri Calendar 🌙">
     <meta property="og:description" content="The most stable Hijri calendar module for Waybar. Pure Python, offline caching, perfectly aligned RTL grids, and authentic Sunnah reminders.">
-    <meta property="og:image" content="https://ahmed-x86.github.io/screenshot_full_2026-03-11_10-38-13.png"> <meta property="og:url" content="https://ahmed-x86.github.io/waybar_hijri_calendar.html">
+    <meta property="og:image" content="https://ahmed-x86.github.io/screenshot_full_2026-03-11_10-38-13.png"> 
+    <meta property="og:url" content="https://ahmed-x86.github.io/waybar_hijri_calendar.html">
     <meta property="og:type" content="article">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Waybar Hijri Calendar 🌙 by Ahmed x86">
     <meta name="twitter:description" content="A stable, Python-based Hijri calendar for Waybar with RTL fixes, offline caching, and Islamic events. No dependencies required!">
     <meta name="twitter:image" content="https://ahmed-x86.github.io/screenshot_full_2026-03-11_10-38-13.png">
+    
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
@@ -39,12 +43,14 @@
     </script>
 
     <style>
-        /* المتغيرات اللونية الخاصة بـ Catppuccin للوهج */
+        /* المتغيرات اللونية الخاصة بـ Catppuccin */
         :root {
             --mauve: #cba6f7;
             --surface0: #313244;
             --crust: #11111b;
             --green: #a6e3a1;
+            --blue: #89b4fa;
+            --subtext: #a6adc8;
         }
 
         .badges {
@@ -58,6 +64,7 @@
             border-radius: 4px;
         }
 
+        /* تنسيق الأكواد والنسخ */
         .code-wrapper {
             position: relative;
             margin-bottom: 20px;
@@ -65,7 +72,7 @@
         pre {
             background-color: var(--crust);
             padding: 15px;
-            padding-top: 40px; 
+            padding-top: 35px; 
             border-radius: 8px;
             overflow-x: auto;
             border: 1px solid var(--surface0);
@@ -96,7 +103,7 @@
             color: var(--crust, #11111b);
         }
 
-        /* --- تطبيق تأثير الوهج والطفو الجديد --- */
+        /* تأثير الصورة */
         .effect-image {
             width: 75%;
             display: block;
@@ -107,13 +114,13 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
-
         .effect-image:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25);
             border-color: var(--mauve);
         }
 
+        /* التنسيقات الإضافية للقوائم والملحوظات */
         .note {
             background-color: var(--surface0);
             padding: 15px;
@@ -122,11 +129,22 @@
             margin: 20px 0;
             line-height: 1.6;
         }
-        
-        h3.theme-title {
-            margin-top: 30px;
+
+        details {
+            background-color: var(--base, #1e1e2e);
+            border: 1px solid var(--surface0);
+            border-radius: 8px;
+            padding: 10px;
             margin-bottom: 10px;
-            color: var(--mauve);
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--blue);
+            padding: 5px 0;
+        }
+        details pre {
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -143,7 +161,7 @@
     <a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank">GitHub Repo</a>
 </nav>
 
-<section>
+<section id="project-details">
 
     <div class="badges">
         <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
@@ -159,22 +177,26 @@
         on Hyprland and Sway.
     </p>
 
-    <img src="screenshot_full_2026-03-11_10-38-13.png" class="effect-image" alt="Waybar Hijri Calendar Preview by Ahmed x86">
+    <img src="screenshot_full_2026-03-11_10-38-13.png" class="effect-image" alt="Waybar Hijri Calendar Preview">
 
-    <h2>✨ Features</h2>
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>✨ Key Features</h2>
     <ul>
         <li><strong>Dynamic Month Length:</strong> Accurately calculates 29 or 30 days based on the actual Hijri month.</li>
-        <li><strong>Offline Caching:</strong> Fetches data once per month and stores it locally for zero-lag performance and offline support.</li>
-        <li><strong>Authentic Islamic Events:</strong> Displays reminders for authentic Sunnah occasions in the tooltip (e.g., White Days, Ashura, Eids, Arafah).</li>
+        <li><strong>Offline Caching:</strong> Fetches data once per month and stores it locally for zero-lag performance.</li>
+        <li><strong>Authentic Islamic Events:</strong> Displays Sunnah reminders (White Days, Ashura, Eids, Arafah) in tooltips.</li>
         <li><strong>Zero Dependencies:</strong> Pure Python, no extra packages needed.</li>
         <li><strong>RTL Fix:</strong> Perfect Pango rendering for right-to-left languages.</li>
     </ul>
 
-    <h2>Installation</h2>
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
+    <h2>🛠️ Installation</h2>
     <p>Deploy the script directly using this command:</p>
     <pre><code>mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py</code></pre>
 
-    <h2>Waybar Configuration</h2>
+    <h2>🖥️ Waybar Configuration</h2>
     <pre><code>"custom/hijri": {
     "format": "{}",
     "exec": "~/.config/waybar/scripts/hijri_waybar.py",
@@ -183,66 +205,88 @@
     "tooltip": true
 }</code></pre>
 
+    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+
     <h2>🎨 Styling (Themes)</h2>
     <p>Choose your favorite theme and add it to your Waybar <code>style.css</code>:</p>
 
-    <h3 class="theme-title">☕ Catppuccin</h3>
-    <pre><code>#custom-hijri {
-    color: #f9e2af;          
+    <details>
+        <summary>1. Catppuccin (Mocha)</summary>
+        <pre><code>/* Hijri Calendar - Catppuccin Mocha */
+#custom-hijri {
+    color: #f9e2af;
     font-weight: bold;
     font-size: 14px;
     padding: 0 8px;
+    transition: all 0.3s ease;
 }
 #custom-hijri:hover {
-    color: #fab387;          
+    color: #fab387;
 }</code></pre>
+    </details>
 
-    <h3 class="theme-title">🧛 Dracula</h3>
-    <pre><code>#custom-hijri {
-    color: #bd93f9;          
+    <details>
+        <summary>2. Dracula</summary>
+        <pre><code>/* Hijri Calendar - Dracula */
+#custom-hijri {
+    color: #bd93f9;
     font-weight: bold;
     font-size: 14px;
     padding: 0 8px;
+    transition: all 0.3s ease;
 }
 #custom-hijri:hover {
-    color: #ff79c6;          
+    color: #ff79c6;
 }</code></pre>
+    </details>
 
-    <h3 class="theme-title">❄️ Nord</h3>
-    <pre><code>#custom-hijri {
-    color: #88C0D0;          
+    <details>
+        <summary>3. Nord</summary>
+        <pre><code>/* Hijri Calendar - Nord */
+#custom-hijri {
+    color: #88C0D0;
     font-weight: bold;
     font-size: 14px;
     padding: 0 8px;
+    transition: all 0.3s ease;
 }
 #custom-hijri:hover {
-    color: #81A1C1;          
+    color: #81A1C1;
 }</code></pre>
+    </details>
 
-    <h3 class="theme-title">📦 Gruvbox</h3>
-    <pre><code>#custom-hijri {
-    color: #fabd2f;          
+    <details>
+        <summary>4. Gruvbox</summary>
+        <pre><code>/* Hijri Calendar - Gruvbox */
+#custom-hijri {
+    color: #fabd2f;
     font-weight: bold;
     font-size: 14px;
     padding: 0 8px;
+    transition: all 0.3s ease;
 }
 #custom-hijri:hover {
-    color: #fe8019;          
+    color: #fe8019;
 }</code></pre>
+    </details>
 
-    <h3 class="theme-title">🌃 Tokyo Night</h3>
-    <pre><code>#custom-hijri {
-    color: #7aa2f7;          
+    <details>
+        <summary>5. Tokyo Night</summary>
+        <pre><code>/* Hijri Calendar - Tokyo Night */
+#custom-hijri {
+    color: #7aa2f7;
     font-weight: bold;
     font-size: 14px;
     padding: 0 8px;
+    transition: all 0.3s ease;
 }
 #custom-hijri:hover {
-    color: #bb9af7;          
+    color: #bb9af7;
 }</code></pre>
+    </details>
 
     <div class="note">
-        <strong>💡 Performance Tip:</strong> The script now caches the entire month locally at <code>~/.cache/waybar_hijri_cache.json</code>. This means it only makes one API call per month, keeping your system ultra-fast and your Waybar functional even without an internet connection!
+        <strong>💡 Performance Tip:</strong> The script caches the entire month at <code>~/.cache/waybar_hijri_cache.json</code>. It only makes one API call per month!
     </div>
 
 </section>
