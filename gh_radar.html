@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | gh-radar: Dynamic GitHub Monitor for Waybar</title>
-    <meta name="description" content="A dynamic and interactive Waybar module that monitors your GitHub activity in real-time. Features an animated ticker, sound alerts, manual refresh, and avatar notifications.">
-    <meta name="keywords" content="Ahmed x86, GitHub, Waybar, Linux, Arch Linux, Hyprland, Python, GitHub Radar, Ticker, Notifications, Ricing, Catppuccin, Dracula">
+    <meta name="description" content="Bring your GitHub to Waybar! A real-time GitHub activity monitor with an animated ticker, audio alerts, and native avatar notifications for Linux ricers.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, gh-radar, Waybar GitHub module, Linux ricing, Arch Linux, Hyprland, Sway WM, Python Waybar script, Catppuccin, Dracula theme, GitHub API notifications, Linux desktop enhancement">
     <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://ahmed-x86.github.io/gh_radar.html">
 
+    <meta property="og:site_name" content="Ahmed x86 Portfolio">
     <meta property="og:title" content="Ahmed x86 | gh-radar for Waybar">
-    <meta property="og:description" content="Bring your GitHub to Waybar! A real-time radar with an animated ticker, sound alerts, and avatar notifications.">
+    <meta property="og:description" content="Never miss a push! A dynamic Waybar module with animated tickers, sound alerts, and live GitHub avatar notifications.">
     <meta property="og:image" content="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif">
+    <meta property="og:image:alt" content="gh-radar Waybar Module Demo">
     <meta property="og:url" content="https://ahmed-x86.github.io/gh_radar.html">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ahmed x86 | gh-radar for Waybar">
-    <meta name="twitter:description" content="Never miss a push again. A dynamic GitHub monitor for Waybar with animations and sound.">
+    <meta name="twitter:title" content="Ahmed x86 | gh-radar for Waybar 📡">
+    <meta name="twitter:description" content="A dynamic GitHub monitor for Waybar. Features animations, sound alerts, and manual refresh via Linux signals.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif">
     
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
@@ -28,15 +32,26 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "gh-radar",
-      "operatingSystem": "Linux",
+      "operatingSystem": "Linux, Arch Linux",
       "applicationCategory": "DesktopEnhancement",
-      "description": "A dynamic and interactive Waybar module that monitors GitHub activity with an animated ticker.",
+      "applicationSubCategory": "System Monitor",
+      "description": "A dynamic and interactive Waybar module that monitors GitHub activity in real-time with an animated ticker, audio alerts, and manual refresh capabilities.",
       "author": {
         "@type": "Person",
-        "name": "Ahmed x86"
+        "name": "Ahmed x86",
+        "url": "https://ahmed-x86.github.io/"
       },
       "url": "https://ahmed-x86.github.io/gh_radar.html",
-      "keywords": "Waybar, GitHub, Linux, Hyprland, Script"
+      "codeRepository": "https://github.com/ahmed-x86/gh-radar",
+      "programmingLanguage": "Python",
+      "featureList": [
+        "Animated Waybar Ticker",
+        "Audio Notifications",
+        "GitHub Avatar Desktop Notifications",
+        "Manual Refresh via SIGUSR1",
+        "Optimized API Polling with ETag"
+      ],
+      "keywords": "Waybar, GitHub, Linux ricing, Hyprland, Python script"
     }
     </script>
 
@@ -111,6 +126,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: 0.2s ease-in-out;
+            z-index: 10;
         }
         .copy-btn:hover {
             background-color: var(--mauve, #cba6f7);
