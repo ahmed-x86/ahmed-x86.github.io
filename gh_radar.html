@@ -344,43 +344,7 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const codeBlocks = document.querySelectorAll("pre");
-
-        codeBlocks.forEach((pre) => {
-            const wrapper = document.createElement("div");
-            wrapper.className = "code-wrapper";
-            
-            pre.parentNode.insertBefore(wrapper, pre);
-            wrapper.appendChild(pre);
-
-            const copyBtn = document.createElement("button");
-            copyBtn.className = "copy-btn";
-            copyBtn.innerText = "Copy";
-            
-            wrapper.appendChild(copyBtn);
-
-            copyBtn.addEventListener("click", async () => {
-                const codeText = pre.querySelector("code").innerText;
-                try {
-                    await navigator.clipboard.writeText(codeText);
-                    copyBtn.innerText = "Copied!";
-                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
-                    copyBtn.style.color = "var(--crust, #11111b)";
-                    
-                    setTimeout(() => {
-                        copyBtn.innerText = "Copy";
-                        copyBtn.style.backgroundColor = "";
-                        copyBtn.style.color = "";
-                    }, 2000);
-                } catch (err) {
-                    console.error("Failed to copy!", err);
-                }
-            });
-        });
-    });
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>
