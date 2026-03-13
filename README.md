@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ahmed-x86/ahmed-x86.github.io/main/screenshot_full_2026-03-11_10-38-13.png" alt="Ahmed x86 Banner" width="100%" style="border-radius: 12px;">
-</p>
 
 <h1 align="center">🍙 Ahmed x86 (ahmedx86)</h1>
 <p align="center">
