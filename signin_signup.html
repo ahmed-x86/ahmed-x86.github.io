@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication | Ahmed x86</title>
+
+    <title>Authentication | Ahmed x86 Secure Terminal</title>
+    <meta name="description" content="Secure login and registration gateway for Ahmed x86's Linux portfolio. Access your session and explore custom dotfiles and scripts.">
+    <meta name="keywords" content="Ahmed x86, Login, Sign up, Authentication, Linux Portfolio, Secure Session, Arch Linux, sudoers access">
+    <meta name="author" content="Ahmed x86">
+    
+    <meta name="robots" content="index, nofollow">
+    <link rel="canonical" href="https://ahmed-x86.github.io/signin_signup.html">
+
+    <meta property="og:site_name" content="Ahmed x86 Security">
+    <meta property="og:title" content="Authentication | Secure Access Gate">
+    <meta property="og:description" content="Enter your credentials to execute a session in Ahmed x86's Arch Linux environment.">
+    <meta property="og:image" content="https://github.com/ahmed-x86.png">
+    <meta property="og:url" content="https://ahmed-x86.github.io/signin_signup.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ahmed x86 Security | Login">
+    <meta name="twitter:description" content="Secure gateway for user sessions. Execute login to access the root environment.">
+    <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
+
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Authentication Page",
+      "description": "Secure login and registration portal for Ahmed x86's personal website.",
+      "breadcrumb": "Home > Auth",
+      "author": {
+        "@type": "Person",
+        "name": "Ahmed x86"
+      }
+    }
+    </script>
 </head>
 <body class="auth-body">
 
@@ -45,7 +79,6 @@
         const formSignin = document.getElementById('form-signin');
         const formSignup = document.getElementById('form-signup');
 
-        // التبديل بين النموذجين
         tabSignin.addEventListener('click', () => {
             tabSignin.classList.add('active');
             tabSignup.classList.remove('active');
@@ -60,25 +93,17 @@
             formSignin.style.display = 'none';
         });
 
-        // التعامل مع تسجيل الدخول
         formSignin.addEventListener('submit', (e) => {
-            e.preventDefault(); // منع إعادة تحميل الصفحة
-            // جلب اسم المستخدم من الحقل الأول
+            e.preventDefault();
             const username = formSignin.querySelector('input[type="text"]').value;
-            // حفظ الاسم في المتصفح
             localStorage.setItem('arch_user', username);
-            // التوجيه للصفحة الرئيسية
             window.location.href = 'index.html';
         });
 
-        // التعامل مع إنشاء حساب
         formSignup.addEventListener('submit', (e) => {
             e.preventDefault();
-            // جلب اسم المستخدم من الحقل الأول
             const newUsername = formSignup.querySelector('input[type="text"]').value;
-            // حفظ الاسم في المتصفح
             localStorage.setItem('arch_user', newUsername);
-            // التوجيه للصفحة الرئيسية
             window.location.href = 'index.html';
         });
     </script>
