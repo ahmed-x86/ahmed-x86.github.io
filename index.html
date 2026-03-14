@@ -55,7 +55,7 @@
 <header>
     <a href="signin_signup.html" class="auth-link">Signin / Signup</a>
 
-    <img src="https://avatars.githubusercontent.com/ahmed-x86" alt="Ahmed x86 Profile Picture" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #a6e3a1; margin-bottom: 15px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+    <img src="https://avatars.githubusercontent.com/ahmed-x86" alt="Ahmed x86 Profile Picture" class="profile-pic">
     
     <h1>Ahmed x86</h1>
     <p>Linux Enthusiast • Cyber Security Student</p>
@@ -139,16 +139,16 @@
     <div class="modal-content">
         <span id="closeModal" class="close-btn">&times;</span>
         <form id="feedbackForm">
-            <h3 style="margin-top: 0; color: var(--mauve);">Send us your Feedback</h3>
-            <p style="margin-bottom: 15px; font-size: 14px; color: var(--subtext);">We value your opinion (kinda).</p>
+            <h3 class="feedback-title">Send us your Feedback</h3>
+            <p class="feedback-subtitle">We value your opinion (kinda).</p>
             <input type="text" placeholder="Your Name" required class="form-input">
             <input type="email" placeholder="Your Email" required class="form-input">
             <textarea placeholder="Describe your issue..." rows="4" required class="form-input"></textarea>
             <button type="submit" class="submit-btn">Submit Feedback</button>
         </form>
-        <div id="trashMessage" style="display: none; text-align: center; padding: 20px 0;">
-            <h2 style="font-size: 50px; margin-bottom: 15px; margin-top: 0;">🗑️</h2>
-            <p style="color: var(--text); font-size: 18px; font-weight: bold; line-height: 1.6;">
+        <div id="trashMessage" class="trash-message-box">
+            <h2 class="trash-icon">🗑️</h2>
+            <p class="trash-text">
                 لقد تم استقبال ردك وسيتم إرساله للمطور حتى يرميه في سلة الزبالة في أسرع وقت.
             </p>
         </div>
