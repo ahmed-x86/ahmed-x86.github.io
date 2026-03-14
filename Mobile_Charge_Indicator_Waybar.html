@@ -52,96 +52,6 @@
   "keywords": "Waybar, KDE Connect, Linux Battery Monitor, Bash, Custom Module"
 }
 </script>
-
-<style>
-    /* المتغيرات اللونية Catppuccin */
-    :root {
-        --mauve: #cba6f7;
-        --surface0: #313244;
-        --crust: #11111b;
-        --green: #a6e3a1;
-        --blue: #89b4fa;
-        --text: #cdd6f4;
-    }
-
-    /* Code Blocks Styles */
-    .code-wrapper {
-        position: relative;
-        margin-bottom: 20px;
-    }
-    pre {
-        background-color: var(--crust);
-        padding: 15px;
-        padding-top: 40px; 
-        border-radius: 8px;
-        overflow-x: auto;
-        border: 1px solid var(--surface0);
-        margin-bottom: 0;
-    }
-    code {
-        color: var(--green);
-        font-family: 'JetBrains Mono', monospace;
-    }
-    
-    /* Copy Button Styles */
-    .copy-btn {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background-color: var(--surface1, #45475a);
-        color: var(--text);
-        border: none;
-        border-radius: 5px;
-        padding: 5px 10px;
-        font-size: 12px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
-        z-index: 10;
-    }
-    .copy-btn:hover {
-        background-color: var(--mauve);
-        color: var(--crust);
-        box-shadow: 0 0 15px rgba(203, 166, 247, 0.4);
-    }
-
-    /* --- تطبيق تأثير الوهج والطفو على الصورة --- */
-    .hero-img {
-        width: 70%;
-        display: block;
-        margin: 30px auto;
-        border-radius: 12px;
-        border: 2px solid var(--surface0);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-    .hero-img:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* وهج بنفسجي ناعم */
-        border-color: var(--mauve);
-    }
-
-    /* --- تطبيق التأثير على زر الأكشن --- */
-    .btn-link {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 12px 24px;
-        background-color: var(--green);
-        color: var(--crust);
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        font-size: 15px;
-        transition: 0.3s ease;
-        box-shadow: 0 4px 15px rgba(166, 227, 161, 0.2);
-    }
-    .btn-link:hover {
-        background-color: var(--blue);
-        color: var(--crust);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(137, 180, 250, 0.3);
-    }
-</style>
 </head>
 
 <body>
@@ -221,7 +131,7 @@ chmod +x install.sh
 }</code></pre>
 </div>
 
-<div style="text-align: center; margin-top: 30px;">
+<div class="action-container">
     <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn-link">
     View GitHub Repository
     </a>
