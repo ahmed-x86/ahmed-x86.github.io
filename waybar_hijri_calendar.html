@@ -19,109 +19,6 @@
 
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        :root {
-            --mauve: #cba6f7;
-            --surface0: #313244;
-            --crust: #11111b;
-            --green: #a6e3a1;
-            --blue: #89b4fa;
-            --subtext: #a6adc8;
-            --red: #f38ba8;
-        }
-
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0;
-            justify-content: center;
-        }
-        .badges img { border-radius: 4px; }
-
-        .code-wrapper { position: relative; margin-bottom: 20px; }
-        pre {
-            background-color: var(--crust);
-            padding: 15px;
-            padding-top: 35px; 
-            border-radius: 8px;
-            overflow-x: auto;
-            border: 1px solid var(--surface0);
-            margin-bottom: 0;
-        }
-        code { color: var(--green); font-family: 'JetBrains Mono', monospace; }
-        
-        .copy-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background-color: #45475a;
-            color: #cdd6f4;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s ease-in-out;
-            z-index: 10;
-        }
-        .copy-btn:hover { background-color: var(--mauve); color: var(--crust); }
-
-        .effect-image {
-            width: 75%;
-            display: block;
-            margin: 30px auto;
-            border-radius: 12px;
-            border: 2px solid var(--surface0);
-            background-color: var(--crust);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-        .effect-image:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25);
-            border-color: var(--mauve);
-        }
-
-        .note {
-            background-color: var(--surface0);
-            padding: 15px;
-            border-left: 4px solid var(--mauve);
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-
-        .warning {
-            border-left: 4px solid var(--red);
-            background-color: rgba(243, 139, 168, 0.1);
-            padding: 15px;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-
-        /* تنسيق جدول اللغات */
-        .lang-table-container { overflow-x: auto; margin: 20px 0; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: var(--crust);
-            border-radius: 8px;
-            border: 1px solid var(--surface0);
-        }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--surface0); }
-        th { background-color: var(--surface0); color: var(--mauve); }
-
-        details {
-            background-color: #1e1e2e;
-            border: 1px solid var(--surface0);
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        summary { font-weight: bold; cursor: pointer; color: var(--blue); padding: 5px 0; }
-    </style>
 </head>
 
 <body>
@@ -152,7 +49,7 @@
 
     <img src="screenshot_full_2026-03-11_10-38-13.png" class="effect-image" alt="Waybar Hijri Calendar Preview">
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>🌐 Supported Languages</h2>
     <p>Switch language using the <code>-lang</code> flag in your configuration:</p>
@@ -176,7 +73,7 @@
         </table>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>✨ Key Features</h2>
     <ul>
@@ -187,11 +84,13 @@
         <li><strong>Zero Dependencies:</strong> Pure Python script with minimal system footprint.</li>
     </ul>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>🛠️ Installation & Update</h2>
     <p>Deploy the script directly using this command:</p>
-    <pre><code>mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py</code></pre>
+    <div class="code-wrapper">
+<pre><code>mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py</code></pre>
+    </div>
 
     <div class="warning">
         <strong>⚠️ Crucial Update Step:</strong> If you are upgrading from an older version, you <b>must</b> clear the old cache file to apply the new format:
@@ -201,22 +100,24 @@
 
     <h2>🖥️ Waybar Configuration</h2>
     <p>Add the following to your <code>config.jsonc</code> (change the lang flag to your preference):</p>
-    <pre><code>"custom/hijri": {
+    <div class="code-wrapper">
+<pre><code>"custom/hijri": {
     "format": "{}",
     "exec": "~/.config/waybar/scripts/hijri_waybar.py -lang ar",
     "interval": 3600,
     "return-type": "json",
     "tooltip": true
 }</code></pre>
+    </div>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>🎨 Styling (Themes)</h2>
     <p>Choose your favorite theme and add it to your Waybar <code>style.css</code>:</p>
 
     <details>
         <summary>1. Catppuccin (Mocha)</summary>
-        <pre><code>/* Hijri Calendar - Catppuccin Mocha */
+<pre><code>/* Hijri Calendar - Catppuccin Mocha */
 #custom-hijri {
     color: #f9e2af;
     font-weight: bold;
@@ -231,7 +132,7 @@
 
     <details>
         <summary>2. Dracula</summary>
-        <pre><code>/* Hijri Calendar - Dracula */
+<pre><code>/* Hijri Calendar - Dracula */
 #custom-hijri {
     color: #bd93f9;
     font-weight: bold;
@@ -246,7 +147,7 @@
 
     <details>
         <summary>3. Nord</summary>
-        <pre><code>/* Hijri Calendar - Nord */
+<pre><code>/* Hijri Calendar - Nord */
 #custom-hijri {
     color: #88C0D0;
     font-weight: bold;
@@ -261,7 +162,7 @@
 
     <details>
         <summary>4. Gruvbox</summary>
-        <pre><code>/* Hijri Calendar - Gruvbox */
+<pre><code>/* Hijri Calendar - Gruvbox */
 #custom-hijri {
     color: #fabd2f;
     font-weight: bold;
@@ -276,7 +177,7 @@
 
     <details>
         <summary>5. Tokyo Night</summary>
-        <pre><code>/* Hijri Calendar - Tokyo Night */
+<pre><code>/* Hijri Calendar - Tokyo Night */
 #custom-hijri {
     color: #7aa2f7;
     font-weight: bold;
