@@ -54,110 +54,6 @@
       "keywords": "Waybar, GitHub, Linux ricing, Hyprland, Python script"
     }
     </script>
-
-    <style>
-        /* Specific styles for this page */
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0;
-            justify-content: center;
-        }
-        .badges img {
-            border-radius: 4px;
-        }
-
-        /* Video Effects */
-        .demo-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-        .demo-video {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border: 2px solid var(--surface0);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            outline: none;
-        }
-        .demo-video:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25); /* Glow matching Catppuccin mauve */
-            border-color: var(--mauve);
-        }
-        .demo-caption {
-            margin-top: 15px;
-            font-size: 0.9em;
-            color: var(--subtext);
-            font-style: italic;
-        }
-        
-        /* Code blocks */
-        .code-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        pre {
-            background-color: var(--crust);
-            padding: 15px;
-            padding-top: 35px; 
-            border-radius: 8px;
-            overflow-x: auto;
-            border: 1px solid var(--surface0);
-            margin-bottom: 0; 
-        }
-        code {
-            color: var(--green);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        .copy-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background-color: var(--surface1, #45475a);
-            color: var(--text, #cdd6f4);
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s ease-in-out;
-            z-index: 10;
-        }
-        .copy-btn:hover {
-            background-color: var(--mauve, #cba6f7);
-            color: var(--crust, #11111b);
-        }
-
-        .note {
-            background-color: var(--surface0);
-            padding: 15px;
-            border-left: 4px solid var(--mauve);
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-
-        details {
-            background-color: var(--base);
-            border: 1px solid var(--surface0);
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--blue);
-            padding: 5px 0;
-        }
-        details pre {
-            margin-top: 15px;
-        }
-    </style>
 </head>
 <body>
 
@@ -188,7 +84,7 @@
         <div class="demo-caption">Watch gh-radar's animated ticker and notifications in action!</div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>✨ Key Features</h2>
     <ul>
@@ -201,12 +97,13 @@
         <li><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits.</li>
     </ul>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>🛠️ Installation & Setup</h2>
     
     <h3>1. Clone & Copy Files</h3>
-    <pre><code>git clone https://github.com/ahmed-x86/gh-radar.git
+    <div class="code-wrapper">
+<pre><code>git clone https://github.com/ahmed-x86/gh-radar.git
 cd gh-radar
 
 # Copy sound to your config
@@ -216,24 +113,33 @@ cp -r sounds ~/.config/
 mkdir -p ~/.config/waybar/scripts
 cp github_radar.py ~/.config/waybar/scripts/
 chmod +x ~/.config/waybar/scripts/github_radar.py</code></pre>
+    </div>
 
     <h3>2. Add Your Credentials (.env)</h3>
     <p>Create a <code>.env</code> file to authenticate with GitHub:</p>
-    <pre><code>nano ~/.config/waybar/scripts/.env</code></pre>
+    <div class="code-wrapper">
+<pre><code>nano ~/.config/waybar/scripts/.env</code></pre>
+    </div>
     <p>Add the following (replace with your info):</p>
-    <pre><code>GITHUB_USERNAME=your_github_username
+    <div class="code-wrapper">
+<pre><code>GITHUB_USERNAME=your_github_username
 GITHUB_PAT=your_personal_access_token_here</code></pre>
+    </div>
 
     <h3>3. Install Dependencies</h3>
     <p>Depending on your Linux distribution, install the required Python libraries. You also need an audio player (<code>mpv</code> or <code>paplay</code>) and a notification daemon (<code>libnotify</code>).</p>
     
     <p><strong>For Arch Linux / Manjaro:</strong></p>
-    <pre><code>sudo pacman -S python-requests python-dotenv</code></pre>
+    <div class="code-wrapper">
+<pre><code>sudo pacman -S python-requests python-dotenv</code></pre>
+    </div>
     
     <p><strong>For Ubuntu / Debian (or using pip):</strong></p>
-    <pre><code>pip install requests python-dotenv</code></pre>
+    <div class="code-wrapper">
+<pre><code>pip install requests python-dotenv</code></pre>
+    </div>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>⚙️ Usage & Arguments</h2>
     <p>The script supports arguments to customize its behavior:</p>
@@ -241,19 +147,22 @@ GITHUB_PAT=your_personal_access_token_here</code></pre>
         <li><code>my_repos_only</code>: Only triggers alerts for repositories you own (ignores activity from other repos you watch/star).</li>
         <li><code>-t 0</code>: <strong>Manual Mode</strong>. The script will not poll GitHub automatically. It will sleep completely until you middle-click the Waybar module.</li>
     </ul>
-    <pre><code># Examples:
+    <div class="code-wrapper">
+<pre><code># Examples:
 github_radar.py                    # Tracks everything, dynamic polling
 github_radar.py my_repos_only      # Tracks only your repos, dynamic polling
 github_radar.py -t 0               # Tracks everything, manual refresh ONLY
 github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY</code></pre>
+    </div>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>🖥️ Waybar Configuration</h2>
 
     <h3>1. Module Configuration (<code>config.jsonc</code>)</h3>
     <p>Add this module to your Waybar config file (under <code>modules-left</code>, <code>modules-center</code>, or <code>modules-right</code>):</p>
-    <pre><code>"custom/github-radar": {
+    <div class="code-wrapper">
+<pre><code>"custom/github-radar": {
     "format": "{}",
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/github_radar.py my_repos_only", // Add '-t 0' here if you want manual mode
@@ -262,6 +171,7 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
     "on-click-middle": "pkill -USR1 -f github_radar.py", // Sends the refresh signal
     "restart-interval": 0 // Set to 0 because the script runs its own background loop
 }</code></pre>
+    </div>
     <p><em>(Note: Change <code>ahmed-x86</code> to your actual GitHub username in the <code>on-click</code> URL).</em></p>
 
     <h3>2. Styling (<code>style.css</code>)</h3>
@@ -269,7 +179,7 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
 
     <details>
         <summary>1. Default (GitHub Dark)</summary>
-        <pre><code>/* GitHub Radar - Default Theme */
+<pre><code>/* GitHub Radar - Default Theme */
 #custom-github-radar {
     background-color: #24292e; /* Dark GitHub background */
     color: #ffffff;
@@ -290,7 +200,7 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
 
     <details>
         <summary>2. Catppuccin (Mocha)</summary>
-        <pre><code>/* GitHub Radar - Catppuccin Mocha Theme */
+<pre><code>/* GitHub Radar - Catppuccin Mocha Theme */
 #custom-github-radar {
     background-color: #1e1e2e; /* Base */
     color: #cdd6f4; /* Text */
@@ -311,7 +221,7 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
 
     <details>
         <summary>3. Dracula</summary>
-        <pre><code>/* GitHub Radar - Dracula Theme */
+<pre><code>/* GitHub Radar - Dracula Theme */
 #custom-github-radar {
     background-color: #282a36; /* Background */
     color: #f8f8f2; /* Foreground */
@@ -334,7 +244,7 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
         <strong>Restart Waybar:</strong> Apply the changes by restarting Waybar using <code>killall waybar && waybar & disown</code>.
     </div>
 
-    <p style="text-align: center; margin-top: 50px; font-weight: bold; color: var(--blue);">
+    <p class="rice-quote">
         > i rice my desktop btw
     </p>
 
