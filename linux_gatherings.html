@@ -34,10 +34,26 @@
             height: 100%;
         }
         .gallery-grid .project a {
-            margin-top: auto; /* هذه الخاصية تدفع الصورة لأسفل الصندوق دائماً */
+            margin-top: auto;
             display: block;
         }
+
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important; 
+            }
+            
+            .gallery-grid .project {
+                height: auto !important; 
+                min-height: min-content !important;
+                margin-bottom: 20px !important; 
+            }
+        }
     </style>
+
 
     <script type="application/ld+json">
     {
@@ -112,4 +128,3 @@
 
 </body>
 </html>
-1
