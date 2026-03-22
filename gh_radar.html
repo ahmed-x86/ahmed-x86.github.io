@@ -35,7 +35,7 @@
       "operatingSystem": "Linux, Arch Linux",
       "applicationCategory": "DesktopEnhancement",
       "applicationSubCategory": "System Monitor",
-      "description": "A dynamic and interactive Waybar module that monitors GitHub activity in real-time with an animated ticker, audio alerts, and manual refresh capabilities.",
+      "description": "A dynamic and interactive Waybar module that monitors GitHub activity in real-time with an animated ticker, audio alerts, custom icons, and manual refresh capabilities.",
       "author": {
         "@type": "Person",
         "name": "Ahmed x86",
@@ -49,6 +49,7 @@
         "Audio Notifications",
         "GitHub Avatar Desktop Notifications",
         "Manual Refresh via SIGUSR1",
+        "Customizable Icons",
         "Optimized API Polling with ETag"
       ],
       "keywords": "Waybar, GitHub, Linux ricing, Hyprland, Python script"
@@ -94,6 +95,7 @@
         <li><strong>Interactive Buttons:</strong> Left-click to open your GitHub profile, Right-click to open notifications directly from Waybar.</li>
         <li><strong>Manual Refresh (New!):</strong> Middle-click the module to instantly fetch the latest updates using Linux signals (<code>SIGUSR1</code>).</li>
         <li><strong>Smart Resource Management:</strong> Dynamic polling intervals (10s when active, 60s when idle) or a complete Sleep Mode (<code>-t 0</code>) to save battery and bandwidth.</li>
+        <li><strong>Custom Icons (New!):</strong> Choose from 10 different Nerd Font icons (Octocat, Git branch, etc.) using the <code>-icon</code> argument.</li>
         <li><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits.</li>
     </ul>
 
@@ -146,13 +148,14 @@ GITHUB_PAT=your_personal_access_token_here</code></pre>
     <ul>
         <li><code>my_repos_only</code>: Only triggers alerts for repositories you own (ignores activity from other repos you watch/star).</li>
         <li><code>-t 0</code>: <strong>Manual Mode</strong>. The script will not poll GitHub automatically. It will sleep completely until you middle-click the Waybar module.</li>
+        <li><code>-icon &lt;1-10&gt;</code>: <strong>(New!)</strong> Choose the icon displayed in Waybar. Choose a number from 1 to 10 (e.g., <code>-icon 2</code> for the Octocat).</li>
     </ul>
     <div class="code-wrapper">
 <pre><code># Examples:
-github_radar.py                    # Tracks everything, dynamic polling
-github_radar.py my_repos_only      # Tracks only your repos, dynamic polling
+github_radar.py                    # Tracks everything, dynamic polling, default icon
+github_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon
 github_radar.py -t 0               # Tracks everything, manual refresh ONLY
-github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY</code></pre>
+github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refresh ONLY, Git logo</code></pre>
     </div>
 
     <hr class="section-divider">
@@ -160,12 +163,17 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
     <h2>🖥️ Waybar Configuration</h2>
 
     <h3>1. Module Configuration (<code>config.jsonc</code>)</h3>
+    
+    <blockquote style="border-left: 4px solid #2ea043; padding: 10px; background-color: rgba(46, 160, 67, 0.1); margin-bottom: 15px;">
+        <strong>💡 Pro Tip:</strong> Add <code>"reload_style_on_change": true,</code> at the very top of your Waybar config file. This allows Waybar to instantly apply changes when you edit the config or style files without needing a manual restart!
+    </blockquote>
+
     <p>Add this module to your Waybar config file (under <code>modules-left</code>, <code>modules-center</code>, or <code>modules-right</code>):</p>
     <div class="code-wrapper">
 <pre><code>"custom/github-radar": {
     "format": "{}",
     "return-type": "json",
-    "exec": "~/.config/waybar/scripts/github_radar.py my_repos_only", // Add '-t 0' here if you want manual mode
+    "exec": "~/.config/waybar/scripts/github_radar.py my_repos_only -t 0 -icon 2", // Customize args here!
     "on-click": "xdg-open https://github.com/ahmed-x86",
     "on-click-right": "xdg-open https://github.com/notifications",
     "on-click-middle": "pkill -USR1 -f github_radar.py", // Sends the refresh signal
@@ -241,10 +249,9 @@ github_radar.py my_repos_only -t 0 # Tracks only your repos, manual refresh ONLY
     </details>
 
     <div class="note">
-        <strong>Restart Waybar:</strong> Apply the changes by restarting Waybar using <code>killall waybar && waybar & disown</code>.
+        <strong>Restart Waybar:</strong> Apply the changes by restarting Waybar using <code>killall waybar && waybar & disown</code> (Only needed if you haven't enabled <code>reload_style_on_change</code>).
     </div>
-
-
+    
 
     <div class="action-container">
     <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn-link">
