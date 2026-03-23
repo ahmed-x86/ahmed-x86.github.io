@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed x86 | GitHub Rolling Contributions 🟪</title>
+    <meta name="description" content="A custom purple GitHub rolling contributions widget for Waybar. Fetches the last 7 days of commits via GraphQL API. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, Waybar, GitHub Heatmap, GitHub Contributions, Waybar Module, Linux Customization, Arch Linux, Hyprland, Sway, GraphQL, Shell Script">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
+    <meta property="og:title" content="Ahmed x86 | GitHub Rolling Contributions 🟪">
+    <meta property="og:description" content="A terminal/bar integration script that fetches your GitHub contribution activity for the last 7 rolling days using GraphQL API and renders a custom purple heatmap.">
+    <meta property="og:image" content="https://ahmed-x86.github.io/screenshot_gh_heatmap.png"> 
+    <meta property="og:url" content="https://ahmed-x86.github.io/waybar-github-rolling-contributions.html">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
+<header>
+    <h1>Ahmed x86 - GitHub Rolling Contributions 🟪</h1>
+    <p>A dynamic, 7-day rolling GitHub heatmap with a custom purple theme for your status bar.</p>
+</header>
+
+<nav>
+    <a href="index.html">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank">GitHub Repo</a>
+</nav>
+
+<section id="project-details">
+
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
+        <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL API">
+        <img src="https://img.shields.io/badge/Waybar-292D3E?style=for-the-badge&logo=linux&logoColor=white" alt="Waybar">
+        <img src="https://img.shields.io/badge/Custom_Theme-c463ff?style=for-the-badge" alt="Purple Theme">
+    </div>
+
+    <h2>About</h2>
+    <p>
+        A terminal or bar integration script that fetches your <b>GitHub contribution activity for the last 7 rolling days</b> using the GitHub GraphQL API and renders a custom purple colored heatmap (■) with detailed tooltips. Designed for seamless integration with status bars like <b>Waybar</b>, <b>Polybar</b>, or any custom desktop widget.
+    </p>
+    
+    <div class="note">
+        <strong>💡 Note:</strong> This is a modified fork of <a href="https://github.com/ad1822/weekly-github-waybar-module" target="_blank">ad1822's module</a>. It has been rewritten to display a <b>rolling 7-day window</b> (avoiding empty trackers at the start of the week) and features a custom <b>purple color scheme</b>.
+    </div>
+
+    <img src="screenshot_gh_heatmap.png" class="effect-image" alt="GitHub Heatmap Waybar Preview">
+
+    <hr class="section-divider">
+
+    <h2>✨ Key Features</h2>
+    <ul>
+        <li><strong>Real-Time Data:</strong> Pulls contribution data directly from GitHub's GraphQL API.</li>
+        <li><strong>Rolling 7-Day Window:</strong> Always shows the past 7 days accurately, never resetting awkwardly at the start of a week.</li>
+        <li><strong>Custom Purple Theme:</strong> Uses a beautiful color-coded square (■) gradient system.</li>
+        <li><strong>Detailed Tooltips:</strong> Hover to see a date-wise contribution breakdown and total contributions over the tracked period.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2>🟪 Color Levels (Purple Theme)</h2>
+    <p>The heatmap utilizes the following color logic based on daily commit count:</p>
+    
+    <div class="lang-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Contributions</th>
+                    <th>Color Hex</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#161b22; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#161b22</code></td><td>No contributions</td></tr>
+                <tr><td>1–3</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#3d2258; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#3d2258</code></td><td>Low activity</td></tr>
+                <tr><td>4–6</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#6a3896; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#6a3896</code></td><td>Moderate activity</td></tr>
+                <tr><td>7–9</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#974ddb; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#974ddb</code></td><td>High activity</td></tr>
+                <tr><td>10+</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#c463ff; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#c463ff</code></td><td>Very high activity</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>🛠️ Setup & Installation</h2>
+    
+    <h3>1. Clone the Repository</h3>
+    <div class="code-wrapper">
+<pre><code>git clone https://github.com/ahmed-x86/waybar-github-rolling-contributions.git
+cd waybar-github-rolling-contributions</code></pre>
+    </div>
+
+    <h3>2. GitHub Authentication</h3>
+    <p>To make this module work, you need your GitHub username and a <b>Fine-Grained Personal Access Token (PAT)</b>.</p>
+    <ul>
+        <li>Scope needed: <code>Repository access → All repositories</code></li>
+        <li>Minimum required permissions for reading contribution data.</li>
+    </ul>
+    <p>➡ <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">Generate your token here</a>.</p>
+
+    <h3>3. Create <code>.env</code> File</h3>
+    <p>Inside the cloned project directory, create a <code>.env</code> file with the following content:</p>
+    <div class="code-wrapper">
+<pre><code>GITHUB_USERNAME=your_github_username
+GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>🖥️ Waybar Configuration</h2>
+    <p>Add the following block to your Waybar <code>config.jsonc</code>. <i>(Make sure to update the path to where you placed the script and change the github URL to your own)</i>:</p>
+    <div class="code-wrapper">
+<pre><code>"custom/gh_heatmap": {
+  "exec": "sleep 1 & ~/.config/waybar/scripts/weekly_commits",
+  "return-type": "json",
+  "interval": 2400,
+  "tooltip": true,
+  "on-click": "xdg-open https://github.com/ahmed-x86",
+  "on-click-right": "~/.config/waybar/scripts/weekly_commits"
+}</code></pre>
+    </div>
+    
+    <div class="warning">
+        <strong>⚠️ Execution Permission:</strong> Ensure the script is executable by running:<br><br>
+        <code>chmod +x ~/.config/waybar/scripts/weekly_commits</code>
+    </div>
+
+    <h2>🎨 Styling (CSS)</h2>
+    <p>Add the following styling to your Waybar <code>style.css</code>. It fits perfectly with dark/Catppuccin backgrounds:</p>
+
+    <div class="code-wrapper">
+<pre><code>#custom-gh_heatmap {
+  color: #c463ff;
+  background: rgba(30, 30, 46, 0.89); 
+  border-radius: 6px;
+  margin-right: 2px;
+  padding: 0px 8px;
+}</code></pre>
+    </div>
+
+    <div class="action-container">
+    <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank" class="btn-link">
+    ⭐ Star on GitHub
+    </a>
+</div>
+
+</section>
+
+<footer>
+    <p>© 2026 Ahmed x86 • Developed for the Linux Community ❄️</p>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
