@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmed x86 | GRUB Fixer 🛠️ (V12)</title>
-    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Now featuring Smart Target Disk Extraction and FSTAB Parsing. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Legacy BIOS, Bash Script, System Rescue, Btrfs, Subvolumes, fstab">
+    <title>Ahmed x86 | GRUB Fixer 🛠️ (V13)</title>
+    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring OS Prober for dual-boot detection, Smart Target Disk Extraction, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, Subvolumes, fstab">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V12 Ultimate Automation & Legacy BIOS Edition)">
-    <meta property="og:description" content="Rescue your Linux system securely. V12 bridges the gap between modern and older hardware by introducing intelligent Legacy BIOS support alongside the Zero-Interaction Pro Mode.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V13 Ultimate Automation, Legacy BIOS & OS Prober)">
+    <meta property="og:description" content="Rescue your Linux system securely. V13 brings intelligent dual-boot detection (OS Prober) alongside Universal Boot support and Zero-Interaction Pro Mode.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -24,7 +24,7 @@
 <body>
 <header>
     <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p>Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite for Linux beginners and sysadmins.</p>
+    <p>Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with intelligent Dual-Boot detection.</p>
 </header>
 
 <nav>
@@ -35,38 +35,43 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V12-blueviolet?style=for-the-badge" alt="Version V12">
+        <img src="https://img.shields.io/badge/Version-V13-blueviolet?style=for-the-badge" alt="Version V13">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+        <img src="https://img.shields.io/badge/Dual_Boot-Ready-success?style=for-the-badge" alt="Dual Boot Ready">
         <img src="https://img.shields.io/badge/UEFI_%26_BIOS-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI & BIOS Support">
-        <img src="https://img.shields.io/badge/Btrfs-Ready-success?style=for-the-badge" alt="Btrfs Ready">
     </div>
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer (V12 - Ultimate Automation & Legacy BIOS Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> Linux systems. This version bridges the gap between modern and older hardware by introducing intelligent Legacy BIOS support alongside the powerful <b>Zero-Interaction "Pro Mode"</b> that parses <code>/etc/fstab</code> to map and mount complex layouts (like Btrfs subvolumes) in seconds.
+        <b>GRUB Fixer (V13 - Ultimate Automation, Legacy BIOS & OS Prober Edition)</b> is the definitive automated Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> Linux systems. This version introduces intelligent dual-boot detection via OS Prober, alongside the powerful <b>Zero-Interaction "Pro Mode"</b> that parses <code>/etc/fstab</code> to map and mount complex layouts (like Btrfs subvolumes) in seconds.
     </p>
 
     <div class="note">
-        <strong>🚀 New in V12:</strong> The script is no longer restricted to UEFI! It now automatically detects if your system lacks an EFI partition and dynamically switches to Legacy mode with <b>Smart Target Disk Extraction</b>.
+        <strong>🚀 New in V13:</strong> The script now integrates <b>OS Prober</b> support! It automatically detects Windows and other Linux distributions in dual-boot setups, ensuring they reappear in your GRUB menu after the repair.
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ New in V12 (The Universal Boot Update)</h2>
+    <h2>✨ New in V13 (The Dual-Boot Update)</h2>
     <ul>
-        <li><strong>Legacy BIOS (<code>i386-pc</code>) Support:</strong> Automatically detects if your system uses older BIOS architecture and dynamically switches the GRUB installation target, expanding compatibility to thousands of older machines.</li>
-        <li><strong>Smart Target Disk Extraction:</strong> In Legacy BIOS mode, GRUB must be installed on the drive itself (e.g., <code>/dev/sda</code>), not the partition. V12 uses advanced block device querying (<code>lsblk -no PKNAME</code>) to intelligently extract the parent disk from your root partition, ensuring flawless installation.</li>
+        <li><strong>OS Prober Integration:</strong> Automatically modifies <code>/etc/default/grub</code> to enable <code>GRUB_DISABLE_OS_PROBER=false</code>. This ensures that <code>grub-mkconfig</code> detects and adds Windows or other installed OSs to the boot menu automatically.</li>
+    </ul>
+
+    <h2>⚙️ Key Features in V12 (Universal Boot)</h2>
+    <ul>
+        <li><strong>Legacy BIOS (<code>i386-pc</code>) Support:</strong> Automatically detects if your system lacks an EFI partition and dynamically switches the GRUB installation target, expanding compatibility to older machines.</li>
+        <li><strong>Smart Target Disk Extraction:</strong> Uses <code>lsblk -no PKNAME</code> to intelligently extract the parent disk (e.g., <code>/dev/sda</code>) from your root partition, ensuring flawless installation on Legacy systems.</li>
     </ul>
 
     <h2>🛡️ Core Features (From V11 & V10)</h2>
     <ul>
         <li><strong>Zero-Interaction FSTAB Parsing (Tier 1):</strong> Automatically scans devices to locate and parse your system's <code>/etc/fstab</code>. It resolves <code>UUID</code> and <code>PARTUUID</code> tags instantly, mapping out your exact system layout without manual input.</li>
-        <li><strong>3-Tier Fallback System:</strong> If <code>fstab</code> is missing or rejected, the script gracefully falls back to Smart Auto-Detection (Tier 2), and finally to fully Manual Input (Tier 3), guaranteeing a crash-free experience.</li>
-        <li><strong>Dynamic EFI Mount Logic:</strong> Solves the common "missing kernel" trap by automatically verifying and applying the correct EFI mount path (<code>/boot</code> vs <code>/boot/efi</code>).</li>
-        <li><strong>Bulletproof Btrfs Loop:</strong> An interactive loop ensures required subvolumes (e.g., <code>@</code>, <code>@home</code>, <code>@log</code>) are mounted in the correct hierarchy with strict input validation.</li>
-        <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag to guarantee booting on Virtual Machines (QEMU/KVM) and stubborn UEFI firmware.</li>
-        <li><strong>Blackbox Logging System:</strong> Automatically captures and logs all stdout/stderr directly to <code>/var/log/grub-fixer.log</code> for a complete forensic troubleshooting trail.</li>
+        <li><strong>3-Tier Fallback System:</strong> If <code>fstab</code> is missing or rejected, the script gracefully falls back to Smart Auto-Detection (Tier 2), and finally to fully Manual Input (Tier 3).</li>
+        <li><strong>Dynamic EFI Mount Logic:</strong> Verifies and applies the correct EFI mount path (<code>/boot</code> vs <code>/boot/efi</code>), critical for <b>Archinstall</b> and <b>CachyOS</b>.</li>
+        <li><strong>Bulletproof Btrfs Loop:</strong> An interactive loop ensures required subvolumes (e.g., <code>@</code>, <code>@home</code>, <code>@log</code>) are mounted in the correct hierarchy.</li>
+        <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag to guarantee booting on Virtual Machines and stubborn UEFI firmware.</li>
+        <li><strong>Blackbox Logging System:</strong> Captures and logs all stdout/stderr directly to <code>/var/log/grub-fixer.log</code>.</li>
     </ul>
 
     <hr class="section-divider">
@@ -101,7 +106,8 @@
                 <tr><td>V9</td><td>Dynamic Btrfs subvolumes support with smart routing.</td></tr>
                 <tr><td>V10</td><td>Dynamic EFI Mount Logic, Forced Validation Loop, and Improved Auto-Detection.</td></tr>
                 <tr><td>V11</td><td>Zero-Interaction Mode (fstab parser), 3-Tier Fallback System.</td></tr>
-                <tr><td><b>V12</b></td><td><b>Current:</b> Added Legacy BIOS (i386-pc) support, auto-detection, and Target Disk extraction.</td></tr>
+                <tr><td>V12</td><td>Added Legacy BIOS (i386-pc) support, auto-detection, and Target Disk extraction.</td></tr>
+                <tr><td><b>V13</b></td><td><b>Current:</b> Added OS Prober support to automatically detect dual-boot systems (e.g., Windows).</td></tr>
             </tbody>
         </table>
     </div>
@@ -116,7 +122,7 @@
     </ul>
     
     <div class="warning">
-        <strong>⚠️ Planned for V13:</strong> Future updates will integrate <b>OS Prober</b> support to automatically detect and list other operating systems (like Windows) in dual-boot setups after the repair.
+        <strong>⚠️ Planned for V14:</strong> Researching automated <b>LUKS Encryption</b> support for repairing encrypted partitions.
     </div>
 
     <div class="action-container">
