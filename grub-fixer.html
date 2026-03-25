@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmed x86 | GRUB Fixer 🛠️ (V7)</title>
-    <meta name="description" content="An automated Bash script to repair the GRUB bootloader on UEFI Linux systems. Now a full Rescue Suite with Custom Volume support. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Bash Script, Custom Volumes, Rescue Suite">
+    <title>Ahmed x86 | GRUB Fixer 🛠️ (V8)</title>
+    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on UEFI Linux systems. Now featuring Smart EFI Validation, Logging, and Custom Volumes. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Bash Script, System Rescue, Shell Logging">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V7 Rescue Suite)">
-    <meta property="og:description" content="Rescue your Linux system with a single command. V7 introduces dynamic support for mounting custom partitions like /home and /var.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V8 Smart & Secure Edition)">
+    <meta property="og:description" content="Rescue your Linux system securely. V8 introduces Smart EFI Validation, Blackbox Logging, and Fail-Fast Root Checks.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -24,7 +24,7 @@
 <body>
 <header>
     <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p>Automated UEFI bootloader rescue suite for Linux beginners and time-saving power users.</p>
+    <p>Automated, secure UEFI bootloader rescue suite for Linux beginners and sysadmins.</p>
 </header>
 
 <nav>
@@ -35,45 +35,46 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V7-blueviolet?style=for-the-badge" alt="Version V7">
+        <img src="https://img.shields.io/badge/Version-V8-blueviolet?style=for-the-badge" alt="Version V8">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/UEFI-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI Support">
+        <img src="https://img.shields.io/badge/Secure-Logged-success?style=for-the-badge" alt="Secure & Logged">
     </div>
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer (V7 - Rescue Suite Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on UEFI Linux systems. This version evolves the project into a comprehensive recovery tool by allowing dynamic mounting of custom system partitions.
+        <b>GRUB Fixer (V8 - Smart & Secure Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on UEFI Linux systems. This version evolves the tool into a highly secure, intelligent Rescue Suite, featuring active logging, strict validations, and smart partition verification.
     </p>
 
     <div class="note">
-        <strong>🚀 New in V7:</strong> The script now supports <b>Custom Volumes</b>. You can dynamically mount additional partitions (like <code>/home</code>, <code>/var</code>, or <code>/opt</code>) to ensure a perfect chroot environment for any recovery task.
+        <strong>🚀 New in V8:</strong> The script now features <b>Smart EFI Validation</b> (verifying the <code>/EFI</code> directory before mounting), a <b>Blackbox Logging System</b> for troubleshooting, and <b>Fail-Fast Root Checks</b>.
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ New in V7 (The Rescue Update)</h2>
+    <h2>✨ New in V8 (The Smart & Secure Update)</h2>
     <ul>
-        <li><strong>Dynamic Custom Volumes:</strong> Added a loop-based UI to mount any number of additional partitions after core detection.</li>
-        <li><strong>Automated Chroot Prep:</strong> Automatically creates mount points inside <code>/mnt</code> and binds essential kernel filesystems (<code>/dev</code>, <code>/proc</code>, etc.).</li>
-        <li><strong>Rescue Versatility:</strong> High flexibility makes it useful for general system maintenance beyond just GRUB repair.</li>
+        <li><strong>Smart EFI Validation:</strong> Actively verifies the <code>/EFI</code> directory by temporarily mounting candidates, preventing accidental installs on random USB drives.</li>
+        <li><strong>Blackbox Logging System:</strong> Automatically captures and logs all stdout/stderr directly to <code>/var/log/grub-fixer.log</code>.</li>
+        <li><strong>Fail-Fast Root Check:</strong> Instantly halts execution cleanly if the script is not initiated with <code>sudo</code>, preventing messy, partial executions.</li>
     </ul>
 
-    <h2>💎 Core Intelligence (V5-V6 Features)</h2>
+    <h2>💎 Rescue & Core Features (V5-V7)</h2>
     <ul>
-        <li><strong>Smart Auto-Detection:</strong> Scans for Root (ext4/btrfs/xfs) and EFI (vfat) partitions using <code>lsblk</code> and <code>awk</code>.</li>
+        <li><strong>Dynamic Custom Volumes:</strong> Mount additional partitions (e.g., <code>/home</code>, <code>/var</code>) dynamically during the repair process for a perfect chroot environment.</li>
+        <li><strong>Smart Auto-Detection:</strong> Scans for Root (ext4/btrfs/xfs) candidates without mounting using <code>lsblk</code> and <code>awk</code>.</li>
         <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag for Virtual Machines and stubborn UEFI firmwares.</li>
         <li><strong>Pipeline Ready:</strong> Fully supports <code>curl | bash</code> execution via <code>/dev/tty</code> input handling.</li>
-        <li><strong>Bulletproof Safety:</strong> Immediate halt on errors (<code>set -e</code>) and recursive unmounting (<code>umount -R</code>) to keep your disks safe.</li>
     </ul>
 
     <hr class="section-divider">
 
     <h2>🛠️ Quick Start (Recommended)</h2>
-    <p>Run the script directly from your terminal in any Live Linux environment:</p>
+    <p>Run the script directly from your terminal in any Live Linux environment. <em>(Note: sudo is required)</em>:</p>
     
     <div class="code-wrapper">
-<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | bash</code></pre>
+<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash</code></pre>
     </div>
 
     <hr class="section-divider">
@@ -94,7 +95,8 @@
                 <tr><td>V4</td><td>Failsafe mode, OS detection, and EOF automation.</td></tr>
                 <tr><td>V5</td><td>VM/NVRAM Rescue and TTY Pipeline support.</td></tr>
                 <tr><td>V6</td><td>Smart Auto-Detection & UX Proposal Flow.</td></tr>
-                <tr><td><b>V7</b></td><td><b>Current:</b> Dynamic Custom Volumes Support (The Rescue Update).</td></tr>
+                <tr><td>V7</td><td>Dynamic Custom Volumes Support (The Rescue Update).</td></tr>
+                <tr><td><b>V8</b></td><td><b>Current:</b> Smart EFI Validation, Logging & Root Checks (Smart & Secure Update).</td></tr>
             </tbody>
         </table>
     </div>
@@ -109,7 +111,7 @@
     </ul>
     
     <div class="warning">
-        <strong>⚠️ Roadmap:</strong> Future versions will focus on <b>BIOS (Legacy)</b>, <b>LUKS (Encryption)</b>, and <b>LVM</b> support.
+        <strong>⚠️ Roadmap:</strong> Future versions will focus on <b>BIOS (Legacy)</b>, <b>LUKS (Encryption)</b>, and <b>fstab Parsing</b>.
     </div>
 
     <div class="action-container">
