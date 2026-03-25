@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmed x86 | GRUB Fixer 🛠️</title>
-    <meta name="description" content="An automated Bash script to repair the GRUB bootloader on UEFI Linux systems via a live chroot environment. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, EndeavourOS, Chroot, Bootloader Repair, UEFI, Bash Script">
+    <title>Ahmed x86 | GRUB Fixer 🛠️ (V7)</title>
+    <meta name="description" content="An automated Bash script to repair the GRUB bootloader on UEFI Linux systems. Now a full Rescue Suite with Custom Volume support. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Bash Script, Custom Volumes, Rescue Suite">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️">
-    <meta property="og:description" content="Rescue your Linux system with a single command. This script automates the tedious process of mounting and reinstalling GRUB in a UEFI environment.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V7 Rescue Suite)">
+    <meta property="og:description" content="Rescue your Linux system with a single command. V7 introduces dynamic support for mounting custom partitions like /home and /var.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -24,7 +24,7 @@
 <body>
 <header>
     <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p>Automated UEFI bootloader rescue script for Linux beginners and time-saving power users.</p>
+    <p>Automated UEFI bootloader rescue suite for Linux beginners and time-saving power users.</p>
 </header>
 
 <nav>
@@ -35,7 +35,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V5-blue?style=for-the-badge" alt="Version V5">
+        <img src="https://img.shields.io/badge/Version-V7-blueviolet?style=for-the-badge" alt="Version V7">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/UEFI-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI Support">
@@ -43,44 +43,42 @@
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer</b> is an automated, failsafe Bash script designed to repair the GRUB bootloader on UEFI Linux systems via a live chroot environment. It automates the tedious process of mounting, binding system directories, and reinstalling GRUB.
+        <b>GRUB Fixer (V7 - Rescue Suite Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on UEFI Linux systems. This version evolves the project into a comprehensive recovery tool by allowing dynamic mounting of custom system partitions.
     </p>
 
-    <p>
-        <strong>🎯 Target Audience:</strong> This project is designed for <b>Linux beginners</b> who may not know how to manually fix GRUB, as well as <b>advanced users</b> looking for a quick, automated solution to save valuable time.
-    </p>
-    
     <div class="note">
-        <strong>💡 Pro Tip:</strong> This script is perfect for users who accidentally broke their GRUB while dual-booting or performing system updates on <b>any Linux distribution</b> (Debian, Ubuntu, Arch, Fedora, openSUSE, and more).
+        <strong>🚀 New in V7:</strong> The script now supports <b>Custom Volumes</b>. You can dynamically mount additional partitions (like <code>/home</code>, <code>/var</code>, or <code>/opt</code>) to ensure a perfect chroot environment for any recovery task.
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ New in V5 (Bulletproof Edition) & Core Features</h2>
+    <h2>✨ New in V7 (The Rescue Update)</h2>
     <ul>
-        <li><strong>VM & NVRAM Rescue (New):</strong> Added the <code>--removable</code> flag to <code>grub-install</code> to guarantee successful booting on Virtual Machines and stubborn UEFI firmware that drop NVRAM entries.</li>
-        <li><strong>Input Collision Prevention (New):</strong> <code>read</code> commands now strictly fetch input from <code>/dev/tty</code>, eliminating terminal buffer conflicts and pipeline issues.</li>
-        <li><strong>Safety First:</strong> Implemented <code>set -e</code> to stop execution immediately if any command fails, preventing system damage.</li>
-        <li><strong>Automatic Cleanup & Exit:</strong> Detects and unmounts any existing processes on <code>/mnt</code> before starting, and automatically unmounts all filesystems recursively after a successful repair.</li>
-        <li><strong>Improved Validation:</strong> Forces Root partition input and strictly verifies partition existence in <code>/dev/</code> before proceeding.</li>
-        <li><strong>Smart OS Detection:</strong> Automatically detects the distribution name from <code>/etc/os-release</code> to set the correct Bootloader ID.</li>
-        <li><strong>Zero-Intervention Chroot:</strong> Executes all repair commands (<code>grub-install</code> and <code>grub-mkconfig</code>) automatically inside the chroot environment using EOF blocks.</li>
+        <li><strong>Dynamic Custom Volumes:</strong> Added a loop-based UI to mount any number of additional partitions after core detection.</li>
+        <li><strong>Automated Chroot Prep:</strong> Automatically creates mount points inside <code>/mnt</code> and binds essential kernel filesystems (<code>/dev</code>, <code>/proc</code>, etc.).</li>
+        <li><strong>Rescue Versatility:</strong> High flexibility makes it useful for general system maintenance beyond just GRUB repair.</li>
+    </ul>
+
+    <h2>💎 Core Intelligence (V5-V6 Features)</h2>
+    <ul>
+        <li><strong>Smart Auto-Detection:</strong> Scans for Root (ext4/btrfs/xfs) and EFI (vfat) partitions using <code>lsblk</code> and <code>awk</code>.</li>
+        <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag for Virtual Machines and stubborn UEFI firmwares.</li>
+        <li><strong>Pipeline Ready:</strong> Fully supports <code>curl | bash</code> execution via <code>/dev/tty</code> input handling.</li>
+        <li><strong>Bulletproof Safety:</strong> Immediate halt on errors (<code>set -e</code>) and recursive unmounting (<code>umount -R</code>) to keep your disks safe.</li>
     </ul>
 
     <hr class="section-divider">
 
-    <h2>🛠️ Quick Start (Live Environment)</h2>
-    <p>Run the following commands directly from your terminal in any Live Linux environment (Arch, EndeavourOS, Ubuntu, Fedora, etc.):</p>
+    <h2>🛠️ Quick Start (Recommended)</h2>
+    <p>Run the script directly from your terminal in any Live Linux environment:</p>
     
     <div class="code-wrapper">
-<pre><code>curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/refs/heads/main/grub-fixer.sh
-chmod +x grub-fixer.sh
-sudo ./grub-fixer.sh</code></pre>
+<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | bash</code></pre>
     </div>
 
     <hr class="section-divider">
 
-<h2>📜 Version History</h2>
+   <h2>📜 Version History</h2>
     <div class="lang-table-container">
         <table>
             <thead>
@@ -91,11 +89,12 @@ sudo ./grub-fixer.sh</code></pre>
             </thead>
             <tbody>
                 <tr><td>V1</td><td>Initial manual chroot logic.</td></tr>
-                <tr><td>V2</td><td>Input validation and device existence checks.</td></tr>
+                <tr><td>V2</td><td>Input validation and device checks.</td></tr>
                 <tr><td>V3</td><td>Automatic <code>/mnt</code> cleanup (umount -R).</td></tr>
-                <tr><td>V4</td><td>Failsafe mode, OS detection, and automated chroot EOF.</td></tr>
-                <tr><td>V5</td><td>Bulletproof Edition (VM/NVRAM Rescue, TTY Input Collision Prevention).</td></tr>
-                <tr><td><b>V6</b></td><td><b>Current:</b> The Smart Update (Auto-Detection & UX Proposal Flow).</td></tr>
+                <tr><td>V4</td><td>Failsafe mode, OS detection, and EOF automation.</td></tr>
+                <tr><td>V5</td><td>VM/NVRAM Rescue and TTY Pipeline support.</td></tr>
+                <tr><td>V6</td><td>Smart Auto-Detection & UX Proposal Flow.</td></tr>
+                <tr><td><b>V7</b></td><td><b>Current:</b> Dynamic Custom Volumes Support (The Rescue Update).</td></tr>
             </tbody>
         </table>
     </div>
@@ -104,14 +103,13 @@ sudo ./grub-fixer.sh</code></pre>
 
     <h2>📋 System Requirements</h2>
     <ul>
-        <li><strong>Environment:</strong> Booted into a Live Linux ISO/USB.</li>
-        <li><strong>Architecture:</strong> Target system must be UEFI (<code>x86_64-efi</code>).</li>
+        <li><strong>Environment:</strong> Live Linux ISO/USB (Arch, Ubuntu, Fedora, etc.).</li>
+        <li><strong>Architecture:</strong> UEFI (<code>x86_64-efi</code>).</li>
         <li><strong>Privileges:</strong> Sudo/Root access required.</li>
-        <li><strong>Network:</strong> Active internet connection to fetch the script.</li>
     </ul>
     
     <div class="warning">
-        <strong>⚠️ Future Updates:</strong> Currently supports UEFI (x86_64-efi) only. Support for BIOS (Legacy), LUKS (Encryption), and LVM is planned for future releases.
+        <strong>⚠️ Roadmap:</strong> Future versions will focus on <b>BIOS (Legacy)</b>, <b>LUKS (Encryption)</b>, and <b>LVM</b> support.
     </div>
 
     <div class="action-container">
