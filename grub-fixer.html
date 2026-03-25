@@ -24,7 +24,7 @@
 <body>
 <header>
     <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p>Automated UEFI bootloader rescue script for Linux power users.</p>
+    <p>Automated UEFI bootloader rescue script for Linux beginners and time-saving power users.</p>
 </header>
 
 <nav>
@@ -35,7 +35,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V4-blue?style=for-the-badge" alt="Version V4">
+        <img src="https://img.shields.io/badge/Version-V5-blue?style=for-the-badge" alt="Version V5">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/UEFI-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI Support">
@@ -43,7 +43,11 @@
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer</b> is a universal rescue tool designed to fix the "Minimal BASH-like line editing" error and other GRUB-related boot failures. It automates the complex process of identifying partitions, performing recursive bind mounts, and executing a <b>chroot-based repair</b> that works across almost all modern Linux distributions.
+        <b>GRUB Fixer</b> is an automated, failsafe Bash script designed to repair the GRUB bootloader on UEFI Linux systems via a live chroot environment. It automates the tedious process of mounting, binding system directories, and reinstalling GRUB.
+    </p>
+
+    <p>
+        <strong>🎯 Target Audience:</strong> This project is designed for <b>Linux beginners</b> who may not know how to manually fix GRUB, as well as <b>advanced users</b> looking for a quick, automated solution to save valuable time.
     </p>
     
     <div class="note">
@@ -52,27 +56,31 @@
 
     <hr class="section-divider">
 
-    <h2>✨ Key Features (V4)</h2>
+    <h2>✨ New in V5 (Bulletproof Edition) & Core Features</h2>
     <ul>
-        <li><strong>Fail-Safe Execution:</strong> Uses <code>set -e</code> to immediately stop if a mount or command fails, preventing data corruption.</li>
-        <li><strong>Automatic Cleanup:</strong> Scans <code>/proc/mounts</code> and cleans up <code>/mnt</code> before starting to avoid mount conflicts.</li>
-        <li><strong>Smart OS Detection:</strong> Automatically pulls the distribution name from your system to set the correct <code>bootloader-id</code>.</li>
-        <li><strong>Recursive Unmounting:</strong> Ensures all system directories are safely unlinked after the repair is complete.</li>
-        <li><strong>Interactive Validation:</strong> Checks if the user-provided partitions actually exist before attempting to mount them.</li>
+        <li><strong>VM & NVRAM Rescue (New):</strong> Added the <code>--removable</code> flag to <code>grub-install</code> to guarantee successful booting on Virtual Machines and stubborn UEFI firmware that drop NVRAM entries.</li>
+        <li><strong>Input Collision Prevention (New):</strong> <code>read</code> commands now strictly fetch input from <code>/dev/tty</code>, eliminating terminal buffer conflicts and pipeline issues.</li>
+        <li><strong>Safety First:</strong> Implemented <code>set -e</code> to stop execution immediately if any command fails, preventing system damage.</li>
+        <li><strong>Automatic Cleanup & Exit:</strong> Detects and unmounts any existing processes on <code>/mnt</code> before starting, and automatically unmounts all filesystems recursively after a successful repair.</li>
+        <li><strong>Improved Validation:</strong> Forces Root partition input and strictly verifies partition existence in <code>/dev/</code> before proceeding.</li>
+        <li><strong>Smart OS Detection:</strong> Automatically detects the distribution name from <code>/etc/os-release</code> to set the correct Bootloader ID.</li>
+        <li><strong>Zero-Intervention Chroot:</strong> Executes all repair commands (<code>grub-install</code> and <code>grub-mkconfig</code>) automatically inside the chroot environment using EOF blocks.</li>
     </ul>
 
     <hr class="section-divider">
 
     <h2>🛠️ Quick Start (Live Environment)</h2>
-    <p>Boot into your Live Linux ISO, open the terminal, and run the following command:</p>
+    <p>Run the following commands directly from your terminal in any Live Linux environment (Arch, EndeavourOS, Ubuntu, Fedora, etc.):</p>
     
     <div class="code-wrapper">
-<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/refs/heads/main/grub-fixer.sh | bash</code></pre>
+<pre><code>curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/refs/heads/main/grub-fixer.sh
+chmod +x grub-fixer.sh
+sudo ./grub-fixer.sh</code></pre>
     </div>
 
     <hr class="section-divider">
 
-    <h2>📜 Version History</h2>
+   <h2>📜 Version History</h2>
     <div class="lang-table-container">
         <table>
             <thead>
@@ -85,7 +93,8 @@
                 <tr><td>V1</td><td>Initial manual chroot logic.</td></tr>
                 <tr><td>V2</td><td>Input validation and device existence checks.</td></tr>
                 <tr><td>V3</td><td>Automatic <code>/mnt</code> cleanup (umount -R).</td></tr>
-                <tr><td><b>V4</b></td><td><b>Current:</b> Failsafe mode, OS detection, and automated chroot EOF.</td></tr>
+                <tr><td>V4</td><td>Failsafe mode, OS detection, and automated chroot EOF.</td></tr>
+                <tr><td><b>V5</b></td><td><b>Current:</b> Bulletproof Edition (VM/NVRAM Rescue, TTY Input Collision Prevention).</td></tr>
             </tbody>
         </table>
     </div>
@@ -94,14 +103,14 @@
 
     <h2>📋 System Requirements</h2>
     <ul>
-        <li><strong>Boot Mode:</strong> UEFI (x86_64-efi).</li>
-        <li><strong>Live ISO:</strong> Any Arch-based or Debian-based Live environment.</li>
-        <li><strong>Privileges:</strong> Sudo access (included in script).</li>
-        <li><strong>Connection:</strong> Internet access to download the script.</li>
+        <li><strong>Environment:</strong> Booted into a Live Linux ISO/USB.</li>
+        <li><strong>Architecture:</strong> Target system must be UEFI (<code>x86_64-efi</code>).</li>
+        <li><strong>Privileges:</strong> Sudo/Root access required.</li>
+        <li><strong>Network:</strong> Active internet connection to fetch the script.</li>
     </ul>
     
     <div class="warning">
-        <strong>⚠️ Future Updates:</strong> Support for BIOS (Legacy), LUKS Encryption, and LVM partitions is currently in development for V5.
+        <strong>⚠️ Future Updates:</strong> Currently supports UEFI (x86_64-efi) only. Support for BIOS (Legacy), LUKS (Encryption), and LVM is planned for future releases.
     </div>
 
     <div class="action-container">
