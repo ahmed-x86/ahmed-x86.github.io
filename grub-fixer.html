@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmed x86 | GRUB Fixer 🛠️ (V10)</title>
-    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on UEFI Linux systems. Now featuring Dynamic EFI Mount Logic, Forced Validation Loop, and Improved Auto-Detection. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Bash Script, System Rescue, Btrfs, Subvolumes">
+    <title>Ahmed x86 | GRUB Fixer 🛠️ (V11)</title>
+    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on UEFI Linux systems. Now featuring Zero-Interaction FSTAB Parsing, a 3-Tier Fallback System, and 5-Second Rescue. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Bash Script, System Rescue, Btrfs, Subvolumes, fstab">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V10 Ultimate Btrfs & Mount Routing Edition)">
-    <meta property="og:description" content="Rescue your Linux system securely. V10 introduces a Zero-Error interactive flow for complex Btrfs layouts and solves archinstall kernel traps.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V11 Ultimate Automation & FSTAB Edition)">
+    <meta property="og:description" content="Rescue your Linux system securely. V11 introduces a Zero-Interaction Pro Mode that parses /etc/fstab to map and mount complex layouts in seconds.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -35,7 +35,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V10-blueviolet?style=for-the-badge" alt="Version V10">
+        <img src="https://img.shields.io/badge/Version-V11-blueviolet?style=for-the-badge" alt="Version V11">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/UEFI-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI Support">
@@ -44,32 +44,30 @@
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer (V10 - Ultimate Btrfs & Mount Routing Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on UEFI Linux systems. This version is a major stability update that addresses specific installation quirks (like <code>archinstall</code>) and introduces a "Zero-Error" interactive flow for complex Btrfs layouts.
+        <b>GRUB Fixer (V11 - Ultimate Automation & FSTAB Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on UEFI Linux systems. This version is a massive leap forward, introducing a <b>Zero-Interaction "Pro Mode"</b> that parses <code>/etc/fstab</code> to map and mount complex layouts (like Btrfs subvolumes) in seconds, turning a 30-minute manual recovery into a 5-second automated task.
     </p>
 
     <div class="note">
-        <strong>🚀 New in V10:</strong> The script now features <b>Dynamic EFI Mount Logic</b> (solving the missing kernel trap) and a <b>Forced Validation Loop</b> for bulletproof Btrfs subvolume mounting.
+        <strong>🚀 New in V11:</strong> The script now features <b>Zero-Interaction FSTAB Parsing (Tier 1)</b> and a robust <b>3-Tier Fallback System</b> guaranteeing a crash-free experience.
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ New in V10 (The Bulletproof Update)</h2>
+    <h2>✨ New in V11 (The Automation Update)</h2>
     <ul>
-        <li><strong>Dynamic EFI Mount Logic:</strong> Solves the common "missing kernel" trap by allowing users to choose the EFI mount path (<code>/boot</code> vs <code>/boot/efi</code>). This ensures <code>grub-mkconfig</code> always finds your <code>vmlinuz</code> images, especially on <b>Archinstall</b> setups.</li>
-        <li><strong>Forced Validation Loop:</strong> The Btrfs subvolume mounting process is now bulletproof. It forces a strict <code>y/n</code> check, preventing the script from skipping crucial partitions due to accidental keyboard input or typos.</li>
-        <li><strong>Improved Auto-Detection:</strong> Enhanced pre-scan logic to verify EFI partitions by looking for the actual <code>/EFI</code> directory structure before proposing it to the user.</li>
+        <li><strong>Zero-Interaction FSTAB Parsing (Tier 1):</strong> Automatically scans devices to locate and parse your system's <code>/etc/fstab</code>. It resolves <code>UUID</code> and <code>PARTUUID</code> tags instantly, mapping out your exact system layout (Root, Boot, EFI, and Btrfs subvolumes) without manual input.</li>
+        <li><strong>3-Tier Fallback System:</strong> If <code>fstab</code> is missing, encrypted, or rejected, the script gracefully falls back to V10's Smart Auto-Detection (Tier 2), and finally to fully Manual Input (Tier 3), guaranteeing a crash-free experience.</li>
+        <li><strong>5-Second Rescue:</strong> Bypasses tedious manual typing. With a single <code>y</code> confirmation, the script dynamically mounts all partitions and subvolumes, chroots, and fixes GRUB in under 5 seconds.</li>
     </ul>
 
-    <h2>🛡️ Features from V8 & V9</h2>
+    <h2>🛡️ Features from V9 & V10</h2>
     <ul>
-        <li><strong>Dynamic Btrfs Subvolumes Support:</strong> Interactive loop to mount required subvolumes (e.g., <code>@</code>, <code>@home</code>, <code>@log</code>, <code>@pkg</code>) in the correct hierarchy before chrooting.</li>
+        <li><strong>Dynamic EFI Mount Logic:</strong> Solves the common "missing kernel" trap by automatically verifying and applying the correct EFI mount path (<code>/boot</code> vs <code>/boot/efi</code>), which is especially critical for <b>Archinstall</b> and <b>CachyOS</b> setups.</li>
+        <li><strong>Bulletproof Btrfs Loop:</strong> In manual/fallback mode, an interactive loop ensures required subvolumes (e.g., <code>@</code>, <code>@home</code>, <code>@log</code>) are mounted in the correct hierarchy with strict input validation.</li>
         <li><strong>Smart Mount Routing:</strong> Automatically translates standard mount points to their chroot equivalents (e.g., inputting <code>/</code> correctly targets <code>/mnt</code>).</li>
-        <li><strong>Smart EFI Validation:</strong> Actively verifies the <code>/EFI</code> directory by temporarily mounting candidates, preventing accidental installs on random USB drives.</li>
+        <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag to guarantee booting on Virtual Machines (QEMU/KVM) and stubborn UEFI firmware that drop NVRAM variables.</li>
         <li><strong>Blackbox Logging System:</strong> Automatically captures and logs all stdout/stderr directly to <code>/var/log/grub-fixer.log</code> for a complete forensic troubleshooting trail.</li>
         <li><strong>Fail-Fast Root Check:</strong> Instantly halts execution cleanly if the script is not initiated with <code>sudo</code>.</li>
-        <li><strong>Dynamic Custom Volumes:</strong> Mount additional partitions (e.g., external <code>/home</code>) dynamically during the repair process.</li>
-        <li><strong>Intelligent Auto-Detection:</strong> Scans for Root candidates without mounting using <code>lsblk</code> and <code>awk</code>.</li>
-        <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag to guarantee booting on Virtual Machines (QEMU/KVM) and stubborn UEFI firmware that drop NVRAM variables.</li>
     </ul>
 
     <hr class="section-divider">
@@ -102,7 +100,8 @@
                 <tr><td>V7</td><td>Dynamic Custom Volumes Support (The Rescue Update).</td></tr>
                 <tr><td>V8</td><td>Smart EFI Validation, Logging & Root Checks (Smart & Secure Update).</td></tr>
                 <tr><td>V9</td><td>Dynamic Btrfs subvolumes support with smart routing.</td></tr>
-                <tr><td><b>V10</b></td><td><b>Current:</b> Dynamic EFI Mount Logic, Forced Validation Loop, and Improved Auto-Detection.</td></tr>
+                <tr><td>V10</td><td>Dynamic EFI Mount Logic, Forced Validation Loop, and Improved Auto-Detection.</td></tr>
+                <tr><td><b>V11</b></td><td><b>Current:</b> Zero-Interaction Mode (fstab parser), 3-Tier Fallback System.</td></tr>
             </tbody>
         </table>
     </div>
@@ -111,13 +110,13 @@
 
     <h2>📋 System Requirements</h2>
     <ul>
-        <li><strong>Environment:</strong> Live Linux ISO/USB (Arch, CachyOS, Fedora, etc.).</li>
+        <li><strong>Environment:</strong> Live Linux ISO/USB (Arch, CachyOS, Fedora, Ubuntu, etc.).</li>
         <li><strong>Architecture:</strong> Target system must be UEFI (<code>x86_64-efi</code>).</li>
         <li><strong>Privileges:</strong> Sudo/Root access required.</li>
     </ul>
     
     <div class="warning">
-        <strong>⚠️ Planned for V11:</strong> Future versions will focus on <b>Zero-Interaction Mode</b> (automatic fstab parsing), <b>Kernel-Seeker</b>, and <b>BIOS (Legacy) Support</b>.
+        <strong>⚠️ Planned for V12:</strong> Future versions will focus on <b>BIOS (Legacy) Support</b>.
     </div>
 
     <div class="action-container">
