@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmed x86 | GRUB Fixer 🛠️ (V8)</title>
-    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on UEFI Linux systems. Now featuring Smart EFI Validation, Logging, and Custom Volumes. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Bash Script, System Rescue, Shell Logging">
+    <title>Ahmed x86 | GRUB Fixer 🛠️ (V9)</title>
+    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on UEFI Linux systems. Now featuring dynamic Btrfs subvolumes support, Smart EFI Validation, and Logging. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Bash Script, System Rescue, Btrfs, Subvolumes">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V8 Smart & Secure Edition)">
-    <meta property="og:description" content="Rescue your Linux system securely. V8 introduces Smart EFI Validation, Blackbox Logging, and Fail-Fast Root Checks.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V9 Btrfs & Smart Detection)">
+    <meta property="og:description" content="Rescue your Linux system securely. V9 introduces dynamic Btrfs subvolumes support for Arch and Fedora users, alongside blackbox logging.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -35,37 +35,38 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V8-blueviolet?style=for-the-badge" alt="Version V8">
+        <img src="https://img.shields.io/badge/Version-V9-blueviolet?style=for-the-badge" alt="Version V9">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/UEFI-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI Support">
-        <img src="https://img.shields.io/badge/Secure-Logged-success?style=for-the-badge" alt="Secure & Logged">
+        <img src="https://img.shields.io/badge/Btrfs-Ready-success?style=for-the-badge" alt="Btrfs Ready">
     </div>
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer (V8 - Smart & Secure Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on UEFI Linux systems. This version evolves the tool into a highly secure, intelligent Rescue Suite, featuring active logging, strict validations, and smart partition verification.
+        <b>GRUB Fixer (V9 - Btrfs & Smart Detection Edition)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on UEFI Linux systems. This version evolves the tool into a highly secure, intelligent Rescue Suite, now fully supporting complex filesystems like Btrfs out-of-the-box.
     </p>
 
     <div class="note">
-        <strong>🚀 New in V8:</strong> The script now features <b>Smart EFI Validation</b> (verifying the <code>/EFI</code> directory before mounting), a <b>Blackbox Logging System</b> for troubleshooting, and <b>Fail-Fast Root Checks</b>.
+        <strong>🚀 New in V9:</strong> The script now features <b>Dynamic Btrfs Support</b> (automatically detecting btrfs partitions and prompting for subvolumes) and <b>Smart Mount Routing</b> to prevent manual entry errors.
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ New in V8 (The Smart & Secure Update)</h2>
+    <h2>✨ New in V9 (The Btrfs Update)</h2>
+    <ul>
+        <li><strong>Dynamic Btrfs Support:</strong> Automatically detects if the target Root partition is <code>btrfs</code> and launches an interactive loop to mount required subvolumes (e.g., <code>@</code>, <code>@home</code>).</li>
+        <li><strong>Smart Mount Routing:</strong> Prevents user error by automatically translating standard mount points to their chroot equivalents (e.g., inputting <code>/</code> automatically mounts to <code>/mnt</code>).</li>
+    </ul>
+
+    <h2>💎 Smart & Core Features (V5-V8)</h2>
     <ul>
         <li><strong>Smart EFI Validation:</strong> Actively verifies the <code>/EFI</code> directory by temporarily mounting candidates, preventing accidental installs on random USB drives.</li>
         <li><strong>Blackbox Logging System:</strong> Automatically captures and logs all stdout/stderr directly to <code>/var/log/grub-fixer.log</code>.</li>
-        <li><strong>Fail-Fast Root Check:</strong> Instantly halts execution cleanly if the script is not initiated with <code>sudo</code>, preventing messy, partial executions.</li>
-    </ul>
-
-    <h2>💎 Rescue & Core Features (V5-V7)</h2>
-    <ul>
-        <li><strong>Dynamic Custom Volumes:</strong> Mount additional partitions (e.g., <code>/home</code>, <code>/var</code>) dynamically during the repair process for a perfect chroot environment.</li>
-        <li><strong>Smart Auto-Detection:</strong> Scans for Root (ext4/btrfs/xfs) candidates without mounting using <code>lsblk</code> and <code>awk</code>.</li>
+        <li><strong>Fail-Fast Root Check:</strong> Instantly halts execution cleanly if the script is not initiated with <code>sudo</code>.</li>
+        <li><strong>Dynamic Custom Volumes:</strong> Mount additional partitions (e.g., external <code>/home</code>) dynamically during the repair process.</li>
+        <li><strong>Intelligent Auto-Detection:</strong> Scans for Root candidates without mounting using <code>lsblk</code> and <code>awk</code>.</li>
         <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag for Virtual Machines and stubborn UEFI firmwares.</li>
-        <li><strong>Pipeline Ready:</strong> Fully supports <code>curl | bash</code> execution via <code>/dev/tty</code> input handling.</li>
     </ul>
 
     <hr class="section-divider">
@@ -96,7 +97,8 @@
                 <tr><td>V5</td><td>VM/NVRAM Rescue and TTY Pipeline support.</td></tr>
                 <tr><td>V6</td><td>Smart Auto-Detection & UX Proposal Flow.</td></tr>
                 <tr><td>V7</td><td>Dynamic Custom Volumes Support (The Rescue Update).</td></tr>
-                <tr><td><b>V8</b></td><td><b>Current:</b> Smart EFI Validation, Logging & Root Checks (Smart & Secure Update).</td></tr>
+                <tr><td>V8</td><td>Smart EFI Validation, Logging & Root Checks (Smart & Secure Update).</td></tr>
+                <tr><td><b>V9</b></td><td><b>Current:</b> Dynamic Btrfs subvolumes support with smart routing.</td></tr>
             </tbody>
         </table>
     </div>
