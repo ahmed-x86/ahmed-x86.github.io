@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed x86 | GRUB Fixer 🛠️</title>
+    <meta name="description" content="An automated Bash script to repair the GRUB bootloader on UEFI Linux systems via a live chroot environment. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, EndeavourOS, Chroot, Bootloader Repair, UEFI, Bash Script">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️">
+    <meta property="og:description" content="Rescue your Linux system with a single command. This script automates the tedious process of mounting and reinstalling GRUB in a UEFI environment.">
+    <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
+    <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
+    <p>Automated UEFI bootloader rescue script for Linux power users.</p>
+</header>
+
+<nav>
+    <a href="index.html">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank">GitHub Repo</a>
+</nav>
+
+<section id="project-details">
+
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Version-V4-blue?style=for-the-badge" alt="Version V4">
+        <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
+        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+        <img src="https://img.shields.io/badge/UEFI-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI Support">
+    </div>
+
+    <h2>About the Project</h2>
+    <p>
+        <b>GRUB Fixer</b> is a universal rescue tool designed to fix the "Minimal BASH-like line editing" error and other GRUB-related boot failures. It automates the complex process of identifying partitions, performing recursive bind mounts, and executing a <b>chroot-based repair</b> that works across almost all modern Linux distributions.
+    </p>
+    
+    <div class="note">
+        <strong>💡 Pro Tip:</strong> This script is perfect for users who accidentally broke their GRUB while dual-booting or performing system updates on <b>any Linux distribution</b> (Debian, Ubuntu, Arch, Fedora, openSUSE, and more).
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>✨ Key Features (V4)</h2>
+    <ul>
+        <li><strong>Fail-Safe Execution:</strong> Uses <code>set -e</code> to immediately stop if a mount or command fails, preventing data corruption.</li>
+        <li><strong>Automatic Cleanup:</strong> Scans <code>/proc/mounts</code> and cleans up <code>/mnt</code> before starting to avoid mount conflicts.</li>
+        <li><strong>Smart OS Detection:</strong> Automatically pulls the distribution name from your system to set the correct <code>bootloader-id</code>.</li>
+        <li><strong>Recursive Unmounting:</strong> Ensures all system directories are safely unlinked after the repair is complete.</li>
+        <li><strong>Interactive Validation:</strong> Checks if the user-provided partitions actually exist before attempting to mount them.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2>🛠️ Quick Start (Live Environment)</h2>
+    <p>Boot into your Live Linux ISO, open the terminal, and run the following command:</p>
+    
+    <div class="code-wrapper">
+<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/refs/heads/main/grub-fixer.sh | bash</code></pre>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>📜 Version History</h2>
+    <div class="lang-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Major Changes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>V1</td><td>Initial manual chroot logic.</td></tr>
+                <tr><td>V2</td><td>Input validation and device existence checks.</td></tr>
+                <tr><td>V3</td><td>Automatic <code>/mnt</code> cleanup (umount -R).</td></tr>
+                <tr><td><b>V4</b></td><td><b>Current:</b> Failsafe mode, OS detection, and automated chroot EOF.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>📋 System Requirements</h2>
+    <ul>
+        <li><strong>Boot Mode:</strong> UEFI (x86_64-efi).</li>
+        <li><strong>Live ISO:</strong> Any Arch-based or Debian-based Live environment.</li>
+        <li><strong>Privileges:</strong> Sudo access (included in script).</li>
+        <li><strong>Connection:</strong> Internet access to download the script.</li>
+    </ul>
+    
+    <div class="warning">
+        <strong>⚠️ Future Updates:</strong> Support for BIOS (Legacy), LUKS Encryption, and LVM partitions is currently in development for V5.
+    </div>
+
+    <div class="action-container">
+        <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" class="btn-link">
+            ⭐ Star on GitHub
+        </a>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Ahmed x86 • Part of the Linux System Recovery Suite ❄️</p>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
