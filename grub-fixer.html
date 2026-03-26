@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmed x86 | GRUB Fixer 🛠️ (V13)</title>
-    <meta name="description" content="An automated, secure Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring OS Prober for dual-boot detection, Smart Target Disk Extraction, and FSTAB Parsing. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, Subvolumes, fstab">
+    <title>Ahmed x86 | GRUB Fixer 🛠️ (V14)</title>
+    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring a Dynamic Execution Timer, OS Prober, Smart Target Disk Extraction, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, Subvolumes, fstab, Speedrun">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V13 Ultimate Automation, Legacy BIOS & OS Prober)">
-    <meta property="og:description" content="Rescue your Linux system securely. V13 brings intelligent dual-boot detection (OS Prober) alongside Universal Boot support and Zero-Interaction Pro Mode.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V14 Ultimate Automation, Legacy BIOS, OS Prober & Execution Timer)">
+    <meta property="og:description" content="Rescue your Linux system securely. V14 brings a dynamic execution timer with gamer-style responses, intelligent dual-boot detection (OS Prober), alongside Universal Boot support and Zero-Interaction Pro Mode.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -24,7 +24,7 @@
 <body>
 <header>
     <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p>Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with intelligent Dual-Boot detection.</p>
+    <p>Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with intelligent Dual-Boot detection and execution speed tracking.</p>
 </header>
 
 <nav>
@@ -35,7 +35,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V13-blueviolet?style=for-the-badge" alt="Version V13">
+        <img src="https://img.shields.io/badge/Version-V14-blueviolet?style=for-the-badge" alt="Version V14">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/Dual_Boot-Ready-success?style=for-the-badge" alt="Dual Boot Ready">
@@ -44,43 +44,61 @@
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer (V13 - Ultimate Automation, Legacy BIOS & OS Prober Edition)</b> is the definitive automated Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> Linux systems. This version introduces intelligent dual-boot detection via OS Prober, alongside the powerful <b>Zero-Interaction "Pro Mode"</b> that parses <code>/etc/fstab</code> to map and mount complex layouts (like Btrfs subvolumes) in seconds.
+        <b>GRUB Fixer (V14 - Ultimate Automation, Legacy BIOS, OS Prober & Execution Timer)</b> is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> Linux systems. <b>V14</b> is the definitive release, bringing a dynamic execution timer with gamer-style human responses, intelligent dual-boot detection (OS Prober) alongside Universal Boot support and the powerful <b>Zero-Interaction "Pro Mode"</b> that parses <code>/etc/fstab</code> to map and mount complex layouts (like Btrfs subvolumes) in seconds.
     </p>
 
     <div class="note">
-        <strong>🚀 New in V13:</strong> The script now integrates <b>OS Prober</b> support! It automatically detects Windows and other Linux distributions in dual-boot setups, ensuring they reappear in your GRUB menu after the repair.
+        <strong>🚀 New in V14:</strong> The script now features a <b>Dynamic Execution Timer</b>! It calculates the total execution time and delivers gamer-style, human-like status messages based on how fast the repair was completed.
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ New in V13 (The Dual-Boot Update)</h2>
+    <h2>✨ New in V14 (The Speedrun Update)</h2>
     <ul>
-        <li><strong>OS Prober Integration:</strong> Automatically modifies <code>/etc/default/grub</code> to enable <code>GRUB_DISABLE_OS_PROBER=false</code>. This ensures that <code>grub-mkconfig</code> detects and adds Windows or other installed OSs to the boot menu automatically.</li>
+        <li><strong>Dynamic Execution Timer:</strong> The script now calculates the total execution time and delivers gamer-style, human-like status messages based on how fast the repair was completed (e.g., <em>"Wait, did I just fix that?! You didn't even get to sip your coffee! ☕😂🏃‍♂️"</em>).</li>
     </ul>
 
-    <h2>⚙️ Key Features in V12 (Universal Boot)</h2>
+    <h2>⚙️ Key Additions in V13 & V12</h2>
     <ul>
-        <li><strong>Legacy BIOS (<code>i386-pc</code>) Support:</strong> Automatically detects if your system lacks an EFI partition and dynamically switches the GRUB installation target, expanding compatibility to older machines.</li>
-        <li><strong>Smart Target Disk Extraction:</strong> Uses <code>lsblk -no PKNAME</code> to intelligently extract the parent disk (e.g., <code>/dev/sda</code>) from your root partition, ensuring flawless installation on Legacy systems.</li>
+        <li><strong>OS Prober Integration (V13):</strong> Solves the issue where Windows or other Linux distros disappear from the GRUB menu after a repair. V13 automatically modifies <code>/etc/default/grub</code> to enable <code>GRUB_DISABLE_OS_PROBER=false</code>, ensuring all installed operating systems are detected and listed correctly.</li>
+        <li><strong>Legacy BIOS (<code>i386-pc</code>) Support (V12):</strong> The script automatically detects if your system lacks an EFI partition and dynamically switches to Legacy mode.</li>
+        <li><strong>Smart Target Disk Extraction (V12):</strong> In Legacy BIOS mode, uses <code>lsblk -no PKNAME</code> to intelligently extract the parent disk from your root partition (e.g., <code>/dev/sda</code>), ensuring flawless GRUB installation on older machines.</li>
     </ul>
 
-    <h2>🛡️ Core Features (From V11 & V10)</h2>
+    <h2>🧠 Core Features (From V11 & V10)</h2>
     <ul>
-        <li><strong>Zero-Interaction FSTAB Parsing (Tier 1):</strong> Automatically scans devices to locate and parse your system's <code>/etc/fstab</code>. It resolves <code>UUID</code> and <code>PARTUUID</code> tags instantly, mapping out your exact system layout without manual input.</li>
-        <li><strong>3-Tier Fallback System:</strong> If <code>fstab</code> is missing or rejected, the script gracefully falls back to Smart Auto-Detection (Tier 2), and finally to fully Manual Input (Tier 3).</li>
-        <li><strong>Dynamic EFI Mount Logic:</strong> Verifies and applies the correct EFI mount path (<code>/boot</code> vs <code>/boot/efi</code>), critical for <b>Archinstall</b> and <b>CachyOS</b>.</li>
-        <li><strong>Bulletproof Btrfs Loop:</strong> An interactive loop ensures required subvolumes (e.g., <code>@</code>, <code>@home</code>, <code>@log</code>) are mounted in the correct hierarchy.</li>
-        <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag to guarantee booting on Virtual Machines and stubborn UEFI firmware.</li>
-        <li><strong>Blackbox Logging System:</strong> Captures and logs all stdout/stderr directly to <code>/var/log/grub-fixer.log</code>.</li>
+        <li><strong>Zero-Interaction FSTAB Parsing (Tier 1):</strong> Automatically scans devices to locate and parse your system's <code>/etc/fstab</code>. It resolves <code>UUID</code> and <code>PARTUUID</code> tags instantly, mapping out your exact system layout (Root, Boot, EFI, and Btrfs subvolumes) without manual input.</li>
+        <li><strong>3-Tier Fallback System:</strong> If <code>fstab</code> is missing, encrypted, or rejected, the script gracefully falls back to Smart Auto-Detection (Tier 2), and finally to fully Manual Input (Tier 3), guaranteeing a crash-free experience.</li>
+        <li><strong>Bulletproof Btrfs Loop:</strong> In manual/fallback mode, an interactive loop ensures required subvolumes (e.g., <code>@</code>, <code>@home</code>, <code>@log</code>) are mounted in the correct hierarchy with strict input validation.</li>
+        <li><strong>Dynamic EFI Mount Logic:</strong> Solves the common "missing kernel" trap by automatically verifying and applying the correct EFI mount path (<code>/boot</code> vs <code>/boot/efi</code>), which is critical for <b>Archinstall</b> and <b>CachyOS</b> setups.</li>
+        <li><strong>VM & NVRAM Rescue:</strong> Uses the <code>--removable</code> flag to guarantee booting on Virtual Machines (QEMU/KVM) and stubborn UEFI firmware that drop NVRAM variables.</li>
+    </ul>
+
+    <h2>💎 Advanced Rescue Tech</h2>
+    <ul>
+        <li><strong>Blackbox Logging System:</strong> Automatically captures and logs all standard output and errors directly to <code>/var/log/grub-fixer.log</code> for a complete forensic troubleshooting trail.</li>
+        <li><strong>Pipeline Ready:</strong> Fully compatible with <code>curl | bash</code> pipelines thanks to TTY redirection for all user inputs.</li>
+        <li><strong>OS Detection:</strong> Automatically sources <code>/etc/os-release</code> from the target system to set the correct Bootloader ID.</li>
+        <li><strong>Safety & Cleanup:</strong> Forced <code>set -e</code> for immediate halt on errors and automatic <code>umount -R</code> cleanup to prevent mount conflicts.</li>
     </ul>
 
     <hr class="section-divider">
 
-    <h2>🛠️ Quick Start (Recommended)</h2>
-    <p>Run the script directly from your terminal in any Live Linux environment. <em>(Note: sudo is required)</em>:</p>
-    
+    <h2>🛠️ Usage</h2>
+    <p>You can choose between the quick one-liner or the manual download method depending on your environment.</p>
+
+    <h3>Option 1: Quick One-Liner (Recommended)</h3>
+    <p>Run the script directly from your terminal in any Live Linux environment without downloading. <em>(Note: sudo is required)</em>:</p>
     <div class="code-wrapper">
 <pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash</code></pre>
+    </div>
+
+    <h3>Option 2: Manual Download & Execute</h3>
+    <p>If you prefer to have the file locally or want to audit the code before running:</p>
+    <div class="code-wrapper">
+<pre><code>curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh
+chmod +x grub-fixer.sh
+sudo ./grub-fixer.sh</code></pre>
     </div>
 
     <hr class="section-divider">
@@ -107,7 +125,8 @@
                 <tr><td>V10</td><td>Dynamic EFI Mount Logic, Forced Validation Loop, and Improved Auto-Detection.</td></tr>
                 <tr><td>V11</td><td>Zero-Interaction Mode (fstab parser), 3-Tier Fallback System.</td></tr>
                 <tr><td>V12</td><td>Added Legacy BIOS (i386-pc) support, auto-detection, and Target Disk extraction.</td></tr>
-                <tr><td><b>V13</b></td><td><b>Current:</b> Added OS Prober support to automatically detect dual-boot systems (e.g., Windows).</td></tr>
+                <tr><td>V13</td><td>Added OS Prober support to automatically detect dual-boot systems (e.g., Windows).</td></tr>
+                <tr><td><b>V14</b></td><td><b>Current:</b> Added Dynamic Execution Timer with gamer-style human responses (The Speedrun Update).</td></tr>
             </tbody>
         </table>
     </div>
@@ -120,9 +139,12 @@
         <li><strong>Architecture:</strong> Target system must be UEFI (<code>x86_64-efi</code>) OR Legacy BIOS (<code>i386-pc</code>).</li>
         <li><strong>Privileges:</strong> Sudo/Root access required.</li>
     </ul>
+
+    <h2>⚠️ Disclaimer</h2>
+    <p>While highly automated, GRUB repair touches critical system files. Always verify the auto-detected partitions, <code>fstab</code> layout, and subvolumes before confirming the repair process, especially on dual-boot systems.</p>
     
     <div class="warning">
-        <strong>⚠️ Planned for V14:</strong> Researching automated <b>LUKS Encryption</b> support for repairing encrypted partitions.
+        <strong>⚠️ Planned for V15:</strong> Researching automated <b>LUKS Encryption</b> support for repairing encrypted partitions.
     </div>
 
     <div class="action-container">
