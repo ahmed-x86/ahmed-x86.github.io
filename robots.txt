@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://ahmed-x86.github.io/sitemap.xml
