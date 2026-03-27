@@ -34,13 +34,6 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="ar_EG">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ahmed x86 (ahmed-x86)">
-    <meta name="twitter:description" content="Arch Linux power user • Cyber Security Student. Check out my projects, custom scripts, and Arch Linux dotfiles.">
-    <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
-    <meta name="twitter:image:alt" content="Ahmed x86 Avatar">
-    <meta name="twitter:creator" content="@ahmedx86">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -88,22 +81,22 @@
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
 <header>
     <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
-        <span class="lang-link" onclick="document.getElementById('langModalOverlay').style.display='flex'" style="cursor: pointer; font-size: 1rem; color: inherit; transition: color 0.3s ease;">🌐 Language</span>
+        <span class="lang-link" data-i18n="header-lang" onclick="document.getElementById('langModalOverlay').style.display='flex'" style="cursor: pointer; font-size: 1rem; color: inherit; transition: color 0.3s ease;">🌐 Language</span>
     </div>
 
-    <a href="signin_signup.html" class="auth-link" style="position: absolute; top: 20px; right: 20px;">Signin / Signup</a>
+    <a href="signin_signup.html" class="auth-link" data-i18n="header-auth" style="position: absolute; top: 20px; right: 20px;">Signin / Signup</a>
 
     <img src="https://avatars.githubusercontent.com/ahmed-x86" alt="Ahmed x86 Profile Picture" class="profile-pic">
     
     <h1>Ahmed x86</h1>
-    <p>Linux Enthusiast • Cyber Security Student</p>
+    <p data-i18n="header-subtitle">Linux Enthusiast • Cyber Security Student</p>
 </header>
 
 <nav>
     <a href="#about" data-i18n="nav-about">About</a>
     <a href="#projects" data-i18n="nav-projects">Projects</a>
     <a href="#wallpapers-section" data-i18n="nav-wallpapers">Wallpapers</a> 
-    <a href="https://github.com/ahmed-x86" target="_blank">GitHub</a>
+    <a href="https://github.com/ahmed-x86" target="_blank" data-i18n="nav-github">GitHub</a>
 </nav>
 
 <section id="about">
@@ -120,68 +113,68 @@
 
     <div class="projects-grid">
         <div class="project">
-            <h3><a href="grub-fixer.html">GRUB Fixer 🛠️</a></h3>
-            <p>A universal, automated recovery tool to repair GRUB on UEFI systems with a single command. Part of my Linux system rescue suite.</p>
-            <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" class="btn">View Repository</a>
+            <h3><a href="grub-fixer.html" data-i18n="proj-grub-title">GRUB Fixer 🛠️</a></h3>
+            <p data-i18n="proj-grub-desc">A universal, automated recovery tool to repair GRUB on UEFI systems with a single command. Part of my Linux system rescue suite.</p>
+            <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
 
         <div class="project">
-            <h3><a href="asm_env.html">ASM Development Environment</a></h3>
-            <p>An extension-like setup to run and debug Assembly natively on VS Code and VSCodium for Linux and Windows.</p>
-            <a href="https://github.com/ahmed-x86/asm" target="_blank" class="btn">View Repository</a>
+            <h3><a href="asm_env.html" data-i18n="proj-asm-title">ASM Development Environment</a></h3>
+            <p data-i18n="proj-asm-desc">An extension-like setup to run and debug Assembly natively on VS Code and VSCodium for Linux and Windows.</p>
+            <a href="https://github.com/ahmed-x86/asm" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
 
         <div class="project">
-            <h3><a href="hyprland_dotfiles.html">Hyprland Dotfiles</a></h3>
-            <p>My personal Hyprland configuration. Focused on productivity, tiling workflow, and a clean, aesthetic Arch Linux setup.</p>
-            <a href="https://github.com/ahmed-x86/hyprland_dotfiles" target="_blank" class="btn">View Repository</a>
+            <h3><a href="hyprland_dotfiles.html" data-i18n="proj-hyprland-title">Hyprland Dotfiles</a></h3>
+            <p data-i18n="proj-hyprland-desc">My personal Hyprland configuration. Focused on productivity, tiling workflow, and a clean, aesthetic Arch Linux setup.</p>
+            <a href="https://github.com/ahmed-x86/hyprland_dotfiles" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
 
         <div class="project">
-            <h3><a href="gh_radar.html">gh-radar for Waybar</a></h3>
-            <p>A dynamic and interactive Waybar module that monitors your GitHub activity in real-time with an animated ticker, sound alerts, and avatar notifications.</p>
-            <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn">View Repository</a>
+            <h3><a href="gh_radar.html" data-i18n="proj-ghradar-title">gh-radar for Waybar</a></h3>
+            <p data-i18n="proj-ghradar-desc">A dynamic and interactive Waybar module that monitors your GitHub activity in real-time with an animated ticker, sound alerts, and avatar notifications.</p>
+            <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
 
         <div class="project">
-            <h3><a href="waybar-github-rolling-contributions.html">GitHub Heatmap for Waybar</a></h3>
-            <p>A custom purple widget fetching your 7-day rolling GitHub contributions using the GraphQL API.</p>
-            <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank" class="btn">View Repository</a>
+            <h3><a href="waybar-github-rolling-contributions.html" data-i18n="proj-ghheatmap-title">GitHub Heatmap for Waybar</a></h3>
+            <p data-i18n="proj-ghheatmap-desc">A custom purple widget fetching your 7-day rolling GitHub contributions using the GraphQL API.</p>
+            <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
 
         <div class="project">
-            <h3><a href="waybar_hijri_calendar.html">Waybar Hijri Calendar</a></h3>
-            <p>A stable Python script for an RTL-fixed, dynamic Hijri calendar in Waybar with zero dependencies.</p>
-            <a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank" class="btn">View Repository</a>
+            <h3><a href="waybar_hijri_calendar.html" data-i18n="proj-hijri-title">Waybar Hijri Calendar</a></h3>
+            <p data-i18n="proj-hijri-desc">A stable Python script for an RTL-fixed, dynamic Hijri calendar in Waybar with zero dependencies.</p>
+            <a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
 
         <div class="project">
-            <h3><a href="Mobile_Charge_Indicator_Waybar.html">Waybar Mobile Charge Indicator</a></h3>
-            <p>A lightweight bash script to show your Android mobile battery status in Waybar via KDE Connect.</p>
-            <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn">View Repository</a>
+            <h3><a href="Mobile_Charge_Indicator_Waybar.html" data-i18n="proj-charge-title">Waybar Mobile Charge Indicator</a></h3>
+            <p data-i18n="proj-charge-desc">A lightweight bash script to show your Android mobile battery status in Waybar via KDE Connect.</p>
+            <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
 
         <div class="project">
-            <h3>Automation Scripts</h3>
-            <p>A collection of bash scripts to automate daily tasks and improve the Arch Linux desktop workflow.</p>
-            <a href="https://github.com/ahmed-x86/my_scripts" target="_blank" class="btn">View Repository</a>
+            <h3><span data-i18n="proj-scripts-title">Automation Scripts</span></h3>
+            <p data-i18n="proj-scripts-desc">A collection of bash scripts to automate daily tasks and improve the Arch Linux desktop workflow.</p>
+            <a href="https://github.com/ahmed-x86/my_scripts" target="_blank" class="btn" data-i18n="btn-view-repo">View Repository</a>
         </div>
     </div>
 </section>
 
 <section id="wallpapers-section">
-    <h2>photos & videos</h2>
+    <h2 data-i18n="media-section-title">photos & videos</h2>
     <div class="projects-grid">
         <div class="project">
-            <h3><a href="wallpaper.html">Wallpapers Gallery</a></h3>
-            <p>A curated collection of 4K, minimalist, and aesthetic wallpapers perfectly suited for Linux ricing, Arch Linux, and Hyprland setups.</p>
-            <a href="wallpaper.html" class="btn">Browse Wallpapers</a>
+            <h3><a href="wallpaper.html" data-i18n="proj-wallpapers-title">Wallpapers Gallery</a></h3>
+            <p data-i18n="proj-wallpapers-desc">A curated collection of 4K, minimalist, and aesthetic wallpapers perfectly suited for Linux ricing, Arch Linux, and Hyprland setups.</p>
+            <a href="wallpaper.html" class="btn" data-i18n="btn-browse-wallpapers">Browse Wallpapers</a>
         </div>
 
         <div class="project">
-            <h3><a href="linux_gatherings.html">linux gatherings</a></h3>
-            <p>Explore gatherings, discussions, and events around Linux, open-source software, and cybersecurity.</p>
-            <a href="linux_gatherings.html" target="_blank" class="btn">View linux gatherings</a>
+            <h3><a href="linux_gatherings.html" data-i18n="proj-gatherings-title">linux gatherings</a></h3>
+            <p data-i18n="proj-gatherings-desc">Explore gatherings, discussions, and events around Linux, open-source software, and cybersecurity.</p>
+            <a href="linux_gatherings.html" target="_blank" class="btn" data-i18n="btn-view-gatherings">View linux gatherings</a>
         </div>
     </div>
 </section>
@@ -190,18 +183,18 @@
     <p data-i18n="footer-text">© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
-<button id="feedbackBtn" class="feedback-btn">Feedback</button>
+<button id="feedbackBtn" class="feedback-btn" data-i18n="btn-feedback">Feedback</button>
 
 <div id="feedbackModal" class="modal-overlay">
     <div class="modal-content">
         <span id="closeModal" class="close-btn">&times;</span>
         <form id="feedbackForm">
-            <h3 class="feedback-title">Send us your Feedback</h3>
-            <p class="feedback-subtitle">We value your opinion (kinda).</p>
-            <input type="text" placeholder="Your Name" required class="form-input">
-            <input type="email" placeholder="Your Email" required class="form-input">
-            <textarea placeholder="Describe your issue..." rows="4" required class="form-input"></textarea>
-            <button type="submit" class="submit-btn">Submit Feedback</button>
+            <h3 class="feedback-title" data-i18n="feedback-title">Send us your Feedback</h3>
+            <p class="feedback-subtitle" data-i18n="feedback-subtitle">We value your opinion (kinda).</p>
+            <input type="text" placeholder="Your Name" required class="form-input" data-i18n="feedback-name-placeholder">
+            <input type="email" placeholder="Your Email" required class="form-input" data-i18n="feedback-email-placeholder">
+            <textarea placeholder="Describe your issue..." rows="4" required class="form-input" data-i18n="feedback-desc-placeholder"></textarea>
+            <button type="submit" class="submit-btn" data-i18n="feedback-submit">Submit Feedback</button>
         </form>
         <div id="trashMessage" class="trash-message-box">
             <h2 class="trash-icon">🗑️</h2>
@@ -215,8 +208,8 @@
 <div id="langModalOverlay" class="modal-overlay" style="display: none;">
     <div class="modal-content" style="text-align: center;">
         <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
-        <h3 class="feedback-title">Select Language</h3>
-        <p class="feedback-subtitle">اختر لغة الموقع</p>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
         <br>
         <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
         <br><br>
