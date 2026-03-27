@@ -79,17 +79,6 @@
           "sameAs": [
             "https://github.com/ahmed-x86"
           ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://ahmed-x86.github.io/#website",
-          "url": "https://ahmed-x86.github.io/",
-          "name": "Ahmed x86",
-          "alternateName": ["ahmed-x86", "ahmedx86 portfolio"],
-          "publisher": {
-            "@id": "https://ahmed-x86.github.io/#person"
-          },
-          "inLanguage": "en-US"
         }
       ]
     }
@@ -98,7 +87,11 @@
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
 <header>
-    <a href="signin_signup.html" class="auth-link">Signin / Signup</a>
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <span class="lang-link" onclick="document.getElementById('langModalOverlay').style.display='flex'" style="cursor: pointer; font-size: 1rem; color: inherit; transition: color 0.3s ease;">🌐 Language</span>
+    </div>
+
+    <a href="signin_signup.html" class="auth-link" style="position: absolute; top: 20px; right: 20px;">Signin / Signup</a>
 
     <img src="https://avatars.githubusercontent.com/ahmed-x86" alt="Ahmed x86 Profile Picture" class="profile-pic">
     
@@ -107,15 +100,15 @@
 </header>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#wallpapers-section">Wallpapers</a> 
+    <a href="#about" data-i18n="nav-about">About</a>
+    <a href="#projects" data-i18n="nav-projects">Projects</a>
+    <a href="#wallpapers-section" data-i18n="nav-wallpapers">Wallpapers</a> 
     <a href="https://github.com/ahmed-x86" target="_blank">GitHub</a>
 </nav>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p>
+    <h2 data-i18n="about-title">About Me</h2>
+    <p data-i18n="about-text">
         I am Ahmed (known online as <strong>ahmed-x86</strong> or <strong>ahmedx86</strong>), currently studying Computers and Information Systems. 
         I specialize in Linux systems (Arch Linux is my daily driver) and cybersecurity.
         I enjoy low-level programming with Assembly, network analysis, and building custom rices using Hyprland and Waybar.
@@ -123,7 +116,7 @@
 </section>
 
 <section id="projects">
-    <h2>My Projects</h2>
+    <h2 data-i18n="projects-title">My Projects</h2>
 
     <div class="projects-grid">
         <div class="project">
@@ -193,12 +186,12 @@
     </div>
 </section>
 
-
 <footer>
-    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+    <p data-i18n="footer-text">© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
 <button id="feedbackBtn" class="feedback-btn">Feedback</button>
+
 <div id="feedbackModal" class="modal-overlay">
     <div class="modal-content">
         <span id="closeModal" class="close-btn">&times;</span>
@@ -219,6 +212,19 @@
     </div>
 </div>
 
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title">Select Language</h3>
+        <p class="feedback-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<script src="lang.js"></script>
 <script src="main.js"></script>
 
 </body>
