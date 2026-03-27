@@ -773,3 +773,50 @@ th {
     background-color: var(--surface0);
     color: var(--mauve);
 }
+/* تنسيق حاوية اللغة عشان تكون في الزاوية */
+.lang-container.top-corner {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* مكانها على الشمال */
+    z-index: 1000;
+}
+
+/* عشان الـ absolute يشتغل صح، لازم الـ header يكون relative */
+header {
+    position: relative;
+}
+
+/* تنسيق كلمة Language عشان تبان زي رابط عادي */
+.lang-link {
+    color: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.lang-link:hover {
+    color: #cba6f7; /* لون بنفسجي خفيف يتماشى مع الـ Theme وقت التمرير */
+}
+
+/* تعديل اتجاه القائمة المنسدلة عشان تفتح تحت الكلمة مباشرة */
+.lang-container.top-corner .lang-modal {
+    right: auto;
+    left: 0;
+}
+
+/* ------------------------------------------------ */
+/* ضبط الأماكن لما الصفحة تتحول للعربي (من اليمين لليسار) */
+html[dir="rtl"] .lang-container.top-corner {
+    left: auto;
+    right: 20px; /* تروح يمين */
+}
+
+html[dir="rtl"] .lang-container.top-corner .lang-modal {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .auth-link {
+    right: auto;
+    left: 20px; /* الـ Signin يروح شمال */
+}
