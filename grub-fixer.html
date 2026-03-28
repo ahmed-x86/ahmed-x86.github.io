@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmed x86 | GRUB Fixer 🛠️ (V16)</title>
+    <title>Ahmed x86 | GRUB Fixer</title>
     <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring In-Situ Local Repair, Universal UEFI 32/64-bit support, OS Prober, Smart Target Disk Extraction, and FSTAB Parsing. Built by Ahmed x86.">
     <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, Subvolumes, fstab, Speedrun, 32-bit UEFI, In-Situ Repair">
     <meta name="author" content="Ahmed x86">
@@ -21,10 +21,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 <header>
     <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p>Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Deep Scan Intelligence, Kernel Environment Detection, and Local In-Situ Repair.</p>
+    <p>Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Zero-Interaction CLI Flags, Deep Scan Intelligence, and Kernel Environment Detection.</p>
 </header>
 
 <nav>
@@ -35,30 +36,39 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V17-firebrick?style=for-the-badge" alt="Version V17">
+        <img src="https://img.shields.io/badge/Version-V18-firebrick?style=for-the-badge" alt="Version V18">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
-        <img src="https://img.shields.io/badge/Deep_Scan-Ready-blueviolet?style=for-the-badge" alt="Deep Scan Ready">
+        <img src="https://img.shields.io/badge/Zero_Interaction-Ready-blueviolet?style=for-the-badge" alt="Zero Interaction Ready">
         <img src="https://img.shields.io/badge/UEFI_%26_BIOS-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI & BIOS Support">
     </div>
 
     <h2>About the Project</h2>
     <p>
-        <b>GRUB Fixer (V17 - The Intelligence Update)</b> is the ultimate automated Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V17</b> introduces the <b>Deep Scan Engine</b>, which proactively maps your system layout (Root, Boot, Btrfs subvolumes) before the first prompt. By analyzing <b>Kernel Command Line Parameters</b>, it achieves 100% accuracy in environment detection (Live vs. Real Machine), offering a <b>Unified One-Click Confirmation</b> experience that eliminates complex manual steps.
+        <b>GRUB Fixer (V18 - The "Zero-Interaction" Automation Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V18</b> introduces <b>CLI Flags for fully automated, headless deployments</b>, building upon the proactive <b>Deep Scan Engine</b> and <b>Kernel Command Line Detection</b> introduced in V17 to eliminate decision fatigue during system recovery.
     </p>
 
     <div class="note">
-        <strong>🚀 New in V17:</strong> The script now features <b>Proactive Deep Scan</b>! It automatically finds and parses your <code>/etc/fstab</code> in the background, presenting a complete system map for a single "y/n" confirmation. No more manual partition guessing.
+        <strong>🚀 New in V18:</strong> The script now features <b>Headless Automation via CLI Flags</b>! Pass <code>-env l -auto</code> to bypass all confirmation prompts and let the script fix GRUB silently in seconds based on auto-detection.
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ New in V17 (The "Deep Scan" Update)</h2>
+    <h2>🚩 V18 CLI Flags Reference</h2>
+    <p>V18 introduces Command-Line Arguments to bypass prompts and enable headless automation:</p>
     <ul>
-        <li><strong>Kernel Cmdline Detection:</strong> Analyzes <code>/proc/cmdline</code> to instantly distinguish between Live ISOs (Archiso, Casper, etc.) and real installed systems.</li>
-        <li><strong>Unified One-Click Prompt:</strong> Combines environment detection and layout confirmation into a single, clean summary for the user.</li>
-        <li><strong>Deep Scan Engine:</strong> Stealthily scans and mounts partitions in read-only mode to locate <code>fstab</code> and resolve UUIDs/PARTUUIDs before user interaction.</li>
-        <li><strong>Automatic efivarfs Repair:</strong> Improved In-Situ logic that ensures <code>efivarfs</code> is mounted, even if the rescue environment fails to do so.</li>
+        <li><strong><code>-env l</code> or <code>-env live</code>:</strong> Force the script to assume a <b>Live Environment</b> (USB/ISO).</li>
+        <li><strong><code>-env h</code> or <code>-env host</code>:</strong> Force the script to assume a <b>Real Machine / Host</b> environment.</li>
+        <li><strong><code>-auto</code>:</strong> The "Ultimate Mode" flag. Bypasses all confirmation prompts <code>(y/n)</code>, automatically assumes default mount points, and executes the repair instantly.</li>
+        <li><strong><code>--version</code> or <code>-v</code>:</strong> Print the current version and exit.</li>
+    </ul>
+
+    <h2>✨ The Intelligence Update (V17 & V18)</h2>
+    <ul>
+        <li><strong>Headless Automation (V18):</strong> Pass flags directly via the pipeline to execute complex repairs without a single keystroke.</li>
+        <li><strong>Kernel Cmdline Detection (V17):</strong> Analyzes <code>/proc/cmdline</code> to instantly distinguish between Live ISOs (Archiso, Casper, etc.) and real installed systems.</li>
+        <li><strong>Deep Scan Engine (V17):</strong> Stealthily scans and mounts partitions in read-only mode to locate <code>fstab</code> and resolve UUIDs/PARTUUIDs before user interaction.</li>
+        <li><strong>Unified One-Click Prompt (V17):</strong> Combines environment detection and layout confirmation into a single, clean summary.</li>
     </ul>
 
     <h2>⚙️ Evolution History (V16 - V12)</h2>
@@ -67,7 +77,7 @@
         <li><strong>Dynamic UEFI 32-bit Detection (V15):</strong> Detects rare 32-bit UEFI architectures and automatically switches the GRUB target to <code>i386-efi</code>.</li>
         <li><strong>Dynamic Execution Timer (V14):</strong> Delivers gamer-style human status messages based on repair speed (e.g., <em>"Wait, did I just fix that?! You didn't even get to sip your coffee! ☕"</em>).</li>
         <li><strong>OS Prober Integration (V13):</strong> Automatically enables <code>GRUB_DISABLE_OS_PROBER=false</code> to ensure Windows/other distros are detected.</li>
-        <li><strong>Legacy BIOS & Smart Target Disk Extraction (V12):</strong> Full support for <code>i386-pc</code> with intelligent parent disk extraction (e.g., extracting <code>/dev/sda</code> from <code>/dev/sda1</code>).</li>
+        <li><strong>Legacy BIOS & Smart Target Disk Extraction (V12):</strong> Full support for <code>i386-pc</code> with intelligent parent disk extraction.</li>
     </ul>
 
     <h2>🧠 Core "Power User" Features</h2>
@@ -81,18 +91,25 @@
     <hr class="section-divider">
 
     <h2>🛠️ Usage</h2>
-    <p>Run the script directly via the one-liner or manual download.</p>
+    <p>Run the "Ultimate Rescue Weapon" directly from your terminal:</p>
 
-    <h3>Option 1: Quick One-Liner (Recommended)</h3>
+    <h3>Option 1: Quick One-Liner (Interactive Mode)</h3>
+    <p>The classic, smart, and unified interactive experience:</p>
     <div class="code-wrapper">
 <pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash</code></pre>
     </div>
 
-    <h3>Option 2: Manual Download & Execute</h3>
+    <h3>Option 2: Fully Automated (Zero-Interaction Mode) 💥</h3>
+    <p>Skip all questions and let the script fix GRUB silently based on auto-detection (perfect for Live USBs):</p>
+    <div class="code-wrapper">
+<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto</code></pre>
+    </div>
+
+    <h3>Option 3: Manual Download</h3>
     <div class="code-wrapper">
 <pre><code>curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh
 chmod +x grub-fixer.sh
-sudo ./grub-fixer.sh</code></pre>
+sudo ./grub-fixer.sh [FLAGS]</code></pre>
     </div>
 
     <hr class="section-divider">
@@ -125,7 +142,8 @@ sudo ./grub-fixer.sh</code></pre>
                     <tr><td>V14</td><td>Added Dynamic Execution Timer with gamer-style human responses (The Speedrun Update).</td></tr>
                     <tr><td>V15</td><td>Added Universal UEFI Support (32-bit/i386-efi) with dynamic bitness detection.</td></tr>
                     <tr><td>V16</td><td> Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
-                    <tr><td><b>V17</b></td><td><b>Current:</b> Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
+                    <tr><td>V17</td><td>Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
+                    <tr><td><b>V18</b></td><td><b>Current:</b> Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -144,7 +162,7 @@ sudo ./grub-fixer.sh</code></pre>
     <p>Always verify the <b>Deep Scan</b> summary before confirming the repair process, especially on dual-boot systems.</p>
     
     <div class="warning">
-        <strong>⚠️ Planned for V18:</strong> Researching automated <b>LUKS Encryption</b> support for seamless encrypted partition repair.
+        <strong>⚠️ Planned for V19:</strong> Researching automated <b>LUKS Encryption</b> support for seamless encrypted partition repair.
     </div>
 
     <div class="action-container">
