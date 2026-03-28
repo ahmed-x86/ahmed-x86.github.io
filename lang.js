@@ -80,7 +80,7 @@ const translations = {
         "asm-feat-2": "<strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut (<code>Ctrl+Shift+B</code>).",
         "asm-feat-3": "<strong>Global CLI Tool:</strong> Installs the custom <code>asm-run</code> command globally, allowing you to compile and test <code>.asm</code> files directly from any terminal without opening an editor.",
         "asm-feat-4": "<strong>Smart Dependency Management:</strong> Automatically detects your package manager on Linux and skips unnecessary downloads, while natively setting up NASM on Windows.",
-        "asm-feat-5": "<strong>Legacy Support:</strong> Special installer for <strong>Windows 7</strong> to ensure assembly development isn't limited by OS version.",
+        "asm-feat-5": "<strong>Legacy Support:</strong> Special installer for <strong>Windows 7</strong> to ensure assembly development isnt limited by OS version.",
         "asm-feat-6": "<strong>Cross-Compilation:</strong> Ready-to-use toolchains to compile and test Windows binaries directly from Linux using Wine and MinGW.",
         "asm-smart-engine": "🧠 Smart Engine Features",
         "asm-smart-1": "<strong>Bulletproof Execution:</strong> Features built-in network stability checks, strict input validation loops, and a <code>Ctrl+C</code> trap that automatically cleans up partial downloads.",
@@ -245,7 +245,24 @@ const translations = {
         "arch-cmds-title": "Essential Linux Commands: Advanced Guide",
         "arch-cmds-desc": "Take your terminal skills to the next level. This session provides an advanced, in-depth explanation of the most important basic Linux commands and how to master them.",
         "pagination-prev": "« Prev",
-        "pagination-next": "Next »"
+        "pagination-next": "Next »",
+
+        // === Mobile Charge Indicator Page Translations (EN) ===
+        "mob-page-title": "Ahmed x86 - Mobile Charge Indicator for Waybar 📱",
+        "mob-page-desc": "A lightweight bash script that shows your phone battery in Waybar using KDE Connect.",
+        "mob-about-title": "About",
+        "mob-about-desc": "A sleek and lightweight script that displays your mobile phone battery status directly in <b>Waybar</b> using <b>KDE Connect</b>. Perfect for Hyprland and Sway users.",
+        "mob-features-title": "Features",
+        "mob-feat-1": "Auto detection of connected phone ID",
+        "mob-feat-2": "Dynamic battery colors (Normal / Warning / Critical)",
+        "mob-feat-3": "Charging indicator icon",
+        "mob-feat-4": "Click module to ping your phone",
+        "mob-install-title": "Installation",
+        "mob-install-desc1": "Run the following commands in your terminal to install the script:",
+        "mob-install-desc2": "The script will automatically copy <b>mobile.sh</b> to:",
+        "mob-waybar-conf-title": "Waybar Configuration",
+        "mob-waybar-style-title": "Waybar Style",
+        "mob-btn-repo": "View GitHub Repository"
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -492,7 +509,24 @@ const translations = {
         "arch-cmds-title": "أوامر لينكس الأساسية: الدليل المتقدم",
         "arch-cmds-desc": "ارتقِ بمهاراتك في التيرمينال إلى المستوى التالي. تقدم هذه الجلسة شرحاً متعمقاً ومتقدماً لأهم أوامر لينكس الأساسية وكيفية احترافها.",
         "pagination-prev": "« السابق",
-        "pagination-next": "التالي »"
+        "pagination-next": "التالي »",
+
+        // === Mobile Charge Indicator Page Translations (AR) ===
+        "mob-page-title": "أحمد x86 - مؤشر شحن الهاتف لـ Waybar 📱",
+        "mob-page-desc": "سكربت Bash خفيف يعرض بطارية هاتفك في Waybar باستخدام KDE Connect.",
+        "mob-about-title": "نبذة",
+        "mob-about-desc": "سكربت أنيق وخفيف الوزن يعرض حالة بطارية هاتفك المحمول مباشرة في <b>Waybar</b> باستخدام <b>KDE Connect</b>. مثالي لمستخدمي Hyprland و Sway.",
+        "mob-features-title": "الميزات",
+        "mob-feat-1": "اكتشاف تلقائي لمعرّف الهاتف المتصل",
+        "mob-feat-2": "ألوان بطارية ديناميكية (طبيعي / تحذير / حرج)",
+        "mob-feat-3": "أيقونة مؤشر الشحن",
+        "mob-feat-4": "انقر على الإضافة لعمل Ping لهاتفك",
+        "mob-install-title": "التثبيت",
+        "mob-install-desc1": "قم بتشغيل الأوامر التالية في التيرمينال لتثبيت السكربت:",
+        "mob-install-desc2": "سيقوم السكربت تلقائياً بنسخ <b>mobile.sh</b> إلى:",
+        "mob-waybar-conf-title": "إعدادات Waybar",
+        "mob-waybar-style-title": "تنسيق Waybar",
+        "mob-btn-repo": "عرض المستودع على GitHub"
     }
 };
 
