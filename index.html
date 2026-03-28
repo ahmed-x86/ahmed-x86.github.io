@@ -82,7 +82,7 @@
     
 <header style="position: relative;">
     <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
-        <span class="lang-link" data-i18n="header-lang" onclick="document.getElementById('langModalOverlay').style.display='flex'" style="cursor: pointer; font-size: 1rem; color: inherit; transition: color 0.3s ease;">🌐 Language</span>
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
     </div>
 
     <a href="signin_signup.html" class="auth-link" data-i18n="header-auth" style="position: absolute; top: 20px; inset-inline-end: 20px;">Signin / Signup</a>
@@ -217,6 +217,24 @@
         <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
     </div>
 </div>
+
+<div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div id="sidebarMenu" class="sidebar">
+    <span class="close-sidebar" onclick="toggleSidebar()">&times;</span>
+        <ul class="sidebar-list">
+            <li onclick="toggleSidebar(); document.getElementById('langModalOverlay').style.display='flex'">
+                <span data-i18n="header-lang">Language</span>
+            </li>
+        </ul>
+</div>
+
+<script>
+    function toggleSidebar() {
+        document.getElementById('sidebarMenu').classList.toggle('open');
+        document.getElementById('sidebarOverlay').classList.toggle('show');
+    }
+</script>
 
 <script src="lang.js"></script>
 <script src="main.js"></script>
