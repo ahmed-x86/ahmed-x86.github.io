@@ -76,6 +76,8 @@ directly in <b>Waybar</b> using <b>KDE Connect</b>. Perfect for Hyprland and Swa
 
 <img src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png" class="hero-img" alt="Waybar Mobile Charge Indicator Preview by Ahmed x86">
 
+<hr class="section-divider">
+
 <h2>Features</h2>
 <ul>
 <li>Auto detection of connected phone ID</li>
@@ -84,10 +86,13 @@ directly in <b>Waybar</b> using <b>KDE Connect</b>. Perfect for Hyprland and Swa
 <li>Click module to ping your phone</li>
 </ul>
 
+<hr class="section-divider">
+
 <h2>Installation</h2>
 <p>Run the following commands in your terminal to install the script:</p>
 
 <div class="code-wrapper">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('cd mobile_charge_indicator_waybar\nchmod +x install.sh\n./install.sh')">Copy</button>
 <pre><code>cd mobile_charge_indicator_waybar
 chmod +x install.sh
 ./install.sh</code></pre>
@@ -95,11 +100,15 @@ chmod +x install.sh
 
 <p>The script will automatically copy <b>mobile.sh</b> to:</p>
 <div class="code-wrapper">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('~/.config/waybar/scripts/')">Copy</button>
 <pre><code>~/.config/waybar/scripts/</code></pre>
 </div>
 
+<hr class="section-divider">
+
 <h2>Waybar Configuration</h2>
 <div class="code-wrapper">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('&quot;custom/mobile&quot;: {\n    &quot;format&quot;: &quot;{text}&quot;,\n    &quot;exec&quot;: &quot;~/.config/waybar/scripts/mobile.sh&quot;,\n    &quot;interval&quot;: 30,\n    &quot;return-type&quot;: &quot;json&quot;,\n    &quot;on-click&quot;: &quot;~/.config/waybar/scripts/mobile.sh --ping&quot;\n}')">Copy</button>
 <pre><code>"custom/mobile": {
     "format": "{text}",
     "exec": "~/.config/waybar/scripts/mobile.sh",
@@ -109,8 +118,11 @@ chmod +x install.sh
 }</code></pre>
 </div>
 
+<hr class="section-divider">
+
 <h2>Waybar Style</h2>
 <div class="code-wrapper">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('#custom-mobile {\n    font-family: &quot;JetBrains Mono Nerd&quot;, monospace;\n    font-size: 14px;\n    padding: 0 6px;\n    margin-left: 4px;\n}\n\n#custom-mobile.critical {\n    color: #f07178;\n}\n\n#custom-mobile.warning {\n    color: #f2cd66;\n}\n\n#custom-mobile.normal {\n    color: #c3e88d;\n}')">Copy</button>
 <pre><code>#custom-mobile {
     font-family: "JetBrains Mono Nerd", monospace;
     font-size: 14px;
@@ -147,3 +159,4 @@ chmod +x install.sh
 
 </body>
 </html>
+3
