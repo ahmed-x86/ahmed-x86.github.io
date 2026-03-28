@@ -23,14 +23,19 @@
 
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
-<header>
-    <h1>Ahmed x86 - GitHub Rolling Contributions 🟪</h1>
-    <p>A dynamic, 7-day rolling GitHub heatmap with a custom purple theme for your status bar.</p>
+
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="heatmap-page-title">Ahmed x86 - GitHub Rolling Contributions 🟪</h1>
+    <p data-i18n="heatmap-page-desc">A dynamic, 7-day rolling GitHub heatmap with a custom purple theme for your status bar.</p>
 </header>
 
 <nav>
-    <a href="index.html">← Back to Home</a>
-    <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank">GitHub Repo</a>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
 </nav>
 
 <section id="project-details">
@@ -42,12 +47,12 @@
         <img src="https://img.shields.io/badge/Custom_Theme-c463ff?style=for-the-badge" alt="Purple Theme">
     </div>
 
-    <h2>About</h2>
-    <p>
+    <h2 data-i18n="heatmap-about-title">About</h2>
+    <p data-i18n="heatmap-about-desc">
         A terminal or bar integration script that fetches your <b>GitHub contribution activity for the last 7 rolling days</b> using the GitHub GraphQL API and renders a custom purple colored heatmap (■) with detailed tooltips. Designed for seamless integration with status bars like <b>Waybar</b>, <b>Polybar</b>, or any custom desktop widget.
     </p>
     
-    <div class="note">
+    <div class="note" data-i18n="heatmap-note">
         <strong>💡 Note:</strong> This is a modified fork of <a href="https://github.com/ad1822/weekly-github-waybar-module" target="_blank">ad1822's module</a>. It has been rewritten to display a <b>rolling 7-day window</b> (avoiding empty trackers at the start of the week) and features a custom <b>purple color scheme</b>.
     </div>
 
@@ -55,71 +60,71 @@
 
     <hr class="section-divider">
 
-    <h2>✨ Key Features</h2>
+    <h2 data-i18n="heatmap-features-title">✨ Key Features</h2>
     <ul>
-        <li><strong>Real-Time Data:</strong> Pulls contribution data directly from GitHub's GraphQL API.</li>
-        <li><strong>Rolling 7-Day Window:</strong> Always shows the past 7 days accurately, never resetting awkwardly at the start of a week.</li>
-        <li><strong>Custom Purple Theme:</strong> Uses a beautiful color-coded square (■) gradient system.</li>
-        <li><strong>Detailed Tooltips:</strong> Hover to see a date-wise contribution breakdown and total contributions over the tracked period.</li>
+        <li data-i18n="heatmap-feat-1"><strong>Real-Time Data:</strong> Pulls contribution data directly from GitHub's GraphQL API.</li>
+        <li data-i18n="heatmap-feat-2"><strong>Rolling 7-Day Window:</strong> Always shows the past 7 days accurately, never resetting awkwardly at the start of a week.</li>
+        <li data-i18n="heatmap-feat-3"><strong>Custom Purple Theme:</strong> Uses a beautiful color-coded square (■) gradient system.</li>
+        <li data-i18n="heatmap-feat-4"><strong>Detailed Tooltips:</strong> Hover to see a date-wise contribution breakdown and total contributions over the tracked period.</li>
     </ul>
 
     <hr class="section-divider">
 
-    <h2>🟪 Color Levels (Purple Theme)</h2>
-    <p>The heatmap utilizes the following color logic based on daily commit count:</p>
+    <h2 data-i18n="heatmap-colors-title">🟪 Color Levels (Purple Theme)</h2>
+    <p data-i18n="heatmap-colors-desc">The heatmap utilizes the following color logic based on daily commit count:</p>
     
     <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>Contributions</th>
-                    <th>Color Hex</th>
-                    <th>Meaning</th>
+                    <th data-i18n="heatmap-table-col1">Contributions</th>
+                    <th data-i18n="heatmap-table-col2">Color Hex</th>
+                    <th data-i18n="heatmap-table-col3">Meaning</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>0</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#161b22; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#161b22</code></td><td>No contributions</td></tr>
-                <tr><td>1–3</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#3d2258; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#3d2258</code></td><td>Low activity</td></tr>
-                <tr><td>4–6</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#6a3896; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#6a3896</code></td><td>Moderate activity</td></tr>
-                <tr><td>7–9</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#974ddb; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#974ddb</code></td><td>High activity</td></tr>
-                <tr><td>10+</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#c463ff; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#c463ff</code></td><td>Very high activity</td></tr>
+                <tr><td>0</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#161b22; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#161b22</code></td><td data-i18n="heatmap-meaning-0">No contributions</td></tr>
+                <tr><td>1–3</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#3d2258; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#3d2258</code></td><td data-i18n="heatmap-meaning-1">Low activity</td></tr>
+                <tr><td>4–6</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#6a3896; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#6a3896</code></td><td data-i18n="heatmap-meaning-2">Moderate activity</td></tr>
+                <tr><td>7–9</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#974ddb; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#974ddb</code></td><td data-i18n="heatmap-meaning-3">High activity</td></tr>
+                <tr><td>10+</td><td><span style="display:inline-block; width:12px; height:12px; background-color:#c463ff; border-radius:2px; vertical-align:middle; margin-right:5px;"></span> <code>#c463ff</code></td><td data-i18n="heatmap-meaning-4">Very high activity</td></tr>
             </tbody>
         </table>
     </div>
 
     <hr class="section-divider">
 
-    <h2>🛠️ Setup & Installation</h2>
+    <h2 data-i18n="heatmap-install-title">🛠️ Setup & Installation</h2>
     
-    <h3>1. Clone the Repository</h3>
+    <h3 data-i18n="heatmap-install-step1">1. Clone the Repository</h3>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/waybar-github-rolling-contributions.git\ncd waybar-github-rolling-contributions')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/waybar-github-rolling-contributions.git\ncd waybar-github-rolling-contributions')">Copy</button>
 <pre><code>git clone https://github.com/ahmed-x86/waybar-github-rolling-contributions.git
 cd waybar-github-rolling-contributions</code></pre>
     </div>
 
-    <h3>2. GitHub Authentication</h3>
-    <p>To make this module work, you need your GitHub username and a <b>Fine-Grained Personal Access Token (PAT)</b>.</p>
+    <h3 data-i18n="heatmap-install-step2">2. GitHub Authentication</h3>
+    <p data-i18n="heatmap-auth-desc1">To make this module work, you need your GitHub username and a <b>Fine-Grained Personal Access Token (PAT)</b>.</p>
     <ul>
-        <li>Scope needed: <code>Repository access → All repositories</code></li>
-        <li>Minimum required permissions for reading contribution data.</li>
+        <li data-i18n="heatmap-auth-desc2">Scope needed: <code>Repository access → All repositories</code></li>
+        <li data-i18n="heatmap-auth-desc3">Minimum required permissions for reading contribution data.</li>
     </ul>
-    <p>➡ <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">Generate your token here</a>.</p>
+    <p data-i18n="heatmap-auth-link">➡ <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">Generate your token here</a>.</p>
 
-    <h3>3. Create <code>.env</code> File</h3>
-    <p>Inside the cloned project directory, create a <code>.env</code> file with the following content:</p>
+    <h3 data-i18n="heatmap-install-step3">3. Create <code>.env</code> File</h3>
+    <p data-i18n="heatmap-env-desc">Inside the cloned project directory, create a <code>.env</code> file with the following content:</p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('GITHUB_USERNAME=your_github_username\nGITHUB_PAT=ghp_yourGeneratedTokenHere')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('GITHUB_USERNAME=your_github_username\nGITHUB_PAT=ghp_yourGeneratedTokenHere')">Copy</button>
 <pre><code>GITHUB_USERNAME=your_github_username
 GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
     </div>
 
     <hr class="section-divider">
 
-    <h2>🖥️ Waybar Configuration</h2>
-    <p>Add the following block to your Waybar <code>config.jsonc</code>. <i>(Make sure to update the path to where you placed the script and change the github URL to your own)</i>:</p>
+    <h2 data-i18n="heatmap-waybar-title">🖥️ Waybar Configuration</h2>
+    <p data-i18n="heatmap-waybar-desc">Add the following block to your Waybar <code>config.jsonc</code>. <i>(Make sure to update the path to where you placed the script and change the github URL to your own)</i>:</p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('&quot;custom/gh_heatmap&quot;: {\n  &quot;exec&quot;: &quot;sleep 1 & ~/.config/waybar/scripts/weekly_commits&quot;,\n  &quot;return-type&quot;: &quot;json&quot;,\n  &quot;interval&quot;: 2400,\n  &quot;tooltip&quot;: true,\n  &quot;on-click&quot;: &quot;xdg-open https://github.com/ahmed-x86&quot;,\n  &quot;on-click-right&quot;: &quot;~/.config/waybar/scripts/weekly_commits&quot;\n}')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('&quot;custom/gh_heatmap&quot;: {\n  &quot;exec&quot;: &quot;sleep 1 & ~/.config/waybar/scripts/weekly_commits&quot;,\n  &quot;return-type&quot;: &quot;json&quot;,\n  &quot;interval&quot;: 2400,\n  &quot;tooltip&quot;: true,\n  &quot;on-click&quot;: &quot;xdg-open https://github.com/ahmed-x86&quot;,\n  &quot;on-click-right&quot;: &quot;~/.config/waybar/scripts/weekly_commits&quot;\n}')">Copy</button>
 <pre><code>"custom/gh_heatmap": {
   "exec": "sleep 1 & ~/.config/waybar/scripts/weekly_commits",
   "return-type": "json",
@@ -130,16 +135,16 @@ GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
 }</code></pre>
     </div>
     
-    <div class="warning">
+    <div class="warning" data-i18n="heatmap-exec-warning">
         <strong>⚠️ Execution Permission:</strong> Ensure the script is executable by running:<br><br>
         <code>chmod +x ~/.config/waybar/scripts/weekly_commits</code>
     </div>
 
-    <h2>🎨 Styling (CSS)</h2>
-    <p>Add the following styling to your Waybar <code>style.css</code>. It fits perfectly with dark/Catppuccin backgrounds:</p>
+    <h2 data-i18n="heatmap-css-title">🎨 Styling (CSS)</h2>
+    <p data-i18n="heatmap-css-desc">Add the following styling to your Waybar <code>style.css</code>. It fits perfectly with dark/Catppuccin backgrounds:</p>
 
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('#custom-gh_heatmap {\n  color: #c463ff;\n  background: rgba(30, 30, 46, 0.89); \n  border-radius: 6px;\n  margin-right: 2px;\n  padding: 0px 8px;\n}')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('#custom-gh_heatmap {\n  color: #c463ff;\n  background: rgba(30, 30, 46, 0.89); \n  border-radius: 6px;\n  margin-right: 2px;\n  padding: 0px 8px;\n}')">Copy</button>
 <pre><code>#custom-gh_heatmap {
   color: #c463ff;
   background: rgba(30, 30, 46, 0.89); 
@@ -150,18 +155,64 @@ GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
     </div>
 
     <div class="action-container">
-    <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank" class="btn-link">
-    ⭐ Star on GitHub
-    </a>
-</div>
+        <a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank" class="btn-link" data-i18n="heatmap-btn-star">
+        ⭐ Star on GitHub
+        </a>
+    </div>
 
 </section>
 
-<footer>
+<footer data-i18n="heatmap-footer-text">
     <p>© 2026 Ahmed x86 • Developed for the Linux Community ❄️</p>
 </footer>
 
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
 <script src="main.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
