@@ -63,6 +63,8 @@
 <p>Welcome to my personal <b>Hyprland</b> configuration. Designed for aesthetics and performance using the Catppuccin color palette.</p>
 <p><b>The Ecosystem Experience:</b> Features a seamless, interactive automated setup to integrate your GitHub account (Rolling Contributions & Radar) and your Mobile device (via KDE Connect).</p>
 
+<hr class="section-divider">
+
 <h2>Software & Tools</h2>
 <div class="software-columns">
     <ul>
@@ -82,13 +84,15 @@
     </ul>
 </div>
 
+<hr class="section-divider">
+
 <h2>Waybar Modules</h2>
 <div class="modules-grid">
     <div>
         <h3>Left Modules</h3>
         <ul>
         <li>Power Menu (wlogout)</li>
-        <li><a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank">GitHub Activity (Rolling Contributions)</a></li>
+        <li><a href="https://github.com/ahmed-x86/waybar-github-rolling-contributions" target="_blank">GitHub Activity</a></li>
         <li><a href="https://ahmed-x86.github.io/gh_radar.html" target="_blank">GitHub Radar</a></li>
         <li>Workspace Switcher</li>
         <li>Idle Inhibitor</li>
@@ -100,7 +104,7 @@
         <h3>Center Modules</h3>
         <ul>
         <li>Color Picker</li>
-        <li><a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank">Hijri Calendar</a> (For Muslims)</li>
+        <li><a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank">Hijri Calendar</a></li>
         <li>Clock</li>
         <li><a href="https://github.com/alvaniss/privacy-dots" target="_blank">Privacy Dots</a></li>
         <li>System Tray</li>
@@ -120,30 +124,37 @@
     </div>
 </div>
 
+<hr class="section-divider">
+
 <h2>Installation</h2>
 
 <h3>Online Install (Fastest & Fully Automated)</h3>
 <div class="code-wrapper">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/online-install.sh)&quot;')">Copy</button>
 <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/refs/heads/main/online-install.sh)"</code></pre>
 </div>
 
 <h3>Offline Install (Manual)</h3>
 <div class="code-wrapper">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/hyprland_dotfiles\ncd hyprland_dotfiles\nchmod +x *\n./main.sh')">Copy</button>
 <pre><code>git clone https://github.com/ahmed-x86/hyprland_dotfiles
 cd hyprland_dotfiles
 chmod +x *
 ./main.sh</code></pre>
 </div>
 
+<hr class="section-divider">
+
 <h2>Gallery</h2>
 <div class="gallery">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_10-21-48.png" width="45%" alt="Desktop Overview">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_17-03-54.png" width="45%" alt="Terminal and TUI">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-22-20.png" width="45%" alt="App Launcher">
-    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-23-34.png" width="45%" alt="Notification Center">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_10-21-48.png" alt="Desktop Overview">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_17-03-54.png" alt="Terminal and TUI">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-22-20.png" alt="App Launcher">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/hyprland_dotfiles/main/screenshot_2026-02-07_19-23-34.png" alt="Notification Center">
 </div>
 
 </section>
+
 <div class="action-container">
     <a href="https://github.com/ahmed-x86/hyprland_dotfiles" target="_blank" class="btn-link">
     View GitHub Repository
@@ -158,3 +169,5 @@ chmod +x *
 
 </body>
 </html>
+
+3
