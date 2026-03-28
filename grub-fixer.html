@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | GRUB Fixer</title>
-    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring In-Situ Local Repair, Universal UEFI 32/64-bit support, OS Prober, Smart Target Disk Extraction, and FSTAB Parsing. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, Subvolumes, fstab, Speedrun, 32-bit UEFI, In-Situ Repair">
+    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring Universal RedHat/Fedora support, In-Situ Local Repair, Universal UEFI 32/64-bit support, OS Prober, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, Subvolumes, fstab, Speedrun, 32-bit UEFI, In-Situ Repair">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V16 Ultimate Automation, Legacy BIOS, OS Prober, Universal UEFI & In-Situ Repair)">
-    <meta property="og:description" content="Rescue your Linux system securely. V16 transforms the script into a Universal Rescue Weapon, bringing In-Situ (Local) Repair capabilities, bypassing chroot when run from the installed OS.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V19 The Universal RedHat/Fedora Update, Ultimate Automation, Legacy BIOS & In-Situ Repair)">
+    <meta property="og:description" content="Rescue your Linux system securely. V19 transforms the script into a truly Universal Rescue Weapon, adding dynamic support for RedHat/Fedora families alongside Zero-Interaction deployments.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
     </div>
 
     <h1 data-i18n="grub-page-title">Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Zero-Interaction CLI Flags, Deep Scan Intelligence, and Kernel Environment Detection.</p>
+    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with RedHat/Fedora support, Zero-Interaction CLI Flags, and Deep Scan Intelligence.</p>
 </header>
 
 <nav>
@@ -41,7 +41,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V18-firebrick?style=for-the-badge" alt="Version V18">
+        <img src="https://img.shields.io/badge/Version-V19-firebrick?style=for-the-badge" alt="Version V19">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/Zero_Interaction-Ready-blueviolet?style=for-the-badge" alt="Zero Interaction Ready">
@@ -50,17 +50,24 @@
 
     <h2 data-i18n="grub-about-title">About the Project</h2>
     <p data-i18n="grub-about-desc">
-        <b>GRUB Fixer (V18 - The "Zero-Interaction" Automation Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V18</b> introduces <b>CLI Flags for fully automated, headless deployments</b>, building upon the proactive <b>Deep Scan Engine</b> and <b>Kernel Command Line Detection</b> introduced in V17 to eliminate decision fatigue during system recovery.
+        <b>GRUB Fixer (V19 - The "Universal RedHat/Fedora" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V19</b> elevates the script to a truly universal tool by adding deep, dynamic support for the <b>RedHat/Fedora family</b>, seamlessly switching commands and paths on the fly, building upon the proactive <b>Deep Scan Engine</b> and <b>Zero-Interaction deployments</b> introduced in previous versions.
     </p>
 
-    <div class="note" data-i18n="grub-v18-note">
-        <strong>🚀 New in V18:</strong> The script now features <b>Headless Automation via CLI Flags</b>! Pass <code>-env l -auto</code> to bypass all confirmation prompts and let the script fix GRUB silently in seconds based on auto-detection.
+    <div class="note" data-i18n="grub-v19-note">
+        <strong>🚀 New in V19:</strong> The script now features <b>Universal RedHat/Fedora Family Support</b>! It automatically reads <code>/etc/os-release</code> and dynamically switches between <code>grub-*</code> and <code>grub2-*</code> commands, adapting to your OS environment in real-time.
     </div>
 
     <hr class="section-divider">
 
+    <h2 data-i18n="grub-univ-title">🌐 The Universal Update (V19)</h2>
+    <ul>
+        <li data-i18n="grub-univ-1"><strong>RedHat/Fedora Family Support:</strong> Full compatibility with Fedora, RHEL, CentOS, Rocky, and AlmaLinux.</li>
+        <li data-i18n="grub-univ-2"><strong>Dynamic Command Routing:</strong> Automatically switches between standard <code>grub-install</code> / <code>grub-mkconfig</code> and the RedHat-specific <code>grub2-install</code> / <code>grub2-mkconfig</code>.</li>
+        <li data-i18n="grub-univ-3"><strong>Smart Pathing:</strong> Intelligently manages configuration paths, dynamically creating and writing to <code>/boot/grub2/grub.cfg</code> or <code>/boot/grub/grub.cfg</code> as required by the host OS.</li>
+    </ul>
+
     <h2 data-i18n="grub-flags-title">🚩 V18 CLI Flags Reference</h2>
-    <p data-i18n="grub-flags-desc">V18 introduces Command-Line Arguments to bypass prompts and enable headless automation:</p>
+    <p data-i18n="grub-flags-desc">V18 introduced Command-Line Arguments to bypass prompts and enable headless automation:</p>
     <ul>
         <li data-i18n="grub-flag-1"><strong><code>-env l</code> or <code>-env live</code>:</strong> Force the script to assume a <b>Live Environment</b> (USB/ISO).</li>
         <li data-i18n="grub-flag-2"><strong><code>-env h</code> or <code>-env host</code>:</strong> Force the script to assume a <b>Real Machine / Host</b> environment.</li>
@@ -68,12 +75,12 @@
         <li data-i18n="grub-flag-4"><strong><code>--version</code> or <code>-v</code>:</strong> Print the current version and exit.</li>
     </ul>
 
-    <h2 data-i18n="grub-intel-title">✨ The Intelligence Update (V17 & V18)</h2>
+    <h2 data-i18n="grub-intel-title">✨ The Intelligence Update (V17)</h2>
     <ul>
-        <li data-i18n="grub-intel-1"><strong>Headless Automation (V18):</strong> Pass flags directly via the pipeline to execute complex repairs without a single keystroke.</li>
-        <li data-i18n="grub-intel-2"><strong>Kernel Cmdline Detection (V17):</strong> Analyzes <code>/proc/cmdline</code> to instantly distinguish between Live ISOs (Archiso, Casper, etc.) and real installed systems.</li>
-        <li data-i18n="grub-intel-3"><strong>Deep Scan Engine (V17):</strong> Stealthily scans and mounts partitions in read-only mode to locate <code>fstab</code> and resolve UUIDs/PARTUUIDs before user interaction.</li>
-        <li data-i18n="grub-intel-4"><strong>Unified One-Click Prompt (V17):</strong> Combines environment detection and layout confirmation into a single, clean summary.</li>
+        <li data-i18n="grub-intel-1"><strong>Kernel Cmdline Detection:</strong> Analyzes <code>/proc/cmdline</code> to instantly distinguish between Live ISOs (Archiso, Casper, etc.) and real installed systems.</li>
+        <li data-i18n="grub-intel-2"><strong>Deep Scan Engine:</strong> Stealthily scans and mounts partitions in read-only mode to locate <code>fstab</code> and resolve UUIDs/PARTUUIDs before user interaction.</li>
+        <li data-i18n="grub-intel-3"><strong>Unified One-Click Prompt:</strong> Combines environment detection and layout confirmation into a single, clean summary.</li>
+        <li data-i18n="grub-intel-4"><strong>Automatic <code>efivarfs</code> Repair:</strong> Enhanced In-Situ logic to automatically mount <code>efivarfs</code> if the rescue environment fails to do so.</li>
     </ul>
 
     <h2 data-i18n="grub-evo-title">⚙️ Evolution History (V16 - V12)</h2>
@@ -151,7 +158,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
                     <tr><td>V15</td><td data-i18n="grub-v15">Added Universal UEFI Support (32-bit/i386-efi) with dynamic bitness detection.</td></tr>
                     <tr><td>V16</td><td data-i18n="grub-v16">Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
                     <tr><td>V17</td><td data-i18n="grub-v17">Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
-                    <tr><td><b>V18</b></td><td data-i18n="grub-v18"><b>Current:</b> Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
+                    <tr><td>V18</td><td data-i18n="grub-v18">Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
+                    <tr><td><b>V19</b></td><td data-i18n="grub-v19"><b>Current:</b> Added universal support for RedHat/Fedora/CentOS family (dynamic grub2 commands & paths).</td></tr>
                 </tbody>
             </table>
         </div>
@@ -161,7 +169,7 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
 
     <h2 data-i18n="grub-req-title">📋 System Requirements</h2>
     <ul>
-        <li data-i18n="grub-req-1"><strong>Environment:</strong> Live Linux USB (Arch, CachyOS, etc.) OR Local Installed OS.</li>
+        <li data-i18n="grub-req-1"><strong>OS Families:</strong> Arch Linux, Debian/Ubuntu, RedHat/Fedora, SUSE, and derivatives.</li>
         <li data-i18n="grub-req-2"><strong>Architecture:</strong> UEFI (x86_64/i386) or Legacy BIOS (i386-pc).</li>
         <li data-i18n="grub-req-3"><strong>Privileges:</strong> Sudo/Root access required.</li>
     </ul>
@@ -169,8 +177,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
     <h2 data-i18n="grub-warn-title">⚠️ Disclaimer</h2>
     <p data-i18n="grub-warn-desc">Always verify the <b>Deep Scan</b> summary before confirming the repair process, especially on dual-boot systems.</p>
     
-    <div class="warning" data-i18n="grub-warn-v19">
-        <strong>⚠️ Planned for V19:</strong> Researching automated <b>LUKS Encryption</b> support for seamless encrypted partition repair.
+    <div class="warning" data-i18n="grub-warn-v20">
+        <strong>⚠️ Planned for V20:</strong> Researching automated <b>LUKS Encryption</b> support for seamless encrypted partition repair.
     </div>
 
     <div class="action-container">
