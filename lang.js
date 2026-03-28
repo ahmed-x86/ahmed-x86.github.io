@@ -356,6 +356,9 @@ const translations = {
         "wall-page-5-desc": "Page 5 - Royal wallpapers straight from my Hyprland dotfiles.",
         "wall-col-5-title": "My Collection (Part 5)",
         "wall-col-5-desc": "Here are the new royal wallpapers from my Hyprland dotfiles. Click on any image to view it in full resolution.",
+        "wall-page-6-desc": "Page 6 - Cyberpunk, Neon Rain, and 4K Cars from my Arch Linux setup.",
+        "wall-col-6-title": "My Collection (Part 6)",
+        "wall-col-6-desc": "Here is the next batch of wallpapers from my Hyprland dotfiles. Click on any image to view it in full resolution.",
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -713,6 +716,9 @@ const translations = {
         "wall-page-5-desc": "الصفحة 5 - خلفيات ملكية مباشرة من ملفات إعداد Hyprland الخاصة بي.",
         "wall-col-5-title": "مجموعتي (الجزء 5)",
         "wall-col-5-desc": "إليك الخلفيات الملكية الجديدة من ملفات إعداد Hyprland. اضغط على أي صورة لعرضها بالدقة الكاملة.",
+        "wall-page-6-desc": "الصفحة 6 - خلفيات سايبربانك، مطر نيون، وسيارات 4K من إعدادات Arch Linux الخاصة بي.",
+        "wall-col-6-title": "مجموعتي (الجزء 6)",
+        "wall-col-6-desc": "إليك الدفعة التالية من خلفيات ملفات إعداد Hyprland. اضغط على أي صورة لعرضها بالدقة الكاملة.",
     }
 };
 
