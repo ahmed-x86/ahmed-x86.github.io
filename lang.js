@@ -359,6 +359,9 @@ const translations = {
         "wall-page-6-desc": "Page 6 - Cyberpunk, Neon Rain, and 4K Cars from my Arch Linux setup.",
         "wall-col-6-title": "My Collection (Part 6)",
         "wall-col-6-desc": "Here is the next batch of wallpapers from my Hyprland dotfiles. Click on any image to view it in full resolution.",
+        "wall-page-7-desc": "Page 7 - The final part of my curated collection for Arch Linux setups.",
+        "wall-col-7-title": "My Collection (Part 7)",
+        "wall-col-7-desc": "Here are the final remaining wallpapers from my Arch Linux setup. Click on any image to view it in full resolution.",
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -719,6 +722,9 @@ const translations = {
         "wall-page-6-desc": "الصفحة 6 - خلفيات سايبربانك، مطر نيون، وسيارات 4K من إعدادات Arch Linux الخاصة بي.",
         "wall-col-6-title": "مجموعتي (الجزء 6)",
         "wall-col-6-desc": "إليك الدفعة التالية من خلفيات ملفات إعداد Hyprland. اضغط على أي صورة لعرضها بالدقة الكاملة.",
+        "wall-page-7-desc": "الصفحة 7 - الجزء الأخير من مجموعتي المختارة لإعدادات Arch Linux.",
+        "wall-col-7-title": "مجموعتي (الجزء 7)",
+        "wall-col-7-desc": "إليك الخلفيات الأخيرة المتبقية من إعدادات Arch Linux الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة.",
     }
 };
 
