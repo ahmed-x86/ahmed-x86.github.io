@@ -850,3 +850,21 @@ th {
 .sidebar-list li:hover a.auth-link {
     color: var(--mauve);
 }
+/* =========================================
+   Fix for equal height cards and bottom-aligned images
+   ========================================= */
+.gallery-grid .project {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* بيخلي كل الكروت تاخد نفس الطول */
+}
+
+.gallery-grid .project p {
+    flex-grow: 1; /* ده السر! بيخلي النص يتمدد وياخد كل المساحة الفاضية ويزق الصورة لتحت */
+    margin-bottom: 20px; /* مسافة بسيطة بين النص والصورة */
+}
+
+.gallery-grid .project a {
+    margin-top: auto; /* بيضمن إن الصورة دايماً لازقة تحت */
+    display: block;
+}
