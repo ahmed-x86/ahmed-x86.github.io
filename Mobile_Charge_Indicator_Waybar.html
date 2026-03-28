@@ -56,59 +56,64 @@
 
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
-<header>
-<h1>Ahmed x86 - Mobile Charge Indicator for Waybar 📱</h1>
-<p>A lightweight bash script that shows your phone battery in Waybar using KDE Connect.</p>
+
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="mob-page-title">Ahmed x86 - Mobile Charge Indicator for Waybar 📱</h1>
+    <p data-i18n="mob-page-desc">A lightweight bash script that shows your phone battery in Waybar using KDE Connect.</p>
 </header>
 
 <nav>
-<a href="index.html">← Back to Home</a>
-<a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank">GitHub Repo</a>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
 </nav>
 
 <section>
 
-<h2>About</h2>
-<p>
-A sleek and lightweight script that displays your mobile phone battery status
-directly in <b>Waybar</b> using <b>KDE Connect</b>. Perfect for Hyprland and Sway users.
-</p>
+    <h2 data-i18n="mob-about-title">About</h2>
+    <p data-i18n="mob-about-desc">
+    A sleek and lightweight script that displays your mobile phone battery status
+    directly in <b>Waybar</b> using <b>KDE Connect</b>. Perfect for Hyprland and Sway users.
+    </p>
 
-<img src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png" class="hero-img" alt="Waybar Mobile Charge Indicator Preview by Ahmed x86">
+    <img src="https://raw.githubusercontent.com/ahmed-x86/mobile_charge_indicator_waybar/refs/heads/main/image.png" class="hero-img" alt="Waybar Mobile Charge Indicator Preview by Ahmed x86">
 
-<hr class="section-divider">
+    <hr class="section-divider">
 
-<h2>Features</h2>
-<ul>
-<li>Auto detection of connected phone ID</li>
-<li>Dynamic battery colors (Normal / Warning / Critical)</li>
-<li>Charging indicator icon</li>
-<li>Click module to ping your phone</li>
-</ul>
+    <h2 data-i18n="mob-features-title">Features</h2>
+    <ul>
+        <li data-i18n="mob-feat-1">Auto detection of connected phone ID</li>
+        <li data-i18n="mob-feat-2">Dynamic battery colors (Normal / Warning / Critical)</li>
+        <li data-i18n="mob-feat-3">Charging indicator icon</li>
+        <li data-i18n="mob-feat-4">Click module to ping your phone</li>
+    </ul>
 
-<hr class="section-divider">
+    <hr class="section-divider">
 
-<h2>Installation</h2>
-<p>Run the following commands in your terminal to install the script:</p>
+    <h2 data-i18n="mob-install-title">Installation</h2>
+    <p data-i18n="mob-install-desc1">Run the following commands in your terminal to install the script:</p>
 
-<div class="code-wrapper">
-    <button class="copy-btn" onclick="navigator.clipboard.writeText('cd mobile_charge_indicator_waybar\nchmod +x install.sh\n./install.sh')">Copy</button>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('cd mobile_charge_indicator_waybar\nchmod +x install.sh\n./install.sh')">Copy</button>
 <pre><code>cd mobile_charge_indicator_waybar
 chmod +x install.sh
 ./install.sh</code></pre>
-</div>
+    </div>
 
-<p>The script will automatically copy <b>mobile.sh</b> to:</p>
-<div class="code-wrapper">
-    <button class="copy-btn" onclick="navigator.clipboard.writeText('~/.config/waybar/scripts/')">Copy</button>
+    <p data-i18n="mob-install-desc2">The script will automatically copy <b>mobile.sh</b> to:</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('~/.config/waybar/scripts/')">Copy</button>
 <pre><code>~/.config/waybar/scripts/</code></pre>
-</div>
+    </div>
 
-<hr class="section-divider">
+    <hr class="section-divider">
 
-<h2>Waybar Configuration</h2>
-<div class="code-wrapper">
-    <button class="copy-btn" onclick="navigator.clipboard.writeText('&quot;custom/mobile&quot;: {\n    &quot;format&quot;: &quot;{text}&quot;,\n    &quot;exec&quot;: &quot;~/.config/waybar/scripts/mobile.sh&quot;,\n    &quot;interval&quot;: 30,\n    &quot;return-type&quot;: &quot;json&quot;,\n    &quot;on-click&quot;: &quot;~/.config/waybar/scripts/mobile.sh --ping&quot;\n}')">Copy</button>
+    <h2 data-i18n="mob-waybar-conf-title">Waybar Configuration</h2>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('&quot;custom/mobile&quot;: {\n    &quot;format&quot;: &quot;{text}&quot;,\n    &quot;exec&quot;: &quot;~/.config/waybar/scripts/mobile.sh&quot;,\n    &quot;interval&quot;: 30,\n    &quot;return-type&quot;: &quot;json&quot;,\n    &quot;on-click&quot;: &quot;~/.config/waybar/scripts/mobile.sh --ping&quot;\n}')">Copy</button>
 <pre><code>"custom/mobile": {
     "format": "{text}",
     "exec": "~/.config/waybar/scripts/mobile.sh",
@@ -116,13 +121,13 @@ chmod +x install.sh
     "return-type": "json",
     "on-click": "~/.config/waybar/scripts/mobile.sh --ping"
 }</code></pre>
-</div>
+    </div>
 
-<hr class="section-divider">
+    <hr class="section-divider">
 
-<h2>Waybar Style</h2>
-<div class="code-wrapper">
-    <button class="copy-btn" onclick="navigator.clipboard.writeText('#custom-mobile {\n    font-family: &quot;JetBrains Mono Nerd&quot;, monospace;\n    font-size: 14px;\n    padding: 0 6px;\n    margin-left: 4px;\n}\n\n#custom-mobile.critical {\n    color: #f07178;\n}\n\n#custom-mobile.warning {\n    color: #f2cd66;\n}\n\n#custom-mobile.normal {\n    color: #c3e88d;\n}')">Copy</button>
+    <h2 data-i18n="mob-waybar-style-title">Waybar Style</h2>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('#custom-mobile {\n    font-family: &quot;JetBrains Mono Nerd&quot;, monospace;\n    font-size: 14px;\n    padding: 0 6px;\n    margin-left: 4px;\n}\n\n#custom-mobile.critical {\n    color: #f07178;\n}\n\n#custom-mobile.warning {\n    color: #f2cd66;\n}\n\n#custom-mobile.normal {\n    color: #c3e88d;\n}')">Copy</button>
 <pre><code>#custom-mobile {
     font-family: "JetBrains Mono Nerd", monospace;
     font-size: 14px;
@@ -141,21 +146,67 @@ chmod +x install.sh
 #custom-mobile.normal {
     color: #c3e88d;
 }</code></pre>
-</div>
+    </div>
 
-<div class="action-container">
-    <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn-link">
-    View GitHub Repository
-    </a>
-</div>
+    <div class="action-container">
+        <a href="https://github.com/ahmed-x86/mobile_charge_indicator_waybar" target="_blank" class="btn-link" data-i18n="mob-btn-repo">
+        View GitHub Repository
+        </a>
+    </div>
 
 </section>
 
-<footer>
-<p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+<footer data-i18n="footer-text">
+    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
 <script src="main.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
