@@ -1012,3 +1012,25 @@ html[dir="rtl"] .auth-link {
     color: var(--subtext);
     transform: none; /* عشان ما يتحركش لفوق زي الزراير العادية */
 }
+/* تنسيق القائمة الجانبية لتدعم دفع العناصر للأسفل */
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px); /* طرح مساحة زر الإغلاق */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* دفع العنصر الأخير إلى أسفل القائمة */
+.sidebar-bottom-item {
+    margin-top: auto; /* هذا هو السر الذي يدفعه للأسفل */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* خط بسيط لتمييزه */
+    padding-bottom: 20px; /* مسافة من القاع */
+}
+
+/* تنسيق الروابط داخل القائمة لتبدو كبقية العناصر */
+.sidebar-list li a {
+    color: inherit;
+    text-decoration: none;
+}
