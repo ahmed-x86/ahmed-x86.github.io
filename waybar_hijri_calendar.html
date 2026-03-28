@@ -54,7 +54,7 @@
     <h2>🌐 Supported Languages</h2>
     <p>Switch language using the <code>-lang</code> flag in your configuration:</p>
     
-    <div class="lang-table-container">
+    <div class="table-container">
         <table>
             <thead>
                 <tr>
@@ -95,6 +95,7 @@
     <h2>🛠️ Installation & Update</h2>
     <p>Deploy the script directly using this command:</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py')">Copy</button>
 <pre><code>mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py</code></pre>
     </div>
 
@@ -107,6 +108,7 @@
     <h2>🖥️ Waybar Configuration</h2>
     <p>Add the following to your <code>config.jsonc</code> (change the lang flag to your preference):</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('&quot;custom/hijri&quot;: {\n    &quot;format&quot;: &quot;{}&quot;,\n    &quot;exec&quot;: &quot;~/.config/waybar/scripts/hijri_waybar.py -lang ar&quot;,\n    &quot;interval&quot;: 3600,\n    &quot;return-type&quot;: &quot;json&quot;,\n    &quot;tooltip&quot;: true\n}')">Copy</button>
 <pre><code>"custom/hijri": {
     "format": "{}",
     "exec": "~/.config/waybar/scripts/hijri_waybar.py -lang ar",
@@ -123,6 +125,8 @@
 
     <details>
         <summary>1. Catppuccin (Mocha)</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Catppuccin Mocha */\n#custom-hijri {\n    color: #f9e2af;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #fab387;\n\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
 <pre><code>/* Hijri Calendar - Catppuccin Mocha */
 #custom-hijri {
     color: #f9e2af;
@@ -140,10 +144,13 @@
     background-color: rgba(243, 139, 168, 0.1);
 }
 </code></pre>
+        </div>
     </details>
 
     <details>
         <summary>2. Dracula</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Dracula */\n#custom-hijri {\n    color: #bd93f9;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #ff79c6;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
 <pre><code>/* Hijri Calendar - Dracula */
 #custom-hijri {
     color: #bd93f9;
@@ -160,10 +167,13 @@
     background-color: rgba(243, 139, 168, 0.1);
 }
 </code></pre>
+        </div>
     </details>
 
     <details>
         <summary>3. Nord</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Nord */\n#custom-hijri {\n    color: #88C0D0;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #81A1C1;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
 <pre><code>/* Hijri Calendar - Nord */
 #custom-hijri {
     color: #88C0D0;
@@ -180,10 +190,13 @@
     background-color: rgba(243, 139, 168, 0.1);
 }
 </code></pre>
+        </div>
     </details>
 
     <details>
         <summary>4. Gruvbox</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Gruvbox */\n#custom-hijri {\n    color: #fabd2f;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #fe8019;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
 <pre><code>/* Hijri Calendar - Gruvbox */
 #custom-hijri {
     color: #fabd2f;
@@ -200,10 +213,13 @@
     background-color: rgba(243, 139, 168, 0.1);
 }
 </code></pre>
+        </div>
     </details>
 
     <details>
         <summary>5. Tokyo Night</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Tokyo Night */\n#custom-hijri {\n    color: #7aa2f7;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #bb9af7;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
 <pre><code>/* Hijri Calendar - Tokyo Night */
 #custom-hijri {
     color: #7aa2f7;
@@ -220,6 +236,7 @@
     background-color: rgba(243, 139, 168, 0.1);
 }
 </code></pre>
+        </div>
     </details>
 
     <div class="note">
@@ -242,3 +259,5 @@
 
 </body>
 </html>
+
+3
