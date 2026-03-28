@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | GRUB Fixer</title>
-    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring Universal RedHat/Fedora support, In-Situ Local Repair, Universal UEFI 32/64-bit support, OS Prober, and FSTAB Parsing. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, Subvolumes, fstab, Speedrun, 32-bit UEFI, In-Situ Repair">
+    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring V20 Chroot Health Check, Auto-Dependency Resolver, Universal RedHat/Fedora support, In-Situ Local Repair, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, resolv.conf, Dependency Check, Speedrun, 32-bit UEFI, In-Situ Repair">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V19 The Universal RedHat/Fedora Update, Ultimate Automation, Legacy BIOS & In-Situ Repair)">
-    <meta property="og:description" content="Rescue your Linux system securely. V19 transforms the script into a truly Universal Rescue Weapon, adding dynamic support for RedHat/Fedora families alongside Zero-Interaction deployments.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V20 Health Check & Dependency Resolver, Ultimate Automation, Legacy BIOS & In-Situ Repair)">
+    <meta property="og:description" content="Rescue your Linux system securely. V20 transforms the script into the ultimate proactive recovery tool, automatically resolving missing bootloader dependencies inside broken systems with DNS tunneling.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
     </div>
 
     <h1 data-i18n="grub-page-title">Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with RedHat/Fedora support, Zero-Interaction CLI Flags, and Deep Scan Intelligence.</p>
+    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Chroot Health Checks, Auto-Dependency Installation, RedHat/Fedora support, and Deep Scan Intelligence.</p>
 </header>
 
 <nav>
@@ -41,7 +41,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V19-firebrick?style=for-the-badge" alt="Version V19">
+        <img src="https://img.shields.io/badge/Version-V20-firebrick?style=for-the-badge" alt="Version V20">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/Zero_Interaction-Ready-blueviolet?style=for-the-badge" alt="Zero Interaction Ready">
@@ -50,14 +50,21 @@
 
     <h2 data-i18n="grub-about-title">About the Project</h2>
     <p data-i18n="grub-about-desc">
-        <b>GRUB Fixer (V19 - The "Universal RedHat/Fedora" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V19</b> elevates the script to a truly universal tool by adding deep, dynamic support for the <b>RedHat/Fedora family</b>, seamlessly switching commands and paths on the fly, building upon the proactive <b>Deep Scan Engine</b> and <b>Zero-Interaction deployments</b> introduced in previous versions.
+        <b>GRUB Fixer (V20 - The "Health Check & Auto-Dependency Resolver" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V20</b> pushes the script to the ultimate level of proactive recovery by automatically detecting and installing missing bootloader dependencies inside the broken system, complete with DNS resolution tunneling. This builds upon the <b>Universal RedHat/Fedora Support</b> (V19), <b>Deep Scan Engine</b>, and <b>Zero-Interaction deployments</b> introduced in previous versions.
     </p>
 
-    <div class="note" data-i18n="grub-v19-note">
-        <strong>🚀 New in V19:</strong> The script now features <b>Universal RedHat/Fedora Family Support</b>! It automatically reads <code>/etc/os-release</code> and dynamically switches between <code>grub-*</code> and <code>grub2-*</code> commands, adapting to your OS environment in real-time.
+    <div class="note" data-i18n="grub-v20-note">
+        <strong>🚀 New in V20:</strong> The script now features a <b>Smart Chroot Health Check</b>! It automatically detects missing packages (<code>grub</code>, <code>efibootmgr</code>, <code>os-prober</code>), tunnels DNS (<code>resolv.conf</code>), and seamlessly installs them via your native package manager (pacman, apt, dnf, zypper) on the fly.
     </div>
 
     <hr class="section-divider">
+
+    <h2 data-i18n="grub-health-title">🩺 The Health Check Update (V20)</h2>
+    <ul>
+        <li data-i18n="grub-health-1"><strong>Smart Dependency Resolution:</strong> Automatically detects if crucial packages (<code>grub</code>, <code>grub2</code>, <code>os-prober</code>, <code>efibootmgr</code>) are missing inside the target broken system (Chroot or In-Situ).</li>
+        <li data-i18n="grub-health-2"><strong>Multi-Package Manager Support:</strong> Dynamically utilizes <code>pacman</code>, <code>apt-get</code>, <code>dnf</code>, or <code>zypper</code> to seamlessly install missing dependencies on the fly.</li>
+        <li data-i18n="grub-health-3"><strong>DNS Tunneling (<code>resolv.conf</code>):</strong> Automatically copies the live host's <code>/etc/resolv.conf</code> into the chroot, ensuring the package managers have full internet access to download required fixes.</li>
+    </ul>
 
     <h2 data-i18n="grub-univ-title">🌐 The Universal Update (V19)</h2>
     <ul>
@@ -159,7 +166,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
                     <tr><td>V16</td><td data-i18n="grub-v16">Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
                     <tr><td>V17</td><td data-i18n="grub-v17">Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
                     <tr><td>V18</td><td data-i18n="grub-v18">Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
-                    <tr><td><b>V19</b></td><td data-i18n="grub-v19"><b>Current:</b> Added universal support for RedHat/Fedora/CentOS family (dynamic grub2 commands & paths).</td></tr>
+                    <tr><td>V19</td><td data-i18n="grub-v19">Added universal support for RedHat/Fedora/CentOS family (dynamic grub2 commands & paths).</td></tr>
+                    <tr><td><b>V20</b></td><td data-i18n="grub-v20"><b>Current:</b> Chroot Health Check - Auto-detects and installs missing GRUB/EFI packages with DNS resolv support.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -177,8 +185,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
     <h2 data-i18n="grub-warn-title">⚠️ Disclaimer</h2>
     <p data-i18n="grub-warn-desc">Always verify the <b>Deep Scan</b> summary before confirming the repair process, especially on dual-boot systems.</p>
     
-    <div class="warning" data-i18n="grub-warn-v20">
-        <strong>⚠️ Planned for V20:</strong> Researching automated <b>LUKS Encryption</b> support for seamless encrypted partition repair.
+    <div class="warning" data-i18n="grub-warn-v21">
+        <strong>⚠️ Planned for V21:</strong> Researching automated <b>LUKS Encryption</b> support for seamless encrypted partition repair.
     </div>
 
     <div class="action-container">
