@@ -343,7 +343,13 @@ const translations = {
         "hijri-theme-5": "5. Tokyo Night",
         "hijri-perf-tip": "<strong>💡 Performance Tip:</strong> The script caches the entire month at <code>~/.cache/waybar_hijri_cache.json</code>. It only makes one API call per month!",
         "hijri-btn-repo": "View GitHub Repository",
-        "hijri-footer-text": "© 2026 Ahmed x86 • Developed for the Linux Community ❄️"
+        "hijri-footer-text": "© 2026 Ahmed x86 • Developed for the Linux Community ❄️",
+        
+        // === Wallpapers Page Translations (EN) ===
+        "wall-page-title": "Ahmed x86 - Wallpapers Gallery 🖼️",
+        "wall-page-desc": "A curated collection of minimalist and high-resolution wallpapers for Linux ricing and desktops.",
+        "wall-col-title": "My Collection",
+        "wall-col-desc": "Here are some of my favorite wallpapers used in my custom Arch Linux setups. Click on any image to view it in full resolution."
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -686,9 +692,15 @@ const translations = {
         "hijri-theme-3": "3. Nord",
         "hijri-theme-4": "4. Gruvbox",
         "hijri-theme-5": "5. Tokyo Night",
-        "hijri-perf-tip": "<strong>💡 نصيحة للأداء:</strong> يقوم السكربت بحفظ الشهر كاملاً في <code>~/.cache/waybar_hijri_cache.json</code>. إنه يجري مكالمة API واحدة فقط شهرياً!",
+        "hijri-perf-tip": "<strong>💡 نصيفة للأداء:</strong> يقوم السكربت بحفظ الشهر كاملاً في <code>~/.cache/waybar_hijri_cache.json</code>. إنه يجري مكالمة API واحدة فقط شهرياً!",
         "hijri-btn-repo": "عرض المستودع على GitHub",
-        "hijri-footer-text": "© 2026 أحمد x86 • تم التطوير لمجتمع لينكس ❄️"
+        "hijri-footer-text": "© 2026 أحمد x86 • تم التطوير لمجتمع لينكس ❄️",
+        
+        // === Wallpapers Page Translations (AR) ===
+        "wall-page-title": "أحمد x86 - معرض الخلفيات 🖼️",
+        "wall-page-desc": "مجموعة منتقاة من خلفيات 4K البسيطة والجمالية المناسبة تمامًا لتخصيص لينكس وإعدادات Arch Linux و Hyprland.",
+        "wall-col-title": "مجموعتي",
+        "wall-col-desc": "إليك بعض من خلفياتي المفضلة المستخدمة في إعدادات Arch Linux المخصصة الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة."
     }
 };
 
