@@ -60,7 +60,12 @@
 </head>
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
-<header>
+    
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+    
     <h1>Ahmed x86 - Assembly Development Environment 🚀</h1>
     <p>An all-in-one repository designed to kickstart your Assembly (ASM) development.</p>
 </header>
@@ -183,7 +188,53 @@
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
 <script src="main.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
