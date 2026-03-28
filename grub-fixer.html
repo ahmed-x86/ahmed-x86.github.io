@@ -23,14 +23,19 @@
 
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
-<header>
-    <h1>Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p>Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Zero-Interaction CLI Flags, Deep Scan Intelligence, and Kernel Environment Detection.</p>
+    
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="grub-page-title">Ahmed x86 - GRUB Fixer 🛠️</h1>
+    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Zero-Interaction CLI Flags, Deep Scan Intelligence, and Kernel Environment Detection.</p>
 </header>
 
 <nav>
-    <a href="index.html">← Back to Home</a>
-    <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank">GitHub Repo</a>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
 </nav>
 
 <section id="project-details">
@@ -43,73 +48,73 @@
         <img src="https://img.shields.io/badge/UEFI_%26_BIOS-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI & BIOS Support">
     </div>
 
-    <h2>About the Project</h2>
-    <p>
+    <h2 data-i18n="grub-about-title">About the Project</h2>
+    <p data-i18n="grub-about-desc">
         <b>GRUB Fixer (V18 - The "Zero-Interaction" Automation Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V18</b> introduces <b>CLI Flags for fully automated, headless deployments</b>, building upon the proactive <b>Deep Scan Engine</b> and <b>Kernel Command Line Detection</b> introduced in V17 to eliminate decision fatigue during system recovery.
     </p>
 
-    <div class="note">
+    <div class="note" data-i18n="grub-v18-note">
         <strong>🚀 New in V18:</strong> The script now features <b>Headless Automation via CLI Flags</b>! Pass <code>-env l -auto</code> to bypass all confirmation prompts and let the script fix GRUB silently in seconds based on auto-detection.
     </div>
 
     <hr class="section-divider">
 
-    <h2>🚩 V18 CLI Flags Reference</h2>
-    <p>V18 introduces Command-Line Arguments to bypass prompts and enable headless automation:</p>
+    <h2 data-i18n="grub-flags-title">🚩 V18 CLI Flags Reference</h2>
+    <p data-i18n="grub-flags-desc">V18 introduces Command-Line Arguments to bypass prompts and enable headless automation:</p>
     <ul>
-        <li><strong><code>-env l</code> or <code>-env live</code>:</strong> Force the script to assume a <b>Live Environment</b> (USB/ISO).</li>
-        <li><strong><code>-env h</code> or <code>-env host</code>:</strong> Force the script to assume a <b>Real Machine / Host</b> environment.</li>
-        <li><strong><code>-auto</code>:</strong> The "Ultimate Mode" flag. Bypasses all confirmation prompts <code>(y/n)</code>, automatically assumes default mount points, and executes the repair instantly.</li>
-        <li><strong><code>--version</code> or <code>-v</code>:</strong> Print the current version and exit.</li>
+        <li data-i18n="grub-flag-1"><strong><code>-env l</code> or <code>-env live</code>:</strong> Force the script to assume a <b>Live Environment</b> (USB/ISO).</li>
+        <li data-i18n="grub-flag-2"><strong><code>-env h</code> or <code>-env host</code>:</strong> Force the script to assume a <b>Real Machine / Host</b> environment.</li>
+        <li data-i18n="grub-flag-3"><strong><code>-auto</code>:</strong> The "Ultimate Mode" flag. Bypasses all confirmation prompts <code>(y/n)</code>, automatically assumes default mount points, and executes the repair instantly.</li>
+        <li data-i18n="grub-flag-4"><strong><code>--version</code> or <code>-v</code>:</strong> Print the current version and exit.</li>
     </ul>
 
-    <h2>✨ The Intelligence Update (V17 & V18)</h2>
+    <h2 data-i18n="grub-intel-title">✨ The Intelligence Update (V17 & V18)</h2>
     <ul>
-        <li><strong>Headless Automation (V18):</strong> Pass flags directly via the pipeline to execute complex repairs without a single keystroke.</li>
-        <li><strong>Kernel Cmdline Detection (V17):</strong> Analyzes <code>/proc/cmdline</code> to instantly distinguish between Live ISOs (Archiso, Casper, etc.) and real installed systems.</li>
-        <li><strong>Deep Scan Engine (V17):</strong> Stealthily scans and mounts partitions in read-only mode to locate <code>fstab</code> and resolve UUIDs/PARTUUIDs before user interaction.</li>
-        <li><strong>Unified One-Click Prompt (V17):</strong> Combines environment detection and layout confirmation into a single, clean summary.</li>
+        <li data-i18n="grub-intel-1"><strong>Headless Automation (V18):</strong> Pass flags directly via the pipeline to execute complex repairs without a single keystroke.</li>
+        <li data-i18n="grub-intel-2"><strong>Kernel Cmdline Detection (V17):</strong> Analyzes <code>/proc/cmdline</code> to instantly distinguish between Live ISOs (Archiso, Casper, etc.) and real installed systems.</li>
+        <li data-i18n="grub-intel-3"><strong>Deep Scan Engine (V17):</strong> Stealthily scans and mounts partitions in read-only mode to locate <code>fstab</code> and resolve UUIDs/PARTUUIDs before user interaction.</li>
+        <li data-i18n="grub-intel-4"><strong>Unified One-Click Prompt (V17):</strong> Combines environment detection and layout confirmation into a single, clean summary.</li>
     </ul>
 
-    <h2>⚙️ Evolution History (V16 - V12)</h2>
+    <h2 data-i18n="grub-evo-title">⚙️ Evolution History (V16 - V12)</h2>
     <ul>
-        <li><strong>In-Situ (Local) Mode Detection (V16):</strong> Intelligently detects if run from the installed OS, bypassing the chroot environment to repair GRUB locally in seconds.</li>
-        <li><strong>Dynamic UEFI 32-bit Detection (V15):</strong> Detects rare 32-bit UEFI architectures and automatically switches the GRUB target to <code>i386-efi</code>.</li>
-        <li><strong>Dynamic Execution Timer (V14):</strong> Delivers gamer-style human status messages based on repair speed (e.g., <em>"Wait, did I just fix that?! You didn't even get to sip your coffee! ☕"</em>).</li>
-        <li><strong>OS Prober Integration (V13):</strong> Automatically enables <code>GRUB_DISABLE_OS_PROBER=false</code> to ensure Windows/other distros are detected.</li>
-        <li><strong>Legacy BIOS & Smart Target Disk Extraction (V12):</strong> Full support for <code>i386-pc</code> with intelligent parent disk extraction.</li>
+        <li data-i18n="grub-evo-1"><strong>In-Situ (Local) Mode Detection (V16):</strong> Intelligently detects if run from the installed OS, bypassing the chroot environment to repair GRUB locally in seconds.</li>
+        <li data-i18n="grub-evo-2"><strong>Dynamic UEFI 32-bit Detection (V15):</strong> Detects rare 32-bit UEFI architectures and automatically switches the GRUB target to <code>i386-efi</code>.</li>
+        <li data-i18n="grub-evo-3"><strong>Dynamic Execution Timer (V14):</strong> Delivers gamer-style human status messages based on repair speed (e.g., <em>"Wait, did I just fix that?! You didn't even get to sip your coffee! ☕"</em>).</li>
+        <li data-i18n="grub-evo-4"><strong>OS Prober Integration (V13):</strong> Automatically enables <code>GRUB_DISABLE_OS_PROBER=false</code> to ensure Windows/other distros are detected.</li>
+        <li data-i18n="grub-evo-5"><strong>Legacy BIOS & Smart Target Disk Extraction (V12):</strong> Full support for <code>i386-pc</code> with intelligent parent disk extraction.</li>
     </ul>
 
-    <h2>🧠 Core "Power User" Features</h2>
+    <h2 data-i18n="grub-core-title">🧠 Core "Power User" Features</h2>
     <ul>
-        <li><strong>Zero-Interaction FSTAB Parsing:</strong> Resolves <code>UUID</code> and <code>PARTUUID</code> tags instantly, mapping Btrfs subvolumes without manual input.</li>
-        <li><strong>3-Tier Fallback System:</strong> Gracefully falls back from Pro Mode (FSTAB) to Smart Auto-Detection, and finally to Manual Input.</li>
-        <li><strong>Bulletproof Btrfs Loop:</strong> Interactive validation for complex subvolume hierarchies (<code>@</code>, <code>@home</code>, <code>@log</code>).</li>
-        <li><strong>VM & NVRAM Rescue:</strong> Forced <code>--removable</code> flag usage for stubborn UEFI firmware and QEMU/KVM environments.</li>
+        <li data-i18n="grub-core-1"><strong>Zero-Interaction FSTAB Parsing:</strong> Resolves <code>UUID</code> and <code>PARTUUID</code> tags instantly, mapping Btrfs subvolumes without manual input.</li>
+        <li data-i18n="grub-core-2"><strong>3-Tier Fallback System:</strong> Gracefully falls back from Pro Mode (FSTAB) to Smart Auto-Detection, and finally to Manual Input.</li>
+        <li data-i18n="grub-core-3"><strong>Bulletproof Btrfs Loop:</strong> Interactive validation for complex subvolume hierarchies (<code>@</code>, <code>@home</code>, <code>@log</code>).</li>
+        <li data-i18n="grub-core-4"><strong>VM & NVRAM Rescue:</strong> Forced <code>--removable</code> flag usage for stubborn UEFI firmware and QEMU/KVM environments.</li>
     </ul>
 
     <hr class="section-divider">
 
-    <h2>🛠️ Usage</h2>
-    <p>Run the "Ultimate Rescue Weapon" directly from your terminal:</p>
+    <h2 data-i18n="grub-usage-title">🛠️ Usage</h2>
+    <p data-i18n="grub-usage-desc">Run the "Ultimate Rescue Weapon" directly from your terminal:</p>
 
-    <h3>Option 1: Quick One-Liner (Interactive Mode)</h3>
-    <p>The classic, smart, and unified interactive experience:</p>
+    <h3 data-i18n="grub-usage-opt1-title">Option 1: Quick One-Liner (Interactive Mode)</h3>
+    <p data-i18n="grub-usage-opt1-desc">The classic, smart, and unified interactive experience:</p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash')">Copy</button>
 <pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash</code></pre>
     </div>
 
-    <h3>Option 2: Fully Automated (Zero-Interaction Mode) 💥</h3>
-    <p>Skip all questions and let the script fix GRUB silently based on auto-detection (perfect for Live USBs):</p>
+    <h3 data-i18n="grub-usage-opt2-title">Option 2: Fully Automated (Zero-Interaction Mode) 💥</h3>
+    <p data-i18n="grub-usage-opt2-desc">Skip all questions and let the script fix GRUB silently based on auto-detection (perfect for Live USBs):</p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto')">Copy</button>
 <pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto</code></pre>
     </div>
 
-    <h3>Option 3: Manual Download</h3>
+    <h3 data-i18n="grub-usage-opt3-title">Option 3: Manual Download</h3>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh\nchmod +x grub-fixer.sh\nsudo ./grub-fixer.sh')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh\nchmod +x grub-fixer.sh\nsudo ./grub-fixer.sh')">Copy</button>
 <pre><code>curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh
 chmod +x grub-fixer.sh
 sudo ./grub-fixer.sh [FLAGS]</code></pre>
@@ -117,36 +122,36 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
 
     <hr class="section-divider">
 
-   <h2>📜 Version History</h2>
+   <h2 data-i18n="grub-version-title">📜 Version History</h2>
    <details open>
-        <summary>Click to view full version history</summary>
+        <summary data-i18n="grub-version-summary">Click to view full version history</summary>
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
-                        <th>Version</th>
-                        <th>Major Changes</th>
+                        <th data-i18n="grub-th-version">Version</th>
+                        <th data-i18n="grub-th-changes">Major Changes</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>V1</td><td>Initial manual chroot logic.</td></tr>
-                    <tr><td>V2</td><td>Input validation and device checks.</td></tr>
-                    <tr><td>V3</td><td>Automatic <code>/mnt</code> cleanup (umount -R).</td></tr>
-                    <tr><td>V4</td><td>Failsafe mode, OS detection, and EOF automation.</td></tr>
-                    <tr><td>V5</td><td>VM/NVRAM Rescue and TTY Pipeline support.</td></tr>
-                    <tr><td>V6</td><td>Smart Auto-Detection & UX Proposal Flow.</td></tr>
-                    <tr><td>V7</td><td>Dynamic Custom Volumes Support (The Rescue Update).</td></tr>
-                    <tr><td>V8</td><td>Smart EFI Validation, Logging & Root Checks (Smart & Secure Update).</td></tr>
-                    <tr><td>V9</td><td>Dynamic Btrfs subvolumes support with smart routing.</td></tr>
-                    <tr><td>V10</td><td>Dynamic EFI Mount Logic, Forced Validation Loop, and Improved Auto-Detection.</td></tr>
-                    <tr><td>V11</td><td>Zero-Interaction Mode (fstab parser), 3-Tier Fallback System.</td></tr>
-                    <tr><td>V12</td><td>Added Legacy BIOS (i386-pc) support, auto-detection, and Target Disk extraction.</td></tr>
-                    <tr><td>V13</td><td>Added OS Prober support to automatically detect dual-boot systems (e.g., Windows).</td></tr>
-                    <tr><td>V14</td><td>Added Dynamic Execution Timer with gamer-style human responses (The Speedrun Update).</td></tr>
-                    <tr><td>V15</td><td>Added Universal UEFI Support (32-bit/i386-efi) with dynamic bitness detection.</td></tr>
-                    <tr><td>V16</td><td>Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
-                    <tr><td>V17</td><td>Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
-                    <tr><td><b>V18</b></td><td><b>Current:</b> Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
+                    <tr><td>V1</td><td data-i18n="grub-v1">Initial manual chroot logic.</td></tr>
+                    <tr><td>V2</td><td data-i18n="grub-v2">Input validation and device checks.</td></tr>
+                    <tr><td>V3</td><td data-i18n="grub-v3">Automatic <code>/mnt</code> cleanup (umount -R).</td></tr>
+                    <tr><td>V4</td><td data-i18n="grub-v4">Failsafe mode, OS detection, and EOF automation.</td></tr>
+                    <tr><td>V5</td><td data-i18n="grub-v5">VM/NVRAM Rescue and TTY Pipeline support.</td></tr>
+                    <tr><td>V6</td><td data-i18n="grub-v6">Smart Auto-Detection & UX Proposal Flow.</td></tr>
+                    <tr><td>V7</td><td data-i18n="grub-v7">Dynamic Custom Volumes Support (The Rescue Update).</td></tr>
+                    <tr><td>V8</td><td data-i18n="grub-v8">Smart EFI Validation, Logging & Root Checks (Smart & Secure Update).</td></tr>
+                    <tr><td>V9</td><td data-i18n="grub-v9">Dynamic Btrfs subvolumes support with smart routing.</td></tr>
+                    <tr><td>V10</td><td data-i18n="grub-v10">Dynamic EFI Mount Logic, Forced Validation Loop, and Improved Auto-Detection.</td></tr>
+                    <tr><td>V11</td><td data-i18n="grub-v11">Zero-Interaction Mode (fstab parser), 3-Tier Fallback System.</td></tr>
+                    <tr><td>V12</td><td data-i18n="grub-v12">Added Legacy BIOS (i386-pc) support, auto-detection, and Target Disk extraction.</td></tr>
+                    <tr><td>V13</td><td data-i18n="grub-v13">Added OS Prober support to automatically detect dual-boot systems (e.g., Windows).</td></tr>
+                    <tr><td>V14</td><td data-i18n="grub-v14">Added Dynamic Execution Timer with gamer-style human responses (The Speedrun Update).</td></tr>
+                    <tr><td>V15</td><td data-i18n="grub-v15">Added Universal UEFI Support (32-bit/i386-efi) with dynamic bitness detection.</td></tr>
+                    <tr><td>V16</td><td data-i18n="grub-v16">Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
+                    <tr><td>V17</td><td data-i18n="grub-v17">Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
+                    <tr><td><b>V18</b></td><td data-i18n="grub-v18"><b>Current:</b> Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -154,33 +159,79 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
 
     <hr class="section-divider">
 
-    <h2>📋 System Requirements</h2>
+    <h2 data-i18n="grub-req-title">📋 System Requirements</h2>
     <ul>
-        <li><strong>Environment:</strong> Live Linux USB (Arch, CachyOS, etc.) OR Local Installed OS.</li>
-        <li><strong>Architecture:</strong> UEFI (x86_64/i386) or Legacy BIOS (i386-pc).</li>
-        <li><strong>Privileges:</strong> Sudo/Root access required.</li>
+        <li data-i18n="grub-req-1"><strong>Environment:</strong> Live Linux USB (Arch, CachyOS, etc.) OR Local Installed OS.</li>
+        <li data-i18n="grub-req-2"><strong>Architecture:</strong> UEFI (x86_64/i386) or Legacy BIOS (i386-pc).</li>
+        <li data-i18n="grub-req-3"><strong>Privileges:</strong> Sudo/Root access required.</li>
     </ul>
 
-    <h2>⚠️ Disclaimer</h2>
-    <p>Always verify the <b>Deep Scan</b> summary before confirming the repair process, especially on dual-boot systems.</p>
+    <h2 data-i18n="grub-warn-title">⚠️ Disclaimer</h2>
+    <p data-i18n="grub-warn-desc">Always verify the <b>Deep Scan</b> summary before confirming the repair process, especially on dual-boot systems.</p>
     
-    <div class="warning">
+    <div class="warning" data-i18n="grub-warn-v19">
         <strong>⚠️ Planned for V19:</strong> Researching automated <b>LUKS Encryption</b> support for seamless encrypted partition repair.
     </div>
 
     <div class="action-container">
-        <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" class="btn-link">
+        <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" class="btn-link" data-i18n="grub-btn-star">
             ⭐ Star on GitHub
         </a>
     </div>
 
 </section>
 
-<footer>
+<footer data-i18n="grub-footer-text">
     <p>© 2026 Ahmed x86 • Part of the Linux System Recovery Suite ❄️</p>
 </footer>
 
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
 <script src="main.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
