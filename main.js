@@ -1,24 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // ==========================================
-    // 1. كود تسجيل الدخول (تغيير الزر في الصفحة الرئيسية)
+    // 0. تحميل القائمة الجانبية ديناميكياً (Sidebar Fetch)
     // ==========================================
-    const authLink = document.querySelector('.auth-link');
-    const savedUser = localStorage.getItem('arch_user');
+    const sidebarContainer = document.getElementById('sidebar-container');
+    
+    if (sidebarContainer) {
+        fetch('sidebar.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(data => {
+                // بنحط كود الـ HTML بتاع القائمة جوه الحاوية
+                sidebarContainer.innerHTML = data;
+                
+                // هنا بنستدعي دالة تسجيل الدخول "بعد" ما الزرار يظهر في الصفحة
+                initAuthLogic();
+            })
+            .catch(error => console.error('Error loading the sidebar:', error));
+    } else {
+        // لو إنت في صفحة مفيهاش القائمة أصلاً، شغل الكود برضه للاحتياط
+        initAuthLogic();
+    }
 
-    if (savedUser && authLink) {
-        authLink.textContent = `~/${savedUser}`;
-        authLink.style.color = "var(--green)";
-        authLink.href = "#"; 
-        authLink.title = "Click to Logout (exit)";
+    // ==========================================
+    // 1. كود تسجيل الدخول (تم وضعه في دالة منفصلة)
+    // ==========================================
+    function initAuthLogic() {
+        const authLink = document.querySelector('.auth-link');
+        const savedUser = localStorage.getItem('arch_user');
 
-        authLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            if(confirm(`Do you want to terminate session for '${savedUser}'? (Logout)`)) {
-                localStorage.removeItem('arch_user');
-                window.location.reload(); 
-            }
-        });
+        if (savedUser && authLink) {
+            authLink.textContent = `~/${savedUser}`;
+            authLink.style.color = "var(--green)";
+            authLink.href = "#"; 
+            authLink.title = "Click to Logout (exit)";
+
+            authLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                if(confirm(`Do you want to terminate session for '${savedUser}'? (Logout)`)) {
+                    localStorage.removeItem('arch_user');
+                    window.location.reload(); 
+                }
+            });
+        }
     }
 
     // ==========================================
@@ -59,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const formSignin = document.getElementById('form-signin');
     const formSignup = document.getElementById('form-signup');
 
-    // الشرط ده بيحمي باقي الصفحات من الأخطاء
     if (tabSignin && tabSignup && formSignin && formSignup) {
         tabSignin.addEventListener('click', () => {
             tabSignin.classList.add('active');
@@ -79,14 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const username = formSignin.querySelector('input[type="text"]').value;
             localStorage.setItem('arch_user', username);
-            window.location.href = 'index.html'; // التوجيه للصفحة الرئيسية
+            window.location.href = 'index.html'; 
         });
 
         formSignup.addEventListener('submit', (e) => {
             e.preventDefault();
             const newUsername = formSignup.querySelector('input[type="text"]').value;
             localStorage.setItem('arch_user', newUsername);
-            window.location.href = 'index.html'; // التوجيه للصفحة الرئيسية
+            window.location.href = 'index.html'; 
         });
     }
 
