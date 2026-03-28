@@ -105,6 +105,7 @@
     
     <h3>1. Clone & Copy Files</h3>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/gh-radar.git\ncd gh-radar\n\n# Copy sound to your config\ncp -r sounds ~/.config/\n\n# Setup Waybar scripts directory\nmkdir -p ~/.config/waybar/scripts\ncp github_radar.py ~/.config/waybar/scripts/\nchmod +x ~/.config/waybar/scripts/github_radar.py')">Copy</button>
 <pre><code>git clone https://github.com/ahmed-x86/gh-radar.git
 cd gh-radar
 
@@ -120,10 +121,12 @@ chmod +x ~/.config/waybar/scripts/github_radar.py</code></pre>
     <h3>2. Add Your Credentials (.env)</h3>
     <p>Create a <code>.env</code> file to authenticate with GitHub:</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('nano ~/.config/waybar/scripts/.env')">Copy</button>
 <pre><code>nano ~/.config/waybar/scripts/.env</code></pre>
     </div>
     <p>Add the following (replace with your info):</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('GITHUB_USERNAME=your_github_username\nGITHUB_PAT=your_personal_access_token_here')">Copy</button>
 <pre><code>GITHUB_USERNAME=your_github_username
 GITHUB_PAT=your_personal_access_token_here</code></pre>
     </div>
@@ -133,11 +136,13 @@ GITHUB_PAT=your_personal_access_token_here</code></pre>
     
     <p><strong>For Arch Linux / Manjaro:</strong></p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('sudo pacman -S python-requests python-dotenv')">Copy</button>
 <pre><code>sudo pacman -S python-requests python-dotenv</code></pre>
     </div>
     
     <p><strong>For Ubuntu / Debian (or using pip):</strong></p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('pip install requests python-dotenv')">Copy</button>
 <pre><code>pip install requests python-dotenv</code></pre>
     </div>
 
@@ -151,6 +156,7 @@ GITHUB_PAT=your_personal_access_token_here</code></pre>
         <li><code>-icon &lt;1-10&gt;</code>: <strong>(New!)</strong> Choose the icon displayed in Waybar. Choose a number from 1 to 10 (e.g., <code>-icon 2</code> for the Octocat).</li>
     </ul>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('# Examples:\ngithub_radar.py                    # Tracks everything, dynamic polling, default icon\ngithub_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon\ngithub_radar.py -t 0               # Tracks everything, manual refresh ONLY\ngithub_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refresh ONLY, Git logo')">Copy</button>
 <pre><code># Examples:
 github_radar.py                    # Tracks everything, dynamic polling, default icon
 github_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon
@@ -164,12 +170,13 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
 
     <h3>1. Module Configuration (<code>config.jsonc</code>)</h3>
     
-    <blockquote style="border-left: 4px solid #2ea043; padding: 10px; background-color: rgba(46, 160, 67, 0.1); margin-bottom: 15px;">
+    <blockquote class="note" style="border-color: #a6e3a1; background-color: rgba(166, 227, 161, 0.1);">
         <strong>💡 Pro Tip:</strong> Add <code>"reload_style_on_change": true,</code> at the very top of your Waybar config file. This allows Waybar to instantly apply changes when you edit the config or style files without needing a manual restart!
     </blockquote>
 
     <p>Add this module to your Waybar config file (under <code>modules-left</code>, <code>modules-center</code>, or <code>modules-right</code>):</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('\"custom/github-radar\": {\n    \"format\": \"{}\",\n    \"return-type\": \"json\",\n    \"exec\": \"~/.config/waybar/scripts/github_radar.py my_repos_only -t 0 -icon 2\", // Customize args here!\n    \"on-click\": \"xdg-open https://github.com/ahmed-x86\",\n    \"on-click-right\": \"xdg-open https://github.com/notifications\",\n    \"on-click-middle\": \"pkill -USR1 -f github_radar.py\", // Sends the refresh signal\n    \"restart-interval\": 0 // Set to 0 because the script runs its own background loop\n}')">Copy</button>
 <pre><code>"custom/github-radar": {
     "format": "{}",
     "return-type": "json",
@@ -187,6 +194,8 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
 
     <details>
         <summary>1. Default (GitHub Dark)</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* GitHub Radar - Default Theme */\n#custom-github-radar {\n    background-color: #24292e; /* Dark GitHub background */\n    color: #ffffff;\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #444c56;\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #2ea043; /* GitHub green */\n    color: #ffffff;\n    border-color: #2ea043;\n}')">Copy</button>
 <pre><code>/* GitHub Radar - Default Theme */
 #custom-github-radar {
     background-color: #24292e; /* Dark GitHub background */
@@ -204,10 +213,13 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
     color: #ffffff;
     border-color: #2ea043;
 }</code></pre>
+        </div>
     </details>
 
     <details>
         <summary>2. Catppuccin (Mocha)</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* GitHub Radar - Catppuccin Mocha Theme */\n#custom-github-radar {\n    background-color: #1e1e2e; /* Base */\n    color: #cdd6f4; /* Text */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #313244; /* Surface0 */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #a6e3a1; /* Green */\n    color: #11111b; /* Crust for contrast */\n    border-color: #a6e3a1;\n}')">Copy</button>
 <pre><code>/* GitHub Radar - Catppuccin Mocha Theme */
 #custom-github-radar {
     background-color: #1e1e2e; /* Base */
@@ -225,10 +237,13 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
     color: #11111b; /* Crust for contrast */
     border-color: #a6e3a1;
 }</code></pre>
+        </div>
     </details>
 
     <details>
         <summary>3. Dracula</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* GitHub Radar - Dracula Theme */\n#custom-github-radar {\n    background-color: #282a36; /* Background */\n    color: #f8f8f2; /* Foreground */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #44475a; /* Selection */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #50fa7b; /* Green */\n    color: #282a36; /* Background for contrast */\n    border-color: #50fa7b;\n}')">Copy</button>
 <pre><code>/* GitHub Radar - Dracula Theme */
 #custom-github-radar {
     background-color: #282a36; /* Background */
@@ -246,18 +261,19 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
     color: #282a36; /* Background for contrast */
     border-color: #50fa7b;
 }</code></pre>
+        </div>
     </details>
 
     <div class="note">
         <strong>Restart Waybar:</strong> Apply the changes by restarting Waybar using <code>killall waybar && waybar & disown</code> (Only needed if you haven't enabled <code>reload_style_on_change</code>).
     </div>
     
-
     <div class="action-container">
-    <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn-link">
-    View GitHub Repository
-    </a>
+        <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn-link">
+            View GitHub Repository
+        </a>
     </div>
+
 </section>
 
 <footer>
@@ -269,3 +285,5 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
 </body>
 </html>
 
+
+3
