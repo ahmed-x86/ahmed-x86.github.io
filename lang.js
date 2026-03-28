@@ -352,7 +352,10 @@ const translations = {
         "wall-col-desc": "Here are some of my favorite wallpapers used in my custom Arch Linux setups. Click on any image to view it in full resolution.",
         "wall-page-4-desc": "Page 4 - My curated collection of Reddit-sourced wallpapers for Linux ricing.",
         "wall-col-4-title": "My Collection (Part 4)",
-        "wall-col-4-desc": "Here are some of the best Reddit-sourced wallpapers for my Arch Linux setup. Click on any image to view it in full resolution."
+        "wall-col-4-desc": "Here are some of the best Reddit-sourced wallpapers for my Arch Linux setup. Click on any image to view it in full resolution.",
+        "wall-page-5-desc": "Page 5 - Royal wallpapers straight from my Hyprland dotfiles.",
+        "wall-col-5-title": "My Collection (Part 5)",
+        "wall-col-5-desc": "Here are the new royal wallpapers from my Hyprland dotfiles. Click on any image to view it in full resolution.",
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -706,7 +709,10 @@ const translations = {
         "wall-col-desc": "إليك بعض من خلفياتي المفضلة المستخدمة في إعدادات Arch Linux المخصصة الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة.",
         "wall-page-4-desc": "الصفحة 4 - مجموعتي المختارة من خلفيات Reddit المخصصة لتوزيعات لينكس.",
         "wall-col-4-title": "مجموعتي (الجزء 4)",
-        "wall-col-4-desc": "إليك بعض من أفضل الخلفيات المأخوذة من Reddit لإعدادات Arch Linux الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة."
+        "wall-col-4-desc": "إليك بعض من أفضل الخلفيات المأخوذة من Reddit لإعدادات Arch Linux الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة.",
+        "wall-page-5-desc": "الصفحة 5 - خلفيات ملكية مباشرة من ملفات إعداد Hyprland الخاصة بي.",
+        "wall-col-5-title": "مجموعتي (الجزء 5)",
+        "wall-col-5-desc": "إليك الخلفيات الملكية الجديدة من ملفات إعداد Hyprland. اضغط على أي صورة لعرضها بالدقة الكاملة.",
     }
 };
 
