@@ -58,7 +58,40 @@ const translations = {
         "feedback-submit": "Submit Feedback",
         
         "lang-modal-title": "Select Language",
-        "lang-modal-subtitle": "Choose website language"
+        "lang-modal-subtitle": "Choose website language",
+        "btn-copy": "Copy",
+
+        // === ASM Page Translations (EN) ===
+        "asm-page-title": "Ahmed x86 - Assembly Development Environment 🚀",
+        "asm-page-desc": "An all-in-one repository designed to kickstart your Assembly (ASM) development.",
+        "nav-back-home": "← Back to Home",
+        "nav-github-repo": "GitHub Repo",
+        "asm-intro-text": "This environment provides out-of-the-box support for Linux x64 and Windows (x86/x64), featuring pre-configured VS Code settings for a seamless workflow.",
+        "asm-quick-install": "🛠️ Quick Installation",
+        "asm-choose-weapon": "Choose your weapon (Operating System) and run the corresponding command to configure your environment immediately:",
+        "asm-linux-install": "🐧 Linux (One-Line Installer)",
+        "asm-linux-desc": "Supports Arch, Debian/Ubuntu, Fedora, Alpine, openSUSE, Solus, Gentoo, Puppy Linux, and Void.",
+        "asm-win10-install": "🪟 Windows 10 / 11 (PowerShell Installer)",
+        "asm-win10-desc": "Optimized for modern Windows environments.",
+        "asm-win7-install": "🏛️ Windows 7 (Legacy Support)",
+        "asm-win7-desc": "Dedicated script for Windows 7 compatibility.",
+        "asm-key-features": "✨ Key Features",
+        "asm-feat-1": "<strong>Dual-Platform Support:</strong> Native installers for both Windows and Linux, ensuring your dev environment is consistent everywhere.",
+        "asm-feat-2": "<strong>VS Code Integration:</strong> Pre-configured <code>tasks.json</code> and <code>launch.json</code> allow you to build and debug your code with a single shortcut (<code>Ctrl+Shift+B</code>).",
+        "asm-feat-3": "<strong>Global CLI Tool:</strong> Installs the custom <code>asm-run</code> command globally, allowing you to compile and test <code>.asm</code> files directly from any terminal without opening an editor.",
+        "asm-feat-4": "<strong>Smart Dependency Management:</strong> Automatically detects your package manager on Linux and skips unnecessary downloads, while natively setting up NASM on Windows.",
+        "asm-feat-5": "<strong>Legacy Support:</strong> Special installer for <strong>Windows 7</strong> to ensure assembly development isn't limited by OS version.",
+        "asm-feat-6": "<strong>Cross-Compilation:</strong> Ready-to-use toolchains to compile and test Windows binaries directly from Linux using Wine and MinGW.",
+        "asm-smart-engine": "🧠 Smart Engine Features",
+        "asm-smart-1": "<strong>Bulletproof Execution:</strong> Features built-in network stability checks, strict input validation loops, and a <code>Ctrl+C</code> trap that automatically cleans up partial downloads.",
+        "asm-smart-2": "<strong>Security First:</strong> Implements rigorous <strong>SHA256 Integrity Checks</strong> for external binaries to guarantee file authenticity.",
+        "asm-smart-3": "<strong>Editor Agnostic:</strong> Automatically scans and detects your installed IDE (VS Code, VSCodium, Cursor) and sets up Assembly extensions.",
+        "asm-smart-4": "<strong>Universal Package Tracking:</strong> Detects if your editor is installed via Native Package Manager, Snap, or Flatpak and configures extensions isolatedly.",
+        "asm-smart-5": "<strong>Auto-Path Patching:</strong> Dynamically updates <code>launch.json</code> and <code>tasks.json</code> based on your current OS username and directory path.",
+        "asm-final-note-title": "🎭 Final Note",
+        "asm-important-note": "<strong>[!IMPORTANT]</strong><br>This project was built to prove that \"Understanding Linux\" isn't about talking, it's about building solutions that work on <strong>9+ distributions</strong> with a single click.",
+        "asm-stay-hard": "Stay Hard, Keep Coding. 🚀",
+        "asm-arch-note": "<strong>Note for Arch Users:</strong> Because \"I use Arch btw\" shouldn't mean spending three hours on config. We've got you covered. 😎"
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -118,7 +151,40 @@ const translations = {
         "feedback-submit": "إرسال الملاحظات",
         
         "lang-modal-title": "اختر اللغة",
-        "lang-modal-subtitle": "اختر لغة الموقع"
+        "lang-modal-subtitle": "اختر لغة الموقع",
+        "btn-copy": "نسخ",
+
+        // === ASM Page Translations (AR) ===
+        "asm-page-title": "أحمد x86 - بيئة تطوير لغة التجميع (Assembly) 🚀",
+        "asm-page-desc": "مستودع شامل صُمم لبدء رحلتك في تطوير لغة التجميع (ASM) بكل سلاسة.",
+        "nav-back-home": "← العودة للرئيسية",
+        "nav-github-repo": "مستودع جيت هب",
+        "asm-intro-text": "توفر هذه البيئة دعماً جاهزاً للعمل لأنظمة Linux x64 و Windows (x86/x64)، وتتميز بإعدادات VS Code مجهزة مسبقاً لسير عمل سلس.",
+        "asm-quick-install": "🛠️ التثبيت السريع",
+        "asm-choose-weapon": "اختر سلاحك (نظام التشغيل) وقم بتشغيل الأمر المقابل لتهيئة بيئتك فوراً:",
+        "asm-linux-install": "🐧 لينكس (تثبيت بأمر واحد)",
+        "asm-linux-desc": "يدعم Arch، Debian/Ubuntu، Fedora، Alpine، openSUSE، Solus، Gentoo، Puppy Linux، و Void.",
+        "asm-win10-install": "🪟 ويندوز 10 / 11 (تثبيت عبر PowerShell)",
+        "asm-win10-desc": "مُحسّن لبيئات ويندوز الحديثة.",
+        "asm-win7-install": "🏛️ ويندوز 7 (دعم الأنظمة القديمة)",
+        "asm-win7-desc": "سكربت مخصص لدعم التوافق مع ويندوز 7.",
+        "asm-key-features": "✨ الميزات الأساسية",
+        "asm-feat-1": "<strong>دعم مزدوج للمنصات:</strong> مثبتات أصلية لكل من ويندوز ولينكس، لضمان استقرار بيئة التطوير الخاصة بك في أي مكان.",
+        "asm-feat-2": "<strong>تكامل مع VS Code:</strong> ملفات <code>tasks.json</code> و <code>launch.json</code> مجهزة مسبقاً لتسمح لك ببناء وتصحيح الكود باختصار واحد (<code>Ctrl+Shift+B</code>).",
+        "asm-feat-3": "<strong>أداة CLI عالمية:</strong> يتم تثبيت أمر <code>asm-run</code> المخصص على النظام، مما يتيح لك تجميع واختبار ملفات <code>.asm</code> مباشرة من أي تيرمينال بدون فتح المحرر.",
+        "asm-feat-4": "<strong>إدارة ذكية للاعتماديات:</strong> يكتشف تلقائياً مدير الحزم الخاص بك على لينكس ويتخطى التنزيلات المكررة، بينما يقوم بإعداد NASM على ويندوز تلقائياً.",
+        "asm-feat-5": "<strong>دعم الأنظمة القديمة:</strong> مثبت خاص لـ <strong>ويندوز 7</strong> لضمان عدم تقييد تطوير الأسمبلي بإصدار نظام التشغيل.",
+        "asm-feat-6": "<strong>تصريف متقاطع (Cross-Compilation):</strong> أدوات جاهزة للاستخدام لتجميع واختبار ثنائيات ويندوز مباشرة من لينكس باستخدام Wine و MinGW.",
+        "asm-smart-engine": "🧠 ميزات المحرك الذكي",
+        "asm-smart-1": "<strong>تنفيذ مضاد للأخطاء:</strong> يحتوي على فحوصات مدمجة لاستقرار الشبكة، حلقات صارمة للتحقق من الإدخال، واصطياد لـ <code>Ctrl+C</code> ينظف التنزيلات الجزئية تلقائياً عند المقاطعة.",
+        "asm-smart-2": "<strong>الأمان أولاً:</strong> يطبق فحوصات سلامة <strong>SHA256</strong> صارمة للملفات الخارجية لضمان أصالتها ومنع اختراقها.",
+        "asm-smart-3": "<strong>متوافق مع عدة محررات:</strong> يفحص ويكتشف بيئة التطوير الخاصة بك تلقائياً (VS Code, VSCodium, Cursor) ويهيئ إضافات الأسمبلي.",
+        "asm-smart-4": "<strong>تتبع شامل للحزم:</strong> يكتشف ما إذا كان محررك مثبتاً عبر مدير الحزم الأصلي أو Snap أو Flatpak ويهيئ الإضافات بالصلاحيات الصحيحة.",
+        "asm-smart-5": "<strong>تصحيح تلقائي للمسارات:</strong> يُحدث مسارات <code>launch.json</code> و <code>tasks.json</code> ديناميكياً بناءً على اسم المستخدم الخاص بك ومسار المجلد.",
+        "asm-final-note-title": "🎭 ملاحظة ختامية",
+        "asm-important-note": "<strong>[!هام]</strong><br>تم بناء هذا المشروع لإثبات أن \"فهم لينكس\" ليس مجرد كلام، بل هو بناء حلول تعمل على <strong>أكثر من 9 توزيعات</strong> بنقرة واحدة.",
+        "asm-stay-hard": "استمر بقوة، وواصل البرمجة. 🚀",
+        "asm-arch-note": "<strong>ملاحظة لمستخدمي Arch:</strong> لأن مقولة \"I use Arch btw\" لا ينبغي أن تعني قضاء ثلاث ساعات في الإعداد. لقد قمنا بتغطية الأمر من أجلك. 😎"
     }
 };
 
