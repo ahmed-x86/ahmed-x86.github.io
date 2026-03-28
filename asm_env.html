@@ -57,76 +57,6 @@
       ]
     }
     </script>
-
-    <style>
-        /* Specific styles for this page to keep it neat */
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0;
-            justify-content: center;
-        }
-        .badges img {
-            border-radius: 4px;
-        }
-        
-        .code-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        pre {
-            background-color: var(--crust);
-            padding: 15px;
-            padding-top: 35px; 
-            border-radius: 8px;
-            overflow-x: auto;
-            border: 1px solid var(--surface0);
-            margin-bottom: 0; 
-        }
-        code {
-            color: var(--green);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        .copy-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background-color: var(--surface1, #45475a);
-            color: var(--text, #cdd6f4);
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s ease-in-out;
-            z-index: 10;
-        }
-        .copy-btn:hover {
-            background-color: var(--mauve, #cba6f7);
-            color: var(--crust, #11111b);
-        }
-
-        .note {
-            background-color: var(--surface0);
-            padding: 15px;
-            border-left: 4px solid var(--mauve);
-            border-radius: 4px;
-            margin: 20px 0;
-            line-height: 1.6;
-        }
-
-        .important-note {
-            background-color: rgba(235, 160, 172, 0.1);
-            padding: 15px;
-            border-left: 4px solid var(--maroon, #eba0ac);
-            border-radius: 4px;
-            margin: 20px 0;
-            line-height: 1.6;
-        }
-    </style>
 </head>
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
@@ -167,11 +97,11 @@
         <img src="https://img.shields.io/badge/Alpine_Linux-0D597F?style=for-the-badge&logo=alpine-linux&logoColor=white" alt="Alpine Linux">
     </div>
 
-    <p style="text-align: center; color: var(--subtext);">
+    <p class="intro-text">
         This environment provides out-of-the-box support for Linux x64 and Windows (x86/x64), featuring pre-configured VS Code settings for a seamless workflow.
     </p>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>🛠️ Quick Installation</h2>
     <p>Choose your weapon (Operating System) and run the corresponding command to configure your environment immediately:</p>
@@ -179,22 +109,25 @@
     <h3>🐧 Linux (One-Line Installer)</h3>
     <p>Supports Arch, Debian/Ubuntu, Fedora, Alpine, openSUSE, Solus, Gentoo, Puppy Linux, and Void.</p>
     <div class="code-wrapper">
-        <pre><code>bash <(curl -sSL https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-linux.sh)</code></pre>
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('bash <(curl -sSL https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-linux.sh)')">Copy</button>
+        <pre><code>bash &lt;(curl -sSL https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-linux.sh)</code></pre>
     </div>
 
     <h3>🪟 Windows 10 / 11 (PowerShell Installer)</h3>
     <p>Optimized for modern Windows environments.</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('irm https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-windows.ps1 | iex')">Copy</button>
         <pre><code>irm https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-windows.ps1 | iex</code></pre>
     </div>
 
     <h3>🏛️ Windows 7 (Legacy Support)</h3>
     <p>Dedicated script for Windows 7 compatibility.</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('irm https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-windows7.ps1 | iex')">Copy</button>
         <pre><code>irm https://raw.githubusercontent.com/ahmed-x86/asm/refs/heads/main/install-windows7.ps1 | iex</code></pre>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>✨ Key Features</h2>
     <ul>
@@ -221,7 +154,7 @@
         <li><strong>Alpine Compatibility:</strong> Includes a dedicated pre-step to fix <code>sed</code> compatibility on Alpine Linux.</li>
     </ul>
 
-    <hr style="border: 0; border-top: 1px solid var(--surface0); margin: 40px 0;">
+    <hr class="section-divider">
 
     <h2>🎭 Final Note</h2>
     
@@ -240,7 +173,7 @@
         <strong>Note for Arch Users:</strong> Because "I use Arch btw" shouldn't mean spending three hours on config. We've got you covered. 😎
     </div>
 
-    <p style="text-align: center; margin-top: 50px; font-weight: bold; color: var(--blue); font-size: 1.2rem;">
+    <p class="rice-quote" style="font-size: 1.2rem;">
         # i use arch btw
     </p>
 
@@ -254,3 +187,5 @@
 
 </body>
 </html>
+
+3
