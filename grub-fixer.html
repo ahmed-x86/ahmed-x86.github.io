@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
 <header>
@@ -97,17 +96,20 @@
     <h3>Option 1: Quick One-Liner (Interactive Mode)</h3>
     <p>The classic, smart, and unified interactive experience:</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash')">Copy</button>
 <pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash</code></pre>
     </div>
 
     <h3>Option 2: Fully Automated (Zero-Interaction Mode) 💥</h3>
     <p>Skip all questions and let the script fix GRUB silently based on auto-detection (perfect for Live USBs):</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto')">Copy</button>
 <pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto</code></pre>
     </div>
 
     <h3>Option 3: Manual Download</h3>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh\nchmod +x grub-fixer.sh\nsudo ./grub-fixer.sh')">Copy</button>
 <pre><code>curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh
 chmod +x grub-fixer.sh
 sudo ./grub-fixer.sh [FLAGS]</code></pre>
@@ -118,7 +120,7 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
    <h2>📜 Version History</h2>
    <details open>
         <summary>Click to view full version history</summary>
-        <div class="lang-table-container">
+        <div class="table-container">
             <table>
                 <thead>
                     <tr>
@@ -142,7 +144,7 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
                     <tr><td>V13</td><td>Added OS Prober support to automatically detect dual-boot systems (e.g., Windows).</td></tr>
                     <tr><td>V14</td><td>Added Dynamic Execution Timer with gamer-style human responses (The Speedrun Update).</td></tr>
                     <tr><td>V15</td><td>Added Universal UEFI Support (32-bit/i386-efi) with dynamic bitness detection.</td></tr>
-                    <tr><td>V16</td><td> Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
+                    <tr><td>V16</td><td>Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
                     <tr><td>V17</td><td>Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
                     <tr><td><b>V18</b></td><td><b>Current:</b> Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
                 </tbody>
@@ -182,3 +184,4 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
 
 </body>
 </html>
+3
