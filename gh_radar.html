@@ -26,46 +26,21 @@
     
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "gh-radar",
-      "operatingSystem": "Linux, Arch Linux",
-      "applicationCategory": "DesktopEnhancement",
-      "applicationSubCategory": "System Monitor",
-      "description": "A dynamic and interactive Waybar module that monitors GitHub activity in real-time with an animated ticker, audio alerts, custom icons, and manual refresh capabilities.",
-      "author": {
-        "@type": "Person",
-        "name": "Ahmed x86",
-        "url": "https://ahmed-x86.github.io/"
-      },
-      "url": "https://ahmed-x86.github.io/gh_radar.html",
-      "codeRepository": "https://github.com/ahmed-x86/gh-radar",
-      "programmingLanguage": "Python",
-      "featureList": [
-        "Animated Waybar Ticker",
-        "Audio Notifications",
-        "GitHub Avatar Desktop Notifications",
-        "Manual Refresh via SIGUSR1",
-        "Customizable Icons",
-        "Optimized API Polling with ETag"
-      ],
-      "keywords": "Waybar, GitHub, Linux ricing, Hyprland, Python script"
-    }
-    </script>
 </head>
 <body>
-    <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
-<header>
-    <h1>Ahmed x86 - gh-radar for Waybar 📡</h1>
-    <p>A dynamic and interactive Waybar module that monitors your GitHub activity in real-time.</p>
+    
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="ghradar-page-title">Ahmed x86 - gh-radar for Waybar 📡</h1>
+    <p data-i18n="ghradar-page-desc">A dynamic and interactive Waybar module that monitors your GitHub activity in real-time.</p>
 </header>
 
 <nav>
-    <a href="index.html">← Back to Home</a>
-    <a href="https://github.com/ahmed-x86/gh-radar" target="_blank">GitHub Repo</a>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
 </nav>
 
 <section id="project-details">
@@ -82,30 +57,30 @@
             <source src="demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="demo-caption">Watch gh-radar's animated ticker and notifications in action!</div>
+        <div class="demo-caption" data-i18n="ghradar-demo-caption">Watch gh-radar's animated ticker and notifications in action!</div>
     </div>
 
     <hr class="section-divider">
 
-    <h2>✨ Key Features</h2>
+    <h2 data-i18n="ghradar-features-title">✨ Key Features</h2>
     <ul>
-        <li><strong>Animated Ticker:</strong> Waybar text changes dynamically when a new push occurs. It shows the branch and commit message, then the repository name, and finally returns to your username.</li>
-        <li><strong>Audio Alerts:</strong> Plays a retro notification sound instantly upon detecting a new push.</li>
-        <li><strong>Avatar Notifications:</strong> Sends a native desktop notification containing the committer's actual GitHub avatar and commit details.</li>
-        <li><strong>Interactive Buttons:</strong> Left-click to open your GitHub profile, Right-click to open notifications directly from Waybar.</li>
-        <li><strong>Manual Refresh (New!):</strong> Middle-click the module to instantly fetch the latest updates using Linux signals (<code>SIGUSR1</code>).</li>
-        <li><strong>Smart Resource Management:</strong> Dynamic polling intervals (10s when active, 60s when idle) or a complete Sleep Mode (<code>-t 0</code>) to save battery and bandwidth.</li>
-        <li><strong>Custom Icons (New!):</strong> Choose from 10 different Nerd Font icons (Octocat, Git branch, etc.) using the <code>-icon</code> argument.</li>
-        <li><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits.</li>
+        <li data-i18n="ghradar-feat-1"><strong>Animated Ticker:</strong> Waybar text changes dynamically when a new push occurs. It shows the branch and commit message, then the repository name, and finally returns to your username.</li>
+        <li data-i18n="ghradar-feat-2"><strong>Audio Alerts:</strong> Plays a retro notification sound instantly upon detecting a new push.</li>
+        <li data-i18n="ghradar-feat-3"><strong>Avatar Notifications:</strong> Sends a native desktop notification containing the committer's actual GitHub avatar and commit details.</li>
+        <li data-i18n="ghradar-feat-4"><strong>Interactive Buttons:</strong> Left-click to open your GitHub profile, Right-click to open notifications directly from Waybar.</li>
+        <li data-i18n="ghradar-feat-5"><strong>Manual Refresh (New!):</strong> Middle-click the module to instantly fetch the latest updates using Linux signals (<code>SIGUSR1</code>).</li>
+        <li data-i18n="ghradar-feat-6"><strong>Smart Resource Management:</strong> Dynamic polling intervals (10s when active, 60s when idle) or a complete Sleep Mode (<code>-t 0</code>) to save battery and bandwidth.</li>
+        <li data-i18n="ghradar-feat-7"><strong>Custom Icons (New!):</strong> Choose from 10 different Nerd Font icons (Octocat, Git branch, etc.) using the <code>-icon</code> argument.</li>
+        <li data-i18n="ghradar-feat-8"><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits.</li>
     </ul>
 
     <hr class="section-divider">
 
-    <h2>🛠️ Installation & Setup</h2>
+    <h2 data-i18n="ghradar-install-title">🛠️ Installation & Setup</h2>
     
-    <h3>1. Clone & Copy Files</h3>
+    <h3 data-i18n="ghradar-install-step1">1. Clone & Copy Files</h3>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/gh-radar.git\ncd gh-radar\n\n# Copy sound to your config\ncp -r sounds ~/.config/\n\n# Setup Waybar scripts directory\nmkdir -p ~/.config/waybar/scripts\ncp github_radar.py ~/.config/waybar/scripts/\nchmod +x ~/.config/waybar/scripts/github_radar.py')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/gh-radar.git\ncd gh-radar\n\n# Copy sound to your config\ncp -r sounds ~/.config/\n\n# Setup Waybar scripts directory\nmkdir -p ~/.config/waybar/scripts\ncp github_radar.py ~/.config/waybar/scripts/\nchmod +x ~/.config/waybar/scripts/github_radar.py')">Copy</button>
 <pre><code>git clone https://github.com/ahmed-x86/gh-radar.git
 cd gh-radar
 
@@ -118,45 +93,45 @@ cp github_radar.py ~/.config/waybar/scripts/
 chmod +x ~/.config/waybar/scripts/github_radar.py</code></pre>
     </div>
 
-    <h3>2. Add Your Credentials (.env)</h3>
-    <p>Create a <code>.env</code> file to authenticate with GitHub:</p>
+    <h3 data-i18n="ghradar-install-step2">2. Add Your Credentials (.env)</h3>
+    <p data-i18n="ghradar-env-desc1">Create a <code>.env</code> file to authenticate with GitHub:</p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('nano ~/.config/waybar/scripts/.env')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('nano ~/.config/waybar/scripts/.env')">Copy</button>
 <pre><code>nano ~/.config/waybar/scripts/.env</code></pre>
     </div>
-    <p>Add the following (replace with your info):</p>
+    <p data-i18n="ghradar-env-desc2">Add the following (replace with your info):</p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('GITHUB_USERNAME=your_github_username\nGITHUB_PAT=your_personal_access_token_here')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('GITHUB_USERNAME=your_github_username\nGITHUB_PAT=your_personal_access_token_here')">Copy</button>
 <pre><code>GITHUB_USERNAME=your_github_username
 GITHUB_PAT=your_personal_access_token_here</code></pre>
     </div>
 
-    <h3>3. Install Dependencies</h3>
-    <p>Depending on your Linux distribution, install the required Python libraries. You also need an audio player (<code>mpv</code> or <code>paplay</code>) and a notification daemon (<code>libnotify</code>).</p>
+    <h3 data-i18n="ghradar-install-step3">3. Install Dependencies</h3>
+    <p data-i18n="ghradar-dep-desc">Depending on your Linux distribution, install the required Python libraries. You also need an audio player (<code>mpv</code> or <code>paplay</code>) and a notification daemon (<code>libnotify</code>).</p>
     
-    <p><strong>For Arch Linux / Manjaro:</strong></p>
+    <p><strong data-i18n="ghradar-dep-arch">For Arch Linux / Manjaro:</strong></p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('sudo pacman -S python-requests python-dotenv')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S python-requests python-dotenv')">Copy</button>
 <pre><code>sudo pacman -S python-requests python-dotenv</code></pre>
     </div>
     
-    <p><strong>For Ubuntu / Debian (or using pip):</strong></p>
+    <p><strong data-i18n="ghradar-dep-ubuntu">For Ubuntu / Debian (or using pip):</strong></p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('pip install requests python-dotenv')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pip install requests python-dotenv')">Copy</button>
 <pre><code>pip install requests python-dotenv</code></pre>
     </div>
 
     <hr class="section-divider">
 
-    <h2>⚙️ Usage & Arguments</h2>
-    <p>The script supports arguments to customize its behavior:</p>
+    <h2 data-i18n="ghradar-usage-title">⚙️ Usage & Arguments</h2>
+    <p data-i18n="ghradar-usage-desc">The script supports arguments to customize its behavior:</p>
     <ul>
-        <li><code>my_repos_only</code>: Only triggers alerts for repositories you own (ignores activity from other repos you watch/star).</li>
-        <li><code>-t 0</code>: <strong>Manual Mode</strong>. The script will not poll GitHub automatically. It will sleep completely until you middle-click the Waybar module.</li>
-        <li><code>-icon &lt;1-10&gt;</code>: <strong>(New!)</strong> Choose the icon displayed in Waybar. Choose a number from 1 to 10 (e.g., <code>-icon 2</code> for the Octocat).</li>
+        <li data-i18n="ghradar-usage-arg1"><code>my_repos_only</code>: Only triggers alerts for repositories you own (ignores activity from other repos you watch/star).</li>
+        <li data-i18n="ghradar-usage-arg2"><code>-t 0</code>: <strong>Manual Mode</strong>. The script will not poll GitHub automatically. It will sleep completely until you middle-click the Waybar module.</li>
+        <li data-i18n="ghradar-usage-arg3"><code>-icon &lt;1-10&gt;</code>: <strong>(New!)</strong> Choose the icon displayed in Waybar. Choose a number from 1 to 10 (e.g., <code>-icon 2</code> for the Octocat).</li>
     </ul>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('# Examples:\ngithub_radar.py                    # Tracks everything, dynamic polling, default icon\ngithub_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon\ngithub_radar.py -t 0               # Tracks everything, manual refresh ONLY\ngithub_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refresh ONLY, Git logo')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('# Examples:\ngithub_radar.py                    # Tracks everything, dynamic polling, default icon\ngithub_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon\ngithub_radar.py -t 0               # Tracks everything, manual refresh ONLY\ngithub_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refresh ONLY, Git logo')">Copy</button>
 <pre><code># Examples:
 github_radar.py                    # Tracks everything, dynamic polling, default icon
 github_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon
@@ -166,17 +141,17 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
 
     <hr class="section-divider">
 
-    <h2>🖥️ Waybar Configuration</h2>
+    <h2 data-i18n="ghradar-waybar-title">🖥️ Waybar Configuration</h2>
 
-    <h3>1. Module Configuration (<code>config.jsonc</code>)</h3>
+    <h3 data-i18n="ghradar-waybar-step1">1. Module Configuration (<code>config.jsonc</code>)</h3>
     
     <blockquote class="note" style="border-color: #a6e3a1; background-color: rgba(166, 227, 161, 0.1);">
-        <strong>💡 Pro Tip:</strong> Add <code>"reload_style_on_change": true,</code> at the very top of your Waybar config file. This allows Waybar to instantly apply changes when you edit the config or style files without needing a manual restart!
+        <strong data-i18n="ghradar-pro-tip">💡 Pro Tip:</strong> <span data-i18n="ghradar-pro-tip-desc">Add <code>"reload_style_on_change": true,</code> at the very top of your Waybar config file. This allows Waybar to instantly apply changes when you edit the config or style files without needing a manual restart!</span>
     </blockquote>
 
-    <p>Add this module to your Waybar config file (under <code>modules-left</code>, <code>modules-center</code>, or <code>modules-right</code>):</p>
+    <p data-i18n="ghradar-waybar-desc1">Add this module to your Waybar config file (under <code>modules-left</code>, <code>modules-center</code>, or <code>modules-right</code>):</p>
     <div class="code-wrapper">
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('\"custom/github-radar\": {\n    \"format\": \"{}\",\n    \"return-type\": \"json\",\n    \"exec\": \"~/.config/waybar/scripts/github_radar.py my_repos_only -t 0 -icon 2\", // Customize args here!\n    \"on-click\": \"xdg-open https://github.com/ahmed-x86\",\n    \"on-click-right\": \"xdg-open https://github.com/notifications\",\n    \"on-click-middle\": \"pkill -USR1 -f github_radar.py\", // Sends the refresh signal\n    \"restart-interval\": 0 // Set to 0 because the script runs its own background loop\n}')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('\"custom/github-radar\": {\n    \"format\": \"{}\",\n    \"return-type\": \"json\",\n    \"exec\": \"~/.config/waybar/scripts/github_radar.py my_repos_only -t 0 -icon 2\", // Customize args here!\n    \"on-click\": \"xdg-open https://github.com/ahmed-x86\",\n    \"on-click-right\": \"xdg-open https://github.com/notifications\",\n    \"on-click-middle\": \"pkill -USR1 -f github_radar.py\", // Sends the refresh signal\n    \"restart-interval\": 0 // Set to 0 because the script runs its own background loop\n}')">Copy</button>
 <pre><code>"custom/github-radar": {
     "format": "{}",
     "return-type": "json",
@@ -187,15 +162,15 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
     "restart-interval": 0 // Set to 0 because the script runs its own background loop
 }</code></pre>
     </div>
-    <p><em>(Note: Change <code>ahmed-x86</code> to your actual GitHub username in the <code>on-click</code> URL).</em></p>
+    <p data-i18n="ghradar-waybar-desc2"><em>(Note: Change <code>ahmed-x86</code> to your actual GitHub username in the <code>on-click</code> URL).</em></p>
 
-    <h3>2. Styling (<code>style.css</code>)</h3>
-    <p>Choose the theme that matches your current Waybar setup and add it to your <code>style.css</code>.</p>
+    <h3 data-i18n="ghradar-waybar-step2">2. Styling (<code>style.css</code>)</h3>
+    <p data-i18n="ghradar-style-desc">Choose the theme that matches your current Waybar setup and add it to your <code>style.css</code>.</p>
 
     <details>
-        <summary>1. Default (GitHub Dark)</summary>
+        <summary data-i18n="ghradar-style-1">1. Default (GitHub Dark)</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* GitHub Radar - Default Theme */\n#custom-github-radar {\n    background-color: #24292e; /* Dark GitHub background */\n    color: #ffffff;\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #444c56;\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #2ea043; /* GitHub green */\n    color: #ffffff;\n    border-color: #2ea043;\n}')">Copy</button>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* GitHub Radar - Default Theme */\n#custom-github-radar {\n    background-color: #24292e; /* Dark GitHub background */\n    color: #ffffff;\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #444c56;\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #2ea043; /* GitHub green */\n    color: #ffffff;\n    border-color: #2ea043;\n}')">Copy</button>
 <pre><code>/* GitHub Radar - Default Theme */
 #custom-github-radar {
     background-color: #24292e; /* Dark GitHub background */
@@ -217,9 +192,9 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
     </details>
 
     <details>
-        <summary>2. Catppuccin (Mocha)</summary>
+        <summary data-i18n="ghradar-style-2">2. Catppuccin (Mocha)</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* GitHub Radar - Catppuccin Mocha Theme */\n#custom-github-radar {\n    background-color: #1e1e2e; /* Base */\n    color: #cdd6f4; /* Text */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #313244; /* Surface0 */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #a6e3a1; /* Green */\n    color: #11111b; /* Crust for contrast */\n    border-color: #a6e3a1;\n}')">Copy</button>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* GitHub Radar - Catppuccin Mocha Theme */\n#custom-github-radar {\n    background-color: #1e1e2e; /* Base */\n    color: #cdd6f4; /* Text */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #313244; /* Surface0 */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #a6e3a1; /* Green */\n    color: #11111b; /* Crust for contrast */\n    border-color: #a6e3a1;\n}')">Copy</button>
 <pre><code>/* GitHub Radar - Catppuccin Mocha Theme */
 #custom-github-radar {
     background-color: #1e1e2e; /* Base */
@@ -241,9 +216,9 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
     </details>
 
     <details>
-        <summary>3. Dracula</summary>
+        <summary data-i18n="ghradar-style-3">3. Dracula</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" onclick="navigator.clipboard.writeText('/* GitHub Radar - Dracula Theme */\n#custom-github-radar {\n    background-color: #282a36; /* Background */\n    color: #f8f8f2; /* Foreground */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #44475a; /* Selection */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #50fa7b; /* Green */\n    color: #282a36; /* Background for contrast */\n    border-color: #50fa7b;\n}')">Copy</button>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* GitHub Radar - Dracula Theme */\n#custom-github-radar {\n    background-color: #282a36; /* Background */\n    color: #f8f8f2; /* Foreground */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #44475a; /* Selection */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #50fa7b; /* Green */\n    color: #282a36; /* Background for contrast */\n    border-color: #50fa7b;\n}')">Copy</button>
 <pre><code>/* GitHub Radar - Dracula Theme */
 #custom-github-radar {
     background-color: #282a36; /* Background */
@@ -264,24 +239,69 @@ github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refr
         </div>
     </details>
 
-    <div class="note">
+    <div class="note" data-i18n="ghradar-restart-note">
         <strong>Restart Waybar:</strong> Apply the changes by restarting Waybar using <code>killall waybar && waybar & disown</code> (Only needed if you haven't enabled <code>reload_style_on_change</code>).
     </div>
     
     <div class="action-container">
-        <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn-link">
+        <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn-link" data-i18n="ghradar-btn-repo">
             View GitHub Repository
         </a>
     </div>
 
 </section>
 
-<footer>
+<footer data-i18n="footer-text">
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
 <script src="main.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
-
