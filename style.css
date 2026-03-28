@@ -34,22 +34,6 @@ header {
     border-bottom: 2px solid var(--mauve);
 }
 
-.auth-link {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: var(--mauve);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.auth-link:hover {
-    color: var(--lavender);
-    text-decoration: underline;
-}
-
 header h1 {
     color: var(--mauve);
     font-size: 2.5rem;
@@ -165,7 +149,6 @@ h2 {
 .gallery-grid img:hover {
     border-color: var(--mauve);
     transform: translateY(-8px) scale(1.03);
-    /* تأثير الوهج البنفسجي المضاف من صفحة الخلفيات */
     box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25);
 }
 
@@ -406,26 +389,19 @@ footer {
     background-color: var(--blue);
 }
 
-/* Responsive Design */
+/* =========================================
+   Responsive Design
+   ========================================= */
 @media (max-width: 768px) {
     .projects-grid, .gallery-grid {
         grid-template-columns: 1fr;
     }
-    
     header {
         padding: 40px 20px;
     }
-
     header h1 {
         font-size: 2rem;
     }
-    
-    .auth-link {
-        top: 15px;
-        right: 15px;
-        font-size: 0.85rem;
-    }
-
     nav {
         display: flex;
         flex-wrap: wrap;
@@ -433,22 +409,18 @@ footer {
         gap: 15px;
         padding: 15px 10px;
     }
-
     nav a {
         margin: 0;
         font-size: 0.95rem;
     }
-
     .pagination {
         gap: 8px;
         margin-bottom: 40px; 
     }
-
     .pagination a {
         padding: 8px 12px;
         font-size: 0.9rem;
     }
-
     .feedback-btn {
         bottom: 15px;
         right: 15px;
@@ -458,7 +430,7 @@ footer {
 }
 
 /* =========================================
-   Extracted Inline Styles (From HTML)
+   Inline & Extra Components Styles
    ========================================= */
 
 .profile-pic {
@@ -501,10 +473,7 @@ footer {
     line-height: 1.6;
 }
 
-/* =========================================
-   Hyprland Dotfiles Specific Styles
-   ========================================= */
-
+/* Code & Gallery */
 .code-wrapper {
     position: relative;
     margin-bottom: 20px;
@@ -559,6 +528,10 @@ code {
     border: 2px solid var(--surface0);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 10px);
+    min-width: 250px; 
+    object-fit: cover; 
 }
 
 .gallery img:hover {
@@ -591,7 +564,7 @@ section a:hover {
 }
 
 /* =========================================
-   gh-radar Specific Styles
+   Project Specific Styles
    ========================================= */
 
 .badges {
@@ -606,12 +579,12 @@ section a:hover {
     border-radius: 4px;
 }
 
-.demo-container {
+.demo-container, .action-container {
     text-align: center;
     margin: 40px 0;
 }
 
-.demo-video {
+.demo-video, .hero-img, .effect-image {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
@@ -619,9 +592,15 @@ section a:hover {
     border: 2px solid var(--surface0);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     outline: none;
+    display: block;
+    margin: 30px auto;
 }
 
-.demo-video:hover {
+.hero-img, .effect-image {
+    width: 70%;
+}
+
+.demo-video:hover, .hero-img:hover, .effect-image:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25);
     border-color: var(--mauve);
@@ -640,6 +619,23 @@ section a:hover {
     border-left: 4px solid var(--mauve);
     border-radius: 4px;
     margin: 20px 0;
+}
+
+.warning {
+    border-left: 4px solid var(--red);
+    background-color: rgba(243, 139, 168, 0.1);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.important-note {
+    background-color: rgba(235, 160, 172, 0.1);
+    padding: 15px;
+    border-left: 4px solid var(--red);
+    border-radius: 4px;
+    margin: 20px 0;
+    line-height: 1.6;
 }
 
 details {
@@ -667,31 +663,15 @@ details pre {
     margin: 40px 0;
 }
 
-.rice-quote {
+.rice-quote, .intro-text {
     text-align: center; 
     margin-top: 50px; 
+    color: var(--subtext);
+}
+
+.rice-quote {
     font-weight: bold; 
     color: var(--blue);
-}
-
-/* =========================================
-   Mobile Charge Indicator Specific Styles
-   ========================================= */
-
-.hero-img {
-    width: 70%;
-    display: block;
-    margin: 30px auto;
-    border-radius: 12px;
-    border: 2px solid var(--surface0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.hero-img:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25);
-    border-color: var(--mauve);
 }
 
 .btn-link {
@@ -715,42 +695,8 @@ details pre {
     box-shadow: 0 8px 20px rgba(137, 180, 250, 0.3);
 }
 
-.action-container {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* =========================================
-   Hijri Calendar Specific Styles
-   ========================================= */
-
-.effect-image {
-    width: 75%;
-    display: block;
-    margin: 30px auto;
-    border-radius: 12px;
-    border: 2px solid var(--surface0);
-    background-color: var(--crust);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.effect-image:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(203, 166, 247, 0.25);
-    border-color: var(--mauve);
-}
-
-.warning {
-    border-left: 4px solid var(--red);
-    background-color: rgba(243, 139, 168, 0.1);
-    padding: 15px;
-    border-radius: 4px;
-    margin: 20px 0;
-}
-
-/* تنسيق جدول اللغات */
-.lang-table-container {
+/* Tables */
+.table-container, .lang-table-container {
     overflow-x: auto;
     margin: 20px 0;
 }
@@ -773,122 +719,13 @@ th {
     background-color: var(--surface0);
     color: var(--mauve);
 }
-/* تنسيق حاوية اللغة عشان تكون في الزاوية */
-.lang-container.top-corner {
-    position: absolute;
-    top: 20px;
-    left: 20px; /* مكانها على الشمال */
-    z-index: 1000;
-}
 
-/* عشان الـ absolute يشتغل صح، لازم الـ header يكون relative */
-header {
-    position: relative;
-}
-
-/* تنسيق كلمة Language عشان تبان زي رابط عادي */
-.lang-link {
-    color: inherit;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.lang-link:hover {
-    color: #cba6f7; /* لون بنفسجي خفيف يتماشى مع الـ Theme وقت التمرير */
-}
-
-/* تعديل اتجاه القائمة المنسدلة عشان تفتح تحت الكلمة مباشرة */
-.lang-container.top-corner .lang-modal {
-    right: auto;
-    left: 0;
-}
-
-/* ------------------------------------------------ */
-/* ضبط الأماكن لما الصفحة تتحول للعربي (من اليمين لليسار) */
-html[dir="rtl"] .lang-container.top-corner {
-    left: auto;
-    right: 20px; /* تروح يمين */
-}
-
-html[dir="rtl"] .lang-container.top-corner .lang-modal {
-    left: auto;
-    right: 0;
-}
-
-html[dir="rtl"] .auth-link {
-    right: auto;
-    left: 20px; /* الـ Signin يروح شمال */
-}
-/* تنسيق الجداول (Responsive Tables) */
-.table-container {
-    overflow-x: auto;
-    margin: 20px 0;
-}
-/* =========================================
-   ASM Environment Specific Styles
-   ========================================= */
-
-.intro-text {
-    text-align: center;
-    color: var(--subtext);
-}
-
-.important-note {
-    background-color: rgba(235, 160, 172, 0.1);
-    padding: 15px;
-    border-left: 4px solid var(--red); /* استخدمت var(--red) المتاح عندك في الباليت */
-    border-radius: 4px;
-    margin: 20px 0;
-    line-height: 1.6;
-}
-
-
-/* تنسيق حاوية الجاليري */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* تنسيق الصور داخل الجاليري */
-.gallery img {
-    border-radius: 12px;
-    border: 2px solid var(--surface0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    
-    /* التعديل الجديد هنا */
-    flex: 1 1 calc(50% - 20px); /* يسمح للصورة بالنمو والتقلص، ويحدد الأساس بـ 50% ناقص الـ gap */
-    max-width: calc(50% - 10px); /* يضمن إنها ما تزيدش عن نصف العرض أبداً */
-    min-width: 250px; /* حد أدنى أصغر قليلاً لضمان المظهر الجيد على الشاشات المتوسطة */
-    object-fit: cover; /* لضمان عدم تمدد الصورة بشكل سيء */
-}
-
-/* =========================================
-   Gallery Grid / Arch Sessions Specific Styles
-   ========================================= */
-
-.gallery-grid .project {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.gallery-grid .project a {
-    margin-top: auto;
-    display: block;
-}
-
-/* تعديلات شاشات الموبايل (Responsive) */
 @media (max-width: 768px) {
     .gallery-grid {
         display: flex !important;
         flex-direction: column !important;
         gap: 30px !important; 
     }
-    
     .gallery-grid .project {
         height: auto !important; 
         min-height: min-content !important;
@@ -897,61 +734,76 @@ html[dir="rtl"] .auth-link {
 }
 
 /* =========================================
+   Theme Modal Styles
+   ========================================= */
+.theme-btn {
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.theme-btn.active-theme {
+    background-color: var(--surface0); 
+    color: var(--subtext);
+    border: 1px solid var(--surface1);
+    cursor: not-allowed; 
+}
+
+.theme-btn.active-theme:hover {
+    background-color: var(--surface0);
+    color: var(--subtext);
+    transform: none; 
+}
+
+/* =========================================
    Sidebar / Off-canvas Menu Styles
    ========================================= */
 
-/* زرار الهامبرجر ☰ */
 .menu-btn {
     cursor: pointer;
     font-size: 1.8rem;
     color: var(--text);
     transition: color 0.3s ease;
-    user-select: none; /* عشان مايتعملوش تحديد بالغلط */
+    user-select: none; 
 }
 
 .menu-btn:hover {
     color: var(--mauve);
 }
 
-/* القائمة الجانبية نفسها */
 .sidebar {
     position: fixed;
     top: 0;
-    /* بنستخدم inset-inline-start عشان في الإنجليزي تفتح من الشمال وفي العربي من اليمين */
     inset-inline-start: -260px; 
     width: 250px;
     height: 100%;
-    background-color: var(--mantle); /* لون يتماشى مع الـ Theme */
+    background-color: var(--mantle);
     border-inline-end: 2px solid var(--surface0);
-    z-index: 2000; /* لازم يكون عالي جداً */
+    z-index: 2000;
     transition: inset-inline-start 0.3s ease;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     padding-top: 60px;
 }
 
-/* كلاس الفتح */
 .sidebar.open {
     inset-inline-start: 0;
 }
 
-/* الطبقة السوداء الشفافة ورا القائمة */
 .sidebar-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(17, 17, 27, 0.7); /* لون شفاف من الـ Base */
+    background-color: rgba(17, 17, 27, 0.7); 
     z-index: 1999;
     display: none;
-    backdrop-filter: blur(3px); /* تأثير ضبابي خفيف */
+    backdrop-filter: blur(3px); 
 }
 
 .sidebar-overlay.show {
     display: block;
 }
 
-/* زرار الإغلاق X */
 .close-sidebar {
     position: absolute;
     top: 15px;
@@ -967,7 +819,6 @@ html[dir="rtl"] .auth-link {
     color: var(--red);
 }
 
-/* قائمة الزراير */
 .sidebar-list {
     list-style: none;
     padding: 0;
@@ -975,62 +826,27 @@ html[dir="rtl"] .auth-link {
 }
 
 .sidebar-list li {
-    padding: 15px 20px;
     border-bottom: 1px solid var(--surface0);
-    cursor: pointer;
-    color: var(--text);
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar-list li:hover {
     background-color: var(--surface0);
-    color: var(--mauve);
-}
-/* =========================================
-   Theme Modal Styles
-   ========================================= */
-
-.theme-btn {
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
 }
 
-/* شكل الزرار لما يكون الثيم بتاعه هو اللي متفعل حالياً */
-.theme-btn.active-theme {
-    background-color: var(--surface0); /* لون باهت يدل إنه مش قابل للضغط */
-    color: var(--subtext);
-    border: 1px solid var(--surface1);
-    cursor: not-allowed; /* علامة الـ X أو الممنوع */
-}
-
-/* منع أي تأثيرات لما تقف بالماوس على الثيم المتفعل */
-.theme-btn.active-theme:hover {
-    background-color: var(--surface0);
-    color: var(--subtext);
-    transform: none; /* عشان ما يتحركش لفوق زي الزراير العادية */
-}
-/* تنسيق القائمة الجانبية لتدعم دفع العناصر للأسفل */
-.sidebar-list {
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 60px); /* طرح مساحة زر الإغلاق */
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-/* دفع العنصر الأخير إلى أسفل القائمة */
-.sidebar-bottom-item {
-    margin-top: auto; /* هذا هو السر الذي يدفعه للأسفل */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* خط بسيط لتمييزه */
-    padding-bottom: 20px; /* مسافة من القاع */
-}
-
-/* تنسيق الروابط داخل القائمة لتبدو كبقية العناصر */
-.sidebar-list li a {
-    color: inherit;
+/* توحيد المسافات لكل عناصر القائمة سواء كان span أو a */
+.sidebar-list li span,
+.sidebar-list li a.auth-link {
+    display: block;
+    padding: 15px 20px;
+    color: var(--text);
+    font-size: 1.1rem;
     text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar-list li:hover span,
+.sidebar-list li:hover a.auth-link {
+    color: var(--mauve);
 }
