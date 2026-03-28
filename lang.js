@@ -8,6 +8,8 @@ const translations = {
         "nav-projects": "Projects",
         "nav-wallpapers": "Wallpapers",
         "nav-github": "GitHub",
+        "nav-back-home": "← Back to Home",
+        "nav-github-repo": "GitHub Repo",
         
         "about-title": "About Me",
         "about-text": "I am Ahmed (known online as <strong>ahmed-x86</strong> or <strong>ahmedx86</strong>), currently studying Computers and Information Systems. I specialize in Linux systems (Arch Linux is my daily driver) and cybersecurity. I enjoy low-level programming with Assembly, network analysis, and building custom rices using Hyprland and Waybar.",
@@ -64,8 +66,6 @@ const translations = {
         // === ASM Page Translations (EN) ===
         "asm-page-title": "Ahmed x86 - Assembly Development Environment 🚀",
         "asm-page-desc": "An all-in-one repository designed to kickstart your Assembly (ASM) development.",
-        "nav-back-home": "← Back to Home",
-        "nav-github-repo": "GitHub Repo",
         "asm-intro-text": "This environment provides out-of-the-box support for Linux x64 and Windows (x86/x64), featuring pre-configured VS Code settings for a seamless workflow.",
         "asm-quick-install": "🛠️ Quick Installation",
         "asm-choose-weapon": "Choose your weapon (Operating System) and run the corresponding command to configure your environment immediately:",
@@ -233,7 +233,19 @@ const translations = {
         "hypr-install-online": "Online Install (Fastest & Fully Automated)",
         "hypr-install-offline": "Offline Install (Manual)",
         "hypr-gallery-title": "Gallery",
-        "hypr-btn-repo": "View GitHub Repository"
+        "hypr-btn-repo": "View GitHub Repository",
+
+        // === Arch Sessions Page Translations (EN) ===
+        "arch-page-title": "Ahmed x86 - Linux Sessions 🖥️",
+        "arch-page-desc": "Explore the Kingdom of Linux with recorded sessions that teach you everything from installation to advanced terminal mastery.",
+        "arch-sessions-title": "Recorded Sessions",
+        "arch-sessions-desc": "Simple, practical sessions that guide you to proficiency in Linux. Click on any video thumbnail to start watching.",
+        "arch-zorin-title": "Zorin OS Installation Guide",
+        "arch-zorin-desc": "A comprehensive, step-by-step tutorial on how to install Zorin OS from scratch. Perfect for a smooth and visually stunning Linux experience.",
+        "arch-cmds-title": "Essential Linux Commands: Advanced Guide",
+        "arch-cmds-desc": "Take your terminal skills to the next level. This session provides an advanced, in-depth explanation of the most important basic Linux commands and how to master them.",
+        "pagination-prev": "« Prev",
+        "pagination-next": "Next »"
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -243,6 +255,8 @@ const translations = {
         "nav-projects": "المشاريع",
         "nav-wallpapers": "الخلفيات",
         "nav-github": "جيت هب",
+        "nav-back-home": "← العودة للرئيسية",
+        "nav-github-repo": "مستودع جيت هب",
         
         "about-title": "نبذة عني",
         "about-text": "أنا أحمد (معروف على الإنترنت باسم <strong>ahmed-x86</strong>)، أدرس نظم المعلومات والحاسبات. أتخصص في أنظمة لينكس (أستخدم Arch Linux كنظامي الأساسي) والأمن السيبراني. أستمتع بالبرمجة منخفضة المستوى بلغة التجميع (Assembly)، تحليل الشبكات، وبناء واجهات مخصصة باستخدام Hyprland و Waybar.",
@@ -299,8 +313,6 @@ const translations = {
         // === ASM Page Translations (AR) ===
         "asm-page-title": "أحمد x86 - بيئة تطوير لغة التجميع (Assembly) 🚀",
         "asm-page-desc": "مستودع شامل صُمم لبدء رحلتك في تطوير لغة التجميع (ASM) بكل سلاسة.",
-        "nav-back-home": "← العودة للرئيسية",
-        "nav-github-repo": "مستودع جيت هب",
         "asm-intro-text": "توفر هذه البيئة دعماً جاهزاً للعمل لأنظمة Linux x64 و Windows (x86/x64)، وتتميز بإعدادات VS Code مجهزة مسبقاً لسير عمل سلس.",
         "asm-quick-install": "🛠️ التثبيت السريع",
         "asm-choose-weapon": "اختر سلاحك (نظام التشغيل) وقم بتشغيل الأمر المقابل لتهيئة بيئتك فوراً:",
@@ -468,7 +480,19 @@ const translations = {
         "hypr-install-online": "التثبيت المباشر (الأسرع والمؤتمت بالكامل)",
         "hypr-install-offline": "التثبيت اليدوي (Offline)",
         "hypr-gallery-title": "معرض الصور",
-        "hypr-btn-repo": "عرض المستودع على GitHub"
+        "hypr-btn-repo": "عرض المستودع على GitHub",
+
+        // === Arch Sessions Page Translations (AR) ===
+        "arch-page-title": "أحمد x86 - جلسات لينكس المسجلة 🖥️",
+        "arch-page-desc": "استكشف مملكة لينكس من خلال جلسات مسجلة تعلمك كل شيء بدءاً من التثبيت وحتى احتراف سطر الأوامر (Terminal).",
+        "arch-sessions-title": "الجلسات المسجلة",
+        "arch-sessions-desc": "جلسات بسيطة وعملية ترشدك نحو إتقان نظام لينكس. اضغط على أي صورة مصغرة لبدء المشاهدة.",
+        "arch-zorin-title": "دليل تثبيت Zorin OS",
+        "arch-zorin-desc": "شرح شامل وخطوة بخطوة لكيفية تثبيت نظام Zorin OS من الصفر. مثالي لتجربة لينكس سلسة وجذابة بصرياً.",
+        "arch-cmds-title": "أوامر لينكس الأساسية: الدليل المتقدم",
+        "arch-cmds-desc": "ارتقِ بمهاراتك في التيرمينال إلى المستوى التالي. تقدم هذه الجلسة شرحاً متعمقاً ومتقدماً لأهم أوامر لينكس الأساسية وكيفية احترافها.",
+        "pagination-prev": "« السابق",
+        "pagination-next": "التالي »"
     }
 };
 
