@@ -349,7 +349,10 @@ const translations = {
         "wall-page-title": "Ahmed x86 - Wallpapers Gallery 🖼️",
         "wall-page-desc": "A curated collection of minimalist and high-resolution wallpapers for Linux ricing and desktops.",
         "wall-col-title": "My Collection",
-        "wall-col-desc": "Here are some of my favorite wallpapers used in my custom Arch Linux setups. Click on any image to view it in full resolution."
+        "wall-col-desc": "Here are some of my favorite wallpapers used in my custom Arch Linux setups. Click on any image to view it in full resolution.",
+        "wall-page-4-desc": "Page 4 - My curated collection of Reddit-sourced wallpapers for Linux ricing.",
+        "wall-col-4-title": "My Collection (Part 4)",
+        "wall-col-4-desc": "Here are some of the best Reddit-sourced wallpapers for my Arch Linux setup. Click on any image to view it in full resolution."
     },
     ar: {
         "header-lang": "🌐 اللغة",
@@ -692,7 +695,7 @@ const translations = {
         "hijri-theme-3": "3. Nord",
         "hijri-theme-4": "4. Gruvbox",
         "hijri-theme-5": "5. Tokyo Night",
-        "hijri-perf-tip": "<strong>💡 نصيفة للأداء:</strong> يقوم السكربت بحفظ الشهر كاملاً في <code>~/.cache/waybar_hijri_cache.json</code>. إنه يجري مكالمة API واحدة فقط شهرياً!",
+        "hijri-perf-tip": "<strong>💡 نصيحة للأداء:</strong> يقوم السكربت بحفظ الشهر كاملاً في <code>~/.cache/waybar_hijri_cache.json</code>. إنه يجري مكالمة API واحدة فقط شهرياً!",
         "hijri-btn-repo": "عرض المستودع على GitHub",
         "hijri-footer-text": "© 2026 أحمد x86 • تم التطوير لمجتمع لينكس ❄️",
         
@@ -700,7 +703,10 @@ const translations = {
         "wall-page-title": "أحمد x86 - معرض الخلفيات 🖼️",
         "wall-page-desc": "مجموعة منتقاة من خلفيات 4K البسيطة والجمالية المناسبة تمامًا لتخصيص لينكس وإعدادات Arch Linux و Hyprland.",
         "wall-col-title": "مجموعتي",
-        "wall-col-desc": "إليك بعض من خلفياتي المفضلة المستخدمة في إعدادات Arch Linux المخصصة الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة."
+        "wall-col-desc": "إليك بعض من خلفياتي المفضلة المستخدمة في إعدادات Arch Linux المخصصة الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة.",
+        "wall-page-4-desc": "الصفحة 4 - مجموعتي المختارة من خلفيات Reddit المخصصة لتوزيعات لينكس.",
+        "wall-col-4-title": "مجموعتي (الجزء 4)",
+        "wall-col-4-desc": "إليك بعض من أفضل الخلفيات المأخوذة من Reddit لإعدادات Arch Linux الخاصة بي. اضغط على أي صورة لعرضها بالدقة الكاملة."
     }
 };
 
