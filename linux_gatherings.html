@@ -26,58 +26,46 @@
 
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": "Arch Linux Recorded Sessions",
-      "description": "A series of recorded sessions from the Kingdom of Arch Linux to help users learn Linux from scratch to mastery.",
-      "url": "https://ahmed-x86.github.io/arch-sessions.html",
-      "author": {
-        "@type": "Person",
-        "name": "Ahmed x86",
-        "url": "https://ahmed-x86.github.io/"
-      },
-      "keywords": "Linux tutorials, Arch Linux, Linux from scratch, Arch Linux community, beginner to expert, Linux training",
-      "about": "Recorded Linux sessions for all skill levels"
-    }
-    </script>
 </head>
 
 <body>
     <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
-<header>
-    <h1>Ahmed x86 - Linux Sessions 🖥️</h1>
-    <p>Explore the Kingdom of Linux with recorded sessions that teach you everything from installation to advanced terminal mastery.</p>
+
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="arch-page-title">Ahmed x86 - Linux Sessions 🖥️</h1>
+    <p data-i18n="arch-page-desc">Explore the Kingdom of Linux with recorded sessions that teach you everything from installation to advanced terminal mastery.</p>
 </header>
 
 <nav>
-    <a href="index.html">← Back to Home</a>
-    <a href="https://github.com/ahmed-x86" target="_blank">GitHub</a>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86" target="_blank" data-i18n="nav-github">GitHub</a>
 </nav>
 
 <section>
 
-    <h2>Recorded Sessions</h2>
+    <h2 data-i18n="arch-sessions-title">Recorded Sessions</h2>
 
-    <p>
+    <p data-i18n="arch-sessions-desc">
         Simple, practical sessions that guide you to proficiency in Linux. 
         Click on any video thumbnail to start watching.
     </p>
 
     <div class="gallery-grid">
         <div class="project">
-            <h3>Zorin OS Installation Guide</h3>
-            <p>A comprehensive, step-by-step tutorial on how to install Zorin OS from scratch. Perfect for a smooth and visually stunning Linux experience.</p>
+            <h3 data-i18n="arch-zorin-title">Zorin OS Installation Guide</h3>
+            <p data-i18n="arch-zorin-desc">A comprehensive, step-by-step tutorial on how to install Zorin OS from scratch. Perfect for a smooth and visually stunning Linux experience.</p>
             <a href="https://youtu.be/ZN4qcotFiWc" target="_blank">
                 <img src="https://img.youtube.com/vi/ZN4qcotFiWc/maxresdefault.jpg" alt="Zorin OS Installation Guide" loading="lazy">
             </a>
         </div>
 
         <div class="project">
-            <h3>Essential Linux Commands: Advanced Guide</h3>
-            <p>Take your terminal skills to the next level. This session provides an advanced, in-depth explanation of the most important basic Linux commands and how to master them.</p>
+            <h3 data-i18n="arch-cmds-title">Essential Linux Commands: Advanced Guide</h3>
+            <p data-i18n="arch-cmds-desc">Take your terminal skills to the next level. This session provides an advanced, in-depth explanation of the most important basic Linux commands and how to master them.</p>
             <a href="https://youtu.be/Q-nYbryAX_E" target="_blank">
                 <img src="https://img.youtube.com/vi/Q-nYbryAX_E/maxresdefault.jpg" alt="Advanced Essential Linux Commands" loading="lazy">
             </a>
@@ -85,18 +73,64 @@
     </div>
 
     <div class="pagination">
-        <a href="#" class="disabled">« Prev</a>
+        <a href="#" class="disabled" data-i18n="pagination-prev">« Prev</a>
         <a href="arch-sessions.html" class="active">1</a>
-        <a href="#" class="disabled">Next »</a>
+        <a href="#" class="disabled" data-i18n="pagination-next">Next »</a>
     </div>
 
 </section>
 
-<footer>
+<footer data-i18n="footer-text">
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
 <script src="main.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
