@@ -1,31 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // ==========================================
-    // 0. تحميل القائمة الجانبية ديناميكياً (Sidebar Fetch)
+    // 0. تحديد المسار الرئيسي (Root Path Logic)
+    // ==========================================
+    // لو إحنا في مجلد فرعي، هنحتاج نطلع خطوة لبره (../)
+    const isSubDir = window.location.pathname.includes('/linux_gatherings/');
+    const rootPath = isSubDir ? '../' : './';
+
+    // ==========================================
+    // 1. تحميل القائمة الجانبية ديناميكياً (Sidebar Fetch)
     // ==========================================
     const sidebarContainer = document.getElementById('sidebar-container');
     
     if (sidebarContainer) {
-        fetch('sidebar.html')
+        // بنستخدم rootPath عشان يروح للمكان الصح مهما كان مكان الصفحة
+        fetch(`${rootPath}sidebar.html`)
             .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
+                if (!response.ok) throw new Error('Sidebar not found at: ' + rootPath);
                 return response.text();
             })
             .then(data => {
-                // بنحط كود الـ HTML بتاع القائمة جوه الحاوية
                 sidebarContainer.innerHTML = data;
                 
-                // هنا بنستدعي دالة تسجيل الدخول "بعد" ما الزرار يظهر في الصفحة
+                // تشغيل منطق تسجيل الدخول بعد تحميل السايدبار
                 initAuthLogic();
             })
             .catch(error => console.error('Error loading the sidebar:', error));
     } else {
-        // لو إنت في صفحة مفيهاش القائمة أصلاً، شغل الكود برضه للاحتياط
         initAuthLogic();
     }
 
     // ==========================================
-    // 1. كود تسجيل الدخول (تم وضعه في دالة منفصلة)
+    // 2. دالة التبديل (Toggle Sidebar) - تم نقلها هنا لتكون Global
+    // ==========================================
+    // جعل الدالة متاحة في الـ window عشان الـ onclick في الـ HTML يشتغل
+    window.toggleSidebar = function() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        } else {
+            console.error("Sidebar elements not found in DOM!");
+        }
+    };
+
+    // ==========================================
+    // 3. كود تسجيل الدخول
     // ==========================================
     function initAuthLogic() {
         const authLink = document.querySelector('.auth-link');
@@ -48,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 2. كود الفيدباك وسلة الزبالة (خاص بالصفحة الرئيسية)
+    // 4. كود الفيدباك (فقط لو العناصر موجودة)
     // ==========================================
     const feedbackBtn = document.getElementById("feedbackBtn");
     const modal = document.getElementById("feedbackModal");
@@ -78,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 3. كود صفحة الـ Auth (Signin / Signup)
+    // 5. كود صفحة الـ Auth - تعديل روابط الانتقال
     // ==========================================
     const tabSignin = document.getElementById('tab-signin');
     const tabSignup = document.getElementById('tab-signup');
@@ -86,6 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const formSignup = document.getElementById('form-signup');
 
     if (tabSignin && tabSignup && formSignin && formSignup) {
+        const redirectToHome = () => {
+            // الانتقال لـ index.html في المجلد الرئيسي
+            window.location.href = rootPath + 'index.html';
+        };
+
         tabSignin.addEventListener('click', () => {
             tabSignin.classList.add('active');
             tabSignup.classList.remove('active');
@@ -104,19 +131,19 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const username = formSignin.querySelector('input[type="text"]').value;
             localStorage.setItem('arch_user', username);
-            window.location.href = 'index.html'; 
+            redirectToHome();
         });
 
         formSignup.addEventListener('submit', (e) => {
             e.preventDefault();
             const newUsername = formSignup.querySelector('input[type="text"]').value;
             localStorage.setItem('arch_user', newUsername);
-            window.location.href = 'index.html'; 
+            redirectToHome();
         });
     }
 
     // ==========================================
-    // 4. كود زرار النسخ (Copy) (لأي صفحة فيها أكواد)
+    // 6. كود زرار النسخ (Copy)
     // ==========================================
     const codeBlocks = document.querySelectorAll("pre");
 
@@ -130,27 +157,29 @@ document.addEventListener("DOMContentLoaded", () => {
             wrapper.appendChild(pre);
         }
 
-        const copyBtn = document.createElement("button");
-        copyBtn.className = "copy-btn";
-        copyBtn.innerText = "Copy";
-        wrapper.appendChild(copyBtn);
+        if (!wrapper.querySelector('.copy-btn')) { // منع تكرار الزرار
+            const copyBtn = document.createElement("button");
+            copyBtn.className = "copy-btn";
+            copyBtn.innerText = "Copy";
+            wrapper.appendChild(copyBtn);
 
-        copyBtn.addEventListener("click", async () => {
-            const codeText = pre.innerText;
-            try {
-                await navigator.clipboard.writeText(codeText);
-                copyBtn.innerText = "Copied!";
-                copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
-                copyBtn.style.color = "var(--crust, #11111b)";
-                
-                setTimeout(() => {
-                    copyBtn.innerText = "Copy";
-                    copyBtn.style.backgroundColor = "";
-                    copyBtn.style.color = "";
-                }, 2000);
-            } catch (err) {
-                console.error("Failed to copy!", err);
-            }
-        });
+            copyBtn.addEventListener("click", async () => {
+                const codeText = pre.innerText;
+                try {
+                    await navigator.clipboard.writeText(codeText);
+                    copyBtn.innerText = "Copied!";
+                    copyBtn.style.backgroundColor = "var(--green, #a6e3a1)";
+                    copyBtn.style.color = "var(--crust, #11111b)";
+                    
+                    setTimeout(() => {
+                        copyBtn.innerText = "Copy";
+                        copyBtn.style.backgroundColor = "";
+                        copyBtn.style.color = "";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
+            });
+        }
     });
 });
