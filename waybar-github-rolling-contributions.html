@@ -68,7 +68,7 @@
     <h2>🟪 Color Levels (Purple Theme)</h2>
     <p>The heatmap utilizes the following color logic based on daily commit count:</p>
     
-    <div class="lang-table-container">
+    <div class="table-container">
         <table>
             <thead>
                 <tr>
@@ -93,6 +93,7 @@
     
     <h3>1. Clone the Repository</h3>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/waybar-github-rolling-contributions.git\ncd waybar-github-rolling-contributions')">Copy</button>
 <pre><code>git clone https://github.com/ahmed-x86/waybar-github-rolling-contributions.git
 cd waybar-github-rolling-contributions</code></pre>
     </div>
@@ -108,6 +109,7 @@ cd waybar-github-rolling-contributions</code></pre>
     <h3>3. Create <code>.env</code> File</h3>
     <p>Inside the cloned project directory, create a <code>.env</code> file with the following content:</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('GITHUB_USERNAME=your_github_username\nGITHUB_PAT=ghp_yourGeneratedTokenHere')">Copy</button>
 <pre><code>GITHUB_USERNAME=your_github_username
 GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
     </div>
@@ -117,6 +119,7 @@ GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
     <h2>🖥️ Waybar Configuration</h2>
     <p>Add the following block to your Waybar <code>config.jsonc</code>. <i>(Make sure to update the path to where you placed the script and change the github URL to your own)</i>:</p>
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('&quot;custom/gh_heatmap&quot;: {\n  &quot;exec&quot;: &quot;sleep 1 & ~/.config/waybar/scripts/weekly_commits&quot;,\n  &quot;return-type&quot;: &quot;json&quot;,\n  &quot;interval&quot;: 2400,\n  &quot;tooltip&quot;: true,\n  &quot;on-click&quot;: &quot;xdg-open https://github.com/ahmed-x86&quot;,\n  &quot;on-click-right&quot;: &quot;~/.config/waybar/scripts/weekly_commits&quot;\n}')">Copy</button>
 <pre><code>"custom/gh_heatmap": {
   "exec": "sleep 1 & ~/.config/waybar/scripts/weekly_commits",
   "return-type": "json",
@@ -136,6 +139,7 @@ GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
     <p>Add the following styling to your Waybar <code>style.css</code>. It fits perfectly with dark/Catppuccin backgrounds:</p>
 
     <div class="code-wrapper">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('#custom-gh_heatmap {\n  color: #c463ff;\n  background: rgba(30, 30, 46, 0.89); \n  border-radius: 6px;\n  margin-right: 2px;\n  padding: 0px 8px;\n}')">Copy</button>
 <pre><code>#custom-gh_heatmap {
   color: #c463ff;
   background: rgba(30, 30, 46, 0.89); 
@@ -161,3 +165,5 @@ GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
 
 </body>
 </html>
+
+3
