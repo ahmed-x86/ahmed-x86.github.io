@@ -77,7 +77,6 @@
         <span class="menu-btn" onclick="toggleSidebar()">☰</span>
     </div>
 
-    <a href="signin_signup.html" class="auth-link" data-i18n="header-auth" style="position: absolute; top: 20px; inset-inline-end: 20px;">Signin / Signup</a>
 
     <img src="https://avatars.githubusercontent.com/ahmed-x86" alt="Ahmed x86 Profile Picture" class="profile-pic">
     
@@ -228,6 +227,12 @@
         </li>
         <li onclick="toggleSidebar(); document.getElementById('themeModalOverlay').style.display='flex'">
             <span data-i18n="header-theme">Web Theme</span>
+        </li>
+
+        <li class="sidebar-bottom-item">
+            <a href="signin_signup.html" class="auth-link" data-i18n="header-auth">
+                Signin / Signup
+            </a>
         </li>
     </ul>
 </div>
