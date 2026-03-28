@@ -989,3 +989,26 @@ html[dir="rtl"] .auth-link {
     background-color: var(--surface0);
     color: var(--mauve);
 }
+/* =========================================
+   Theme Modal Styles
+   ========================================= */
+
+.theme-btn {
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+/* شكل الزرار لما يكون الثيم بتاعه هو اللي متفعل حالياً */
+.theme-btn.active-theme {
+    background-color: var(--surface0); /* لون باهت يدل إنه مش قابل للضغط */
+    color: var(--subtext);
+    border: 1px solid var(--surface1);
+    cursor: not-allowed; /* علامة الـ X أو الممنوع */
+}
+
+/* منع أي تأثيرات لما تقف بالماوس على الثيم المتفعل */
+.theme-btn.active-theme:hover {
+    background-color: var(--surface0);
+    color: var(--subtext);
+    transform: none; /* عشان ما يتحركش لفوق زي الزراير العادية */
+}
