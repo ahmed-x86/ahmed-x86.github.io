@@ -820,3 +820,78 @@ html[dir="rtl"] .auth-link {
     right: auto;
     left: 20px; /* الـ Signin يروح شمال */
 }
+/* تنسيق الجداول (Responsive Tables) */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+/* =========================================
+   ASM Environment Specific Styles
+   ========================================= */
+
+.intro-text {
+    text-align: center;
+    color: var(--subtext);
+}
+
+.important-note {
+    background-color: rgba(235, 160, 172, 0.1);
+    padding: 15px;
+    border-left: 4px solid var(--red); /* استخدمت var(--red) المتاح عندك في الباليت */
+    border-radius: 4px;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+
+/* تنسيق حاوية الجاليري */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* تنسيق الصور داخل الجاليري */
+.gallery img {
+    border-radius: 12px;
+    border: 2px solid var(--surface0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    
+    /* التعديل الجديد هنا */
+    flex: 1 1 calc(50% - 20px); /* يسمح للصورة بالنمو والتقلص، ويحدد الأساس بـ 50% ناقص الـ gap */
+    max-width: calc(50% - 10px); /* يضمن إنها ما تزيدش عن نصف العرض أبداً */
+    min-width: 250px; /* حد أدنى أصغر قليلاً لضمان المظهر الجيد على الشاشات المتوسطة */
+    object-fit: cover; /* لضمان عدم تمدد الصورة بشكل سيء */
+}
+
+/* =========================================
+   Gallery Grid / Arch Sessions Specific Styles
+   ========================================= */
+
+.gallery-grid .project {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gallery-grid .project a {
+    margin-top: auto;
+    display: block;
+}
+
+/* تعديلات شاشات الموبايل (Responsive) */
+@media (max-width: 768px) {
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important; 
+    }
+    
+    .gallery-grid .project {
+        height: auto !important; 
+        min-height: min-content !important;
+        margin-bottom: 20px !important; 
+    }
+}
