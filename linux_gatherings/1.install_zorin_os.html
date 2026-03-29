@@ -39,18 +39,38 @@
     <link rel="stylesheet" href="../style.css">
 
     <style>
-        /* سحب المحتوى لليسار ليتناسب مع تجربة يوتيوب */
-        #project-details {
-            text-align: left;
-            margin-left: 20px;
+        /* التخطيط المحدث: التصاق باليسار مع هامش بسيط */
+        .page-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 380px; /* الفيديو يأخذ الباقي، القائمة 380 بكسل */
+            gap: 30px;
+            max-width: 1700px; /* يسمح بالتمدد بشكل أكبر */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 3%; /* هنا السحر: يدفعه لأقصى اليسار ويترك 3% فقط للحافة */
             margin-right: auto;
-            max-width: 1000px;
+            align-items: start;
+        }
+
+        /* للموبايل: نلغي الهامش الكبير ليأخذ الشاشة بالكامل */
+        @media (max-width: 1000px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
+        /* ------------------------------------------- */
+        /* تنسيقات قسم الفيديو والوصف */
+        /* ------------------------------------------- */
+        .main-content {
+            width: 100%;
         }
 
         .video-wrapper {
-            margin: 20px 0;
+            margin: 0 0 20px 0;
             width: 100%;
-            max-width: 850px;
         }
 
         video {
@@ -75,7 +95,6 @@
             font-weight: bold;
         }
 
-        /* تنسيق الوصف كمقال احترافي */
         .description-note {
             background-color: var(--surface0);
             padding: 25px;
@@ -84,17 +103,12 @@
             margin: 20px 0;
             color: var(--text);
             line-height: 1.8;
-            max-width: 850px;
+            text-align: left;
         }
 
-        .description-note a {
-            color: var(--blue);
-            text-decoration: none;
-        }
-
-        .description-note a:hover {
-            text-decoration: underline;
-        }
+        .description-note a { color: var(--blue); text-decoration: none; }
+        .description-note a:hover { text-decoration: underline; }
+        .hashtags { color: var(--blue); margin-top: 15px; font-weight: bold; }
 
         .channel-strip {
             display: flex;
@@ -122,16 +136,86 @@
             transition: 0.3s ease;
             box-shadow: 0 4px 15px rgba(166, 227, 161, 0.2);
         }
+        .download-btn-site:hover { background-color: var(--blue); transform: translateY(-3px); }
 
-        .download-btn-site:hover {
-            background-color: var(--blue);
-            transform: translateY(-3px);
+        /* ------------------------------------------- */
+        /* تنسيقات القائمة الجانبية الملتصقة */
+        /* ------------------------------------------- */
+        .playlist-sidebar {
+            background-color: var(--surface0);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--surface1);
+            position: sticky;
+            top: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .hashtags {
-            color: var(--blue);
-            margin-top: 15px;
-            font-weight: bold;
+        .playlist-title {
+            color: var(--text);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--surface1);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .playlist-count {
+            font-size: 0.8rem;
+            background-color: var(--surface1);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .playlist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.3s ease;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .playlist-item:hover {
+            background-color: var(--surface1);
+        }
+
+        .playlist-item.active-video {
+            border-left: 4px solid var(--mauve);
+            background-color: var(--surface1);
+        }
+
+        .playlist-item img {
+            width: 120px;
+            height: 67.5px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .playlist-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .playlist-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        .playlist-info span {
+            font-size: 0.8rem;
+            color: var(--subtext);
         }
     </style>
 </head>
@@ -151,66 +235,101 @@
     <a href="https://github.com/ahmed-x86" target="_blank">GitHub Repo</a>
 </nav>
 
-<section id="project-details">
+<div class="page-layout">
 
-    <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V1-firebrick?style=for-the-badge" alt="V1">
-        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
-        <img src="https://img.shields.io/badge/Zorin_OS-0CCAD4?style=for-the-badge&logo=zorin&logoColor=white" alt="Zorin">
-        <img src="https://img.shields.io/badge/Status-Complete-blueviolet?style=for-the-badge" alt="Ready">
-    </div>
-
-    <div class="video-wrapper">
-        <video controls poster="https://i.ytimg.com/vi/ZN4qcotFiWc/maxresdefault.jpg">
-            <source src="https://res.cloudinary.com/deuuw6kui/video/upload/v1774715579/2026-03-03_22-09-18_rieeti.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <h2 class="video-main-title">Goodbye Windows! The Easiest Way to Install Zorin OS</h2>
-
-    <div class="channel-strip">
-        <img src="https://github.com/ahmed-x86.png" alt="Ahmed">
-        <div>
-            <strong style="color: var(--text);">Ahmed x86_64</strong>
-            <span style="color: var(--subtext); display: block; font-size: 0.85rem;">22 subscribers</span>
-        </div>
-    </div>
-    
-    <div class="description-note">
-        <p>In this video, we'll discover the absolute easiest way to install <strong>Zorin OS</strong> step-by-step!</p>
+    <div class="main-content">
         
-        <p>If you're thinking about switching from Windows to the Linux world and searching for smoothness and speed, this system is your best gateway. 
-        <br><em>(And even if we're Arch enthusiasts, we have to give user-friendly systems a chance for beginners! 😉)</em></p>
-
-        <p><strong>What we will cover:</strong><br>
-        • Preparing the system environment.<br>
-        • Essential pre-installation tweaks.<br>
-        • The full installation process for daily use.</p>
-
-        <hr style="border: 0; border-top: 1px solid var(--surface1); margin: 15px 0;">
-
-        <p>📌 <strong>Important Links:</strong><br>
-        • Download Zorin OS: <a href="https://zorin.com/os/" target="_blank">zorin.com/os/</a><br>
-        • Flash Tool (Ventoy): <a href="https://github.com/ventoy/Ventoy" target="_blank">github.com/ventoy/Ventoy</a></p>
-
-        <p>🔔 <strong>Support the Channel:</strong><br>
-        Don't forget to <strong>subscribe</strong> and hit the <strong>Like</strong> button if this guide helped you!<br>
-        What is your favorite Linux distribution? Let us know in the comments!</p>
-
-        <p>Enjoy the session!</p>
-
-        <div class="hashtags">
-            #ZorinOS #Linux #LinuxInstallation #WindowsAlternative #Zorin_OS #Technology #LinuxTutorials #ArchLinux
+        <div class="badges" style="margin-bottom: 15px;">
+            <img src="https://img.shields.io/badge/Version-V1-firebrick?style=for-the-badge" alt="V1">
+            <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+            <img src="https://img.shields.io/badge/Zorin_OS-0CCAD4?style=for-the-badge&logo=zorin&logoColor=white" alt="Zorin">
+            <img src="https://img.shields.io/badge/Status-Complete-blueviolet?style=for-the-badge" alt="Ready">
         </div>
+
+        <div class="video-wrapper">
+            <video controls poster="https://i.ytimg.com/vi/ZN4qcotFiWc/maxresdefault.jpg">
+                <source src="https://res.cloudinary.com/deuuw6kui/video/upload/v1774715579/2026-03-03_22-09-18_rieeti.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <h2 class="video-main-title">Goodbye Windows! The Easiest Way to Install Zorin OS</h2>
+
+        <div class="channel-strip">
+            <img src="https://github.com/ahmed-x86.png" alt="Ahmed">
+            <div>
+                <strong style="color: var(--text);">Ahmed x86_64</strong>
+                <span style="color: var(--subtext); display: block; font-size: 0.85rem;">22 subscribers</span>
+            </div>
+        </div>
+        
+        <div class="description-note">
+            <p>In this video, we'll discover the absolute easiest way to install <strong>Zorin OS</strong> step-by-step!</p>
+            
+            <p>If you're thinking about switching from Windows to the Linux world and searching for smoothness and speed, this system is your best gateway. 
+            <br><em>(And even if we're Arch enthusiasts, we have to give user-friendly systems a chance for beginners! 😉)</em></p>
+
+            <p><strong>What we will cover:</strong><br>
+            • Preparing the system environment.<br>
+            • Essential pre-installation tweaks.<br>
+            • The full installation process for daily use.</p>
+
+            <hr style="border: 0; border-top: 1px solid var(--surface1); margin: 15px 0;">
+
+            <p>📌 <strong>Important Links:</strong><br>
+            • Download Zorin OS: <a href="https://zorin.com/os/" target="_blank">zorin.com/os/</a><br>
+            • Flash Tool (Ventoy): <a href="https://github.com/ventoy/Ventoy" target="_blank">github.com/ventoy/Ventoy</a></p>
+
+            <p>🔔 <strong>Support the Channel:</strong><br>
+            Don't forget to <strong>subscribe</strong> and hit the <strong>Like</strong> button if this guide helped you!<br>
+            What is your favorite Linux distribution? Let us know in the comments!</p>
+
+            <p>Enjoy the session!</p>
+
+            <div class="hashtags">
+                #ZorinOS #Linux #LinuxInstallation #WindowsAlternative #Zorin_OS #Technology #LinuxTutorials #ArchLinux
+            </div>
+        </div>
+
+        <div style="text-align: left; margin-top: 30px;">
+            <a href="https://res.cloudinary.com/deuuw6kui/video/upload/v1774715579/2026-03-03_22-09-18_rieeti.mp4" download class="download-btn-site">
+                📥 Download Video Lesson
+            </a>
+        </div>
+
     </div>
 
-    <div style="text-align: left; margin-top: 30px;">
-        <a href="https://res.cloudinary.com/deuuw6kui/video/upload/v1774715579/2026-03-03_22-09-18_rieeti.mp4" download class="download-btn-site">
-            📥 Download Video Lesson
+    <aside class="playlist-sidebar">
+        <h3 class="playlist-title">
+            Linux Gatherings 🐧
+            <span class="playlist-count">2 / ∞</span>
+        </h3>
+
+        <a href="1.install_zorin_os.html" class="playlist-item active-video">
+            <img src="https://img.youtube.com/vi/ZN4qcotFiWc/maxresdefault.jpg" alt="Session 1">
+            <div class="playlist-info">
+                <h4>Goodbye Windows! Install Zorin OS</h4>
+                <span>Session 1 • Zorin OS</span>
+            </div>
         </a>
-    </div>
 
-</section>
+        <a href="2.terminal_file_management.html" class="playlist-item">
+            <img src="https://img.youtube.com/vi/Q-nYbryAX_E/maxresdefault.jpg" alt="Session 2">
+            <div class="playlist-info">
+                <h4>Terminal Magic: Master File Management</h4>
+                <span>Session 2 • Bash </span>
+            </div>
+        </a>
+
+        <div class="playlist-item" style="opacity: 0.6; cursor: not-allowed; background: transparent;">
+            <div style="width: 120px; height: 67.5px; background: var(--surface1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--subtext); flex-shrink: 0;">🔒</div>
+            <div class="playlist-info">
+                <h4 style="color: var(--subtext);">Coming Soon...</h4>
+                <span>Session 3 • Unknown yet</span>
+            </div>
+        </div>
+    </aside>
+
+</div>
 
 <footer>
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
