@@ -855,9 +855,8 @@ th {
    ========================================= */
 .gallery-grid .project {
     display: flex;
-    flex-direction: column;Ahmed x86 Profile Pictureئس
-    height: 100%; /* بيخلي كل الكروت تاخد نفس الطول */
-}
+    flex-direction: column;
+    height: 100%;
 
 .gallery-grid .project p {
     flex-grow: 1; /* ده السر! بيخلي النص يتمدد وياخد كل المساحة الفاضية ويزق الصورة لتحت */
