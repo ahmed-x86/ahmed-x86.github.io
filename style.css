@@ -855,7 +855,7 @@ th {
    ========================================= */
 .gallery-grid .project {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;Ahmed x86 Profile Pictureئس
     height: 100%; /* بيخلي كل الكروت تاخد نفس الطول */
 }
 
@@ -868,5 +868,3 @@ th {
     margin-top: auto; /* بيضمن إن الصورة دايماً لازقة تحت */
     display: block;
 }
-
-/* حق اليوم اللى نسيته هايرجع*/
