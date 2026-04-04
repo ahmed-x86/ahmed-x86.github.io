@@ -379,5 +379,19 @@
     "session3-topic-2": "• <strong>Decoding File Formats:</strong> What is the fundamental difference between <code>deb</code>, <code>rpm</code>, and the fast <code>pkg.zst</code> format?",
     "session3-topic-3": "• <strong>Universal Packages:</strong> When do we use <code>Flatpak</code>? Why do some dislike <code>Snap</code>? And what is the advantage of <code>AppImage</code>?",
     "session3-topic-4": "• <strong>System Core:</strong> What is an <code>ELF</code> file and how does Linux read executable files?",
-    "session3-hashtags": "#Linux #ArchLinux #FOSS #Ubuntu #Flatpak #pacman #Programming #OpenSource"
+    "session3-hashtags": "#Linux #ArchLinux #FOSS #Ubuntu #Flatpak #pacman #Programming #OpenSource",
+    "session1-main-title": "Goodbye Windows! The Easiest Way to Install Zorin OS",
+    "session1-desc-1": "In this video, we'll discover the absolute easiest way to install <strong>Zorin OS</strong> step-by-step!",
+    "session1-desc-2": "If you're thinking about switching from Windows to the Linux world and searching for smoothness and speed, this system is your best gateway. (And even if we're Arch enthusiasts, we have to give user-friendly systems a chance for beginners! 😉)",
+    "session1-topics-title": "📍 <strong>What we will cover:</strong>",
+    "session1-topic-1": "• Preparing the system environment.",
+    "session1-topic-2": "• Essential pre-installation tweaks.",
+    "session1-topic-3": "• The full installation process for daily use.",
+    "session1-links-title": "📌 <strong>Important Links:</strong>",
+    "session1-link-zorin": "• Download Zorin OS: <a href='https://zorin.com/os/' target='_blank'>zorin.com/os/</a>",
+    "session1-link-ventoy": "• Flash Tool (Ventoy): <a href='https://github.com/ventoy/Ventoy' target='_blank'>github.com/ventoy/Ventoy</a>",
+    "session1-support-title": "🔔 <strong>Support the Channel:</strong>",
+    "session1-support-desc": "Don't forget to <strong>subscribe</strong> and hit the <strong>Like</strong> button if this guide helped you! What is your favorite Linux distribution? Let us know in the comments!",
+    "session1-footer-msg": "Enjoy the session!",
+    "session1-hashtags": "#ZorinOS #Linux #LinuxInstallation #WindowsAlternative #Zorin_OS #Technology #LinuxTutorials #ArchLinux"
 }
