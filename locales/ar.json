@@ -404,5 +404,58 @@
     "session1-footer-msg": "مشاهدة ممتعة!",
     "session1-hashtags": "#لينكس #تثبيت_لينكس #بديل_ويندوز #ZorinOS #تقنية #دروس_لينكس #ArchLinux",
     "arch-pkg-title": "حرب الباكيدجات: apt, pacman, Flatpak",
-    "arch-pkg-desc": "تعلم كيف يتم بناء وتوزيع البرامج في لينكس. نفكك شفرات مدراء الحزم والصيغ الشاملة مثل Flatpak و AppImage."
+    "arch-pkg-desc": "تعلم كيف يتم بناء وتوزيع البرامج في لينكس. نفكك شفرات مدراء الحزم والصيغ الشاملة مثل Flatpak و AppImage.",
+    "grub-page-desc": "أداة استرداد محمل الإقلاع عالمية ومؤتمتة وآمنة (لـ UEFI و Legacy BIOS) مع تعزيز الأمان، تسجيل MOK للإقلاع الآمن، دعم تشفير LUKS، فحوصات سلامة Chroot، دعم RedHat/Fedora، وذكاء المسح العميق.",
+    "grub-about-desc": "<b>GRUB Fixer (V23 - تحديث التعزيز الأمني)</b> ينقل استعادة النظام إلى أقصى حد. هو سكربت Bash مؤتمت ومضاد للرصاص مصمم لإصلاح محمل الإقلاع GRUB على كل من أنظمة <b>UEFI و Legacy BIOS</b>. يرتقي <b>V23</b> بالسكربت ليصبح أداة استرداد عالية الأمان من خلال تقديم توليد ديناميكي لـ MOK OTP، إخفاء إدخال كلمة مرور LUKS، ونسخ احتياطي آمن للإعدادات. يُبنى هذا على <b>دعم الإقلاع الآمن</b> (V22)، <b>تشفير LUKS</b> (V21)، <b>فحوصات سلامة Chroot</b> (V20)، و<b>دعم RedHat/Fedora العالمي</b> (V19) للإصدارات السابقة.",
+    
+    "grub-v23-note": "<strong>🔒 جديد في V23:</strong> يتميز السكربت الآن بـ <b>تعزيز أمني متقدم</b>! يقوم بتوليد كلمات مرور (OTP) لـ MOK ديناميكياً للإقلاع الآمن باستخدام <code>openssl</code>، يخفي إدخال كلمات مرور LUKS تماماً لمنع التلصص، ويقوم تلقائياً بعمل نسخة احتياطية لملف <code>/etc/default/grub</code> قبل تعديل النظام المضيف.",
+    
+    "grub-sec-title": "🔒 تحديث التعزيز الأمني (V23)",
+    "grub-sec-1": "<strong>مكافحة التلصص (Anti-Shoulder Surfing):</strong> أصبح إدخال كلمة مرور LUKS مخفياً تماماً (<code>read -s</code>) خلال مرحلة فك التشفير المبكرة لحماية بيانات اعتمادك.",
+    "grub-sec-2": "<strong>توليد MOK OTP ديناميكي:</strong> استبدال كلمة مرور الإقلاع الآمن الثابتة بكلمة مرور لمرة واحدة (OTP) عشوائية مكونة من 12 حرفاً يتم إنشاؤها ديناميكياً.",
+    "grub-sec-3": "<strong>نسخ احتياطي آمن للإعدادات:</strong> يقوم تلقائياً بإنشاء نسخة احتياطية مختومة بالوقت لملف <code>/etc/default/grub</code> قبل إجراء أي تعديلات على إعدادات إقلاع النظام.",
+    "grub-sec-4": "<strong>عزل البيئة:</strong> يستخدم تحليل <code>grep</code> الموجه بدلاً من الاستيراد المباشر لـ <code>/mnt/etc/os-release</code> لمنع تلوث متغيرات البيئة للنظام المضيف أثناء Chroot.",
+    "grub-sec-5": "<strong>سلامة Bash:</strong> حل تعارضات أسماء المتغيرات وأخطاء المتغيرات غير المقيدة أثناء التنفيذ التلقائي للمستوى الأول (Tier 1) لضمان استقرار لا تشوبه شائبة.",
+    
+    "grub-sb-title": "🛡️ تحديث الإقلاع الآمن (V22)",
+    "grub-sb-1": "<strong>اكتشاف ذكي للحالة:</strong> يستخدم <code>mokutil --sb-state</code> للتحقق مما إذا كان الإقلاع الآمن مفعلاً قبل محاولة أي تثبيت لـ GRUB.",
+    "grub-sb-2": "<strong>توجيه ديناميكي لـ Shim:</strong> يفرض تلقائياً علم <code>--uefi-secure-boot</code> على أنظمة Debian/Ubuntu لاستخدام ثنائيات <code>shim</code> الموقعة من مايكروسوفت.",
+    "grub-sb-3": "<strong>تكامل <code>sbctl</code> لـ Arch Linux:</strong> يكتشف مفاتيح الإقلاع الآمن المخصصة ويحاول توقيع ثنائي GRUB الجديد تلقائياً باستخدام <code>sbctl sign</code>.",
+    "grub-sb-4": "<strong>تسجيل MOK التلقائي:</strong> يستورد مفتاح <code>MOK.der</code> بصمت ويغذي النظام بكلمة المرور (OTP) التي تم إنشاؤها، تاركاً المستخدم مع تعليمات واضحة لإعادة التشغيل القادمة.",
+    
+    "grub-luks-title": "🔐 تحديث تشفير LUKS (V21)",
+    "grub-luks-1": "<strong>اكتشاف مبكر لـ LUKS:</strong> يبحث عن أقسام <code>crypto_LUKS</code> <em>قبل</em> بدء محرك المسح العميق، لمنع فشل المسح على الأقراص المشفرة.",
+    "grub-luks-2": "<strong>فك تشفير تفاعلي ذكي:</strong> يطالب بفتح الأقسام باستخدام <code>cryptsetup</code> لمنع الإغلاق النهائي أو القفل بسبب الأخطاء الإملائية.",
+    "grub-luks-3": "<strong>تفعيل تلقائي لـ LVM:</strong> يقوم بتشغيل <code>vgchange -ay</code> تلقائياً لكشف المجلدات المنطقية المخفية داخل حاويات LUKS المفتوحة.",
+    "grub-luks-4": "<strong>حقن Auto-Cryptodisk:</strong> يضيف تلقائياً <code>GRUB_ENABLE_CRYPTODISK=y</code> إلى <code>/etc/default/grub</code> لضمان أن النظام المصلح سيطلب كلمة المرور عند الإقلاع.",
+    "grub-luks-5": "<strong>إعادة قفل آمنة:</strong> ينفذ <code>luksClose</code> بأمان ويلغي تنشيط مجموعات النظائر بعد الإصلاح الناجح للحفاظ على أمان البيانات.",
+    
+    "grub-health-title": "🩺 تحديث الفحص الصحي (V20)",
+    "grub-health-1": "<strong>حل الاعتماديات الذكي:</strong> يكتشف تلقائياً ما إذا كانت الحزم الأساسية (<code>grub</code>, <code>grub2</code>, <code>os-prober</code>, <code>efibootmgr</code>, <code>cryptsetup</code>, <code>mokutil</code>) مفقودة داخل النظام المستهدف.",
+    "grub-health-2": "<strong>دعم مديري الحزم المتعددين:</strong> يستخدم ديناميكياً <code>pacman</code>, <code>apt-get</code>, <code>dnf</code>, أو <code>zypper</code> لتثبيت الاعتماديات المفقودة بسلاسة أثناء التنفيذ.",
+    "grub-health-3": "<strong>نفق DNS (<code>resolv.conf</code>):</strong> ينسخ تلقائياً <code>/etc/resolv.conf</code> الخاص بالمضيف إلى بيئة chroot، لضمان وصول مديري الحزم إلى الإنترنت لتنزيل الإصلاحات.",
+    
+    "grub-univ-title": "🌐 التحديث العالمي (V19)",
+    "grub-univ-1": "<strong>دعم عائلة RedHat/Fedora:</strong> توافق كامل مع Fedora, RHEL, CentOS, Rocky, و AlmaLinux.",
+    "grub-univ-2": "<strong>توجيه أوامر ديناميكي:</strong> يبدل تلقائياً بين <code>grub-install</code> / <code>grub-mkconfig</code> القياسية وأوامر <code>grub2-install</code> / <code>grub2-mkconfig</code> الخاصة بـ RedHat.",
+    "grub-univ-3": "<strong>توجيه مسارات ذكي:</strong> يدير مسارات الإعداد بذكاء، ويقوم بإنشاء وكتابة <code>/boot/grub2/grub.cfg</code> أو <code>/boot/grub/grub.cfg</code> ديناميكياً حسب الحاجة في النظام المضيف.",
+    
+    "grub-intel-title": "✨ تحديث الذكاء (V17)",
+    "grub-intel-1": "<strong>اكتشاف سطر أوامر النواة:</strong> يحلل <code>/proc/cmdline</code> للتمييز الفوري بين أسطوانات Live ISO (مثل Archiso) والأنظمة المثبتة الفعلية.",
+    "grub-intel-2": "<strong>محرك مسح عميق:</strong> يمسح خلسة ويحمل الأقسام في وضع القراءة فقط لتحديد موقع <code>fstab</code> وحل UUIDs/PARTUUIDs قبل تفاعل المستخدم.",
+    "grub-intel-3": "<strong>مطالبة موحدة بنقرة واحدة:</strong> يجمع بين اكتشاف البيئة وتأكيد التخطيط في ملخص نظيف واحد.",
+    "grub-intel-4": "<strong>إصلاح <code>efivarfs</code> التلقائي:</strong> منطق (In-Situ) محسّن لتركيب <code>efivarfs</code> تلقائياً في حال فشلت بيئة الإنقاذ في ذلك.",
+    
+    "grub-v18": "إضافة أعلام CLI (مثل --version, -env l/h, -auto) لأتمتة صامتة بالكامل.",
+    "grub-v19": "إضافة دعم عالمي لعائلة RedHat/Fedora/CentOS (أوامر ومسارات grub2 ديناميكية).",
+    "grub-v20": "فحص صحة Chroot - اكتشاف وتثبيت حزم GRUB/EFI المفقودة تلقائياً مع دعم DNS resolv.",
+    "grub-v21": "دعم تشفير LUKS و LVM - اكتشاف تلقائي، فك التشفير (بكلمة مرور مرئية)، وتهيئة GRUB_ENABLE_CRYPTODISK.",
+    "grub-v22": "تكامل الإقلاع الآمن (Secure Boot) و Shim - اكتشاف تلقائي للإقلاع الآمن، التعامل مع الحزم الموقعة بـ shim، وتسجيل MOK.",
+    "grub-v23": "<b>الحالي:</b> تعزيز الأمان وإصلاح الأخطاء - كلمة مرور MOK OTP ديناميكية، كلمات مرور LUKS مخفية، نسخ احتياطي للإعدادات، وعزل البيئة.",
+    
+    "grub-req-1": "<strong>عائلات أنظمة التشغيل:</strong> Arch Linux, Debian/Ubuntu, RedHat/Fedora, SUSE، ومشتقاتها.",
+    "grub-req-4": "<strong>أنظمة الملفات:</strong> Ext4, Btrfs, XFS, LUKS, LVM2.",
+    "grub-req-5": "<strong>الإقلاع الآمن (Secure Boot):</strong> مدعوم بالكامل (يتطلب إكمال تسجيل MOK في اللوحة الأم عبر كلمة المرور OTP).",
+    
+    "grub-warn-v24": "<strong>⚠️ مخطط للإصدار V24:</strong> إجراء بحث لدعم <b>واجهة مستخدم نصية (TUI)</b> للحصول على تجربة إصلاح مرئية بالكامل ومبنية على القوائم."
 }
