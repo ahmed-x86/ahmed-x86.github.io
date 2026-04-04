@@ -402,5 +402,7 @@
     "session1-support-title": "🔔 <strong>ادعم القناة:</strong>",
     "session1-support-desc": "لا تنسَ <strong>الاشتراك</strong> والضغط على زر <strong>الإعجاب</strong> إذا أفادك هذا الشرح! ما هي توزيعة لينكس المفضلة لديك؟ أخبرنا في التعليقات!",
     "session1-footer-msg": "مشاهدة ممتعة!",
-    "session1-hashtags": "#لينكس #تثبيت_لينكس #بديل_ويندوز #ZorinOS #تقنية #دروس_لينكس #ArchLinux"
+    "session1-hashtags": "#لينكس #تثبيت_لينكس #بديل_ويندوز #ZorinOS #تقنية #دروس_لينكس #ArchLinux",
+    "arch-pkg-title": "حرب الباكيدجات: apt, pacman, Flatpak",
+    "arch-pkg-desc": "تعلم كيف يتم بناء وتوزيع البرامج في لينكس. نفكك شفرات مدراء الحزم والصيغ الشاملة مثل Flatpak و AppImage."
 }
