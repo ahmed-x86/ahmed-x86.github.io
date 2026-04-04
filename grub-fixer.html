@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | GRUB Fixer</title>
-    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring V22 Secure Boot & Shim Support, V21 LUKS Encryption, Chroot Health Check, Universal RedHat/Fedora support, and FSTAB Parsing. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Secure Boot, MOK, Shim, LUKS, Encryption, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, In-Situ Repair">
+    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring V23 Security Hardening, V22 Secure Boot & Shim Support, V21 LUKS Encryption, Chroot Health Check, Universal RedHat/Fedora support, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Secure Boot, MOK, Shim, LUKS, Encryption, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, In-Situ Repair, Security">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V22 Secure Boot & Shim Integration, LUKS Encryption, Ultimate Automation)">
-    <meta property="og:description" content="Rescue your Linux system securely. V22 transforms the script into the ultimate proactive recovery tool, automatically handling Secure Boot MOK enrollment, LUKS decryption, and missing dependencies.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V23 Security Hardening, Secure Boot, LUKS Encryption)">
+    <meta property="og:description" content="Rescue your Linux system securely. V23 transforms the script into the ultimate proactive recovery tool, featuring dynamic MOK OTP generation, hidden LUKS inputs, configuration backups, and automated system repair.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
     </div>
 
     <h1 data-i18n="grub-page-title">Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Secure Boot MOK Enrollment, LUKS Encryption Support, Chroot Health Checks, RedHat/Fedora support, and Deep Scan Intelligence.</p>
+    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Security Hardening, Secure Boot MOK Enrollment, LUKS Encryption Support, Chroot Health Checks, RedHat/Fedora support, and Deep Scan Intelligence.</p>
 </header>
 
 <nav>
@@ -41,7 +41,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V22-firebrick?style=for-the-badge" alt="Version V22">
+        <img src="https://img.shields.io/badge/Version-V23-firebrick?style=for-the-badge" alt="Version V23">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/Zero_Interaction-Ready-blueviolet?style=for-the-badge" alt="Zero Interaction Ready">
@@ -50,27 +50,36 @@
 
     <h2 data-i18n="grub-about-title">About the Project</h2>
     <p data-i18n="grub-about-desc">
-        <b>GRUB Fixer (V22 - The "Secure Boot & Shim" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V22</b> transforms the script into the ultimate recovery beast by introducing native support for <b>Secure Boot</b>, seamlessly detecting its state, bypassing signature errors with <code>shim</code>, and automating the MOK enrollment process. This builds upon the <b>LUKS Encryption</b> (V21), <b>Chroot Health Checks</b> (V20), and <b>Universal RedHat/Fedora Support</b> (V19) of previous versions.
+        <b>GRUB Fixer (V23 - The "Security Hardening" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V23</b> elevates the script into a highly-secure recovery tool by introducing dynamic MOK OTP generation, hidden LUKS password inputs, and failsafe configuration backups. This builds upon the <b>Secure Boot Support</b> (V22), <b>LUKS Encryption</b> (V21), <b>Chroot Health Checks</b> (V20), and <b>Universal RedHat/Fedora Support</b> (V19) of previous versions.
     </p>
 
-    <div class="note" data-i18n="grub-v22-note">
-        <strong>🚀 New in V22:</strong> The script now features <b>Smart Secure Boot Integration</b>! It automatically detects Secure Boot, forces <code>shim-signed</code> installations on Debian/Fedora, utilizes <code>sbctl</code> on Arch, and handles the MOK Enrollment process with a predefined One-Time Password (1234) for a flawless reboot.
+    <div class="note" data-i18n="grub-v23-note">
+        <strong>🔒 New in V23:</strong> The script now features <b>Advanced Security Hardening</b>! It dynamically generates Secure Boot MOK OTPs using <code>openssl</code>, completely hides LUKS password inputs to prevent shoulder surfing, and automatically backs up <code>/etc/default/grub</code> before modifying the host system.
     </div>
 
     <hr class="section-divider">
+
+    <h2 data-i18n="grub-sec-title">🔒 The Security Hardening Update (V23)</h2>
+    <ul>
+        <li data-i18n="grub-sec-1"><strong>Anti-Shoulder Surfing:</strong> LUKS password input is now completely hidden (<code>read -s</code>) during the early decryption phase to protect your credentials.</li>
+        <li data-i18n="grub-sec-2"><strong>Dynamic MOK OTP Generation:</strong> Replaced the hardcoded Secure Boot password with a dynamically generated, 12-character random One-Time Password.</li>
+        <li data-i18n="grub-sec-3"><strong>Failsafe Config Backups:</strong> Automatically creates a timestamped backup of <code>/etc/default/grub</code> before making any modifications to the system's boot configuration.</li>
+        <li data-i18n="grub-sec-4"><strong>Environment Isolation:</strong> Uses targeted <code>grep</code> parsing instead of sourcing <code>/mnt/etc/os-release</code> to prevent host environment variable pollution during Chroot.</li>
+        <li data-i18n="grub-sec-5"><strong>Bash Integrity:</strong> Resolved variable naming conflicts and unbound variable errors during automated Tier 1 execution for a flawlessly stable run.</li>
+    </ul>
 
     <h2 data-i18n="grub-sb-title">🛡️ The Secure Boot Update (V22)</h2>
     <ul>
         <li data-i18n="grub-sb-1"><strong>Smart State Detection:</strong> Utilizes <code>mokutil --sb-state</code> to check if Secure Boot is enforced before attempting any GRUB installation.</li>
         <li data-i18n="grub-sb-2"><strong>Dynamic Shim Routing:</strong> Automatically forces the <code>--uefi-secure-boot</code> flag on Debian/Ubuntu systems to utilize Microsoft-signed <code>shim</code> binaries.</li>
         <li data-i18n="grub-sb-3"><strong>Arch Linux <code>sbctl</code> Integration:</strong> Detects custom Secure Boot keys and attempts to automatically sign the new GRUB binary using <code>sbctl sign</code>.</li>
-        <li data-i18n="grub-sb-4"><strong>Automated MOK Enrollment:</strong> Imports the <code>MOK.der</code> key silently and feeds a One-Time Password (OTP: <strong>1234</strong>) to the system, leaving the user with clear instructions for their next reboot.</li>
+        <li data-i18n="grub-sb-4"><strong>Automated MOK Enrollment:</strong> Imports the <code>MOK.der</code> key silently and feeds the generated One-Time Password to the system, leaving the user with clear instructions for their next reboot.</li>
     </ul>
 
     <h2 data-i18n="grub-luks-title">🔐 The LUKS Encryption Update (V21)</h2>
     <ul>
         <li data-i18n="grub-luks-1"><strong>Early LUKS Detection:</strong> Scans for <code>crypto_LUKS</code> partitions <em>before</em> the Deep Scan Engine starts, preventing scan failures on encrypted drives.</li>
-        <li data-i18n="grub-luks-2"><strong>Interactive Smart Decryption:</strong> Prompts to unlock partitions using <code>cryptsetup</code> with visible password input to prevent lockouts due to typos.</li>
+        <li data-i18n="grub-luks-2"><strong>Interactive Smart Decryption:</strong> Prompts to unlock partitions using <code>cryptsetup</code> to prevent lockouts.</li>
         <li data-i18n="grub-luks-3"><strong>LVM Auto-Activation:</strong> Automatically runs <code>vgchange -ay</code> to expose hidden Logical Volumes inside unlocked LUKS containers.</li>
         <li data-i18n="grub-luks-4"><strong>Auto-Cryptodisk Injection:</strong> Automatically appends <code>GRUB_ENABLE_CRYPTODISK=y</code> to <code>/etc/default/grub</code> ensuring the repaired system actually prompts for a password on boot.</li>
         <li data-i18n="grub-luks-5"><strong>Secure Relocking:</strong> Safely executes <code>luksClose</code> and deactivates volume groups after a successful repair to maintain data security.</li>
@@ -186,7 +195,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
                     <tr><td>V19</td><td data-i18n="grub-v19">Added universal support for RedHat/Fedora/CentOS family (dynamic grub2 commands & paths).</td></tr>
                     <tr><td>V20</td><td data-i18n="grub-v20">Chroot Health Check - Auto-detects and installs missing GRUB/EFI packages with DNS resolv support.</td></tr>
                     <tr><td>V21</td><td data-i18n="grub-v21">LUKS & LVM Encryption Support - Auto-detects, unlocks (visible password), and configures GRUB_ENABLE_CRYPTODISK.</td></tr>
-                    <tr><td><b>V22</b></td><td data-i18n="grub-v22"><b>Current:</b> Secure Boot & Shim Integration - Auto-detects Secure Boot, handles shim-signed, and MOK Enrollment (OTP 1234).</td></tr>
+                    <tr><td>V22</td><td data-i18n="grub-v22">Secure Boot & Shim Integration - Auto-detects Secure Boot, handles shim-signed, and MOK Enrollment.</td></tr>
+                    <tr><td><b>V23</b></td><td data-i18n="grub-v23"><b>Current:</b> Security Hardening & Bug Fixes - Dynamic MOK OTP, hidden LUKS passwords, config backups, and environment isolation.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -203,8 +213,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
         <li data-i18n="grub-req-5"><strong>Secure Boot:</strong> Fully supported (Requires Motherboard MOK Enrollment via OTP).</li>
     </ul>
 
-    <div class="warning" data-i18n="grub-warn-v23">
-        <strong>⚠️ Planned for V23:</strong> Researching <b>TUI (Text User Interface)</b> implementation for a completely visual, menu-driven repair experience.
+    <div class="warning" data-i18n="grub-warn-v24">
+        <strong>⚠️ Planned for V24:</strong> Researching <b>TUI (Text User Interface)</b> implementation for a completely visual, menu-driven repair experience.
     </div>
 
     <div class="action-container">
