@@ -388,5 +388,19 @@
     "session3-topic-2": "• <strong>فك شفرة صيغ الملفات:</strong> ما الفرق الجوهري بين <code>deb</code>، <code>rpm</code>، وصيغة <code>pkg.zst</code> السريعة؟",
     "session3-topic-3": "• <strong>التطبيقات الشاملة (Universal Packages):</strong> متى نستخدم <code>Flatpak</code>؟ ولماذا يكره البعض <code>Snap</code>؟ وما هي ميزة <code>AppImage</code>؟",
     "session3-topic-4": "• <strong>نواة النظام:</strong> ما هو ملف الـ <code>ELF</code> وكيف يقرأ لينكس الملفات التنفيذية؟",
-    "session3-hashtags": "#لينكس #Linux #ArchLinux #FOSS #Ubuntu #Flatpak #pacman #برمجة #مفتوح_المصدر"
+    "session3-hashtags": "#لينكس #Linux #ArchLinux #FOSS #Ubuntu #Flatpak #pacman #برمجة #مفتوح_المصدر",
+    "session1-main-title": "وداعاً ويندوز! أسهل طريقة لتثبيت نظام Zorin OS (المجلس الأول)",
+    "session1-desc-1": "في هذا الفيديو، سنكتشف معاً أسهل طريقة على الإطلاق لتثبيت نظام <strong>Zorin OS</strong> خطوة بخطوة!",
+    "session1-desc-2": "إذا كنت تفكر في الانتقال من ويندوز إلى عالم لينكس وتبحث عن السلاسة والسرعة، فهذا النظام هو بوابتك الأفضل. (وحتى لو كنا من عشاق Arch، يجب أن نعطي الأنظمة الصديقة للمستخدم فرصة للمبتدئين! 😉)",
+    "session1-topics-title": "📍 <strong>ماذا سنغطي في هذا المجلس؟</strong>",
+    "session1-topic-1": "• تجهيز بيئة النظام.",
+    "session1-topic-2": "• تعديلات ضرورية قبل البدء بالتثبيت.",
+    "session1-topic-3": "• عملية التثبيت الكاملة للاستخدام اليومي.",
+    "session1-links-title": "📌 <strong>روابط هامة:</strong>",
+    "session1-link-zorin": "• تحميل نظام Zorin OS: <a href='https://zorin.com/os/' target='_blank'>zorin.com/os/</a>",
+    "session1-link-ventoy": "• أداة حرق الفلاشة (Ventoy): <a href='https://github.com/ventoy/Ventoy' target='_blank'>github.com/ventoy/Ventoy</a>",
+    "session1-support-title": "🔔 <strong>ادعم القناة:</strong>",
+    "session1-support-desc": "لا تنسَ <strong>الاشتراك</strong> والضغط على زر <strong>الإعجاب</strong> إذا أفادك هذا الشرح! ما هي توزيعة لينكس المفضلة لديك؟ أخبرنا في التعليقات!",
+    "session1-footer-msg": "مشاهدة ممتعة!",
+    "session1-hashtags": "#لينكس #تثبيت_لينكس #بديل_ويندوز #ZorinOS #تقنية #دروس_لينكس #ArchLinux"
 }
