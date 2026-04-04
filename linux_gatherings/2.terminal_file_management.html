@@ -26,8 +26,6 @@
     <meta property="og:image:height" content="720">
     <meta property="og:url" content="https://ahmed-x86.github.io/linux_gatherings/2.terminal_file_management.html">
     <meta property="og:type" content="article">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ar_EG">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Terminal Magic: Master File Management Like a Pro 💻">
@@ -39,20 +37,18 @@
     <link rel="stylesheet" href="../style.css">
 
     <style>
-        /* التخطيط المحدث: التصاق باليسار مع هامش بسيط */
         .page-layout {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) 380px; /* الفيديو يأخذ الباقي، القائمة 380 بكسل */
+            grid-template-columns: minmax(0, 1fr) 380px;
             gap: 30px;
-            max-width: 1700px; /* يسمح بالتمدد بشكل أكبر */
+            max-width: 1700px;
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-left: 3%; /* هنا السحر: يدفعه لأقصى اليسار ويترك 3% فقط للحافة */
+            margin-left: 3%;
             margin-right: auto;
             align-items: start;
         }
 
-        /* للموبايل: نلغي الهامش الكبير ليأخذ الشاشة بالكامل */
         @media (max-width: 1000px) {
             .page-layout {
                 grid-template-columns: 1fr;
@@ -61,17 +57,8 @@
             }
         }
 
-        /* ------------------------------------------- */
-        /* تنسيقات قسم الفيديو والوصف */
-        /* ------------------------------------------- */
-        .main-content {
-            width: 100%;
-        }
-
-        .video-wrapper {
-            margin: 0 0 20px 0;
-            width: 100%;
-        }
+        .main-content { width: 100%; }
+        .video-wrapper { margin: 0 0 20px 0; width: 100%; }
 
         video {
             width: 100%;
@@ -138,9 +125,6 @@
         }
         .download-btn-site:hover { background-color: var(--blue); transform: translateY(-3px); }
 
-        /* ------------------------------------------- */
-        /* تنسيقات القائمة الجانبية الملتصقة */
-        /* ------------------------------------------- */
         .playlist-sidebar {
             background-color: var(--surface0);
             border-radius: 12px;
@@ -183,10 +167,7 @@
             margin-bottom: 10px;
         }
 
-        .playlist-item:hover {
-            background-color: var(--surface1);
-        }
-
+        .playlist-item:hover { background-color: var(--surface1); }
         .playlist-item.active-video {
             border-left: 4px solid var(--mauve);
             background-color: var(--surface1);
@@ -227,12 +208,12 @@
     <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
         <span class="menu-btn" onclick="toggleSidebar()">☰</span>
     </div>
-    <h1>Ahmed x86 - Video Player 📺</h1>
+    <h1 data-i18n="video-header-title">Ahmed x86 - Video Player 📺</h1>
 </header>
 
 <nav>
-    <a href="../index.html">← Back to Home</a>
-    <a href="https://github.com/ahmed-x86" target="_blank">GitHub Repo</a>
+    <a href="../index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
 </nav>
 
 <div class="page-layout">
@@ -252,36 +233,36 @@
             </video>
         </div>
 
-        <h2 class="video-main-title">Terminal Magic: Master File Management Like a Pro (Session 2)</h2>
+        <h2 class="video-main-title" data-i18n="session2-main-title">Terminal Magic: Master File Management Like a Pro (Session 2)</h2>
 
         <div class="channel-strip">
             <img src="https://github.com/ahmed-x86.png" alt="Ahmed">
             <div>
                 <strong style="color: var(--text);">Ahmed x86_64</strong>
-                <span style="color: var(--subtext); display: block; font-size: 0.85rem;">22 subscribers</span>
+                <span style="color: var(--subtext); display: block; font-size: 0.85rem;" data-i18n="subscribers-count">22 subscribers</span>
             </div>
         </div>
         
-        <div class="description-note">
-            <p>Welcome to the second session of our Linux mastery series. In this video, we break the fear barrier of the "black screen" and move to an advanced level in file management and system handling using the Command Line Interface (CLI).</p>
+        <div class="description-note" dir="auto">
+            <p data-i18n="session2-desc-1">Welcome to the second session of our Linux mastery series. In this video, we break the fear barrier of the "black screen" and move to an advanced level in file management and system handling using the Command Line Interface (CLI).</p>
             
-            <p>If you think the Terminal is just a tool for writing simple commands, this video will completely change your mind! We will explore how commands can save you hours of manual work, and how we performed quick video editing and modifications using <strong>ffmpeg</strong> and <strong>ffprobe</strong> right from the heart of Arch Linux.</p>
+            <p data-i18n="session2-desc-2">If you think the Terminal is just a tool for writing simple commands, this video will completely change your mind! We will explore how commands can save you hours of manual work, and how we performed quick video editing and modifications using <strong>ffmpeg</strong> and <strong>ffprobe</strong> right from the heart of Arch Linux.</p>
 
-            <p>📍 <strong>What you will learn in this session?</strong><br>
-            • Secrets of fast handling of large folders and files.<br>
-            • Reviewing video data and technical files with pinpoint accuracy.<br>
-            • Processing and editing videos programmatically without the need for heavy editing software.<br>
-            • Tips and tricks for Arch Linux and Hyprland users to boost productivity.</p>
+            <p><span data-i18n="session2-topics-title">📍 <strong>What you will learn in this session?</strong></span><br>
+            <span data-i18n="session2-topic-1">• Secrets of fast handling of large folders and files.</span><br>
+            <span data-i18n="session2-topic-2">• Reviewing video data and technical files with pinpoint accuracy.</span><br>
+            <span data-i18n="session2-topic-3">• Processing and editing videos programmatically without the need for heavy editing software.</span><br>
+            <span data-i18n="session2-topic-4">• Tips and tricks for Arch Linux and Hyprland users to boost productivity.</span></p>
 
             <hr style="border: 0; border-top: 1px solid var(--surface1); margin: 15px 0;">
 
-            <div class="hashtags">
+            <div class="hashtags" data-i18n="session2-hashtags">
                 #LinuxTerminal #Bash #CommandLine #ArchLinux #Hyprland #ffmpeg #Ahmed_x86 #Tech #LinuxTutorials
             </div>
         </div>
 
         <div style="text-align: left; margin-top: 30px;">
-            <a href="https://res.cloudinary.com/deuuw6kui/video/upload/v1774768850/%D8%B3%D8%AD%D8%B1_%D8%A7%D9%84%D9%80_Terminal_%D9%83%D9%8A%D9%81_%D8%AA%D8%B3%D9%8A%D8%B7%D8%B1_%D8%B9%D9%84%D9%89_%D9%85%D9%84%D9%81%D8%A7%D8%AA%D9%83_%D9%83%D8%A7%D9%84%D9%85%D8%AD%D8%AA%D8%B1%D9%81%D9%8A%D9%86_%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%B3_cvcemi.mp4" class="download-btn-site">
+            <a href="https://res.cloudinary.com/deuuw6kui/video/upload/v1774768850/%D8%B3%D8%AD%D8%B1_%D8%A7%D9%84%D9%80_Terminal_%D9%83%D9%8A%D9%81_%D8%AA%D8%B3%D9%8A%D8%B7%D8%B1_%D8%B9%D9%84%D9%89_%D9%85%D9%84%D9%81%D8%A7%D8%AA%D9%83_%D9%83%D8%A7%D9%84%D9%85%D8%AD%D8%AA%D8%B1%D9%81%D9%8A%D9%86_%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%B3_cvcemi.mp4" class="download-btn-site" data-i18n="download-btn">
                 📥 Download Video Lesson
             </a>
         </div>
@@ -290,38 +271,46 @@
 
     <aside class="playlist-sidebar">
         <h3 class="playlist-title">
-            Linux Gatherings 🐧
-            <span class="playlist-count">2 / ∞</span>
+            <span data-i18n="sidebar-title">Linux Gatherings 🐧</span>
+            <span class="playlist-count">3 / ∞</span>
         </h3>
 
         <a href="1.install_zorin_os.html" class="playlist-item">
             <img src="https://img.youtube.com/vi/ZN4qcotFiWc/maxresdefault.jpg" alt="Session 1">
             <div class="playlist-info">
-                <h4>Goodbye Windows! Install Zorin OS</h4>
-                <span>Session 1 • insatll Zorin OS</span>
+                <h4 data-i18n="sidebar-s1-title">Goodbye Windows! Install Zorin OS</h4>
+                <span data-i18n="sidebar-s1-sub">Session 1 • Install Zorin OS</span>
             </div>
         </a>
 
         <a href="2.terminal_file_management.html" class="playlist-item active-video">
             <img src="https://img.youtube.com/vi/Q-nYbryAX_E/maxresdefault.jpg" alt="Session 2">
             <div class="playlist-info">
-                <h4>Terminal Magic: Master File Management</h4>
-                <span>Session 2 • Bash </span>
+                <h4 data-i18n="sidebar-s2-title">Terminal Magic: Master File Management</h4>
+                <span data-i18n="sidebar-s2-sub">Session 2 • Bash</span>
+            </div>
+        </a>
+
+        <a href="3.linux_package_wars.html" class="playlist-item">
+            <img src="https://img.youtube.com/vi/qdvTvmRtHU0/maxresdefault.jpg" alt="Session 3">
+            <div class="playlist-info">
+                <h4 data-i18n="sidebar-s3-title">Linux Package Wars: apt, pacman, Flatpak</h4>
+                <span data-i18n="sidebar-s3-sub">Session 3 • Package Managers</span>
             </div>
         </a>
 
         <div class="playlist-item" style="opacity: 0.6; cursor: not-allowed; background: transparent;">
             <div style="width: 120px; height: 67.5px; background: var(--surface1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--subtext); flex-shrink: 0;">🔒</div>
             <div class="playlist-info">
-                <h4 style="color: var(--subtext);">Coming Soon...</h4>
-                <span>Session 3 • Unknown yet</span>
+                <h4 style="color: var(--subtext);" data-i18n="sidebar-coming-title">Coming Soon...</h4>
+                <span data-i18n="sidebar-coming-sub">Session 4 • Unknown yet</span>
             </div>
         </div>
     </aside>
 
 </div>
 
-<footer>
+<footer data-i18n="footer-text">
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
@@ -332,19 +321,22 @@
 <script src="../theme.js"></script>
 
 <div id="langModalOverlay" class="modal-overlay" style="display: none;">
-    <div class="modal-content">
+    <div class="modal-content" style="text-align: center;">
         <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
-        <h3 class="feedback-title">Select Language</h3>
-        <button class="submit-btn" onclick="setLanguage('en')">English (EN)</button>
-        <button class="submit-btn" onclick="setLanguage('ar')" style="margin-top:10px;">العربية (AR)</button>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">Choose website language</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
     </div>
 </div>
 
 <div id="themeModalOverlay" class="modal-overlay" style="display: none;">
-    <div class="modal-content" style="max-height: 80vh; overflow-y: auto;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
         <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
-        <h3 class="feedback-title">Select Theme</h3>
-        <p class="feedback-subtitle">Customize your experience</p>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">Customize your experience</p>
         <br>
         <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
         <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000; margin-top: 8px;">☀️ Pure Light</button>
@@ -357,6 +349,18 @@
         <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7; margin-top: 8px;">🌃 Tokyo Night</button>
     </div>
 </div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
 
 </body>
 </html>
