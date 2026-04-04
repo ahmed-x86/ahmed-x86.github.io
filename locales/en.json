@@ -393,5 +393,7 @@
     "session1-support-title": "🔔 <strong>Support the Channel:</strong>",
     "session1-support-desc": "Don't forget to <strong>subscribe</strong> and hit the <strong>Like</strong> button if this guide helped you! What is your favorite Linux distribution? Let us know in the comments!",
     "session1-footer-msg": "Enjoy the session!",
-    "session1-hashtags": "#ZorinOS #Linux #LinuxInstallation #WindowsAlternative #Zorin_OS #Technology #LinuxTutorials #ArchLinux"
+    "session1-hashtags": "#ZorinOS #Linux #LinuxInstallation #WindowsAlternative #Zorin_OS #Technology #LinuxTutorials #ArchLinux",
+    "arch-pkg-title": "Linux Package Wars: apt, pacman, Flatpak",
+    "arch-pkg-desc": "Understand how software is built and distributed in Linux. We decode package managers and universal formats like Flatpak and AppImage."
 }
