@@ -8,8 +8,8 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://ahmed-x86.github.io/linux_gatherings/1.install_zorin_os.html">
     
-    <meta name="description" content="Step-by-step guide on how to install Zorin OS by Ahmed x86. Perfect for Windows users transitioning to Linux. Part of the Linux Gatherings recorded sessions.">
-    <meta name="keywords" content="Ahmed x86, Zorin OS, Linux Installation, Windows Alternative, Linux Tutorial, Arch Linux Enthusiast, Computer Science Student, Open Source">
+    <meta name="description" content="Step-by-step guide on how to install Zorin OS by Ahmed x86. Perfect for Windows users transitioning to Linux.">
+    <meta name="keywords" content="Ahmed x86, Zorin OS, Linux Installation, Windows Alternative, Linux Tutorial, Arch Linux Enthusiast, Open Source">
     <meta name="author" content="Ahmed x86">
     <meta name="generator" content="Handcrafted by ahmed-x86">
 
@@ -26,33 +26,24 @@
     <meta property="og:image:height" content="720">
     <meta property="og:url" content="https://ahmed-x86.github.io/linux_gatherings/1.install_zorin_os.html">
     <meta property="og:type" content="article">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ar_EG">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Goodbye Windows! Easiest Way to Install Zorin OS 🐧">
-    <meta name="twitter:description" content="Check out my tutorial on installing Zorin OS. Perfect for Linux beginners!">
-    <meta name="twitter:image" content="https://img.youtube.com/vi/ZN4qcotFiWc/maxresdefault.jpg">
 
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
     <link rel="apple-touch-icon" href="https://github.com/ahmed-x86.png">
     <link rel="stylesheet" href="../style.css">
 
     <style>
-        /* التخطيط المحدث: التصاق باليسار مع هامش بسيط */
         .page-layout {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) 380px; /* الفيديو يأخذ الباقي، القائمة 380 بكسل */
+            grid-template-columns: minmax(0, 1fr) 380px;
             gap: 30px;
-            max-width: 1700px; /* يسمح بالتمدد بشكل أكبر */
+            max-width: 1700px;
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-left: 3%; /* هنا السحر: يدفعه لأقصى اليسار ويترك 3% فقط للحافة */
+            margin-left: 3%;
             margin-right: auto;
             align-items: start;
         }
 
-        /* للموبايل: نلغي الهامش الكبير ليأخذ الشاشة بالكامل */
         @media (max-width: 1000px) {
             .page-layout {
                 grid-template-columns: 1fr;
@@ -61,17 +52,8 @@
             }
         }
 
-        /* ------------------------------------------- */
-        /* تنسيقات قسم الفيديو والوصف */
-        /* ------------------------------------------- */
-        .main-content {
-            width: 100%;
-        }
-
-        .video-wrapper {
-            margin: 0 0 20px 0;
-            width: 100%;
-        }
+        .main-content { width: 100%; }
+        .video-wrapper { margin: 0 0 20px 0; width: 100%; }
 
         video {
             width: 100%;
@@ -138,9 +120,6 @@
         }
         .download-btn-site:hover { background-color: var(--blue); transform: translateY(-3px); }
 
-        /* ------------------------------------------- */
-        /* تنسيقات القائمة الجانبية الملتصقة */
-        /* ------------------------------------------- */
         .playlist-sidebar {
             background-color: var(--surface0);
             border-radius: 12px;
@@ -183,10 +162,7 @@
             margin-bottom: 10px;
         }
 
-        .playlist-item:hover {
-            background-color: var(--surface1);
-        }
-
+        .playlist-item:hover { background-color: var(--surface1); }
         .playlist-item.active-video {
             border-left: 4px solid var(--mauve);
             background-color: var(--surface1);
@@ -227,12 +203,12 @@
     <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
         <span class="menu-btn" onclick="toggleSidebar()">☰</span>
     </div>
-    <h1>Ahmed x86 - Video Player 📺</h1>
+    <h1 data-i18n="video-header-title">Ahmed x86 - Video Player 📺</h1>
 </header>
 
 <nav>
-    <a href="../index.html">← Back to Home</a>
-    <a href="https://github.com/ahmed-x86" target="_blank">GitHub Repo</a>
+    <a href="../index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
 </nav>
 
 <div class="page-layout">
@@ -252,46 +228,44 @@
             </video>
         </div>
 
-        <h2 class="video-main-title">Goodbye Windows! The Easiest Way to Install Zorin OS</h2>
+        <h2 class="video-main-title" data-i18n="session1-main-title">Goodbye Windows! The Easiest Way to Install Zorin OS</h2>
 
         <div class="channel-strip">
             <img src="https://github.com/ahmed-x86.png" alt="Ahmed">
             <div>
                 <strong style="color: var(--text);">Ahmed x86_64</strong>
-                <span style="color: var(--subtext); display: block; font-size: 0.85rem;">22 subscribers</span>
+                <span style="color: var(--subtext); display: block; font-size: 0.85rem;" data-i18n="subscribers-count">22 subscribers</span>
             </div>
         </div>
         
-        <div class="description-note">
-            <p>In this video, we'll discover the absolute easiest way to install <strong>Zorin OS</strong> step-by-step!</p>
+        <div class="description-note" dir="auto">
+            <p data-i18n="session1-desc-1">In this video, we'll discover the absolute easiest way to install <strong>Zorin OS</strong> step-by-step!</p>
             
-            <p>If you're thinking about switching from Windows to the Linux world and searching for smoothness and speed, this system is your best gateway. 
-            <br><em>(And even if we're Arch enthusiasts, we have to give user-friendly systems a chance for beginners! 😉)</em></p>
+            <p data-i18n="session1-desc-2">If you're thinking about switching from Windows to the Linux world and searching for smoothness and speed, this system is your best gateway. (And even if we're Arch enthusiasts, we have to give user-friendly systems a chance for beginners! 😉)</p>
 
-            <p><strong>What we will cover:</strong><br>
-            • Preparing the system environment.<br>
-            • Essential pre-installation tweaks.<br>
-            • The full installation process for daily use.</p>
+            <p><span data-i18n="session1-topics-title">📍 <strong>What we will cover:</strong></span><br>
+            <span data-i18n="session1-topic-1">• Preparing the system environment.</span><br>
+            <span data-i18n="session1-topic-2">• Essential pre-installation tweaks.</span><br>
+            <span data-i18n="session1-topic-3">• The full installation process for daily use.</span></p>
 
             <hr style="border: 0; border-top: 1px solid var(--surface1); margin: 15px 0;">
 
-            <p>📌 <strong>Important Links:</strong><br>
-            • Download Zorin OS: <a href="https://zorin.com/os/" target="_blank">zorin.com/os/</a><br>
-            • Flash Tool (Ventoy): <a href="https://github.com/ventoy/Ventoy" target="_blank">github.com/ventoy/Ventoy</a></p>
+            <p><span data-i18n="session1-links-title">📌 <strong>Important Links:</strong></span><br>
+            <span data-i18n="session1-link-zorin">• Download Zorin OS: <a href="https://zorin.com/os/" target="_blank">zorin.com/os/</a></span><br>
+            <span data-i18n="session1-link-ventoy">• Flash Tool (Ventoy): <a href="https://github.com/ventoy/Ventoy" target="_blank">github.com/ventoy/Ventoy</a></span></p>
 
-            <p>🔔 <strong>Support the Channel:</strong><br>
-            Don't forget to <strong>subscribe</strong> and hit the <strong>Like</strong> button if this guide helped you!<br>
-            What is your favorite Linux distribution? Let us know in the comments!</p>
+            <p><span data-i18n="session1-support-title">🔔 <strong>Support the Channel:</strong></span><br>
+            <span data-i18n="session1-support-desc">Don't forget to <strong>subscribe</strong> and hit the <strong>Like</strong> button if this guide helped you! What is your favorite Linux distribution? Let us know in the comments!</span></p>
 
-            <p>Enjoy the session!</p>
+            <p data-i18n="session1-footer-msg">Enjoy the session!</p>
 
-            <div class="hashtags">
+            <div class="hashtags" data-i18n="session1-hashtags">
                 #ZorinOS #Linux #LinuxInstallation #WindowsAlternative #Zorin_OS #Technology #LinuxTutorials #ArchLinux
             </div>
         </div>
 
         <div style="text-align: left; margin-top: 30px;">
-            <a href="https://res.cloudinary.com/deuuw6kui/video/upload/v1774715579/2026-03-03_22-09-18_rieeti.mp4" download class="download-btn-site">
+            <a href="https://res.cloudinary.com/deuuw6kui/video/upload/v1774715579/2026-03-03_22-09-18_rieeti.mp4" class="download-btn-site" data-i18n="download-btn">
                 📥 Download Video Lesson
             </a>
         </div>
@@ -300,38 +274,46 @@
 
     <aside class="playlist-sidebar">
         <h3 class="playlist-title">
-            Linux Gatherings 🐧
-            <span class="playlist-count">2 / ∞</span>
+            <span data-i18n="sidebar-title">Linux Gatherings 🐧</span>
+            <span class="playlist-count">3 / ∞</span>
         </h3>
 
         <a href="1.install_zorin_os.html" class="playlist-item active-video">
             <img src="https://img.youtube.com/vi/ZN4qcotFiWc/maxresdefault.jpg" alt="Session 1">
             <div class="playlist-info">
-                <h4>Goodbye Windows! Install Zorin OS</h4>
-                <span>Session 1 • Zorin OS</span>
+                <h4 data-i18n="sidebar-s1-title">Goodbye Windows! Install Zorin OS</h4>
+                <span data-i18n="sidebar-s1-sub">Session 1 • Install Zorin OS</span>
             </div>
         </a>
 
         <a href="2.terminal_file_management.html" class="playlist-item">
             <img src="https://img.youtube.com/vi/Q-nYbryAX_E/maxresdefault.jpg" alt="Session 2">
             <div class="playlist-info">
-                <h4>Terminal Magic: Master File Management</h4>
-                <span>Session 2 • Bash </span>
+                <h4 data-i18n="sidebar-s2-title">Terminal Magic: Master File Management</h4>
+                <span data-i18n="sidebar-s2-sub">Session 2 • Bash</span>
+            </div>
+        </a>
+
+        <a href="3.linux_package_wars.html" class="playlist-item">
+            <img src="https://img.youtube.com/vi/qdvTvmRtHU0/maxresdefault.jpg" alt="Session 3">
+            <div class="playlist-info">
+                <h4 data-i18n="sidebar-s3-title">Linux Package Wars: apt, pacman, Flatpak</h4>
+                <span data-i18n="sidebar-s3-sub">Session 3 • Package Managers</span>
             </div>
         </a>
 
         <div class="playlist-item" style="opacity: 0.6; cursor: not-allowed; background: transparent;">
             <div style="width: 120px; height: 67.5px; background: var(--surface1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--subtext); flex-shrink: 0;">🔒</div>
             <div class="playlist-info">
-                <h4 style="color: var(--subtext);">Coming Soon...</h4>
-                <span>Session 3 • Unknown yet</span>
+                <h4 style="color: var(--subtext);" data-i18n="sidebar-coming-title">Coming Soon...</h4>
+                <span data-i18n="sidebar-coming-sub">Session 4 • Unknown yet</span>
             </div>
         </div>
     </aside>
 
 </div>
 
-<footer>
+<footer data-i18n="footer-text">
     <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
 </footer>
 
@@ -342,19 +324,22 @@
 <script src="../theme.js"></script>
 
 <div id="langModalOverlay" class="modal-overlay" style="display: none;">
-    <div class="modal-content">
+    <div class="modal-content" style="text-align: center;">
         <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
-        <h3 class="feedback-title">Select Language</h3>
-        <button class="submit-btn" onclick="setLanguage('en')">English (EN)</button>
-        <button class="submit-btn" onclick="setLanguage('ar')" style="margin-top:10px;">العربية (AR)</button>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">Choose website language</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
     </div>
 </div>
 
 <div id="themeModalOverlay" class="modal-overlay" style="display: none;">
-    <div class="modal-content" style="max-height: 80vh; overflow-y: auto;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
         <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
-        <h3 class="feedback-title">Select Theme</h3>
-        <p class="feedback-subtitle">Customize your experience</p>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">Customize your experience</p>
         <br>
         <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
         <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000; margin-top: 8px;">☀️ Pure Light</button>
@@ -367,6 +352,18 @@
         <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7; margin-top: 8px;">🌃 Tokyo Night</button>
     </div>
 </div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
 
 </body>
 </html>
