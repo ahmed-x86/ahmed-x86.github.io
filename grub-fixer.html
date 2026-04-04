@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | GRUB Fixer</title>
-    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring V23 Security Hardening, V22 Secure Boot & Shim Support, V21 LUKS Encryption, Chroot Health Check, Universal RedHat/Fedora support, and FSTAB Parsing. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Secure Boot, MOK, Shim, LUKS, Encryption, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, In-Situ Repair, Security">
+    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring V24 Backend API, V23 Security Hardening, V22 Secure Boot & Shim Support, V21 LUKS Encryption, Chroot Health Check, Universal RedHat/Fedora support, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Secure Boot, MOK, Shim, LUKS, Encryption, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, In-Situ Repair, Security, API, Backend">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V23 Security Hardening, Secure Boot, LUKS Encryption)">
-    <meta property="og:description" content="Rescue your Linux system securely. V23 transforms the script into the ultimate proactive recovery tool, featuring dynamic MOK OTP generation, hidden LUKS inputs, configuration backups, and automated system repair.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V24 Backend API, Security Hardening, Secure Boot, LUKS Encryption)">
+    <meta property="og:description" content="Rescue your Linux system securely. V24 transforms the script into a powerful Backend API capable of driving graphical user interfaces (GUIs) with JSON outputs and explicit mapping.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
     </div>
 
     <h1 data-i18n="grub-page-title">Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Security Hardening, Secure Boot MOK Enrollment, LUKS Encryption Support, Chroot Health Checks, RedHat/Fedora support, and Deep Scan Intelligence.</p>
+    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Backend API capabilities, Security Hardening, Secure Boot MOK Enrollment, LUKS Encryption Support, Chroot Health Checks, RedHat/Fedora support, and Deep Scan Intelligence.</p>
 </header>
 
 <nav>
@@ -41,7 +41,7 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V23-firebrick?style=for-the-badge" alt="Version V23">
+        <img src="https://img.shields.io/badge/Version-V24-firebrick?style=for-the-badge" alt="Version V24">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/Zero_Interaction-Ready-blueviolet?style=for-the-badge" alt="Zero Interaction Ready">
@@ -50,14 +50,23 @@
 
     <h2 data-i18n="grub-about-title">About the Project</h2>
     <p data-i18n="grub-about-desc">
-        <b>GRUB Fixer (V23 - The "Security Hardening" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V23</b> elevates the script into a highly-secure recovery tool by introducing dynamic MOK OTP generation, hidden LUKS password inputs, and failsafe configuration backups. This builds upon the <b>Secure Boot Support</b> (V22), <b>LUKS Encryption</b> (V21), <b>Chroot Health Checks</b> (V20), and <b>Universal RedHat/Fedora Support</b> (V19) of previous versions.
+        <b>GRUB Fixer (V24 - The "Backend API" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V24</b> evolves the script beyond a terminal tool into a fully-fledged <b>Backend API</b>, capable of seamlessly driving graphical user interfaces (GUIs) with JSON outputs and explicit execution mapping. This builds upon the <b>Security Hardening</b> (V23), <b>Secure Boot Support</b> (V22), <b>LUKS Encryption</b> (V21), and <b>Chroot Health Checks</b> (V20) of previous versions.
     </p>
 
-    <div class="note" data-i18n="grub-v23-note">
-        <strong>🔒 New in V23:</strong> The script now features <b>Advanced Security Hardening</b>! It dynamically generates Secure Boot MOK OTPs using <code>openssl</code>, completely hides LUKS password inputs to prevent shoulder surfing, and automatically backs up <code>/etc/default/grub</code> before modifying the host system.
+    <div class="note" data-i18n="grub-v24-note">
+        <strong>🔌 New in V24:</strong> The script now features <b>Backend API Capabilities</b>! It acts as a headless worker for GUIs, offering endpoints like <code>--sys-info</code> and <code>--json-scan</code> for smart environment detection, and accepts explicit layouts via <code>--map-std</code> or <code>--map-btrfs</code> to bypass all interactive prompts.
     </div>
 
     <hr class="section-divider">
+
+    <h2 data-i18n="grub-api-title">🔌 The Backend API Update (V24)</h2>
+    <ul>
+        <li data-i18n="grub-api-1"><strong>JSON Endpoints for GUIs:</strong> Designed to be the brain behind graphical interfaces. Passing <code>--sys-info</code> returns live system state (environment, firmware, battery), and <code>--json-scan</code> silently parses <code>fstab</code> to output a clean JSON array of the detected partition layout.</li>
+        <li data-i18n="grub-api-2"><strong>Explicit Execution Mapping:</strong> Bypasses all interactive logic and deep scans when explicitly instructed by a frontend GUI.</li>
+        <li data-i18n="grub-api-3"><strong>Standard Mapping (<code>--map-std</code>):</strong> Accepts structured payloads for Ext4/XFS layouts (e.g., <code>vda1:efi:/boot/efi vda2:root:/ vda3:ext:/mnt/data</code>).</li>
+        <li data-i18n="grub-api-4"><strong>Btrfs Subvolume Mapping (<code>--map-btrfs</code>):</strong> Handles complex Btrfs layouts seamlessly (e.g., <code>nvme0n1p1:efi:/boot nvme0n1p2:root:/=@,/home=@home</code>).</li>
+        <li data-i18n="grub-api-5"><strong>Headless Worker:</strong> Operates flawlessly in the background, executing precise mounts, LUKS unlocks, and GRUB repairs based purely on GUI-provided data strings.</li>
+    </ul>
 
     <h2 data-i18n="grub-sec-title">🔒 The Security Hardening Update (V23)</h2>
     <ul>
@@ -99,9 +108,13 @@
         <li data-i18n="grub-univ-3"><strong>Smart Pathing:</strong> Intelligently manages configuration paths, dynamically creating and writing to <code>/boot/grub2/grub.cfg</code> or <code>/boot/grub/grub.cfg</code> as required by the host OS.</li>
     </ul>
 
-    <h2 data-i18n="grub-flags-title">🚩 V18 CLI Flags Reference</h2>
-    <p data-i18n="grub-flags-desc">V18 introduced Command-Line Arguments to bypass prompts and enable headless automation:</p>
+    <h2 data-i18n="grub-flags-title">🚩 CLI Flags & API Reference</h2>
+    <p data-i18n="grub-flags-desc">Bypass prompts, enable headless automation, or integrate with graphical frontends:</p>
     <ul>
+        <li data-i18n="grub-flag-5"><strong><code>--sys-info</code>:</strong> Return basic system information (environment type, firmware, battery) as JSON.</li>
+        <li data-i18n="grub-flag-6"><strong><code>--json-scan</code>:</strong> Perform a stealth scan and output the detected partition/fstab layout as a JSON array.</li>
+        <li data-i18n="grub-flag-7"><strong><code>--map-std "&lt;mapping&gt;"</code>:</strong> Provide an explicit partition layout for standard filesystems (e.g., <code>--map-std "sda1:efi:/boot sda2:root:/"</code>).</li>
+        <li data-i18n="grub-flag-8"><strong><code>--map-btrfs "&lt;mapping&gt;"</code>:</strong> Provide an explicit partition layout for Btrfs setups with subvolumes.</li>
         <li data-i18n="grub-flag-1"><strong><code>-env l</code> or <code>-env live</code>:</strong> Force the script to assume a <b>Live Environment</b> (USB/ISO).</li>
         <li data-i18n="grub-flag-2"><strong><code>-env h</code> or <code>-env host</code>:</strong> Force the script to assume a <b>Real Machine / Host</b> environment.</li>
         <li data-i18n="grub-flag-3"><strong><code>-auto</code>:</strong> The "Ultimate Mode" flag. Bypasses all confirmation prompts <code>(y/n)</code>, automatically assumes default mount points, and executes the repair instantly.</li>
@@ -196,7 +209,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
                     <tr><td>V20</td><td data-i18n="grub-v20">Chroot Health Check - Auto-detects and installs missing GRUB/EFI packages with DNS resolv support.</td></tr>
                     <tr><td>V21</td><td data-i18n="grub-v21">LUKS & LVM Encryption Support - Auto-detects, unlocks (visible password), and configures GRUB_ENABLE_CRYPTODISK.</td></tr>
                     <tr><td>V22</td><td data-i18n="grub-v22">Secure Boot & Shim Integration - Auto-detects Secure Boot, handles shim-signed, and MOK Enrollment.</td></tr>
-                    <tr><td><b>V23</b></td><td data-i18n="grub-v23"><b>Current:</b> Security Hardening & Bug Fixes - Dynamic MOK OTP, hidden LUKS passwords, config backups, and environment isolation.</td></tr>
+                    <tr><td>V23</td><td data-i18n="grub-v23">Security Hardening & Bug Fixes - Dynamic MOK OTP, hidden LUKS passwords, config backups, and environment isolation.</td></tr>
+                    <tr><td><b>V24</b></td><td data-i18n="grub-v24"><b>Current:</b> The "Backend API" Update - Added JSON Endpoints (--sys-info, --json-scan) and explicit mapping for GUI integration.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -213,8 +227,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
         <li data-i18n="grub-req-5"><strong>Secure Boot:</strong> Fully supported (Requires Motherboard MOK Enrollment via OTP).</li>
     </ul>
 
-    <div class="warning" data-i18n="grub-warn-v24">
-        <strong>⚠️ Planned for V24:</strong> Researching <b>TUI (Text User Interface)</b> implementation for a completely visual, menu-driven repair experience.
+    <div class="warning" data-i18n="grub-warn-v25">
+        <strong>⚠️ Planned for V25:</strong> Utilizing the new Backend API to develop a standalone <b>Python/GTK GUI</b> for an intuitive visual repair experience.
     </div>
 
     <div class="action-container">
