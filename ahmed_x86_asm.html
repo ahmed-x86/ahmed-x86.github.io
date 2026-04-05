@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed x86 | ahmed_x86_asm: Smart Assembly Runner for VS Code</title>
+    
+    <meta name="description" content="Compile, link, and run x86/x64 Assembly code instantly on Linux and Windows from VS Code! Supports NASM, GCC, UASM, and Irvine32.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, ahmed_x86_asm, VS Code Assembly, NASM, MASM, UASM, Irvine32, Linux Assembly, MSYS2 Assembly runner">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://ahmed-x86.github.io/ahmed_x86_asm.html">
+
+    <meta property="og:site_name" content="Ahmed x86 Portfolio">
+    <meta property="og:title" content="Ahmed x86 | ahmed_x86_asm 🚀">
+    <meta property="og:description" content="The ultimate VS Code extension to build and run x86/x64 Assembly seamlessly. Features smart auto-detect, cross-platform support, and Irvine32 integration.">
+    <meta property="og:image" content="https://ahmed-x86.github.io/ahmed_x86_asm_logo.png">
+    <meta property="og:image:alt" content="ahmed_x86_asm Extension Logo">
+    <meta property="og:url" content="https://ahmed-x86.github.io/ahmed_x86_asm.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahmed x86 | ahmed_x86_asm for VS Code 🚀">
+    <meta name="twitter:description" content="Compile and run Assembly inside VS Code instantly! Smart auto-detect, Linux/Windows support, and zero hassle.">
+    <meta name="twitter:image" content="https://ahmed-x86.github.io/ahmed_x86_asm_logo.png">
+    
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="asm-page-title">Ahmed x86 - ahmed_x86_asm 🚀</h1>
+    <p data-i18n="asm-page-desc">A smart and dynamic VS Code extension to compile, link, and run x86/x64 Assembly code instantly.</p>
+</header>
+
+<nav>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/ahmed_x86_asm" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
+    <a href="https://marketplace.visualstudio.com/manage/publishers/ahmed-x86/extensions/ahmed-x86-asm/hub" target="_blank" data-i18n="nav-marketplace">VS Code Marketplace</a>
+</nav>
+
+<section id="project-details">
+    
+    <div class="badges">
+        <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code">
+        <img src="https://img.shields.io/badge/Assembly-000000?style=for-the-badge&logo=nasm&logoColor=white" alt="Assembly">
+        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+        <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+    </div>
+
+    <div class="demo-container">
+        <img src="ahmed_x86_asm.png" alt="ahmed_x86_asm VS Code Extension" class="demo-video" style="width: 100%; border-radius: 10px; border: 1px solid #444c56;">
+        <div class="demo-caption" data-i18n="asm-demo-caption">Write, build, and run Assembly code with a single click!</div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="asm-features-title">✨ Key Features</h2>
+    <ul>
+        <li data-i18n="vscode-asm-feat-1"><strong>Smart Auto-Detect:</strong> Instantly analyzes your <code>.asm</code> code to determine the optimal build configuration (32-bit/64-bit, Irvine/Native, <code>main</code>/<code>_start</code>).</li>
+        <li data-i18n="vscode-asm-feat-2"><strong>True Cross-Platform:</strong> Runs seamlessly on Linux (Native & Wine) and Windows (Native MSYS2) directly from your editor.</li>
+        <li data-i18n="vscode-asm-feat-3"><strong>Irvine32 Support:</strong> First-class integration for the <code>Irvine32.inc</code> library, featuring a persistent path saver for a hassle-free setup.</li>
+        <li data-i18n="vscode-asm-feat-4"><strong>Integrated Terminal:</strong> Automatically spawns a dedicated clean terminal and clears previous execution outputs.</li>
+        <li data-i18n="vscode-asm-feat-5"><strong>Multi-Toolchain Magic:</strong> Seamlessly orchestrates NASM, GCC, LD, and UASM build commands in the background.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="asm-install-title">🛠️ Requirements & Dependencies</h2>
+    
+    <p data-i18n="asm-req-desc">Before using the extension, you need to install the required tools based on your operating system.</p>
+
+    <h3 data-i18n="asm-req-win">🪟 Windows (Using MSYS2)</h3>
+    <p data-i18n="asm-win-desc">If you don't have it installed, download and install MSYS2 first. Then, open your MSYS2 terminal and run the pacman command to install the required assemblers and linkers:</p>
+    
+    <div class="action-container" style="text-align: left; margin-bottom: 15px;">
+        <a href="https://www.msys2.org/" target="_blank" class="btn-link" style="background-color: #E34F26; color: white;" data-i18n="asm-btn-download-msys">
+            🪟 Download MSYS2
+        </a>
+    </div>
+
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pacman -S mingw-w64-i686-gcc mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb mingw-w64-x86_64-nasm make p7zip mingw-w64-x86_64-uasm')">Copy</button>
+<pre><code>pacman -S mingw-w64-i686-gcc mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb mingw-w64-x86_64-nasm make p7zip mingw-w64-x86_64-uasm</code></pre>
+    </div>
+
+    <h3 data-i18n="asm-req-lin">🐧 Linux Dependencies</h3>
+    <p data-i18n="asm-lin-desc">Choose your Linux distribution below to install the required dependencies (<code>nasm</code>, <code>mingw-w64</code>, <code>wine</code>, <code>uasm</code>, <code>binutils</code>, <code>ghex</code>, etc.):</p>
+    
+    <details>
+        <summary>Arch Linux / Manjaro / CachyOS</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl\nyay -S --needed uasm')">Copy</button>
+<pre><code>sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl
+yay -S --needed uasm</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Debian / Ubuntu / Linux Mint</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apt update && sudo apt install -y nasm gcc-mingw-w64 wine binutils ghex unzip curl')">Copy</button>
+<pre><code>sudo apt update && sudo apt install -y nasm gcc-mingw-w64 wine binutils ghex unzip curl</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Fedora / Nobara / Bazzit</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo dnf install -y nasm mingw64-gcc wine binutils ghex unzip curl')">Copy</button>
+<pre><code>sudo dnf install -y nasm mingw64-gcc wine binutils ghex unzip curl</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Void Linux</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo xbps-install -S nasm cross-x86_64-w64-mingw32-gcc wine binutils ghex unzip curl')">Copy</button>
+<pre><code>sudo xbps-install -S nasm cross-x86_64-w64-mingw32-gcc wine binutils ghex unzip curl</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Gentoo</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo emerge --ask dev-lang/nasm dev-util/mingw64-toolchain app-emulation/wine-vanilla sys-devel/binutils dev-util/ghex app-arch/unzip net-misc/curl')">Copy</button>
+<pre><code>sudo emerge --ask dev-lang/nasm dev-util/mingw64-toolchain app-emulation/wine-vanilla sys-devel/binutils dev-util/ghex app-arch/unzip net-misc/curl</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Solus</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo eopkg install nasm mingw-w64 wine binutils ghex unzip curl')">Copy</button>
+<pre><code>sudo eopkg install nasm mingw-w64 wine binutils ghex unzip curl</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>openSUSE</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo zypper install -y nasm mingw64-gcc wine binutils ghex unzip curl')">Copy</button>
+<pre><code>sudo zypper install -y nasm mingw64-gcc wine binutils ghex unzip curl</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Alpine Linux</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apk add --no-cache nasm mingw-w64-gcc wine binutils ghex unzip curl sed')">Copy</button>
+<pre><code>sudo apk add --no-cache nasm mingw-w64-gcc wine binutils ghex unzip curl sed</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Puppy Linux</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pkg install nasm mingw-w64-gcc wine binutils ghex unzip curl')">Copy</button>
+<pre><code>pkg install nasm mingw-w64-gcc wine binutils ghex unzip curl</code></pre>
+        </div>
+    </details>
+
+    <blockquote class="note" style="border-color: #f38ba8; background-color: rgba(243, 139, 168, 0.1); margin-top: 15px;">
+        <strong data-i18n="asm-uasm-note-title">⚠️ UASM Manual Installation:</strong> 
+        <p data-i18n="asm-uasm-note-desc" style="margin-top: 5px;">If your distribution does not have <code>uasm</code> in its official repositories, download and install it manually:</p>
+        <div class="code-wrapper" style="margin-top: 10px;">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('curl -fsSL https://www.terraspace.co.uk/uasm257_linux64.zip -o uasm_linux.zip\nunzip -q uasm_linux.zip -d uasm_temp\nsudo mv uasm_temp/uasm /usr/local/bin/\nsudo chmod +x /usr/local/bin/uasm\nrm -rf uasm_linux.zip uasm_temp')">Copy</button>
+<pre><code>curl -fsSL https://www.terraspace.co.uk/uasm257_linux64.zip -o uasm_linux.zip
+unzip -q uasm_linux.zip -d uasm_temp
+sudo mv uasm_temp/uasm /usr/local/bin/
+sudo chmod +x /usr/local/bin/uasm
+rm -rf uasm_linux.zip uasm_temp</code></pre>
+        </div>
+        <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">SHA256: <code>d9fecb2226f66c7e48d81402fc13a67eda23507be9067a2983ee14ec7d68a94f</code></p>
+    </blockquote>
+
+    <h3 data-i18n="asm-req-irvine">📚 Irvine32 Library (Optional but recommended)</h3>
+    <p data-i18n="asm-irvine-desc">If your project uses the Irvine32 library, download it, extract it to a known folder, and the extension will handle the linking automatically.</p>
+    <div class="action-container" style="text-align: left; margin-top: 10px;">
+        <a href="http://www.asmirvine.com/gettingStartedVS2019/Irvine.zip" class="btn-link" style="background-color: #007ACC; color: white;" data-i18n="asm-btn-download-irvine">
+            📦 Download Irvine.zip
+        </a>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="asm-usage-title">⚙️ How to Use</h2>
+    <ol>
+        <li data-i18n="asm-usage-step1">Install the extension from the VS Code Marketplace.</li>
+        <li data-i18n="asm-usage-step2">Open any <code>.asm</code> file in VS Code.</li>
+        <li data-i18n="asm-usage-step3"><strong>Run Code:</strong> Simply click the <strong>▶ Play button</strong> in the top right corner of the editor and select <strong>Run x86 Assembly (ahmed_x86)</strong>. Alternatively, you can open the Command Palette (<code>Ctrl+Shift+P</code>) and type <code>Ahmed x86 ASM: Run Code</code>.</li>
+        <li data-i18n="asm-usage-step4">The extension will <strong>Auto-Detect</strong> the best environment. Press Enter, and watch your code compile and run in the terminal!</li>
+        <li data-i18n="asm-usage-step5"><strong>Irvine32 Setup:</strong> The extension will prompt you to select the folder containing <code>Irvine32.lib</code> <em>only the very first time</em> you need it.</li>
+        <li data-i18n="asm-usage-step6"><strong>Reset Path:</strong> To change the Irvine library path later, press <code>Ctrl+Shift+P</code> and search for <code>Ahmed x86 ASM: Reset Irvine Library Path</code>.</li>
+    </ol>
+
+    <hr class="section-divider">
+    
+    <div class="action-container">
+        <a href="https://marketplace.visualstudio.com/manage/publishers/ahmed-x86/extensions/ahmed-x86-asm/hub" target="_blank" class="btn-link" data-i18n="asm-btn-store">
+            ⬇️ Download from VS Code Store
+        </a>
+        <a href="https://github.com/ahmed-x86/ahmed_x86_asm" target="_blank" class="btn-link" data-i18n="asm-btn-repo">
+            ⭐ View GitHub Repository
+        </a>
+    </div>
+
+</section>
+
+<footer data-i18n="footer-text">
+    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
+<script src="main.js"></script>
+<script src="theme.js"></script>
+
+</body>
+</html>
