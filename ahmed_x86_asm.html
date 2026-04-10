@@ -316,6 +316,85 @@ sudo ldconfig</code></pre>
         </table>
     </blockquote>
 
+    <blockquote class="note" style="border-color: #f38ba8; background-color: rgba(243, 139, 168, 0.1); margin-top: 25px;">
+        <h3 style="margin-top: 0; color: #f38ba8;">The BSD Gateway</h3>
+        <strong>FreeBSD Cross-Compilation & Emulation on Arch Linux</strong>
+        
+        <p style="margin-top: 10px;">This guide documents the streamlined process of turning an Arch Linux system into a development hub for <strong>FreeBSD 64-bit Assembly</strong>, enabling you to build and test BSD binaries without leaving your Linux environment.</p>
+
+        
+
+        <hr style="border: 0; border-top: 1px solid #555; margin: 15px 0;">
+
+        <h4 style="margin-bottom: 10px;">🚀 Phase 1: Installing the Universal Linker (LLD)</h4>
+        <p>Instead of building complex cross-binutils, we leverage <strong>LLVM's LLD</strong>, which natively supports multiple targets including FreeBSD.</p>
+        <div class="code-wrapper" style="margin-top: 10px;">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('sudo pacman -S --needed lld')">Copy</button>
+<pre><code># Install the LLVM Linker
+sudo pacman -S --needed lld</code></pre>
+        </div>
+
+        <h4 style="margin-bottom: 10px; margin-top: 15px;">🛠️ Phase 2: Installing the Execution Bridge (QEMU)</h4>
+        <p>To run FreeBSD binaries on the Linux kernel, we use QEMU in User-Mode emulation. This acts as a translator between BSD system calls and Linux system calls.</p>
+        <div class="code-wrapper" style="margin-top: 10px;">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('sudo pacman -S --needed qemu-user-static')">Copy</button>
+<pre><code># Install QEMU User Static emulators
+sudo pacman -S --needed qemu-user-static</code></pre>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #555; margin: 20px 0;">
+
+        <h4 style="margin-bottom: 10px;">⚙️ Phase 3: Build & Execution Workflow</h4>
+        <p>To target FreeBSD 64-bit, follow this specific toolchain sequence:</p>
+
+        <h5 style="margin-top: 15px;">1. Assembling (NASM)</h5>
+        <p>We use the standard ELF64 format, as it is the foundation for FreeBSD executables.</p>
+        <div class="code-wrapper" style="margin-top: 10px;">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('nasm -f elf64 code.asm -o code.o')">Copy</button>
+<pre><code>nasm -f elf64 code.asm -o code.o</code></pre>
+        </div>
+
+        <h5 style="margin-top: 15px;">2. Linking (LLD)</h5>
+        <p>We must explicitly tell the linker to use the FreeBSD emulation mode (<code>elf_x86_64_fbsd</code>).</p>
+        <div class="code-wrapper" style="margin-top: 10px;">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('ld.lld -m elf_x86_64_fbsd code.o -o code')">Copy</button>
+<pre><code>ld.lld -m elf_x86_64_fbsd code.o -o code</code></pre>
+        </div>
+
+        <h5 style="margin-top: 15px;">3. Execution (QEMU)</h5>
+        <p>Run the resulting binary through the QEMU x86_64 static interpreter.</p>
+        <div class="code-wrapper" style="margin-top: 10px;">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('qemu-x86_64-static ./code')">Copy</button>
+<pre><code>qemu-x86_64-static ./code</code></pre>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #555; margin: 20px 0;">
+
+        <h4 style="margin-bottom: 10px;">✅ Technical Summary for <code>extension.ts</code></h4>
+        <table style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 15px; font-size: 0.9em; background-color: rgba(0,0,0,0.2);">
+            <tr>
+                <th style="border: 1px solid #555; padding: 10px; color: #f38ba8;">Platform Component</th>
+                <th style="border: 1px solid #555; padding: 10px; color: #f38ba8;">Tool / Configuration</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #555; padding: 10px;"><strong>Target OS</strong></td>
+                <td style="border: 1px solid #555; padding: 10px;">FreeBSD 64-bit</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #555; padding: 10px;"><strong>Linker</strong></td>
+                <td style="border: 1px solid #555; padding: 10px;"><code>ld.lld</code></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #555; padding: 10px;"><strong>Emulation Mode</strong></td>
+                <td style="border: 1px solid #555; padding: 10px;"><code>-m elf_x86_64_fbsd</code></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #555; padding: 10px;"><strong>Runner</strong></td>
+                <td style="border: 1px solid #555; padding: 10px;"><code>qemu-x86_64-static</code></td>
+            </tr>
+        </table>
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">&gt; <strong>Note:</strong> As of April 2026, this feature is officially optimized for <strong>Arch Linux</strong> users of the <code>ahmed_x86_asm</code> extension.</p>
+    </blockquote>
     <h3 data-i18n="asm-req-irvine">📚 Irvine32 Library (Optional but recommended)</h3>
     <p data-i18n="asm-irvine-desc">If your project uses the Irvine32 library, download it, extract it to a known folder, and the extension will handle the linking automatically.</p>
     <div class="action-container" style="text-align: left; margin-top: 10px;">
