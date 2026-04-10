@@ -6,15 +6,15 @@
 
     <title>Ahmed x86 | ahmed_x86_asm: Smart Assembly Runner for VS Code</title>
     
-    <meta name="description" content="Compile, link, and run x86/x64 Assembly code instantly on Linux and Windows from VS Code! Supports NASM, GCC, UASM, and Irvine32.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, ahmed_x86_asm, VS Code Assembly, NASM, MASM, UASM, Irvine32, Linux Assembly, MSYS2 Assembly runner">
+    <meta name="description" content="Compile, link, and run x86/x64 Assembly code instantly on Linux and Windows from VS Code! Supports NASM, GCC, UASM, Irvine32, and macOS cross-compilation on Linux.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, ahmed_x86_asm, VS Code Assembly, NASM, MASM, UASM, Irvine32, Linux Assembly, MSYS2 Assembly runner, macOS Assembly on Linux, Darling">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://ahmed-x86.github.io/ahmed_x86_asm.html">
 
     <meta property="og:site_name" content="Ahmed x86 Portfolio">
     <meta property="og:title" content="Ahmed x86 | ahmed_x86_asm 🚀">
-    <meta property="og:description" content="The ultimate VS Code extension to build and run x86/x64 Assembly seamlessly. Features smart auto-detect, cross-platform support, and Irvine32 integration.">
+    <meta property="og:description" content="The ultimate VS Code extension to build and run x86/x64 Assembly seamlessly. Features smart auto-detect, cross-platform support, Irvine32 integration, and macOS support on Linux.">
     <meta property="og:image" content="https://ahmed-x86.github.io/ahmed_x86_asm_logo.png">
     <meta property="og:image:alt" content="ahmed_x86_asm Extension Logo">
     <meta property="og:url" content="https://ahmed-x86.github.io/ahmed_x86_asm.html">
@@ -28,7 +28,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ahmed x86 | ahmed_x86_asm for VS Code 🚀">
-    <meta name="twitter:description" content="Compile and run Assembly inside VS Code instantly! Smart auto-detect, Linux/Windows support, and zero hassle.">
+    <meta name="twitter:description" content="Compile and run Assembly inside VS Code instantly! Smart auto-detect, Linux/Windows/macOS cross-compilation support, and zero hassle.">
     <meta name="twitter:image" content="https://ahmed-x86.github.io/ahmed_x86_asm_logo.png">
     
     <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
@@ -58,6 +58,7 @@
         <img src="https://img.shields.io/badge/Assembly-000000?style=for-the-badge&logo=nasm&logoColor=white" alt="Assembly">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+        <img src="https://img.shields.io/badge/macOS_on_Linux-555555?style=for-the-badge&logo=apple&logoColor=white" alt="macOS on Linux">
     </div>
 
     <div class="demo-container">
@@ -71,9 +72,10 @@
     <ul>
         <li data-i18n="vscode-asm-feat-1"><strong>Smart Auto-Detect:</strong> Instantly analyzes your <code>.asm</code> code to determine the optimal build configuration (32-bit/64-bit, Irvine/Native, <code>main</code>/<code>_start</code>).</li>
         <li data-i18n="vscode-asm-feat-2"><strong>True Cross-Platform:</strong> Runs seamlessly on Linux (Native & Wine) and Windows (Native MSYS2) directly from your editor.</li>
+        <li><strong>macOS Assembly on Linux (New!):</strong> Compile and run macOS Mach-O 32-bit and 64-bit Assembly code directly on your Linux machine using <code>osxcross</code> and <code>Darling</code>.</li>
         <li data-i18n="vscode-asm-feat-3"><strong>Irvine32 Support:</strong> First-class integration for the <code>Irvine32.inc</code> library, featuring a persistent path saver for a hassle-free setup.</li>
         <li data-i18n="vscode-asm-feat-4"><strong>Integrated Terminal:</strong> Automatically spawns a dedicated clean terminal and clears previous execution outputs.</li>
-        <li data-i18n="vscode-asm-feat-5"><strong>Multi-Toolchain Magic:</strong> Seamlessly orchestrates NASM, GCC, LD, and UASM build commands in the background.</li>
+        <li data-i18n="vscode-asm-feat-5"><strong>Multi-Toolchain Magic:</strong> Seamlessly orchestrates NASM, GCC, LD, UASM, and Apple Darwin linkers in the background.</li>
     </ul>
 
     <hr class="section-divider">
@@ -97,78 +99,91 @@
     </div>
 
     <h3 data-i18n="asm-req-lin">🐧 Linux Dependencies</h3>
-    <p data-i18n="asm-lin-desc">Choose your Linux distribution below to install the required dependencies (<code>nasm</code>, <code>mingw-w64</code>, <code>wine</code>, <code>uasm</code>, <code>binutils</code>, <code>ghex</code>, etc.):</p>
+    <p data-i18n="asm-lin-desc">Choose your Linux distribution below to install the required dependencies (<code>nasm</code>, <code>mingw-w64</code>, <code>wine</code>, <code>uasm</code>, <code>binutils</code>, <code>ghex</code>, etc.).</p>
     
+    <blockquote class="note" style="border-color: #555; background-color: rgba(85, 85, 85, 0.1); margin-bottom: 15px;">
+        <strong>🍎 macOS Cross-Compilation Note:</strong> 
+        The commands below include tools to run macOS binaries (Darling) and link them. If you do not plan to compile for macOS, you can safely ignore `darling` and `osxcross`.
+    </blockquote>
+
     <details>
         <summary>Arch Linux / Manjaro / CachyOS</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl\nyay -S --needed uasm')">Copy</button>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl\nyay -S --needed uasm darling darling-mach-dkms osxcross')">Copy</button>
 <pre><code>sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl
-yay -S --needed uasm</code></pre>
+yay -S --needed uasm darling darling-mach-dkms osxcross</code></pre>
         </div>
     </details>
 
     <details>
         <summary>Debian / Ubuntu / Linux Mint</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apt update && sudo apt install -y nasm gcc-mingw-w64 wine binutils ghex unzip curl')">Copy</button>
-<pre><code>sudo apt update && sudo apt install -y nasm gcc-mingw-w64 wine binutils ghex unzip curl</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apt update && sudo apt install -y nasm gcc-mingw-w64 wine binutils ghex unzip curl\n# Note: Darling and osxcross may require manual compilation from source on Debian-based systems.')">Copy</button>
+<pre><code>sudo apt update && sudo apt install -y nasm gcc-mingw-w64 wine binutils ghex unzip curl
+# Note: Darling and osxcross may require manual compilation from source on Debian-based systems.</code></pre>
         </div>
     </details>
 
     <details>
         <summary>Fedora / Nobara / Bazzit</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo dnf install -y nasm mingw64-gcc wine binutils ghex unzip curl')">Copy</button>
-<pre><code>sudo dnf install -y nasm mingw64-gcc wine binutils ghex unzip curl</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo dnf install -y nasm mingw64-gcc wine binutils ghex unzip curl\n# Note: Darling and osxcross may require manual compilation from source on Fedora-based systems.')">Copy</button>
+<pre><code>sudo dnf install -y nasm mingw64-gcc wine binutils ghex unzip curl
+# Note: Darling and osxcross may require manual compilation from source on Fedora-based systems.</code></pre>
         </div>
     </details>
 
     <details>
         <summary>Void Linux</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo xbps-install -S nasm cross-x86_64-w64-mingw32-gcc wine binutils ghex unzip curl')">Copy</button>
-<pre><code>sudo xbps-install -S nasm cross-x86_64-w64-mingw32-gcc wine binutils ghex unzip curl</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo xbps-install -S nasm cross-x86_64-w64-mingw32-gcc wine binutils ghex unzip curl\n# Note: Darling and osxcross may require manual compilation from source on Void Linux.')">Copy</button>
+<pre><code>sudo xbps-install -S nasm cross-x86_64-w64-mingw32-gcc wine binutils ghex unzip curl
+# Note: Darling and osxcross may require manual compilation from source on Void Linux.</code></pre>
         </div>
     </details>
 
     <details>
         <summary>Gentoo</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo emerge --ask dev-lang/nasm dev-util/mingw64-toolchain app-emulation/wine-vanilla sys-devel/binutils dev-util/ghex app-arch/unzip net-misc/curl')">Copy</button>
-<pre><code>sudo emerge --ask dev-lang/nasm dev-util/mingw64-toolchain app-emulation/wine-vanilla sys-devel/binutils dev-util/ghex app-arch/unzip net-misc/curl</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo emerge --ask dev-lang/nasm dev-util/mingw64-toolchain app-emulation/wine-vanilla sys-devel/binutils dev-util/ghex app-arch/unzip net-misc/curl\n# Note: Darling and osxcross may require manual compilation from source on Gentoo.')">Copy</button>
+<pre><code>sudo emerge --ask dev-lang/nasm dev-util/mingw64-toolchain app-emulation/wine-vanilla sys-devel/binutils dev-util/ghex app-arch/unzip net-misc/curl
+# Note: Darling and osxcross may require manual compilation from source on Gentoo.</code></pre>
         </div>
     </details>
 
     <details>
         <summary>Solus</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo eopkg install nasm mingw-w64 wine binutils ghex unzip curl')">Copy</button>
-<pre><code>sudo eopkg install nasm mingw-w64 wine binutils ghex unzip curl</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo eopkg install nasm mingw-w64 wine binutils ghex unzip curl\n# Note: Darling and osxcross may require manual compilation from source on Solus.')">Copy</button>
+<pre><code>sudo eopkg install nasm mingw-w64 wine binutils ghex unzip curl
+# Note: Darling and osxcross may require manual compilation from source on Solus.</code></pre>
         </div>
     </details>
 
     <details>
         <summary>openSUSE</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo zypper install -y nasm mingw64-gcc wine binutils ghex unzip curl')">Copy</button>
-<pre><code>sudo zypper install -y nasm mingw64-gcc wine binutils ghex unzip curl</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo zypper install -y nasm mingw64-gcc wine binutils ghex unzip curl\n# Note: Darling and osxcross may require manual compilation from source on openSUSE.')">Copy</button>
+<pre><code>sudo zypper install -y nasm mingw64-gcc wine binutils ghex unzip curl
+# Note: Darling and osxcross may require manual compilation from source on openSUSE.</code></pre>
         </div>
     </details>
 
     <details>
         <summary>Alpine Linux</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apk add --no-cache nasm mingw-w64-gcc wine binutils ghex unzip curl sed')">Copy</button>
-<pre><code>sudo apk add --no-cache nasm mingw-w64-gcc wine binutils ghex unzip curl sed</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apk add --no-cache nasm mingw-w64-gcc wine binutils ghex unzip curl sed\n# Note: Darling and osxcross may require manual compilation from source on Alpine Linux.')">Copy</button>
+<pre><code>sudo apk add --no-cache nasm mingw-w64-gcc wine binutils ghex unzip curl sed
+# Note: Darling and osxcross may require manual compilation from source on Alpine Linux.</code></pre>
         </div>
     </details>
 
     <details>
         <summary>Puppy Linux</summary>
         <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pkg install nasm mingw-w64-gcc wine binutils ghex unzip curl')">Copy</button>
-<pre><code>pkg install nasm mingw-w64-gcc wine binutils ghex unzip curl</code></pre>
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pkg install nasm mingw-w64-gcc wine binutils ghex unzip curl\n# Note: Darling and osxcross may require manual compilation from source on Puppy Linux.')">Copy</button>
+<pre><code>pkg install nasm mingw-w64-gcc wine binutils ghex unzip curl
+# Note: Darling and osxcross may require manual compilation from source on Puppy Linux.</code></pre>
         </div>
     </details>
 
@@ -184,6 +199,15 @@ sudo chmod +x /usr/local/bin/uasm
 rm -rf uasm_linux.zip uasm_temp</code></pre>
         </div>
         <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">SHA256: <code>d9fecb2226f66c7e48d81402fc13a67eda23507be9067a2983ee14ec7d68a94f</code></p>
+    </blockquote>
+
+    <blockquote class="note" style="border-color: #a6e3a1; background-color: rgba(166, 227, 161, 0.1); margin-top: 15px;">
+        <strong data-i18n="asm-mac-note-title">🍎 macOS Tools (Darling & osxcross) Manual Installation:</strong> 
+        <p data-i18n="asm-mac-note-desc" style="margin-top: 5px;">If your distribution does not have <code>darling</code> and <code>osxcross</code> in its official repositories, you will need to build them from source to use the macOS compilation features on Linux.</p>
+        <ul style="margin-top: 5px; margin-bottom: 5px; padding-inline-start: 20px;">
+            <li><a href="https://docs.darlinghq.org/build-instructions.html" target="_blank" style="color: #007ACC; text-decoration: none;">Darling Build Instructions</a></li>
+            <li><a href="https://github.com/tpoechtrager/osxcross" target="_blank" style="color: #007ACC; text-decoration: none;">osxcross GitHub Repository</a></li>
+        </ul>
     </blockquote>
 
     <h3 data-i18n="asm-req-irvine">📚 Irvine32 Library (Optional but recommended)</h3>
