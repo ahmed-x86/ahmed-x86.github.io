@@ -249,6 +249,20 @@ sudo pacman -S arm-none-eabi-binutils arm-none-eabi-gcc</code></pre>
         </div>
     </blockquote>
 
+    <blockquote class="note" style="border-color: #fabd2f; background-color: rgba(250, 189, 47, 0.1); margin-top: 25px;">
+        <h3 style="margin-top: 0; color: #fabd2f;">🪐 RISC-V Execution & Cross-Compilation</h3>
+        <strong>Run RISC-V 32/64/128-bit on Arch Linux</strong>
+        
+        <p style="margin-top: 10px;">To enable full RISC-V support (including the experimental 128-bit mode) on your Arch-based system, install the GNU toolchain and QEMU emulators:</p>
+
+        <div class="code-wrapper" style="margin-top: 10px;">
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('sudo pacman -S riscv64-linux-gnu-binutils qemu-user-static riscv64-linux-gnu-gcc riscv64-linux-gnu-glibc qemu-user')">Copy</button>
+<pre><code>sudo pacman -S riscv64-linux-gnu-binutils qemu-user-static
+sudo pacman -S riscv64-linux-gnu-gcc riscv64-linux-gnu-glibc
+sudo pacman -S qemu-user</code></pre>
+        </div>
+    </blockquote>
+
     <blockquote class="note" style="border-color: #a6e3a1; background-color: rgba(166, 227, 161, 0.1); margin-top: 25px;">
         <h3 style="margin-top: 0; color: #a6e3a1;">🍎 The Mach-O Bridge</h3>
         <strong>macOS Cross-Compilation & Execution on Arch Linux</strong>
