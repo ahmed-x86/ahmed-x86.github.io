@@ -131,6 +131,12 @@
     <h2 data-i18n="asm-install-title">🛠️ Requirements & Dependencies</h2>
     
     <p data-i18n="asm-req-desc">Before using the extension, you need to install the required tools based on your operating system.</p>
+        <h3 data-i18n="asm-req-mac" style="margin-top: 30px;">🍎 macOS Dependencies</h3>
+    <p data-i18n="asm-mac-desc">To natively compile and run ARM64 assembly on your Apple Silicon Mac, simply ensure you have the Xcode Command Line Tools installed (which provides <code>clang</code>, <code>as</code>, and <code>ld</code>):</p>
+
+    <div class="code-wrapper" style="margin-bottom: 20px;">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('xcode-select --install')">Copy</button>
+<pre><code>xcode-select --install</code></pre>
 
 <h3 data-i18n="asm-req-win">🪟 Windows (Using MSYS2)</h3>
     <p data-i18n="asm-win-desc">If you don't have it installed, download and install MSYS2 first. Then, open your MSYS2 terminal and run the pacman command to install the required assemblers and linkers:</p>
@@ -228,12 +234,7 @@ yay -S --needed uasm</code></pre>
         </div>
     </details>
 
-    <h3 data-i18n="asm-req-mac" style="margin-top: 30px;">🍎 macOS Dependencies</h3>
-    <p data-i18n="asm-mac-desc">To natively compile and run ARM64 assembly on your Apple Silicon Mac, simply ensure you have the Xcode Command Line Tools installed (which provides <code>clang</code>, <code>as</code>, and <code>ld</code>):</p>
 
-    <div class="code-wrapper" style="margin-bottom: 20px;">
-        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('xcode-select --install')">Copy</button>
-<pre><code>xcode-select --install</code></pre>
     </div>
     <blockquote class="note" style="border-color: #f38ba8; background-color: rgba(243, 139, 168, 0.1); margin-top: 15px;">
         <strong data-i18n="asm-uasm-note-title">⚠️ UASM Manual Installation:</strong> 
