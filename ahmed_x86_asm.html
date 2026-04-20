@@ -162,15 +162,6 @@
     <p data-i18n="asm-lin-desc">Choose your Linux distribution below to install the required dependencies (<code>nasm</code>, <code>mingw-w64</code>, <code>wine</code>, <code>uasm</code>, <code>binutils</code>, <code>ghex</code>, etc.).</p>
 
     <details>
-        <summary>Arch Linux / Manjaro / CachyOS</summary>
-        <div class="code-wrapper">
-            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl\nyay -S --needed uasm')">Copy</button>
-<pre><code>sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl
-yay -S --needed uasm</code></pre>
-        </div>
-    </details>
-
-    <details>
         <summary>Debian / Ubuntu / Linux Mint</summary>
         <div class="code-wrapper">
             <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apt update && sudo apt install -y nasm gcc-mingw-w64 wine binutils ghex unzip curl')">Copy</button>
@@ -249,6 +240,14 @@ rm -rf uasm_linux.zip uasm_temp</code></pre>
         </div>
         <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">SHA256: <code>d9fecb2226f66c7e48d81402fc13a67eda23507be9067a2983ee14ec7d68a94f</code></p>
     </blockquote>
+        <details>
+        <summary>Arch Linux / Manjaro / CachyOS</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl\nyay -S --needed uasm')">Copy</button>
+<pre><code>sudo pacman -S --needed nasm mingw-w64-gcc wine binutils ghex unzip curl
+yay -S --needed uasm</code></pre>
+        </div>
+    </details>
 
     <blockquote class="note" style="border-color: #fabd2f; background-color: rgba(250, 189, 47, 0.1); margin-top: 25px;">
         <h3 style="margin-top: 0; color: #fabd2f;">🦾 ARM Execution on x86-64</h3>
