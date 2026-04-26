@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | GRUB Fixer</title>
-    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring V24 Backend API, V23 Security Hardening, V22 Secure Boot & Shim Support, V21 LUKS Encryption, Chroot Health Check, Universal RedHat/Fedora support, and FSTAB Parsing. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Secure Boot, MOK, Shim, LUKS, Encryption, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, In-Situ Repair, Security, API, Backend">
+    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS Linux systems. Featuring V25 Polishing Update, V24 Backend API, V23 Security Hardening, V22 Secure Boot & Shim Support, V21 LUKS Encryption, Chroot Health Check, Universal RedHat/Fedora support, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, Linux Repair, Arch Linux, Fedora, RedHat, Secure Boot, MOK, Shim, LUKS, Encryption, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, In-Situ Repair, Security, API, Backend, VirtIO, VM Repair">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
-    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V24 Backend API, Security Hardening, Secure Boot, LUKS Encryption)">
-    <meta property="og:description" content="Rescue your Linux system securely. V24 transforms the script into a powerful Backend API capable of driving graphical user interfaces (GUIs) with JSON outputs and explicit mapping.">
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V25 Polishing Update, Backend API, Security Hardening, Secure Boot, LUKS Encryption)">
+    <meta property="og:description" content="Rescue your Linux system securely. V25 refines the engine with high-precision fixes for Virtual Machine (VirtIO) environments and Btrfs subvolume hardening, building upon a powerful Backend API capable of driving graphical user interfaces.">
     <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer.html">
     <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
     </div>
 
     <h1 data-i18n="grub-page-title">Ahmed x86 - GRUB Fixer 🛠️</h1>
-    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with Backend API capabilities, Security Hardening, Secure Boot MOK Enrollment, LUKS Encryption Support, Chroot Health Checks, RedHat/Fedora support, and Deep Scan Intelligence.</p>
+    <p data-i18n="grub-page-desc">Automated, secure Universal (UEFI & Legacy BIOS) bootloader rescue suite with high-precision VM polishing, Backend API capabilities, Security Hardening, Secure Boot MOK Enrollment, LUKS Encryption Support, Chroot Health Checks, RedHat/Fedora support, and Deep Scan Intelligence.</p>
 </header>
 
 <nav>
@@ -41,23 +41,30 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Version-V24-firebrick?style=for-the-badge" alt="Version V24">
+        <img src="https://img.shields.io/badge/Version-V25-firebrick?style=for-the-badge" alt="Version V25">
         <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
         <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
         <img src="https://img.shields.io/badge/Zero_Interaction-Ready-blueviolet?style=for-the-badge" alt="Zero Interaction Ready">
         <img src="https://img.shields.io/badge/UEFI_%26_BIOS-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI & BIOS Support">
+        <img src="https://img.shields.io/badge/VM_Optimized-Yes-success?style=for-the-badge" alt="VM Optimized">
     </div>
 
     <h2 data-i18n="grub-about-title">About the Project</h2>
     <p data-i18n="grub-about-desc">
-        <b>GRUB Fixer (V24 - The "Backend API" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V24</b> evolves the script beyond a terminal tool into a fully-fledged <b>Backend API</b>, capable of seamlessly driving graphical user interfaces (GUIs) with JSON outputs and explicit execution mapping. This builds upon the <b>Security Hardening</b> (V23), <b>Secure Boot Support</b> (V22), <b>LUKS Encryption</b> (V21), and <b>Chroot Health Checks</b> (V20) of previous versions.
+        <b>GRUB Fixer (V25 - The "Polishing" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> systems. <b>V25</b> refines the engine with high-precision fixes for Virtual Machine (VirtIO) environments and Btrfs subvolume mounting logic, ensuring 100% stability. This builds upon the <b>Backend API</b> (V24), <b>Security Hardening</b> (V23), <b>Secure Boot Support</b> (V22), <b>LUKS Encryption</b> (V21), and <b>Chroot Health Checks</b> (V20) of previous versions.
     </p>
 
-    <div class="note" data-i18n="grub-v24-note">
-        <strong>🔌 New in V24:</strong> The script now features <b>Backend API Capabilities</b>! It acts as a headless worker for GUIs, offering endpoints like <code>--sys-info</code> and <code>--json-scan</code> for smart environment detection, and accepts explicit layouts via <code>--map-std</code> or <code>--map-btrfs</code> to bypass all interactive prompts.
+    <div class="note" data-i18n="grub-v25-note">
+        <strong>✨ New in V25:</strong> High-precision polishing! Added <b>Regex Fallback</b> for Legacy BIOS disk extraction to support VM/VirtIO environments and hardened <b>Btrfs subvolume</b> mounting to prevent crashes in Tier 1 execution.
     </div>
 
     <hr class="section-divider">
+
+    <h2 data-i18n="grub-polish-title">✨ The Polishing Update (V25)</h2>
+    <ul>
+        <li data-i18n="grub-polish-1"><strong>VM & VirtIO Precision:</strong> Fixed Legacy BIOS disk extraction failures in virtual environments by implementing a smart Regex fallback that strips partition suffixes when <code>lsblk</code> topology fails.</li>
+        <li data-i18n="grub-polish-2"><strong>Btrfs Hardening:</strong> Added failsafe checks for empty subvolume definitions in <code>fstab</code> parsing, preventing Tier 1 automated mount failures.</li>
+    </ul>
 
     <h2 data-i18n="grub-api-title">🔌 The Backend API Update (V24)</h2>
     <ul>
@@ -210,7 +217,8 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
                     <tr><td>V21</td><td data-i18n="grub-v21">LUKS & LVM Encryption Support - Auto-detects, unlocks (visible password), and configures GRUB_ENABLE_CRYPTODISK.</td></tr>
                     <tr><td>V22</td><td data-i18n="grub-v22">Secure Boot & Shim Integration - Auto-detects Secure Boot, handles shim-signed, and MOK Enrollment.</td></tr>
                     <tr><td>V23</td><td data-i18n="grub-v23">Security Hardening & Bug Fixes - Dynamic MOK OTP, hidden LUKS passwords, config backups, and environment isolation.</td></tr>
-                    <tr><td><b>V24</b></td><td data-i18n="grub-v24"><b>Current:</b> The "Backend API" Update - Added JSON Endpoints (--sys-info, --json-scan) and explicit mapping for GUI integration.</td></tr>
+                    <tr><td>V24</td><td data-i18n="grub-v24">The "Backend API" Update - Added JSON Endpoints (--sys-info, --json-scan) and explicit mapping for GUI integration.</td></tr>
+                    <tr><td><b>V25</b></td><td data-i18n="grub-v25"><b>Current:</b> The "Polishing" Update - VM/VirtIO Regex Fallback and Btrfs Hardening.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -227,9 +235,6 @@ sudo ./grub-fixer.sh [FLAGS]</code></pre>
         <li data-i18n="grub-req-5"><strong>Secure Boot:</strong> Fully supported (Requires Motherboard MOK Enrollment via OTP).</li>
     </ul>
 
-    <div class="warning" data-i18n="grub-warn-v25">
-        <strong>⚠️ Planned for V25:</strong> Utilizing the new Backend API to develop a standalone <b>Python/GTK GUI</b> for an intuitive visual repair experience.
-    </div>
 
     <div class="action-container">
         <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" class="btn-link" data-i18n="grub-btn-star">
