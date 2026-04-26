@@ -26,19 +26,13 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* --- تصحيح التصميم والمحاذاة --- */
+        /* --- تصحيح التصميم والمحاذاة ليعمل بشكل مثالي على الجوال --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 20px;
+            /* استخدام auto-fit مع minmax يمنع التداخل ويجعل التصميم مرناً 100% */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px;
             margin-top: 30px;
-        }
-
-        @media (max-width: 1024px) {
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .gallery-grid { grid-template-columns: 1fr; }
         }
 
         .project {
@@ -50,6 +44,8 @@
             border: 1px solid var(--surface1);
             height: 100%;
             transition: all 0.3s ease;
+            box-sizing: border-box; /* لضمان عدم خروج العنصر عن مساحته */
+            overflow: hidden;
         }
 
         .project:hover {
@@ -61,6 +57,7 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            word-wrap: break-word;
         }
 
         .project h3 { margin-top: 0; margin-bottom: 10px; }
@@ -122,6 +119,7 @@
     <p data-i18n="arch-sessions-desc">Simple, practical sessions. Click any thumbnail to start watching.</p>
 
     <div class="gallery-grid">
+        
         <div class="project">
             <div class="project-content">
                 <h3><a href="linux_gatherings/1.install_zorin_os.html" data-i18n="arch-zorin-title" style="text-decoration: none; color: #779ad6;">Zorin OS Installation Guide</a></h3>
@@ -157,6 +155,19 @@
                 </a>
             </div>
         </div>
+
+        <div class="project">
+            <div class="project-content">
+                <h3><a href="linux_gatherings/4.linux_file_system.html" data-i18n="arch-fs-title" style="text-decoration: none; color: #779ad6;">Linux File System Hierarchy</a></h3>
+                <p data-i18n="arch-fs-desc">Understand the core directory structure of Linux: /bin, /etc, /usr, /var, and more.</p>
+            </div>
+            <div class="thumb-wrapper">
+                <a href="linux_gatherings/4.linux_file_system.html">
+                    <img src="https://img.youtube.com/vi/fLvrGTQfzZ8/maxresdefault.jpg" alt="Linux File System">
+                </a>
+            </div>
+        </div>
+
     </div>
 
     <div class="pagination">
@@ -201,7 +212,6 @@
 <script src="theme.js"></script>
 
 <script>
-    // دوال التحكم في النوافذ (Modals) لضمان العمل مع السايدبار
     function openLangModal() {
         document.getElementById('langModalOverlay').style.display = 'flex';
         closeSidebar();
@@ -233,7 +243,6 @@
         }
     }
 
-    // ربط الأزرار بالدوال بعد تحميل السايدبار
     document.addEventListener('click', function(e) {
         if (e.target.innerText === 'Language' || e.target.getAttribute('data-i18n') === 'header-lang') {
             openLangModal();
