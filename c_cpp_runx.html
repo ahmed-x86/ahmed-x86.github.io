@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed x86 | C/C++ RunX: The Ultimate Runner & Compiler</title>
+    
+    <meta name="description" content="The ultimate VS Code extension to instantly compile, run, and cross-compile C and C++ code using GCC, G++, or TCC. Features Smart Syntax Checking, Build Profiles, and Wine simulation on Linux.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, c-cpp-runx, VS Code C++, C/C++ Runner, GCC, G++, TCC, MinGW, Wine cross-compile, Linux C++ development, Arch Linux">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://ahmed-x86.github.io/c_cpp_runx.html">
+
+    <meta property="og:site_name" content="Ahmed x86 Portfolio">
+    <meta property="og:title" content="Ahmed x86 | C/C++ RunX 🚀">
+    <meta property="og:description" content="Instantly build, execute, and cross-compile C/C++ inside VS Code. Features real-time error tracking, Build Profiles (-O3 -s), and Wine integration for Linux users.">
+    <meta property="og:url" content="https://ahmed-x86.github.io/c_cpp_runx.html">
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://ahmed-x86.github.io/icon.png">
+    <meta property="og:image:secure_url" content="https://ahmed-x86.github.io/icon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="C/C++ RunX Extension Logo">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahmed x86 | C/C++ RunX for VS Code 🚀">
+    <meta name="twitter:description" content="The fastest way to build, run, and analyze C/C++ code. Smart diagnostics, multi-compiler support (GCC/TCC), and Wine simulation out of the box.">
+    <meta name="twitter:image" content="https://ahmed-x86.github.io/icon.png">
+    
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="runx-page-title">Ahmed x86 - C/C++ RunX 🚀</h1>
+    <p data-i18n="runx-page-desc">The ultimate code runner and compiler extension for C/C++ developers on VS Code. Fast, transparent, and powerful.</p>
+</header>
+
+<nav>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/c-cpp-runx" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=ahmed-x86.c-cpp-runx" target="_blank" data-i18n="nav-marketplace">VS Code Marketplace</a>
+    <a href="https://open-vsx.org/extension/ahmed-x86/c-cpp-runx" target="_blank">VSCodium Marketplace</a>
+</nav>
+
+<section id="project-details">
+    
+<div class="badges">
+        <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code">
+        <img src="https://img.shields.io/badge/VSCodium-2F80ED?style=for-the-badge&logo=vscodium&logoColor=white" alt="VSCodium">
+        <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C">
+        <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++">
+        <img src="https://img.shields.io/badge/GCC-A42E2B?style=for-the-badge&logo=gnu&logoColor=white" alt="GCC">
+        
+        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+        <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+        <img src="https://img.shields.io/badge/macOS-555555?style=for-the-badge&logo=apple&logoColor=white" alt="macOS">
+        <img src="https://img.shields.io/badge/Wine-AE0000?style=for-the-badge&logo=wine&logoColor=white" alt="Wine">
+
+        <img src="https://img.shields.io/badge/Arch_Linux-1793d1?style=for-the-badge&logo=archlinux&logoColor=white" alt="Arch Linux">
+        <img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian">
+        <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu">
+    </div>
+    
+    <div class="demo-container">
+        <img src="c-cpp_runx.png" alt="C/C++ RunX VS Code Extension" class="demo-video" style="width: 100%; border-radius: 10px; border: 1px solid #444c56;">
+        <div class="demo-caption" data-i18n="runx-demo-caption">Write, check, build, and run C/C++ code with a single click!</div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="asm-features-title">✨ Key Features</h2>
+    <ul>
+        <li><strong>Smart Syntax Checking (New!):</strong> Automatically checks C/C++ syntax in the background before execution. Finds errors early and highlights them with precise red squiggles, keeping your terminal clean!</li>
+        <li><strong>Build Profiles (New!):</strong> Instantly switch between <strong>Normal</strong> and <strong>Release (-O3 -s)</strong> modes to generate highly optimized, lightweight executables.</li>
+        <li><strong>Cross-Compile & Simulate:</strong> On GNU/Linux & Mac, instantly compile C/C++ to a Windows executable (<code>.exe</code>) using MinGW and simulate it seamlessly via Wine directly from the menu.</li>
+        <li><strong>Multi-Compiler Support:</strong> Choose your weapon! Easily toggle between the standard <strong>GCC/G++</strong> or the lightning-fast <strong>TCC</strong> (Tiny C Compiler) via the Settings menu.</li>
+        <li><strong>Clean Terminal Transparency:</strong> Executes commands in a dedicated terminal. It teaches you how compilers work under the hood instead of hiding the details like a black box.</li>
+        <li><strong>Assembly Generation:</strong> One click to translate your C/C++ code into Assembly (both AT&T and Intel syntax) for deep low-level analysis.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="asm-install-title">🛠️ Requirements & Dependencies</h2>
+    
+    <p>For the extension to work properly across all its features (including Cross-Compilation), you must install the core compilers (GCC/G++, TCC) and Windows emulators (Wine/MinGW).</p>
+
+    <h3 style="margin-top: 30px;">🪟 Windows</h3>
+    <p>Install MSYS2 and use pacman to get the GCC toolchain.</p>
+    
+    <div class="action-container" style="text-align: left; margin-bottom: 15px;">
+        <a href="https://www.msys2.org/" target="_blank" class="btn-link" style="background-color: #E34F26; color: white;" data-i18n="asm-btn-download-msys">
+            🪟 Download MSYS2 (Official Site)
+        </a>
+    </div>
+
+    <div class="code-wrapper" style="margin-bottom: 20px;">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pacman -S mingw-w64-ucrt-x86_64-gcc make')">Copy</button>
+<pre><code>pacman -S mingw-w64-ucrt-x86_64-gcc make</code></pre>
+    </div>
+
+    <h3 style="margin-top: 30px;">🍎 macOS Dependencies</h3>
+    <p>Use Homebrew to install the required compilers and Wine for cross-platform simulation.</p>
+    <div class="code-wrapper" style="margin-bottom: 20px;">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('brew install gcc tcc mingw-w64 wine')">Copy</button>
+<pre><code>brew install gcc tcc mingw-w64 wine</code></pre>
+    </div>
+
+    <h3>🐧 GNU/Linux Dependencies</h3>
+    <p>Choose your Linux distribution below to install the required tools (<code>gcc</code>, <code>tcc</code>, <code>mingw-w64</code>, and <code>wine</code>).</p>
+
+    <details open>
+        <summary>Arch Linux / Manjaro / CachyOS</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S --needed gcc tcc mingw-w64-gcc wine')">Copy</button>
+<pre><code>sudo pacman -S --needed gcc tcc mingw-w64-gcc wine</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Debian / Ubuntu / Linux Mint</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apt update && sudo apt install -y gcc g++ tcc gcc-mingw-w64 g++-mingw-w64 wine')">Copy</button>
+<pre><code>sudo apt update && sudo apt install -y gcc g++ tcc gcc-mingw-w64 g++-mingw-w64 wine</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Fedora / Nobara</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo dnf install -y gcc gcc-c++ tcc mingw64-gcc mingw64-gcc-c++ wine')">Copy</button>
+<pre><code>sudo dnf install -y gcc gcc-c++ tcc mingw64-gcc mingw64-gcc-c++ wine</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Void Linux</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo xbps-install -S gcc tcc cross-x86_64-w64-mingw32-gcc wine')">Copy</button>
+<pre><code>sudo xbps-install -S gcc tcc cross-x86_64-w64-mingw32-gcc wine</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Gentoo</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo emerge --ask sys-devel/gcc dev-lang/tcc dev-util/mingw64-toolchain app-emulation/wine-vanilla')">Copy</button>
+<pre><code>sudo emerge --ask sys-devel/gcc dev-lang/tcc dev-util/mingw64-toolchain app-emulation/wine-vanilla</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Solus</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo eopkg install gcc tcc mingw-w64 wine')">Copy</button>
+<pre><code>sudo eopkg install gcc tcc mingw-w64 wine</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>openSUSE</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo zypper install -y gcc gcc-c++ tcc mingw64-gcc mingw64-gcc-c++ wine')">Copy</button>
+<pre><code>sudo zypper install -y gcc gcc-c++ tcc mingw64-gcc mingw64-gcc-c++ wine</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Alpine Linux</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apk add --no-cache gcc g++ tcc mingw-w64-gcc wine')">Copy</button>
+<pre><code>sudo apk add --no-cache gcc g++ tcc mingw-w64-gcc wine</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary>Puppy Linux</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pkg install gcc tcc mingw-w64-gcc wine')">Copy</button>
+<pre><code>pkg install gcc tcc mingw-w64-gcc wine</code></pre>
+        </div>
+    </details>
+
+    <hr class="section-divider">
+    
+    <h2 data-i18n="asm-templates-title">📜 Built-in Snippets</h2>
+    <p>Type the prefix in a <code>.c</code> or <code>.cpp</code> file and hit <code>Tab</code> for instant boilerplate code!</p>
+
+    <table style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px; font-size: 0.9em; background-color: rgba(0,0,0,0.2);">
+        <tr>
+            <th style="border: 1px solid #555; padding: 10px; color: #a6e3a1;">Prefix</th>
+            <th style="border: 1px solid #555; padding: 10px; color: #a6e3a1;">Description</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #555; padding: 10px;"><code>hello_world_c</code></td>
+            <td style="border: 1px solid #555; padding: 10px;">Generates a standard C Hello World.</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #555; padding: 10px;"><code>hello_world_c++</code></td>
+            <td style="border: 1px solid #555; padding: 10px;">Generates a standard C++ Hello World.</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #555; padding: 10px;"><code>fstream_c++_windows</code></td>
+            <td style="border: 1px solid #555; padding: 10px;">C++ file handling template with Windows paths (<code>C:\\...</code>). Great for Wine testing!</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #555; padding: 10px;"><code>fstream_c++_unix</code></td>
+            <td style="border: 1px solid #555; padding: 10px;">C++ file handling template with Unix paths (<code>/tmp/...</code>).</td>
+        </tr>
+    </table>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="asm-usage-title">⚙️ How to Use</h2>
+    <ol>
+        <li>Open any <code>.c</code> or <code>.cpp</code> file in VS Code.</li>
+        <li><strong>Quick Run:</strong> Click the Play button top-right or use the command palette to <code>Run C</code> or <code>Run C++</code>.</li>
+        <li><strong>Smart Menu:</strong> Press <code>Ctrl + Alt + C</code> to open the RunX Build Menu. From here, you can natively compile, generate Assembly, or cross-compile to Windows.</li>
+        <li><strong>Settings Center:</strong> Open the command palette and select <code>C/C++ RunX: Settings</code> to:
+            <ul>
+                <li>Change your C compiler (GCC ↔ TCC).</li>
+                <li>Change your Build Profile (Normal ↔ Release).</li>
+                <li>Turn Wine debug logs ON/OFF.</li>
+            </ul>
+        </li>
+        <li><strong>Syntax Errors?</strong> If you make a typo, the extension stops execution and points out the exact error with a red squiggle!</li>
+    </ol>
+
+    <hr class="section-divider">
+    
+    <div class="action-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        <a href="https://marketplace.visualstudio.com/items?itemName=ahmed-x86.c-cpp-runx" target="_blank" class="btn-link" data-i18n="asm-btn-store">
+            ⬇️ Download from VS Code Store
+        </a>
+        <a href="https://open-vsx.org/extension/ahmed-x86/c-cpp-runx" target="_blank" class="btn-link">
+            ⬇️ Download for VSCodium (Open VSX)
+        </a>
+        <a href="https://github.com/ahmed-x86/c-cpp-runx" target="_blank" class="btn-link" data-i18n="asm-btn-repo">
+            ⭐ View GitHub Repository
+        </a>
+    </div>
+
+</section>
+
+<footer data-i18n="footer-text">
+    <p>© 2026 Ahmed x86 • Built on Arch Linux ❄️</p>
+</footer>
+
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
+<script src="main.js"></script>
+<script src="theme.js"></script>
+
+</body>
+</html>
