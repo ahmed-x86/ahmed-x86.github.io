@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahmed x86 | GitHub Rolling Contributions 🟪</title>
-    <meta name="description" content="A custom purple GitHub rolling contributions widget for Waybar. Fetches the last 7 days of commits via GraphQL API. Built by Ahmed x86.">
-    <meta name="keywords" content="Ahmed x86, ahmedx86, Waybar, GitHub Heatmap, GitHub Contributions, Waybar Module, Linux Customization, Arch Linux, Hyprland, Sway, GraphQL, Shell Script">
+    <meta name="description" content="A custom dynamic GitHub rolling contributions widget for Waybar. Fetches the last 7 days of commits via GraphQL API with dynamic color palettes. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, Waybar, GitHub Heatmap, GitHub Contributions, Waybar Module, Linux Customization, Arch Linux, Hyprland, Sway, GraphQL, Shell Script, Dynamic Colors">
     <meta name="author" content="Ahmed x86">
     <meta name="robots" content="index, follow">
     
     <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
     <meta property="og:title" content="Ahmed x86 | GitHub Rolling Contributions 🟪">
-    <meta property="og:description" content="A terminal/bar integration script that fetches your GitHub contribution activity for the last 7 rolling days using GraphQL API and renders a custom purple heatmap.">
+    <meta property="og:description" content="A terminal/bar integration script that fetches your GitHub contribution activity for the last 7 rolling days using GraphQL API and renders a custom heatmap with dynamic color generation.">
     <meta property="og:image" content="https://ahmed-x86.github.io/screenshot_gh_heatmap.png"> 
     <meta property="og:url" content="https://ahmed-x86.github.io/waybar-github-rolling-contributions.html">
     <meta property="og:type" content="article">
@@ -29,8 +29,8 @@
         <span class="menu-btn" onclick="toggleSidebar()">☰</span>
     </div>
 
-    <h1 data-i18n="heatmap-page-title">Ahmed x86 - GitHub Rolling Contributions 🟪</h1>
-    <p data-i18n="heatmap-page-desc">A dynamic, 7-day rolling GitHub heatmap with a custom purple theme for your status bar.</p>
+    <h1 data-i18n="heatmap-page-title">Ahmed x86 - GitHub Rolling Contributions 🎨</h1>
+    <p data-i18n="heatmap-page-desc">A dynamic, 7-day rolling GitHub heatmap with dynamic color palettes for your status bar.</p>
 </header>
 
 <nav>
@@ -41,19 +41,19 @@
 <section id="project-details">
 
     <div class="badges">
-        <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
         <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL API">
         <img src="https://img.shields.io/badge/Waybar-292D3E?style=for-the-badge&logo=linux&logoColor=white" alt="Waybar">
-        <img src="https://img.shields.io/badge/Custom_Theme-c463ff?style=for-the-badge" alt="Purple Theme">
+        <img src="https://img.shields.io/badge/Dynamic_Theme-c463ff?style=for-the-badge" alt="Dynamic Theme">
     </div>
 
     <h2 data-i18n="heatmap-about-title">About</h2>
     <p data-i18n="heatmap-about-desc">
-        A terminal or bar integration script that fetches your <b>GitHub contribution activity for the last 7 rolling days</b> using the GitHub GraphQL API and renders a custom purple colored heatmap (■) with detailed tooltips. Designed for seamless integration with status bars like <b>Waybar</b>, <b>Polybar</b>, or any custom desktop widget.
+        A terminal or bar integration script that fetches your <b>GitHub contribution activity for the last 7 rolling days</b> using the GitHub GraphQL API and renders a custom colored heatmap (■) with detailed tooltips. Designed for seamless integration with status bars like <b>Waybar</b>, <b>Polybar</b>, or any custom desktop widget.
     </p>
     
     <div class="note" data-i18n="heatmap-note">
-        <strong>💡 Note:</strong> This is a modified fork of <a href="https://github.com/ad1822/weekly-github-waybar-module" target="_blank">ad1822's module</a>. It has been rewritten to display a <b>rolling 7-day window</b> (avoiding empty trackers at the start of the week) and features a custom <b>purple color scheme</b>.
+        <strong>💡 Note:</strong> This is a modified fork of <a href="https://github.com/ad1822/weekly-github-waybar-module" target="_blank">ad1822's module</a>. It has been rewritten in Python to display a <b>rolling 7-day window</b> (avoiding empty trackers at the start of the week) and features a <b>dynamic color palette generator</b>.
     </div>
 
     <img src="screenshot_gh_heatmap.png" class="effect-image" alt="GitHub Heatmap Waybar Preview">
@@ -64,21 +64,22 @@
     <ul>
         <li data-i18n="heatmap-feat-1"><strong>Real-Time Data:</strong> Pulls contribution data directly from GitHub's GraphQL API.</li>
         <li data-i18n="heatmap-feat-2"><strong>Rolling 7-Day Window:</strong> Always shows the past 7 days accurately, never resetting awkwardly at the start of a week.</li>
-        <li data-i18n="heatmap-feat-3"><strong>Custom Purple Theme:</strong> Uses a beautiful color-coded square (■) gradient system.</li>
-        <li data-i18n="heatmap-feat-4"><strong>Detailed Tooltips:</strong> Hover to see a date-wise contribution breakdown and total contributions over the tracked period.</li>
+        <li data-i18n="heatmap-feat-3"><strong>Dynamic Gradients:</strong> Uses a color-coded square (■) system with automatic gradient generation based on your preferred base color.</li>
+        <li data-i18n="heatmap-feat-4"><strong>Custom Colors:</strong> Supports custom colors via CLI arguments in <b>HEX</b> or <b>RGB</b> formats.</li>
+        <li data-i18n="heatmap-feat-5"><strong>Detailed Tooltips:</strong> Hover to see a date-wise contribution breakdown, currently active base color, and total contributions over the tracked period.</li>
     </ul>
 
     <hr class="section-divider">
 
-    <h2 data-i18n="heatmap-colors-title">🟪 Color Levels (Purple Theme)</h2>
-    <p data-i18n="heatmap-colors-desc">The heatmap utilizes the following color logic based on daily commit count:</p>
+    <h2 data-i18n="heatmap-colors-title">🎨 Color Levels (Default Purple Theme)</h2>
+    <p data-i18n="heatmap-colors-desc">By default, the script uses a purple theme. However, you can pass any custom base color (representing the highest activity level 10+), and the script will automatically calculate and generate the lower-level gradients based on that color. The default mapping is:</p>
     
     <div class="table-container">
         <table>
             <thead>
                 <tr>
                     <th data-i18n="heatmap-table-col1">Contributions</th>
-                    <th data-i18n="heatmap-table-col2">Color Hex</th>
+                    <th data-i18n="heatmap-table-col2">Default Hex</th>
                     <th data-i18n="heatmap-table-col3">Meaning</th>
                 </tr>
             </thead>
@@ -121,8 +122,15 @@ GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
 
     <hr class="section-divider">
 
-    <h2 data-i18n="heatmap-waybar-title">🖥️ Waybar Configuration</h2>
-    <p data-i18n="heatmap-waybar-desc">Add the following block to your Waybar <code>config.jsonc</code>. <i>(Make sure to update the path to where you placed the script and change the github URL to your own)</i>:</p>
+    <h2 data-i18n="heatmap-waybar-title">🖥️ Waybar Configuration & Custom Colors</h2>
+    <p data-i18n="heatmap-waybar-desc">Ensure the script is executable, then add the block below to your Waybar <code>config.jsonc</code>. You can customize the heatmap color by passing the <code>-c</code> or <code>--color</code> argument.</p>
+    
+    <div class="warning" data-i18n="heatmap-exec-warning">
+        <strong>⚠️ Execution Permission:</strong> Ensure the script is executable by running:<br><br>
+        <code>chmod +x ~/.config/waybar/scripts/weekly_commits</code>
+    </div>
+
+    <h4 style="margin-top: 15px;" data-i18n="heatmap-waybar-ex1">Example 1: Default (Purple)</h4>
     <div class="code-wrapper">
         <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('&quot;custom/gh_heatmap&quot;: {\n  &quot;exec&quot;: &quot;sleep 1 & ~/.config/waybar/scripts/weekly_commits&quot;,\n  &quot;return-type&quot;: &quot;json&quot;,\n  &quot;interval&quot;: 2400,\n  &quot;tooltip&quot;: true,\n  &quot;on-click&quot;: &quot;xdg-open https://github.com/ahmed-x86&quot;,\n  &quot;on-click-right&quot;: &quot;~/.config/waybar/scripts/weekly_commits&quot;\n}')">Copy</button>
 <pre><code>"custom/gh_heatmap": {
@@ -134,19 +142,40 @@ GITHUB_PAT=ghp_yourGeneratedTokenHere</code></pre>
   "on-click-right": "~/.config/waybar/scripts/weekly_commits"
 }</code></pre>
     </div>
-    
-    <div class="warning" data-i18n="heatmap-exec-warning">
-        <strong>⚠️ Execution Permission:</strong> Ensure the script is executable by running:<br><br>
-        <code>chmod +x ~/.config/waybar/scripts/weekly_commits</code>
+
+    <h4 style="margin-top: 15px;" data-i18n="heatmap-waybar-ex2">Example 2: Custom Color using HEX (e.g., Green)</h4>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('&quot;custom/gh_heatmap&quot;: {\n  &quot;exec&quot;: &quot;sleep 1 & ~/.config/waybar/scripts/weekly_commits --color \'#00ff00\'&quot;,\n  &quot;return-type&quot;: &quot;json&quot;,\n  &quot;interval&quot;: 2400,\n  &quot;tooltip&quot;: true,\n  &quot;on-click&quot;: &quot;xdg-open https://github.com/ahmed-x86&quot;,\n  &quot;on-click-right&quot;: &quot;~/.config/waybar/scripts/weekly_commits&quot;\n}')">Copy</button>
+<pre><code>"custom/gh_heatmap": {
+  "exec": "sleep 1 & ~/.config/waybar/scripts/weekly_commits --color '#00ff00'",
+  "return-type": "json",
+  "interval": 2400,
+  "tooltip": true,
+  "on-click": "xdg-open https://github.com/ahmed-x86",
+  "on-click-right": "~/.config/waybar/scripts/weekly_commits"
+}</code></pre>
+    </div>
+
+    <h4 style="margin-top: 15px;" data-i18n="heatmap-waybar-ex3">Example 3: Custom Color using RGB (e.g., Orange)</h4>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('&quot;custom/gh_heatmap&quot;: {\n  &quot;exec&quot;: &quot;sleep 1 & ~/.config/waybar/scripts/weekly_commits --color \'255,165,0\'&quot;,\n  &quot;return-type&quot;: &quot;json&quot;,\n  &quot;interval&quot;: 2400,\n  &quot;tooltip&quot;: true,\n  &quot;on-click&quot;: &quot;xdg-open https://github.com/ahmed-x86&quot;,\n  &quot;on-click-right&quot;: &quot;~/.config/waybar/scripts/weekly_commits&quot;\n}')">Copy</button>
+<pre><code>"custom/gh_heatmap": {
+  "exec": "sleep 1 & ~/.config/waybar/scripts/weekly_commits --color '255,165,0'",
+  "return-type": "json",
+  "interval": 2400,
+  "tooltip": true,
+  "on-click": "xdg-open https://github.com/ahmed-x86",
+  "on-click-right": "~/.config/waybar/scripts/weekly_commits"
+}</code></pre>
     </div>
 
     <h2 data-i18n="heatmap-css-title">🎨 Styling (CSS)</h2>
     <p data-i18n="heatmap-css-desc">Add the following styling to your Waybar <code>style.css</code>. It fits perfectly with dark/Catppuccin backgrounds:</p>
 
     <div class="code-wrapper">
-        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('#custom-gh_heatmap {\n  color: #c463ff;\n  background: rgba(30, 30, 46, 0.89); \n  border-radius: 6px;\n  margin-right: 2px;\n  padding: 0px 8px;\n}')">Copy</button>
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('#custom-gh_heatmap {\n  color: #c463ff; /* Change this to match your custom base color if used */\n  background: rgba(30, 30, 46, 0.89); \n  border-radius: 6px;\n  margin-right: 2px;\n  padding: 0px 8px;\n}')">Copy</button>
 <pre><code>#custom-gh_heatmap {
-  color: #c463ff;
+  color: #c463ff; /* Change this to match your custom base color if used */
   background: rgba(30, 30, 46, 0.89); 
   border-radius: 6px;
   margin-right: 2px;
