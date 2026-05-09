@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed x86 | HardPlayer</title>
+    <meta name="description" content="HardPlayer is a lightweight, high-performance modular media player built with Python, PyQt6, and the MPV Engine. It combines native system integration with a sleek Catppuccin Mocha aesthetic and a pro-grade YouTube acquisition engine.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, HardPlayer, Media Player, MPV, PyQt6, Python, Linux, YouTube Downloader, Catppuccin Mocha, yt-dlp, ffmpeg, Wayland, Hyprland">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
+    <meta property="og:title" content="Ahmed x86 | HardPlayer 🎬 (V25 Next-Gen, MPV Engine, Pro YouTube Downloader)">
+    <meta property="og:description" content="A lightweight, high-performance modular media player built with Python, PyQt6, and the MPV Engine. Specifically optimized for the Linux ecosystem.">
+    <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
+    <meta property="og:url" content="https://ahmed-x86.github.io/hardplayer.html">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="https://keepandroidopen.org/banner.js?link=https://example.com&hidebutton=off"></script>
+    
+<header style="position: relative;">
+    <div style="position: absolute; top: 20px; inset-inline-start: 20px; z-index: 1000;">
+        <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <h1 data-i18n="hp-page-title">Ahmed x86 - HardPlayer 🎬</h1>
+    <p data-i18n="hp-page-desc">A lightweight, high-performance modular media player built with Python, PyQt6, and the MPV Engine. Features YouTube integration, hardware decoding, and Catppuccin Mocha aesthetics.</p>
+</header>
+
+<nav>
+    <a href="index.html" data-i18n="nav-back-home">← Back to Home</a>
+    <a href="https://github.com/ahmed-x86/hardplayer" target="_blank" data-i18n="nav-github-repo">GitHub Repo</a>
+</nav>
+
+<section id="project-details">
+
+    <div class="badges">
+        <img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge" alt="License">
+        <img src="https://img.shields.io/badge/Platform-Linux%20-lightgrey?style=for-the-badge&logo=linux" alt="Platform Linux">
+        <img src="https://img.shields.io/badge/Version-25.0.0-mauve?style=for-the-badge" alt="Version 25.0.0">
+        <img src="https://img.shields.io/badge/Theme-Catppuccin%20Mocha-blue?style=for-the-badge" alt="Theme Catppuccin Mocha">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/Qt-41CD52?style=for-the-badge&logo=qt&logoColor=white" alt="Qt">
+    </div>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <img src="hardplayer.png" alt="HardPlayer Screenshot" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    </div>
+
+    <h2 data-i18n="hp-about-title">About the Project</h2>
+    <p data-i18n="hp-about-desc">
+        <b>HardPlayer (25.0.0)</b> is a lightweight, high-performance modular media player built with <b>Python</b>, <b>PyQt6</b>, and the <b>MPV Engine</b>. It combines native system integration with a sleek <b>Catppuccin Mocha</b> aesthetic and a pro-grade YouTube acquisition engine. Developed by <b>Ahmed (ahmed-x86)</b>, this player follows the "KISS" philosophy, specifically optimized for the Linux ecosystem.
+    </p>
+
+    <div class="note" data-i18n="hp-v25-note">
+        <strong>✨ New in v25.0.0:</strong> Upgraded the core engine to version 25 and resolved startup logo display issues for installed binaries by enforcing runtime asset resolution.
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="hp-downloads-title">📥 Download Links</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th data-i18n="hp-th-variant">Variant</th>
+                    <th data-i18n="hp-th-deb">Ubuntu / Debian (DEB)</th>
+                    <th data-i18n="hp-th-rpm">Fedora / Suse (RPM)</th>
+                    <th data-i18n="hp-th-arch">Arch Linux (Pacman)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Standalone (Bundled Qt)</strong></td>
+                    <td><a href="https://github.com/ahmed-x86/hardplayer/releases/download/v25.0.0/hardplayer-standalone_25.0.0_amd64.deb" target="_blank">Download DEB</a></td>
+                    <td><a href="https://github.com/ahmed-x86/hardplayer/releases/download/v25.0.0/hardplayer-standalone-25.0.0-1.x86_64.rpm" target="_blank">Download RPM</a></td>
+                    <td><a href="https://github.com/ahmed-x86/hardplayer/releases/download/v25.0.0/hardplayer-standalone-25.0.0-1-x86_64.pkg.tar.zst" target="_blank">Download Pacman</a></td>
+                </tr>
+                <tr>
+                    <td><strong>System-Qt (Lightweight)</strong></td>
+                    <td><a href="https://github.com/ahmed-x86/hardplayer/releases/download/v25.0.0/hardplayer-system-qt_25.0.0_amd64.deb" target="_blank">Download DEB</a></td>
+                    <td><a href="https://github.com/ahmed-x86/hardplayer/releases/download/v25.0.0/hardplayer-system-qt-25.0.0-1.x86_64.rpm" target="_blank">Download RPM</a></td>
+                    <td><a href="https://github.com/ahmed-x86/hardplayer/releases/download/v25.0.0/hardplayer-system-qt-25.0.0-1-x86_64.pkg.tar.zst" target="_blank">Download Pacman</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 data-i18n="hp-v24-title">✨ What's New in v24.0.0?</h2>
+    <ul>
+        <li data-i18n="hp-v24-1"><strong>Fixed Ubuntu Builds:</strong> System-Qt for Debian/Ubuntu now utilizes the 24.04 base to ensure <code>python3-pyqt6</code> dependency resolution.</li>
+        <li data-i18n="hp-v24-2"><strong>Embedded Assets:</strong> Nuitka now correctly embeds UI icons directly into the compiled binaries for a flawless native look.</li>
+    </ul>
+
+    <h2 data-i18n="hp-v23-title">✨ What's New in v23.0.0?</h2>
+    <ul>
+        <li data-i18n="hp-v23-1"><strong>Robust Download Resumption:</strong> Integrated state-management for tracking incomplete downloads. Automatically detects leftover <code>.part</code> files to resume seamlessly.</li>
+        <li data-i18n="hp-v23-2"><strong>Smart YouTube URL Parsing:</strong> Robust URL cleaner strips unwanted parameters (like timestamps or playlists) to prevent erratic <code>yt-dlp</code> behavior.</li>
+        <li data-i18n="hp-v23-3"><strong>Extended Filename & UI WordWrap:</strong> Dynamic text wrapping for long video titles. Downloaded files append the YouTube ID to prevent conflicts.</li>
+        <li data-i18n="hp-v23-4"><strong>Granular Progress:</strong> Stream-aware UI showing exact sizes for Video/Audio and a dedicated merging status during <code>ffmpeg</code> finalization.</li>
+    </ul>
+
+    <h2 data-i18n="hp-v22-title">✨ What's New in v22.0.0?</h2>
+    <ul>
+        <li data-i18n="hp-v22-1"><strong>Dual-Variant Release:</strong> Standalone (all Qt6 libraries bundled) and System-Qt (uses distro native libraries for smaller footprint).</li>
+        <li data-i18n="hp-v22-2"><strong>Pro Media Converter Suite:</strong> Multi-threaded conversion engine for Video, Audio, and Images from the top menu.</li>
+        <li data-i18n="hp-v22-3"><strong>CUDA-Assisted Pipeline:</strong> Hardware-accelerated decoding optimized for NVIDIA, ensuring perfect playback.</li>
+        <li data-i18n="hp-v22-4"><strong>Smart Progress & Safety:</strong> Real-time conversion analytics and interactive confirmation when cancelling active conversions.</li>
+    </ul>
+
+    <h2 data-i18n="hp-pro-dl-title">📥 Pro YouTube Downloader & Enhancements (v16.0 - v21.0)</h2>
+    <ul>
+        <li data-i18n="hp-pro-1"><strong>Advanced Fetching:</strong> Download subtitles, thumbnails, embed chapters, and save metadata. Includes smart subtitle fetching with anti-ban mechanisms.</li>
+        <li data-i18n="hp-pro-2"><strong>Aria2 Acceleration:</strong> Multi-threaded acquiring (16 parallel connections) to bypass YouTube throttling.</li>
+        <li data-i18n="hp-pro-3"><strong>Universal Subtitles & Translation:</strong> Works for local and YouTube media.</li>
+        <li data-i18n="hp-pro-4"><strong>Customizable Environment:</strong> Set default format (<code>mp4</code>, <code>mkv</code>, <code>webm</code>) and custom download locations directly from the menu.</li>
+        <li data-i18n="hp-pro-5"><strong>Optimized UI:</strong> Catppuccin aesthetically styled progress bars, clean ANSI logic, and robust cancellation dialogs.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="hp-core-title">🛠️ Core Features & Philosophy</h2>
+    <ul>
+        <li data-i18n="hp-core-1"><strong>Wayland-Native:</strong> Optimized for <b>Hyprland</b> with forced EGL contexts for stability.</li>
+        <li data-i18n="hp-core-2"><strong>Hardware Mastery:</strong> Specialized support for NVDEC and VA-API with graceful fallbacks.</li>
+        <li data-i18n="hp-core-3"><strong>Rich MPRIS:</strong> Seamless integration with Waybar, SwayNC, and system trays.</li>
+        <li data-i18n="hp-core-4"><strong>Modular Engine:</strong> Decoupled core components to ensure the UI thread remains 100% lag-free.</li>
+    </ul>
+
+    <h2 data-i18n="hp-cli-title">💻 CLI Documentation</h2>
+    <p data-i18n="hp-cli-desc">HardPlayer's terminal interface remains the fastest way to launch media.</p>
+    <ul>
+        <li data-i18n="hp-cli-flag-1"><strong><code>-device [cpu|intel|amd|nvidia]</code>:</strong> Force hardware decoding backends.</li>
+        <li data-i18n="hp-cli-flag-2"><strong><code>-quality [1080p|720p|480p|audio]</code>:</strong> Set YouTube streaming resolution.</li>
+        <li data-i18n="hp-cli-flag-3"><strong><code>-search</code>:</strong> Treat input as a YouTube search query.</li>
+    </ul>
+
+    <h3 data-i18n="hp-cli-ex1-title">Example: Fast Launch (Local File + Hardware Decoding)</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('hardplayer /path/to/video.mp4 -device old_nvidia')">Copy</button>
+<pre><code>hardplayer /path/to/video.mp4 -device old_nvidia</code></pre>
+    </div>
+
+    <h3 data-i18n="hp-cli-ex2-title">Example: Fast Launch (YouTube + Quality + Decoding)</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('hardplayer &quot;https://www.youtube.com/watch?v=test&quot; -quality 1080p -device old_nvidia')">Copy</button>
+<pre><code>hardplayer "https://www.youtube.com/watch?v=test" -quality 1080p -device old_nvidia</code></pre>
+    </div>
+
+    <h3 data-i18n="hp-cli-ex3-title">Example: Direct YouTube Search</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('hardplayer -search &quot;test&quot; -quality 720p -device cpu')">Copy</button>
+<pre><code>hardplayer -search "test"
+# Or combined with flags:
+hardplayer -search "test" -quality 720p -device cpu</code></pre>
+    </div>
+
+    <h3 data-i18n="hp-cli-ex4-title">Example: Audio-Only Mode (Podcasts)</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('hardplayer &quot;https://www.youtube.com/watch?v=test&quot; -quality audio')">Copy</button>
+<pre><code>hardplayer "https://www.youtube.com/watch?v=test" -quality audio</code></pre>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="hp-install-title">📥 Installation & Requirements</h2>
+    
+    <h3 data-i18n="hp-install-arch-title">Arch Linux (Pacman):</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S aria2\nsudo pacman -U hardplayer-system-qt-25.0.0-1-x86_64.pkg.tar.zst')">Copy</button>
+<pre><code>sudo pacman -S aria2  # Required for high-speed downloads
+sudo pacman -U hardplayer-system-qt-25.0.0-1-x86_64.pkg.tar.zst</code></pre>
+    </div>
+
+    <h3 data-i18n="hp-install-deb-title">Debian/Ubuntu (DEB):</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo apt install aria2\nsudo dpkg -i hardplayer-system-qt_25.0.0_amd64.deb')">Copy</button>
+<pre><code>sudo apt install aria2
+sudo dpkg -i hardplayer-system-qt_25.0.0_amd64.deb</code></pre>
+    </div>
+
+    <h3 data-i18n="hp-req-title">📦 Requirements</h3>
+    <ul>
+        <li><code>mpv</code> (libmpv)</li>
+        <li><code>ffmpeg</code></li>
+        <li><code>yt-dlp</code></li>
+        <li><strong><code>aria2</code></strong> (For accelerated downloads)</li>
+    </ul>
+
+    <h3 data-i18n="hp-dev-title">Development & Quick Run</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/hardplayer.git\ncd hardplayer\npython hardplayer.py')">Copy</button>
+<pre><code>git clone https://github.com/ahmed-x86/hardplayer.git
+cd hardplayer
+python hardplayer.py</code></pre>
+    </div>
+
+    <div class="action-container">
+        <a href="https://github.com/ahmed-x86/hardplayer" target="_blank" class="btn-link" data-i18n="hp-btn-star">
+            ⭐ Star on GitHub
+        </a>
+    </div>
+
+</section>
+
+<footer data-i18n="hp-footer-text">
+    <p>© 2026 Ahmed x86 • "Keep it simple, keep it elegant, keep it fast." ☕</p>
+</footer>
+
+<div id="langModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+        <span onclick="document.getElementById('langModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="lang-modal-title">Select Language</h3>
+        <p class="feedback-subtitle" data-i18n="lang-modal-subtitle">اختر لغة الموقع</p>
+        <br>
+        <button class="submit-btn" onclick="setLanguage('en'); document.getElementById('langModalOverlay').style.display='none'">English (EN)</button>
+        <br><br>
+        <button class="submit-btn" onclick="setLanguage('ar'); document.getElementById('langModalOverlay').style.display='none'">العربية (AR)</button>
+    </div>
+</div>
+
+<div id="themeModalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <span onclick="document.getElementById('themeModalOverlay').style.display='none'" class="close-btn">&times;</span>
+        <h3 class="feedback-title" data-i18n="theme-modal-title">Select Theme</h3>
+        <p class="feedback-subtitle" data-i18n="theme-modal-subtitle">اختر مظهر الموقع</p>
+        <br>
+        <button class="submit-btn theme-btn active-theme" onclick="setTheme('mocha', this)">☕ Default Mocha</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('latte', this)" style="background-color: #ffffff; color: #000;">☀️ Pure Light</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('oled', this)" style="background-color: #000000; color: #fff; border: 1px solid #333;">🌑 OLED Black</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('hacker', this)" style="background-color: #0d0d0d; color: #00ff41;">💻 Hacker Green</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('cyberpunk', this)" style="background-color: #2b213a; color: #ff003c;">🦄 Cyberpunk Neon</button>        
+        <button class="submit-btn theme-btn" onclick="setTheme('dracula', this)" style="background-color: #282a36; color: #bd93f9;">🎨 Dracula</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('nord', this)" style="background-color: #2E3440; color: #88C0D0;">❄️ Nord Frost</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('gruvbox', this)" style="background-color: #282828; color: #fabd2f;">📦 Gruvbox Retro</button>
+        <button class="submit-btn theme-btn" onclick="setTheme('tokyonight', this)" style="background-color: #1a1b26; color: #7aa2f7;">🌃 Tokyo Night</button>
+    </div>
+</div>
+
+<div id="sidebar-container"></div>
+
+<script>
+    function toggleSidebar() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebarMenu && sidebarOverlay) {
+            sidebarMenu.classList.toggle('open');
+            sidebarOverlay.classList.toggle('show');
+        }
+    }
+</script>
+
+<script src="lang.js"></script>
+<script src="main.js"></script>
+<script src="theme.js"></script>
+
+</body>
+</html>
