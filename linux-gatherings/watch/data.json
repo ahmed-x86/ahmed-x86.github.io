@@ -1,0 +1,315 @@
+{
+  "sessions": [
+    {
+      "id": 1,
+      "slug": "install-zorin-os",
+      "video": {
+        "youtube_id": "ZN4qcotFiWc",
+        "mp4_url": "https://res.cloudinary.com/deuuw6kui/video/upload/v1774715579/2026-03-03_22-09-18_rieeti.mp4",
+        "poster": "https://img.youtube.com/vi/ZN4qcotFiWc/maxresdefault.jpg"
+      },
+      "titles": {
+        "page_title": { "en": "Ahmed x86 | Goodbye Windows! Easiest Way to Install Zorin OS", "ar": "Ahmed x86 | وداعاً ويندوز! أسهل طريقة لتثبيت نظام Zorin OS" },
+        "main_title": { "en": "Goodbye Windows! The Easiest Way to Install Zorin OS", "ar": "وداعاً ويندوز! أسهل طريقة لتثبيت نظام Zorin OS (المجلس الأول)" },
+        "sidebar_title": { "en": "Goodbye Windows! Install Zorin OS", "ar": "وداعاً ويندوز! تثبيت Zorin OS" },
+        "sidebar_sub": { "en": "Session 1 • Install Zorin OS", "ar": "المجلس الأول • تثبيت Zorin OS" }
+      },
+      "meta": {
+        "description": { "en": "Step-by-step guide on how to install Zorin OS by Ahmed x86. Perfect for Windows users transitioning to Linux.", "ar": "دليل خطوة بخطوة لكيفية تثبيت Zorin OS. مثالي لمستخدمي ويندوز." },
+        "og_description": { "en": "Learn the absolute easiest way to install Zorin OS. Watch the recorded session from the Kingdom of Arch Linux.", "ar": "تعلم أسهل طريقة لتثبيت نظام Zorin OS. شاهد الجلسة المسجلة." }
+      },
+      "badges": [
+        { "text": "Version-V1", "bg": "firebrick", "logo": "" },
+        { "text": "Linux", "bg": "FCC624", "logo": "linux" },
+        { "text": "Zorin_OS", "bg": "0CCAD4", "logo": "zorin" },
+        { "text": "Status-Complete", "bg": "blueviolet", "logo": "" }
+      ],
+      "channel": {
+        "name": "Ahmed x86_64",
+        "avatar": "https://github.com/ahmed-x86.png",
+        "subscribers": "22"
+      },
+      "description": {
+        "en": {
+          "paragraphs": [
+            "In this video, we'll discover the absolute easiest way to install <strong>Zorin OS</strong> step-by-step!",
+            "If you're thinking about switching from Windows to the Linux world and searching for smoothness and speed, this system is your best gateway. (And even if we're Arch enthusiasts, we have to give user-friendly systems a chance for beginners! 😉)"
+          ],
+          "topics_title": "📍 <strong>What we will cover:</strong>",
+          "topics": [
+            "• Preparing the system environment.",
+            "• Essential pre-installation tweaks.",
+            "• The full installation process for daily use."
+          ],
+          "support_title": "🔔 <strong>Support the Channel:</strong>",
+          "support_desc": "Don't forget to <strong>subscribe</strong> and hit the <strong>Like</strong> button if this guide helped you! What is your favorite Linux distribution? Let us know in the comments!",
+          "footer_message": "Enjoy the session!"
+        },
+        "ar": {
+          "paragraphs": [
+            "في هذا الفيديو، سنكتشف معاً أسهل طريقة على الإطلاق لتثبيت نظام <strong>Zorin OS</strong> خطوة بخطوة!",
+            "إذا كنت تفكر في الانتقال من ويندوز إلى عالم لينكس وتبحث عن السلاسة والسرعة، فهذا النظام هو بوابتك الأفضل. (وحتى لو كنا من عشاق Arch، يجب أن نعطي الأنظمة الصديقة للمستخدم فرصة للمبتدئين! 😉)"
+          ],
+          "topics_title": "📍 <strong>ماذا سنغطي في هذا المجلس؟</strong>",
+          "topics": [
+            "• تجهيز بيئة النظام.",
+            "• تعديلات ضرورية قبل البدء بالتثبيت.",
+            "• عملية التثبيت الكاملة للاستخدام اليومي."
+          ],
+          "support_title": "🔔 <strong>ادعم القناة:</strong>",
+          "support_desc": "لا تنسَ <strong>الاشتراك</strong> والضغط على زر <strong>الإعجاب</strong> إذا أفادك هذا الشرح! ما هي توزيعة لينكس المفضلة لديك؟ أخبرنا في التعليقات!",
+          "footer_message": "مشاهدة ممتعة!"
+        }
+      },
+      "links": [
+        { "label": { "en": "• Download Zorin OS: ", "ar": "• تحميل نظام Zorin OS: " }, "url": "https://zorin.com/os/", "display": "zorin.com/os/" },
+        { "label": { "en": "• Flash Tool (Ventoy): ", "ar": "• أداة حرق الفلاشة (Ventoy): " }, "url": "https://github.com/ventoy/Ventoy", "display": "github.com/ventoy/Ventoy" }
+      ],
+      "hashtags": {
+        "en": ["#ZorinOS", "#Linux", "#LinuxInstallation", "#WindowsAlternative", "#Zorin_OS", "#Technology", "#LinuxTutorials", "#ArchLinux"],
+        "ar": ["#لينكس", "#تثبيت_لينكس", "#بديل_ويندوز", "#ZorinOS", "#تقنية", "#دروس_لينكس", "#ArchLinux"]
+      },
+      "timestamps": []
+    },
+    {
+      "id": 2,
+      "slug": "terminal-file-management",
+      "video": {
+        "youtube_id": "Q-nYbryAX_E",
+        "mp4_url": "https://res.cloudinary.com/deuuw6kui/video/upload/v1774768850/%D8%B3%D8%AD%D8%B1_%D8%A7%D9%84%D9%80_Terminal_%D9%83%D9%8A%D9%81_%D8%AA%D8%B3%D9%8A%D8%B7%D8%B1_%D8%B9%D9%84%D9%89_%D9%85%D9%84%D9%81%D8%A7%D8%AA%D9%83_%D9%83%D8%A7%D9%84%D9%85%D8%AD%D8%AA%D8%B1%D9%81%D9%8A%D9%86_%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%B3_cvcemi.mp4",
+        "poster": "https://img.youtube.com/vi/Q-nYbryAX_E/maxresdefault.jpg"
+      },
+      "titles": {
+        "page_title": { "en": "Ahmed x86 | Terminal Magic: Master File Management Like a Pro", "ar": "Ahmed x86 | سحر التيرمنال: السيطرة على ملفاتك كالمحترفين" },
+        "main_title": { "en": "Terminal Magic: Master File Management Like a Pro (Session 2)", "ar": "سحر التيرمنال: السيطرة على ملفاتك كالمحترفين (المجلس الثاني)" },
+        "sidebar_title": { "en": "Terminal Magic: Master File Management", "ar": "سحر التيرمنال: السيطرة على ملفاتك" },
+        "sidebar_sub": { "en": "Session 2 • Bash", "ar": "المجلس الثاني • Bash" }
+      },
+      "meta": {
+        "description": { "en": "Welcome to the second session of the Linux mastery series. Break the fear of the CLI and master file management and video processing with ffmpeg on Arch Linux.", "ar": "Welcome to the second session of the Linux mastery series. Break the fear of the CLI and master file management and video processing with ffmpeg on Arch Linux." },
+        "og_description": { "en": "Break the fear of the CLI! Learn advanced file management and programmatic video editing using ffmpeg right from the heart of Arch Linux.", "ar": "Break the fear of the CLI! Learn advanced file management and programmatic video editing using ffmpeg right from the heart of Arch Linux." }
+      },
+      "badges": [
+        { "text": "Session-2", "bg": "firebrick", "logo": "" },
+        { "text": "Linux", "bg": "FCC624", "logo": "linux" },
+        { "text": "GNU%20Bash", "bg": "4EAA25", "logo": "GNU%20Bash" },
+        { "text": "Status-Complete", "bg": "blueviolet", "logo": "" }
+      ],
+      "channel": {
+        "name": "Ahmed x86_64",
+        "avatar": "https://github.com/ahmed-x86.png",
+        "subscribers": "22"
+      },
+      "description": {
+        "en": {
+          "paragraphs": [
+            "Welcome to the second session of our Linux mastery series. In this video, we break the fear barrier of the \"black screen\" and move to an advanced level in file management and system handling using the Command Line Interface (CLI).",
+            "If you think the Terminal is just a tool for writing simple commands, this video will completely change your mind! We will explore how commands can save you hours of manual work, and how we performed quick video editing and modifications using <strong>ffmpeg</strong> and <strong>ffprobe</strong> right from the heart of Arch Linux."
+          ],
+          "topics_title": "📍 <strong>What you will learn in this session?</strong>",
+          "topics": [
+            "• Secrets of fast handling of large folders and files.",
+            "• Reviewing video data and technical files with pinpoint accuracy.",
+            "• Processing and editing videos programmatically without the need for heavy editing software.",
+            "• Tips and tricks for Arch Linux and Hyprland users to boost productivity."
+          ],
+          "support_title": "",
+          "support_desc": "",
+          "footer_message": ""
+        },
+        "ar": {
+          "paragraphs": [
+            "أهلاً بكم في المجلس الثاني من سلسلة احتراف لينكس. في هذا الفيديو، نكسر حاجز الخوف من \"الشاشة السوداء\" وننتقل لمستوى متقدم في إدارة الملفات والتعامل مع النظام باستخدام واجهة سطر الأوامر (CLI).",
+            "إذا كنت تظن أن التيرمنال مجرد أداة لكتابة أوامر بسيطة، فهذا الفيديو سيغير رأيك تماماً! سنستكشف كيف يمكن للأوامر أن توفر عليك ساعات من العمل اليدوي، وكيف قمنا بعمليات مونتاج وتعديل سريعة للفيديو باستخدام <strong>ffmpeg</strong> و <strong>ffprobe</strong> من قلب نظام Arch Linux."
+          ],
+          "topics_title": "📍 <strong>ماذا ستتعلم في هذا المجلس؟</strong>",
+          "topics": [
+            "• أسرار التعامل السريع مع المجلدات والملفات الضخمة.",
+            "• استعراض بيانات الفيديو والملفات التقنية بدقة متناهية.",
+            "• معالجة ومونتاج الفيديوهات برمجياً دون الحاجة لبرامج مونتاج ثقيلة.",
+            "• حيل ونصائح لمستخدمي Arch Linux و Hyprland لرفع الإنتاجية."
+          ],
+          "support_title": "",
+          "support_desc": "",
+          "footer_message": ""
+        }
+      },
+      "links": [],
+      "hashtags": {
+        "en": ["#LinuxTerminal", "#Bash", "#CommandLine", "#ArchLinux", "#Hyprland", "#ffmpeg", "#Ahmed_x86", "#Tech", "#LinuxTutorials"],
+        "ar": ["#لينكس", "#تيرمنال", "#سطر_الأوامر", "#مفتوح_المصدر", "#ffmpeg", "#برمجة", "#ArchLinux"]
+      },
+      "timestamps": []
+    },
+    {
+      "id": 3,
+      "slug": "linux-package-wars",
+      "video": {
+        "youtube_id": "qdvTvmRtHU0",
+        "mp4_url": "https://res.cloudinary.com/deuuw6kui/video/upload/v1775304692/%D8%A7%D9%84%D8%AF%D8%B1%D8%B3_100%D9%85%D9%8A%D8%AC%D8%A7_agrhq7.mp4",
+        "poster": "https://img.youtube.com/vi/qdvTvmRtHU0/maxresdefault.jpg"
+      },
+      "titles": {
+        "page_title": { "en": "Ahmed x86 | Linux Package Wars: apt, pacman, Flatpak & More", "ar": "Ahmed x86 | حرب الباكيدجات: apt, pacman, Flatpak" },
+        "main_title": { "en": "Session 3: The Ultimate Guide to Linux Packages (pacman, apt, Flatpak)", "ar": "المجلس الثالث: الدليل الشامل لفهم حزم لينكس (pacman, apt, Flatpak)" },
+        "sidebar_title": { "en": "Linux Package Wars: apt, pacman, Flatpak", "ar": "حرب الباكيدجات: apt, pacman, Flatpak" },
+        "sidebar_sub": { "en": "Session 3 • Package Managers", "ar": "المجلس الثالث • مدراء الحزم" }
+      },
+      "meta": {
+        "description": { "en": "Welcome to the third session of the Linux mastery series. Dive deep into Linux package management, formats like deb, rpm, pkg.zst, and universal apps like Flatpak and AppImage.", "ar": "Welcome to the third session of the Linux mastery series. Dive deep into Linux package management, formats like deb, rpm, pkg.zst, and universal apps like Flatpak and AppImage." },
+        "og_description": { "en": "Understand how software is built and distributed in Linux. We decode package managers and universal formats like Flatpak and AppImage.", "ar": "Understand how software is built and distributed in Linux. We decode package managers and universal formats like Flatpak and AppImage." }
+      },
+      "badges": [
+        { "text": "Session-3", "bg": "firebrick", "logo": "" },
+        { "text": "Linux", "bg": "FCC624", "logo": "linux" },
+        { "text": "FOSS", "bg": "1793D1", "logo": "" },
+        { "text": "Status-Complete", "bg": "blueviolet", "logo": "" }
+      ],
+      "channel": {
+        "name": "Ahmed x86_64",
+        "avatar": "https://github.com/ahmed-x86.png",
+        "subscribers": "22"
+      },
+      "description": {
+        "en": {
+          "paragraphs": [
+            "Welcome to the third session! In this lesson, we dive deep into the Linux system to understand how software is built and distributed, and the secret behind the differences in package managers across distributions.",
+            "If you want to understand what happens behind the scenes when you type an installation command in the terminal, this session is for you."
+          ],
+          "topics_title": "📍 <strong>Session Topics:</strong>",
+          "topics": [
+            "• <strong>Core Package Managers:</strong> How <code>apt</code> (Debian/Ubuntu), <code>dnf</code> (Fedora), and the giant <code>pacman</code> (Arch) work.",
+            "• <strong>Decoding File Formats:</strong> What is the fundamental difference between <code>deb</code>, <code>rpm</code>, and the fast <code>pkg.zst</code> format?",
+            "• <strong>Universal Packages:</strong> When do we use <code>Flatpak</code>? Why do some dislike <code>Snap</code>? And what is the advantage of <code>AppImage</code>?",
+            "• <strong>System Core:</strong> What is an <code>ELF</code> file and how does Linux read executable files?"
+          ],
+          "support_title": "",
+          "support_desc": "",
+          "footer_message": ""
+        },
+        "ar": {
+          "paragraphs": [
+            "أهلاً بكم في المجلس الثالث! في هذا الدرس، نغوص في أعماق نظام لينكس لنفهم كيف يتم بناء وتوزيع البرامج، وما هو السر وراء اختلاف مدراء الحزم بين التوزيعات.",
+            "إذا كنت تريد أن تفهم ما يحدث خلف الكواليس عندما تكتب أمر التثبيت في التيرمنال، فهذا المجلس مخصص لك."
+          ],
+          "topics_title": "📍 <strong>محاور المجلس:</strong>",
+          "topics": [
+            "• <strong>مدراء الحزم الأساسية:</strong> كيف تعمل <code>apt</code> (دبيان/أوبونتو)، <code>dnf</code> (فيدورا)، والعملاق <code>pacman</code> الخاص بـ Arch.",
+            "• <strong>فك شفرة صيغ الملفات:</strong> ما الفرق الجوهري بين <code>deb</code>، <code>rpm</code>، وصيغة <code>pkg.zst</code> السريعة؟",
+            "• <strong>التطبيقات الشاملة (Universal Packages):</strong> متى نستخدم <code>Flatpak</code>؟ ولماذا يكره البعض <code>Snap</code>؟ وما هي ميزة <code>AppImage</code>؟",
+            "• <strong>نواة النظام:</strong> ما هو ملف الـ <code>ELF</code> وكيف يقرأ لينكس الملفات التنفيذية؟"
+          ],
+          "support_title": "",
+          "support_desc": "",
+          "footer_message": ""
+        }
+      },
+      "links": [],
+      "hashtags": {
+        "en": ["#Linux", "#ArchLinux", "#FOSS", "#Ubuntu", "#Flatpak", "#pacman", "#Programming", "#OpenSource"],
+        "ar": ["#لينكس", "#Linux", "#ArchLinux", "#FOSS", "#Ubuntu", "#Flatpak", "#pacman", "#برمجة", "#مفتوح_المصدر"]
+      },
+      "timestamps": []
+    },
+    {
+      "id": 4,
+      "slug": "linux-file-system",
+      "video": {
+        "youtube_id": "fLvrGTQfzZ8",
+        "mp4_url": "https://res.cloudinary.com/deuuw6kui/video/upload/v1777232689/4th_session11_pnlvze.mp4",
+        "poster": "https://img.youtube.com/vi/fLvrGTQfzZ8/maxresdefault.jpg"
+      },
+      "titles": {
+        "page_title": { "en": "Ahmed x86 | Linux File System Hierarchy", "ar": "Ahmed x86 | مسارات نظام لينكس" },
+        "main_title": { "en": "Session 4: Linux File System Hierarchy", "ar": "المجلس الرابع: هيكلة نظام ملفات لينكس" },
+        "sidebar_title": { "en": "Linux File System Hierarchy", "ar": "مسارات نظام لينكس" },
+        "sidebar_sub": { "en": "Session 4 • File System", "ar": "المجلس الرابع • مسارات النظام" }
+      },
+      "meta": {
+        "description": { "en": "Welcome to the fourth session! We dive deep into the heart of the Linux operating system to understand the Linux File System Hierarchy and system paths.", "ar": "Welcome to the fourth session! We dive deep into the heart of the Linux operating system to understand the Linux File System Hierarchy and system paths." },
+        "og_description": { "en": "Understanding system paths is the key to mastering Linux. Learn about the file system hierarchy and the difference between core directories.", "ar": "Understanding system paths is the key to mastering Linux. Learn about the file system hierarchy and the difference between core directories." }
+      },
+      "badges": [
+        { "text": "Session-4", "bg": "firebrick", "logo": "" },
+        { "text": "Linux", "bg": "FCC624", "logo": "linux" },
+        { "text": "FOSS", "bg": "1793D1", "logo": "" },
+        { "text": "Status-Complete", "bg": "blueviolet", "logo": "" }
+      ],
+      "channel": {
+        "name": "Ahmed x86_64",
+        "avatar": "https://github.com/ahmed-x86.png",
+        "subscribers": "22"
+      },
+      "description": {
+        "en": {
+          "paragraphs": [
+            "Welcome to the fourth session of the Arch Linux gathering! 🐧 In this session, we dive deep into the heart of the Linux operating system to understand the Linux File System Hierarchy. If you are wondering where programs are installed? Where are system settings saved? And what is the difference between directories like /bin and /sbin or /usr and /opt? Then this video is your comprehensive guide.",
+            "Understanding system paths is the key to mastering Linux (whether you use Arch or any other distribution), giving you full control over your machine away from the chaos of closed systems."
+          ],
+          "topics_title": "📍 <strong>In this video we discussed:</strong>",
+          "topics": [
+            "• A complete breakdown of the Root Directory ( / ).",
+            "• Core system paths and boot files (Boot & Kernels).",
+            "• Where user files, logs, and configurations (/etc) are kept.",
+            "• A look at pseudo-filesystems that interact directly with hardware like /dev and /sys."
+          ],
+          "support_title": "",
+          "support_desc": "",
+          "footer_message": ""
+        },
+        "ar": {
+          "paragraphs": [
+            "مرحباً بكم في المجلس الرابع! في هذه الجلسة، نغوص عميقاً في قلب نظام التشغيل لينكس لفهم هيكلة نظام ملفات لينكس (Linux File System Hierarchy). إذا كنت تتساءل أين يتم تثبيت البرامج؟ أين تُحفظ إعدادات النظام؟ وما الفرق بين مجلدات مثل /bin و /sbin أو /usr و /opt؟ فهذا الفيديو هو دليلك الشامل.",
+            "فهم مسارات النظام هو مفتاحك لاحتراف لينكس، مما يمنحك تحكماً كاملاً في جهازك بعيداً عن فوضى الأنظمة المغلقة."
+          ],
+          "topics_title": "📍 <strong>في هذا الفيديو ناقشنا:</strong>",
+          "topics": [
+            "• تفكيك كامل للمجلد الجذري ( / ).",
+            "• مسارات النظام الأساسية وملفات الإقلاع (Boot & Kernels).",
+            "• أين تُحفظ ملفات المستخدم، السجلات، والإعدادات (/etc).",
+            "• نظرة على أنظمة الملفات الوهمية التي تتفاعل مع العتاد مثل /dev و /sys."
+          ],
+          "support_title": "",
+          "support_desc": "",
+          "footer_message": ""
+        }
+      },
+      "links": [],
+      "hashtags": {
+        "en": ["#Linux", "#ArchLinux", "#FileSystem", "#FOSS", "#OpenSource", "#Tech"],
+        "ar": ["#Linux", "#ArchLinux", "#FileSystem", "#FOSS", "#OpenSource", "#Tech"]
+      },
+      "timestamps": [
+        { "time": "00:00", "label": "Intro" },
+        { "time": "00:20", "label": "Root Directory ( / )" },
+        { "time": "01:36", "label": "/bin directory" },
+        { "time": "03:15", "label": "/sbin directory" },
+        { "time": "04:00", "label": "/lib directory" },
+        { "time": "05:10", "label": "/home directory" },
+        { "time": "05:50", "label": "/root directory" },
+        { "time": "06:56", "label": "/tmp directory" },
+        { "time": "07:26", "label": "/usr directory" },
+        { "time": "07:56", "label": "/usr/bin" },
+        { "time": "08:20", "label": "/usr/sbin" },
+        { "time": "08:30", "label": "/usr/include" },
+        { "time": "08:45", "label": "/var directory" },
+        { "time": "09:39", "label": "/var/log" },
+        { "time": "10:19", "label": "/var/tmp" },
+        { "time": "10:30", "label": "/var/spool" },
+        { "time": "11:20", "label": "/boot directory" },
+        { "time": "12:30", "label": "/boot/efi" },
+        { "time": "12:57", "label": "Linux Kernels" },
+        { "time": "15:03", "label": "/etc directory" },
+        { "time": "15:34", "label": "/opt directory" },
+        { "time": "16:37", "label": "/media directory" },
+        { "time": "17:34", "label": "/dev directory" },
+        { "time": "20:02", "label": "/proc directory" },
+        { "time": "21:36", "label": "/sys directory" },
+        { "time": "22:41", "label": "/run directory" },
+        { "time": "23:10", "label": "/srv directory" },
+        { "time": "24:04", "label": "/snap directory" },
+        { "time": "24:20", "label": "Outro" }
+      ]
+    }
+  ]
+}
