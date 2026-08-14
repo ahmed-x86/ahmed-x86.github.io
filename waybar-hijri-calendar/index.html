@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A stable, multi-language Python Hijri calendar for Waybar. Featuring authentic Islamic events, dynamic tooltips, and RTL alignment fixes. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, Waybar, Hijri Calendar, Multi-language Hijri, Islamic Calendar, Python Script, Linux Customization, Arch Linux, Hyprland, Sway, Wayland, RTL fix, Pango rendering, Offline Caching">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
+    <meta property="og:title" content="Ahmed x86 | Waybar Hijri Calendar 🌙">
+    <meta property="og:description" content="The most stable Multi-language Hijri calendar module for Waybar. Pure Python, offline caching, and perfectly aligned grids.">
+    <meta property="og:image" content="https://ahmed-x86.github.io/screenshot_full_2026-03-11_10-38-13.png"> 
+    <meta property="og:url" content="https://ahmed-x86.github.io/waybar-hijri-calendar">
+    <meta property="og:type" content="article">
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <meta name="page-config" content='{"pageType":"project","titleKey":"hijri-page-title","descKey":"hijri-page-desc","titleDefault":"Ahmed x86 - Waybar Hijri Calendar 🌙","descDefault":"A stable, multi-language Hijri calendar for Linux status bars.","navLinks":[{"href":"https://github.com/ahmed-x86/waybar_hijri_calendar","text":"GitHub Repo","i18nKey":"nav-github-repo","target":"_blank"}]}'>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="page-content">
+<section id="project-details">
+
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/I18n-Multi--lang-cba6f7?style=for-the-badge" alt="I18n">
+        <img src="https://img.shields.io/badge/Waybar-292D3E?style=for-the-badge&logo=linux&logoColor=white" alt="Waybar">
+        <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
+    </div>
+
+    <h2 data-i18n="hijri-about-title">About</h2>
+    <p data-i18n="hijri-about-desc">
+        This module provides an accurate Hijri calendar with <b>Multi-language support</b>. It intelligently solves Pango's RTL alignment bugs by utilizing localized headers and monospace formatting, ensuring a pixel-perfect grid in your tooltips.
+    </p>
+
+    <img src="/screenshot_full_2026-03-11_10-38-13.png" class="effect-image" alt="Waybar Hijri Calendar Preview">
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="hijri-lang-title">🌐 Supported Languages</h2>
+    <p data-i18n="hijri-lang-desc">Switch language using the <code>-lang</code> flag in your configuration:</p>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th data-i18n="hijri-th-flag">Flag</th>
+                    <th data-i18n="hijri-th-lang">Language</th>
+                    <th data-i18n="hijri-th-headers">Headers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>-lang ar</code></td><td data-i18n="hijri-lang-ar">Arabic (Default)</td><td>Su Mo Tu...</td></tr>
+                <tr><td><code>-lang en</code></td><td data-i18n="hijri-lang-en">English</td><td>Su Mo Tu We Th Fr Sa</td></tr>
+                <tr><td><code>-lang fr</code></td><td data-i18n="hijri-lang-fr">French</td><td>Di Lu Ma Me Je Ve Sa</td></tr>
+                <tr><td><code>-lang de</code></td><td data-i18n="hijri-lang-de">German</td><td>So Mo Di Mi Do Fr Sa</td></tr>
+                <tr><td><code>-lang it</code></td><td data-i18n="hijri-lang-it">Italian</td><td>Do Lu Ma Me Gi Ve Sa</td></tr>
+                <tr><td><code>-lang es</code></td><td data-i18n="hijri-lang-es">Spanish</td><td>Do Lu Ma Mi Ju Vi Sá</td></tr>
+                <tr><td><code>-lang tr</code></td><td data-i18n="hijri-lang-tr">Turkish</td><td>Pz Pt Sa Ça Pe Cu Ct</td></tr>
+                <tr><td><code>-lang ku</code></td><td data-i18n="hijri-lang-ku">Kurdish</td><td>Yk Du Sê Ça Pê În Şe</td></tr>
+                <tr><td><code>-lang ja</code></td><td data-i18n="hijri-lang-ja">Japanese</td><td>日 月 火 水 木 金 土</td></tr>
+                <tr><td><code>-lang ko</code></td><td data-i18n="hijri-lang-ko">Korean</td><td>일 월 화 수 목 금 토</td></tr>
+                <tr><td><code>-lang id</code></td><td data-i18n="hijri-lang-id">Indonesian</td><td>Mg Sn Sl Rb Km Jm Sb</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="hijri-feat-title">✨ Key Features</h2>
+    <ul>
+        <li data-i18n="hijri-feat-1"><strong>Multi-language Support:</strong> Choose between 11 languages including Arabic, English, French, German, Italian, Spanish, Turkish, Kurdish, Japanese, Korean, and Indonesian.</li>
+        <li data-i18n="hijri-feat-2"><strong>Dynamic Month Length:</strong> Accurately handles 29/30 day months based on Hijri data.</li>
+        <li data-i18n="hijri-feat-3"><strong>Offline Caching:</strong> Fetches data once per month for zero-lag performance.</li>
+        <li data-i18n="hijri-feat-4"><strong>Authentic Islamic Events:</strong> Sunnah reminders like Ramadan, Eids, and White Days.</li>
+        <li data-i18n="hijri-feat-5"><strong>Zero Dependencies:</strong> Pure Python script with minimal system footprint.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="hijri-install-title">🛠️ Installation & Update</h2>
+    <p data-i18n="hijri-install-desc">Deploy the script directly using this command:</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py')">Copy</button>
+<pre><code>mkdir -p ~/.config/waybar/scripts && curl -sSL https://raw.githubusercontent.com/ahmed-x86/waybar_hijri_calendar/main/hijri_waybar.py -o ~/.config/waybar/scripts/hijri_waybar.py && chmod +x ~/.config/waybar/scripts/hijri_waybar.py</code></pre>
+    </div>
+
+    <div class="warning" data-i18n="hijri-update-warn">
+        <strong>⚠️ Crucial Update Step:</strong> If you are upgrading from an older version, you <b>must</b> clear the old cache file to apply the new format:
+        <br><br>
+        <code>rm ~/.cache/waybar_hijri_cache.json</code>
+    </div>
+
+    <h2 data-i18n="hijri-waybar-title">🖥️ Waybar Configuration</h2>
+    <p data-i18n="hijri-waybar-desc">Add the following to your <code>config.jsonc</code> (change the lang flag to your preference):</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('&quot;custom/hijri&quot;: {\n    &quot;format&quot;: &quot;{}&quot;,\n    &quot;exec&quot;: &quot;~/.config/waybar/scripts/hijri_waybar.py -lang ar&quot;,\n    &quot;interval&quot;: 3600,\n    &quot;return-type&quot;: &quot;json&quot;,\n    &quot;tooltip&quot;: true\n}')">Copy</button>
+<pre><code>"custom/hijri": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/hijri_waybar.py -lang ar",
+    "interval": 3600,
+    "return-type": "json",
+    "tooltip": true
+}</code></pre>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="hijri-style-title">🎨 Styling (Themes)</h2>
+    <p data-i18n="hijri-style-desc">Choose your favorite theme and add it to your Waybar <code>style.css</code>:</p>
+
+    <details>
+        <summary data-i18n="hijri-theme-1">1. Catppuccin (Mocha)</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Catppuccin Mocha */\n#custom-hijri {\n    color: #f9e2af;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #fab387;\n\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
+<pre><code>/* Hijri Calendar - Catppuccin Mocha */
+#custom-hijri {
+    color: #f9e2af;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+#custom-hijri:hover {
+    color: #fab387;
+
+}
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
+</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary data-i18n="hijri-theme-2">2. Dracula</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Dracula */\n#custom-hijri {\n    color: #bd93f9;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #ff79c6;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
+<pre><code>/* Hijri Calendar - Dracula */
+#custom-hijri {
+    color: #bd93f9;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+#custom-hijri:hover {
+    color: #ff79c6;
+}
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
+</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary data-i18n="hijri-theme-3">3. Nord</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Nord */\n#custom-hijri {\n    color: #88C0D0;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #81A1C1;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
+<pre><code>/* Hijri Calendar - Nord */
+#custom-hijri {
+    color: #88C0D0;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+#custom-hijri:hover {
+    color: #81A1C1;
+}
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
+</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary data-i18n="hijri-theme-4">4. Gruvbox</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Gruvbox */\n#custom-hijri {\n    color: #fabd2f;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #fe8019;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
+<pre><code>/* Hijri Calendar - Gruvbox */
+#custom-hijri {
+    color: #fabd2f;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+#custom-hijri:hover {
+    color: #fe8019;
+}
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
+</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary data-i18n="hijri-theme-5">5. Tokyo Night</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* Hijri Calendar - Tokyo Night */\n#custom-hijri {\n    color: #7aa2f7;\n    font-weight: bold;\n    font-size: 14px;\n    padding: 0 8px;\n    transition: all 0.3s ease;\n}\n#custom-hijri:hover {\n    color: #bb9af7;\n}\n#custom-hijri.error {\n    color: #f38ba8; \n    background-color: rgba(243, 139, 168, 0.1);\n}')">Copy</button>
+<pre><code>/* Hijri Calendar - Tokyo Night */
+#custom-hijri {
+    color: #7aa2f7;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+#custom-hijri:hover {
+    color: #bb9af7;
+}
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
+</code></pre>
+        </div>
+    </details>
+
+    <div class="note" data-i18n="hijri-perf-tip">
+        <strong>💡 Performance Tip:</strong> The script caches the entire month at <code>~/.cache/waybar_hijri_cache.json</code>. It only makes one API call per month!
+    </div>
+
+    <div class="action-container">
+        <a href="https://github.com/ahmed-x86/waybar_hijri_calendar" target="_blank" class="btn-link" data-i18n="hijri-btn-repo">
+        View GitHub Repository
+        </a>
+    </div>
+
+</section>
+    </div>
+    <script src="/js/lang.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/theme.js"></script>
+</body>
+</html>
