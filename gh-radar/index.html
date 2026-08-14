@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bring your GitHub to Waybar! A real-time GitHub activity monitor with an animated ticker, audio alerts, and native avatar notifications for Linux ricers.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, gh-radar, Waybar GitHub module, Linux ricing, Arch Linux, Hyprland, Sway WM, Python Waybar script, Catppuccin, Dracula theme, GitHub API notifications, Linux desktop enhancement">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://ahmed-x86.github.io/gh-radar">
+    <meta property="og:site_name" content="Ahmed x86 Portfolio">
+    <meta property="og:title" content="Ahmed x86 | gh-radar for Waybar">
+    <meta property="og:description" content="Never miss a push! A dynamic Waybar module with animated tickers, sound alerts, and live GitHub avatar notifications.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif">
+    <meta property="og:url" content="https://ahmed-x86.github.io/gh-radar">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahmed x86 | gh-radar for Waybar 📡">
+    <meta name="twitter:description" content="A dynamic GitHub monitor for Waybar. Features animations, sound alerts, and manual refresh via Linux signals.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/ahmed-x86/gh-radar/main/demo.gif">
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <meta name="page-config" content='{"pageType":"project","titleKey":"ghradar-page-title","descKey":"ghradar-page-desc","titleDefault":"Ahmed x86 - gh-radar for Waybar 📡","descDefault":"A dynamic and interactive Waybar module that monitors your GitHub activity.","navLinks":[{"href":"https://github.com/ahmed-x86/gh-radar","text":"GitHub Repo","i18nKey":"nav-github-repo","target":"_blank"}]}'>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="page-content">
+<section id="project-details">
+    
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/Waybar-333333?style=for-the-badge&logo=wayland&logoColor=white" alt="Waybar">
+        <img src="https://img.shields.io/badge/GitHub_API-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub API">
+        <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
+    </div>
+
+    <div class="demo-container">
+        <video class="demo-video" autoplay loop muted playsinline controls>
+            <source src="/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="demo-caption" data-i18n="ghradar-demo-caption">Watch gh-radar's animated ticker and notifications in action!</div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="ghradar-features-title">✨ Key Features</h2>
+    <ul>
+        <li data-i18n="ghradar-feat-1"><strong>Animated Ticker:</strong> Waybar text changes dynamically when a new push occurs. It shows the branch and commit message, then the repository name, and finally returns to your username.</li>
+        <li data-i18n="ghradar-feat-2"><strong>Audio Alerts:</strong> Plays a retro notification sound instantly upon detecting a new push.</li>
+        <li data-i18n="ghradar-feat-3"><strong>Avatar Notifications:</strong> Sends a native desktop notification containing the committer's actual GitHub avatar and commit details.</li>
+        <li data-i18n="ghradar-feat-4"><strong>Interactive Buttons:</strong> Left-click to open your GitHub profile, Right-click to open notifications directly from Waybar.</li>
+        <li data-i18n="ghradar-feat-5"><strong>Manual Refresh (New!):</strong> Middle-click the module to instantly fetch the latest updates using Linux signals (<code>SIGUSR1</code>).</li>
+        <li data-i18n="ghradar-feat-6"><strong>Smart Resource Management:</strong> Dynamic polling intervals (10s when active, 60s when idle) or a complete Sleep Mode (<code>-t 0</code>) to save battery and bandwidth.</li>
+        <li data-i18n="ghradar-feat-7"><strong>Custom Icons (New!):</strong> Choose from 10 different Nerd Font icons (Octocat, Git branch, etc.) using the <code>-icon</code> argument.</li>
+        <li data-i18n="ghradar-feat-8"><strong>API Optimized:</strong> Uses GitHub's <code>ETag</code> headers to respect API rate limits.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="ghradar-install-title">🛠️ Installation & Setup</h2>
+    
+    <h3 data-i18n="ghradar-install-step1">1. Clone & Copy Files</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('git clone https://github.com/ahmed-x86/gh-radar.git\ncd gh-radar\n\n# Copy sound to your config\ncp -r sounds ~/.config/\n\n# Setup Waybar scripts directory\nmkdir -p ~/.config/waybar/scripts\ncp github_radar.py ~/.config/waybar/scripts/\nchmod +x ~/.config/waybar/scripts/github_radar.py')">Copy</button>
+<pre><code>git clone https://github.com/ahmed-x86/gh-radar.git
+cd gh-radar
+
+# Copy sound to your config
+cp -r sounds ~/.config/
+
+# Setup Waybar scripts directory
+mkdir -p ~/.config/waybar/scripts
+cp github_radar.py ~/.config/waybar/scripts/
+chmod +x ~/.config/waybar/scripts/github_radar.py</code></pre>
+    </div>
+
+    <h3 data-i18n="ghradar-install-step2">2. Add Your Credentials (.env)</h3>
+    <p data-i18n="ghradar-env-desc1">Create a <code>.env</code> file to authenticate with GitHub:</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('nano ~/.config/waybar/scripts/.env')">Copy</button>
+<pre><code>nano ~/.config/waybar/scripts/.env</code></pre>
+    </div>
+    <p data-i18n="ghradar-env-desc2">Add the following (replace with your info):</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('GITHUB_USERNAME=your_github_username\nGITHUB_PAT=your_personal_access_token_here')">Copy</button>
+<pre><code>GITHUB_USERNAME=your_github_username
+GITHUB_PAT=your_personal_access_token_here</code></pre>
+    </div>
+
+    <h3 data-i18n="ghradar-install-step3">3. Install Dependencies</h3>
+    <p data-i18n="ghradar-dep-desc">Depending on your Linux distribution, install the required Python libraries. You also need an audio player (<code>mpv</code> or <code>paplay</code>) and a notification daemon (<code>libnotify</code>).</p>
+    
+    <p><strong data-i18n="ghradar-dep-arch">For Arch Linux / Manjaro:</strong></p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('sudo pacman -S python-requests python-dotenv')">Copy</button>
+<pre><code>sudo pacman -S python-requests python-dotenv</code></pre>
+    </div>
+    
+    <p><strong data-i18n="ghradar-dep-ubuntu">For Ubuntu / Debian (or using pip):</strong></p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('pip install requests python-dotenv')">Copy</button>
+<pre><code>pip install requests python-dotenv</code></pre>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="ghradar-usage-title">⚙️ Usage & Arguments</h2>
+    <p data-i18n="ghradar-usage-desc">The script supports arguments to customize its behavior:</p>
+    <ul>
+        <li data-i18n="ghradar-usage-arg1"><code>my_repos_only</code>: Only triggers alerts for repositories you own (ignores activity from other repos you watch/star).</li>
+        <li data-i18n="ghradar-usage-arg2"><code>-t 0</code>: <strong>Manual Mode</strong>. The script will not poll GitHub automatically. It will sleep completely until you middle-click the Waybar module.</li>
+        <li data-i18n="ghradar-usage-arg3"><code>-icon &lt;1-10&gt;</code>: <strong>(New!)</strong> Choose the icon displayed in Waybar. Choose a number from 1 to 10 (e.g., <code>-icon 2</code> for the Octocat).</li>
+    </ul>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('# Examples:\ngithub_radar.py                    # Tracks everything, dynamic polling, default icon\ngithub_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon\ngithub_radar.py -t 0               # Tracks everything, manual refresh ONLY\ngithub_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refresh ONLY, Git logo')">Copy</button>
+<pre><code># Examples:
+github_radar.py                    # Tracks everything, dynamic polling, default icon
+github_radar.py my_repos_only -icon 2 # Tracks only your repos, uses Octocat icon
+github_radar.py -t 0               # Tracks everything, manual refresh ONLY
+github_radar.py my_repos_only -t 0 -icon 5 # Tracks only your repos, manual refresh ONLY, Git logo</code></pre>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="ghradar-waybar-title">🖥️ Waybar Configuration</h2>
+
+    <h3 data-i18n="ghradar-waybar-step1">1. Module Configuration (<code>config.jsonc</code>)</h3>
+    
+    <blockquote class="note" style="border-color: #a6e3a1; background-color: rgba(166, 227, 161, 0.1);">
+        <strong data-i18n="ghradar-pro-tip">💡 Pro Tip:</strong> <span data-i18n="ghradar-pro-tip-desc">Add <code>"reload_style_on_change": true,</code> at the very top of your Waybar config file. This allows Waybar to instantly apply changes when you edit the config or style files without needing a manual restart!</span>
+    </blockquote>
+
+    <p data-i18n="ghradar-waybar-desc1">Add this module to your Waybar config file (under <code>modules-left</code>, <code>modules-center</code>, or <code>modules-right</code>):</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('\"custom/github-radar\": {\n    \"format\": \"{}\",\n    \"return-type\": \"json\",\n    \"exec\": \"~/.config/waybar/scripts/github_radar.py my_repos_only -t 0 -icon 2\", // Customize args here!\n    \"on-click\": \"xdg-open https://github.com/ahmed-x86\",\n    \"on-click-right\": \"xdg-open https://github.com/notifications\",\n    \"on-click-middle\": \"pkill -USR1 -f github_radar.py\", // Sends the refresh signal\n    \"restart-interval\": 0 // Set to 0 because the script runs its own background loop\n}')">Copy</button>
+<pre><code>"custom/github-radar": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/github_radar.py my_repos_only -t 0 -icon 2", // Customize args here!
+    "on-click": "xdg-open https://github.com/ahmed-x86",
+    "on-click-right": "xdg-open https://github.com/notifications",
+    "on-click-middle": "pkill -USR1 -f github_radar.py", // Sends the refresh signal
+    "restart-interval": 0 // Set to 0 because the script runs its own background loop
+}</code></pre>
+    </div>
+    <p data-i18n="ghradar-waybar-desc2"><em>(Note: Change <code>ahmed-x86</code> to your actual GitHub username in the <code>on-click</code> URL).</em></p>
+
+    <h3 data-i18n="ghradar-waybar-step2">2. Styling (<code>style.css</code>)</h3>
+    <p data-i18n="ghradar-style-desc">Choose the theme that matches your current Waybar setup and add it to your <code>style.css</code>.</p>
+
+    <details>
+        <summary data-i18n="ghradar-style-1">1. Default (GitHub Dark)</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* GitHub Radar - Default Theme */\n#custom-github-radar {\n    background-color: #24292e; /* Dark GitHub background */\n    color: #ffffff;\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #444c56;\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #2ea043; /* GitHub green */\n    color: #ffffff;\n    border-color: #2ea043;\n}')">Copy</button>
+<pre><code>/* GitHub Radar - Default Theme */
+#custom-github-radar {
+    background-color: #24292e; /* Dark GitHub background */
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 4px 5px;
+    font-weight: bold;
+    border: 1px solid #444c56;
+    transition: all 0.3s ease;
+}
+
+#custom-github-radar:hover {
+    background-color: #2ea043; /* GitHub green */
+    color: #ffffff;
+    border-color: #2ea043;
+}</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary data-i18n="ghradar-style-2">2. Catppuccin (Mocha)</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* GitHub Radar - Catppuccin Mocha Theme */\n#custom-github-radar {\n    background-color: #1e1e2e; /* Base */\n    color: #cdd6f4; /* Text */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #313244; /* Surface0 */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #a6e3a1; /* Green */\n    color: #11111b; /* Crust for contrast */\n    border-color: #a6e3a1;\n}')">Copy</button>
+<pre><code>/* GitHub Radar - Catppuccin Mocha Theme */
+#custom-github-radar {
+    background-color: #1e1e2e; /* Base */
+    color: #cdd6f4; /* Text */
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 4px 5px;
+    font-weight: bold;
+    border: 1px solid #313244; /* Surface0 */
+    transition: all 0.3s ease;
+}
+
+#custom-github-radar:hover {
+    background-color: #a6e3a1; /* Green */
+    color: #11111b; /* Crust for contrast */
+    border-color: #a6e3a1;
+}</code></pre>
+        </div>
+    </details>
+
+    <details>
+        <summary data-i18n="ghradar-style-3">3. Dracula</summary>
+        <div class="code-wrapper">
+            <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('/* GitHub Radar - Dracula Theme */\n#custom-github-radar {\n    background-color: #282a36; /* Background */\n    color: #f8f8f2; /* Foreground */\n    border-radius: 10px;\n    padding: 0px 10px;\n    margin: 4px 5px;\n    font-weight: bold;\n    border: 1px solid #44475a; /* Selection */\n    transition: all 0.3s ease;\n}\n\n#custom-github-radar:hover {\n    background-color: #50fa7b; /* Green */\n    color: #282a36; /* Background for contrast */\n    border-color: #50fa7b;\n}')">Copy</button>
+<pre><code>/* GitHub Radar - Dracula Theme */
+#custom-github-radar {
+    background-color: #282a36; /* Background */
+    color: #f8f8f2; /* Foreground */
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 4px 5px;
+    font-weight: bold;
+    border: 1px solid #44475a; /* Selection */
+    transition: all 0.3s ease;
+}
+
+#custom-github-radar:hover {
+    background-color: #50fa7b; /* Green */
+    color: #282a36; /* Background for contrast */
+    border-color: #50fa7b;
+}</code></pre>
+        </div>
+    </details>
+
+    <div class="note" data-i18n="ghradar-restart-note">
+        <strong>Restart Waybar:</strong> Apply the changes by restarting Waybar using <code>killall waybar && waybar & disown</code> (Only needed if you haven't enabled <code>reload_style_on_change</code>).
+    </div>
+    
+    <div class="action-container">
+        <a href="https://github.com/ahmed-x86/gh-radar" target="_blank" class="btn-link" data-i18n="ghradar-btn-repo">
+            View GitHub Repository
+        </a>
+    </div>
+
+</section>
+    </div>
+    <script src="/js/lang.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/theme.js"></script>
+</body>
+</html>
