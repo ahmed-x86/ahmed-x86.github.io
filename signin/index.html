@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication | Ahmed x86 Secure Terminal</title>
+    <meta name="description" content="Secure login and registration gateway for Ahmed x86's Linux portfolio. Access your session and explore custom dotfiles and scripts.">
+    <meta name="keywords" content="Ahmed x86, Login, Sign up, Authentication, Linux Portfolio, Secure Session, Arch Linux, sudoers access">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, nofollow">
+    <link rel="canonical" href="https://ahmed-x86.github.io/signin">
+    <meta property="og:site_name" content="Ahmed x86 Security">
+    <meta property="og:title" content="Authentication | Secure Access Gate">
+    <meta property="og:description" content="Enter your credentials to execute a session in Ahmed x86's Arch Linux environment.">
+    <meta property="og:image" content="https://github.com/ahmed-x86.png">
+    <meta property="og:url" content="https://ahmed-x86.github.io/signin">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ahmed x86 Security | Login">
+    <meta name="twitter:description" content="Secure gateway for user sessions. Execute login to access the root environment.">
+    <meta name="twitter:image" content="https://github.com/ahmed-x86.png">
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <a href="/" class="back-link">← cd /home/</a>
+
+        <div class="auth-tabs">
+            <button id="tab-signin" class="auth-tab active">Sign In</button>
+            <button id="tab-signup" class="auth-tab">Sign Up</button>
+        </div>
+
+        <form id="form-signin" class="auth-form">
+            <h2 class="auth-heading">Welcome Back, Root!</h2>
+            <p class="auth-desc">Enter your credentials to access the system.</p>
+            
+            <input type="text" placeholder="Username or IP" required class="form-input">
+            <input type="password" placeholder="Password" required class="form-input">
+            
+            <button type="submit" class="submit-btn login-btn">Execute Login</button>
+        </form>
+
+        <form id="form-signup" class="auth-form" style="display: none;">
+            <h2 class="auth-heading">Create a Session</h2>
+            <p class="auth-desc">Register a new user in the sudoers file.</p>
+            
+            <input type="text" placeholder="Desired Username" required class="form-input">
+            <input type="email" placeholder="Email Address" required class="form-input">
+            <input type="password" placeholder="Secure Password" required class="form-input">
+            
+            <button type="submit" class="submit-btn">Generate User</button>
+        </form>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
