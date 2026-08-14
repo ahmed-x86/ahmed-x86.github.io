@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An automated, bulletproof Bash script to repair the GRUB bootloader on both UEFI and Legacy BIOS GNU/Linux systems. Featuring V27 Bulletproof Update, V26 Modular Architecture, V24 Backend API, Security Hardening, Secure Boot & Shim Support, LUKS Encryption, Chroot Health Check, Universal RedHat/Fedora support, and FSTAB Parsing. Built by Ahmed x86.">
+    <meta name="keywords" content="Ahmed x86, ahmedx86, GRUB Fixer, GNU/Linux Repair, Arch Linux, Fedora, RedHat, Secure Boot, MOK, Shim, LUKS, Encryption, Chroot, UEFI, Legacy BIOS, OS Prober, Dual Boot, Bash Script, System Rescue, Btrfs, In-Situ Repair, Security, API, Backend, VirtIO, VM Repair">
+    <meta name="author" content="Ahmed x86">
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Ahmed x86 Portfolio"> 
+    <meta property="og:title" content="Ahmed x86 | GRUB Fixer 🛠️ (V27 Bulletproof Update, Modular Architecture, Backend API, Secure Boot, LUKS)">
+    <meta property="og:description" content="Rescue your GNU/Linux system securely. V27 solidifies the engine with extreme error handling, strict cleanup traps, and absolute execution safety, built on a newly refactored modular architecture.">
+    <meta property="og:image" content="https://github.com/ahmed-x86.png"> 
+    <meta property="og:url" content="https://ahmed-x86.github.io/grub-fixer">
+    <meta property="og:type" content="article">
+    <link rel="icon" href="https://github.com/ahmed-x86.png" type="image/png">
+   <meta name="page-config" content='{"pageType":"project","titleKey":"grub-page-title","descKey":"grub-page-desc","titleDefault":"Ahmed x86 - GRUB Fixer 🛠️","descDefault":"The most advanced automated GRUB recovery suite.","navLinks":[{"href":"https://github.com/ahmed-x86/grub-fixer","text":"GitHub Repo","i18nKey":"nav-github-repo","target":"_blank"}],"footerKey":"grub-footer-text"}'>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="page-content">
+<section id="project-details">
+
+    <div class="badges">
+        <img src="https://img.shields.io/badge/Version-V27-firebrick?style=for-the-badge" alt="Version V27">
+        <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
+        <img src="https://img.shields.io/badge/GNU%2FLinux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="GNU/Linux">
+        <img src="https://img.shields.io/badge/Zero_Interaction-Ready-blueviolet?style=for-the-badge" alt="Zero Interaction Ready">
+        <img src="https://img.shields.io/badge/UEFI_%26_BIOS-0078D4?style=for-the-badge&logo=intel&logoColor=white" alt="UEFI & BIOS Support">
+        <img src="https://img.shields.io/badge/Bulletproof-Yes-success?style=for-the-badge" alt="Bulletproof Safety">
+    </div>
+
+    <h2 data-i18n="grub-about-title">About the Project</h2>
+    <p data-i18n="grub-about-desc">
+        <b>GRUB Fixer (V27 - The "Bulletproof" Update)</b> takes system recovery to the absolute limit. It is an automated, bulletproof Bash script designed to repair the GRUB bootloader on both <b>UEFI and Legacy BIOS</b> GNU/Linux systems. <b>V27</b> solidifies the engine with extreme error handling, strict cleanup traps, and absolute execution safety. This builds upon the <b>Modular Architecture</b> (V26), <b>VM Polishing</b> (V25), <b>Backend API</b> (V24), <b>Security Hardening</b> (V23), <b>Secure Boot Support</b> (V22), and <b>LUKS Encryption</b> (V21) of previous versions.
+    </p>
+
+    <div class="note" data-i18n="grub-v27-note">
+        <strong>✨ New in V27:</strong> Absolute Safety! Implemented a strict <code>trap</code> engine to automatically unmount and clean up the system on errors, plus global input validation and download integrity verification.
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="grub-bulletproof-title">🛡️ The Bulletproof Update (V27)</h2>
+    <ul>
+        <li data-i18n="grub-bulletproof-1"><strong>Absolute Safety (Trap Engine):</strong> A global <code>trap</code> system guarantees that your system is never left in an unstable state, safely unmounting all partitions before exiting on success, failure, or interruption.</li>
+        <li data-i18n="grub-bulletproof-2"><strong>Network Interruption Immunity:</strong> Modules download to temporary files with strict HTTP checks, preventing incomplete code execution during connection drops.</li>
+        <li data-i18n="grub-bulletproof-3"><strong>Global Input Validation:</strong> Robust, pipe-safe boolean engine forces valid <code>y/n</code> answers across all interactive prompts, eliminating typos.</li>
+    </ul>
+
+    <h2 data-i18n="grub-modular-title">🧩 The Modular Update (V26)</h2>
+    <ul>
+        <li data-i18n="grub-modular-1"><strong>Architectural Overhaul:</strong> The monolith script is completely deconstructed into a sleek, modular engine (api, ui, crypto, core_scan, secureboot).</li>
+        <li data-i18n="grub-modular-2"><strong>Smart Module Loader:</strong> Intelligently detects execution context, sourcing local files or downloading modules on-the-fly to a temporary directory.</li>
+    </ul>
+
+    <h2 data-i18n="grub-polish-title">✨ The Polishing Update (V25)</h2>
+    <ul>
+        <li data-i18n="grub-polish-1"><strong>VM & VirtIO Precision:</strong> Fixed Legacy BIOS disk extraction failures in virtual environments by implementing a smart Regex fallback.</li>
+        <li data-i18n="grub-polish-2"><strong>Btrfs Hardening:</strong> Added failsafe checks for empty subvolume definitions in <code>fstab</code> parsing.</li>
+    </ul>
+
+    <h2 data-i18n="grub-api-title">🔌 The Backend API Update (V24)</h2>
+    <ul>
+        <li data-i18n="grub-api-1"><strong>JSON Endpoints for GUIs:</strong> Designed to be the brain behind graphical interfaces (<code>--sys-info</code>, <code>--json-scan</code>).</li>
+        <li data-i18n="grub-api-2"><strong>Explicit Execution Mapping:</strong> Bypasses all interactive logic when instructed by a frontend GUI via <code>--map-std</code> or <code>--map-btrfs</code>.</li>
+        <li data-i18n="grub-api-5"><strong>Headless Worker:</strong> Operates flawlessly in the background, executing precise mounts, LUKS unlocks, and repairs.</li>
+    </ul>
+
+    <h2 data-i18n="grub-sec-title">🔒 The Security Hardening Update (V23)</h2>
+    <ul>
+        <li data-i18n="grub-sec-1"><strong>Anti-Shoulder Surfing:</strong> LUKS password input is now completely hidden (<code>read -s</code>).</li>
+        <li data-i18n="grub-sec-2"><strong>Dynamic MOK OTP Generation:</strong> Replaced hardcoded passwords with a 12-character random One-Time Password.</li>
+        <li data-i18n="grub-sec-3"><strong>Failsafe Config Backups:</strong> Creates a timestamped backup of <code>/etc/default/grub</code> before modification.</li>
+    </ul>
+
+    <h2 data-i18n="grub-sb-title">🛡️ The Secure Boot Update (V22)</h2>
+    <ul>
+        <li data-i18n="grub-sb-1"><strong>Smart State Detection:</strong> Utilizes <code>mokutil --sb-state</code> to check if Secure Boot is enforced.</li>
+        <li data-i18n="grub-sb-2"><strong>Dynamic Shim Routing:</strong> Forces <code>--uefi-secure-boot</code> on Debian/Ubuntu systems to utilize Microsoft-signed <code>shim</code> binaries.</li>
+        <li data-i18n="grub-sb-3"><strong>Arch Linux <code>sbctl</code> Integration:</strong> Detects custom keys and attempts automatic <code>sbctl sign</code>.</li>
+    </ul>
+
+    <h2 data-i18n="grub-luks-title">🔐 The LUKS Encryption Update (V21)</h2>
+    <ul>
+        <li data-i18n="grub-luks-1"><strong>Early LUKS Detection:</strong> Scans for <code>crypto_LUKS</code> partitions before the Deep Scan Engine starts.</li>
+        <li data-i18n="grub-luks-3"><strong>LVM Auto-Activation:</strong> Automatically runs <code>vgchange -ay</code> to expose hidden Logical Volumes.</li>
+        <li data-i18n="grub-luks-4"><strong>Auto-Cryptodisk Injection:</strong> Appends <code>GRUB_ENABLE_CRYPTODISK=y</code> to ensure the repaired system prompts for a password.</li>
+    </ul>
+
+    <h2 data-i18n="grub-health-title">🩺 The Health Check Update (V20)</h2>
+    <ul>
+        <li data-i18n="grub-health-1"><strong>Smart Dependency Resolution:</strong> Auto-detects missing crucial packages (<code>grub</code>, <code>os-prober</code>, <code>efibootmgr</code>, <code>cryptsetup</code>, <code>mokutil</code>).</li>
+        <li data-i18n="grub-health-2"><strong>Multi-Package Manager Support:</strong> Dynamically utilizes <code>pacman</code>, <code>apt-get</code>, <code>dnf</code>, or <code>zypper</code>.</li>
+    </ul>
+
+    <h2 data-i18n="grub-univ-title">🌐 The Universal Update (V19)</h2>
+    <ul>
+        <li data-i18n="grub-univ-1"><strong>RedHat/Fedora Family Support:</strong> Full compatibility with Fedora, RHEL, CentOS, Rocky, and AlmaLinux.</li>
+        <li data-i18n="grub-univ-2"><strong>Dynamic Command Routing:</strong> Automatically switches to RedHat-specific <code>grub2-install</code> / <code>grub2-mkconfig</code>.</li>
+    </ul>
+
+    <h2 data-i18n="grub-flags-title">🚩 CLI Flags & API Reference</h2>
+    <p data-i18n="grub-flags-desc">Bypass prompts, enable headless automation, or integrate with graphical frontends:</p>
+    <ul>
+        <li data-i18n="grub-flag-5"><strong><code>--sys-info</code>:</strong> Return basic system information as JSON.</li>
+        <li data-i18n="grub-flag-6"><strong><code>--json-scan</code>:</strong> Stealth scan outputting partition layout as JSON.</li>
+        <li data-i18n="grub-flag-7"><strong><code>--map-std "&lt;mapping&gt;"</code>:</strong> Explicit partition layout for standard filesystems.</li>
+        <li data-i18n="grub-flag-8"><strong><code>--map-btrfs "&lt;mapping&gt;"</code>:</strong> Explicit partition layout for Btrfs setups.</li>
+        <li data-i18n="grub-flag-1"><strong><code>-env l</code> or <code>-env live</code>:</strong> Force the script to assume a <b>Live Environment</b>.</li>
+        <li data-i18n="grub-flag-2"><strong><code>-env h</code> or <code>-env host</code>:</strong> Force the script to assume a <b>Real Machine</b> environment.</li>
+        <li data-i18n="grub-flag-3"><strong><code>-auto</code>:</strong> Bypasses all confirmation prompts <code>(y/n)</code> and executes the repair instantly.</li>
+        <li data-i18n="grub-flag-4"><strong><code>--version</code> or <code>-v</code>:</strong> Print the current version and exit.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="grub-usage-title">🛠️ Usage</h2>
+    <p data-i18n="grub-usage-desc">Run the "Ultimate Rescue Weapon" directly from your terminal:</p>
+
+    <h3 data-i18n="grub-usage-opt1-title">Option 1: Quick One-Liner (Interactive Mode)</h3>
+    <p data-i18n="grub-usage-opt1-desc">The classic, smart, and unified interactive experience:</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash')">Copy</button>
+<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash</code></pre>
+    </div>
+
+    <h3 data-i18n="grub-usage-opt2-title">Option 2: Fully Automated (Zero-Interaction Mode) 💥</h3>
+    <p data-i18n="grub-usage-opt2-desc">Skip all questions and let the script fix GRUB silently based on auto-detection (perfect for Live USBs):</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto')">Copy</button>
+<pre><code>curl -sL https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh | sudo bash -s -- -env l -auto</code></pre>
+    </div>
+
+    <h3 data-i18n="grub-usage-opt3-title">Option 3: Manual Download</h3>
+    <div class="code-wrapper">
+        <button class="copy-btn" data-i18n="btn-copy" onclick="navigator.clipboard.writeText('curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh\nchmod +x grub-fixer.sh\nsudo ./grub-fixer.sh')">Copy</button>
+<pre><code>curl -O https://raw.githubusercontent.com/ahmed-x86/grub-fixer/main/grub-fixer.sh
+chmod +x grub-fixer.sh
+sudo ./grub-fixer.sh [FLAGS]</code></pre>
+    </div>
+
+    <hr class="section-divider">
+
+   <h2 data-i18n="grub-version-title">📜 Version History</h2>
+   <details open>
+        <summary data-i18n="grub-version-summary">Click to view full version history</summary>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th data-i18n="grub-th-version">Version</th>
+                        <th data-i18n="grub-th-changes">Major Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>V1</td><td data-i18n="grub-v1">Basic manual-like chroot logic for GRUB repair.</td></tr>
+                    <tr><td>V2</td><td data-i18n="grub-v2">Added input validation (checks if partition exists) and loops for user input.</td></tr>
+                    <tr><td>V3</td><td data-i18n="grub-v3">Added /mnt cleanup (umount -R) before starting to prevent mount conflicts.</td></tr>
+                    <tr><td>V4</td><td data-i18n="grub-v4">Added 'set -e' for safety, forced Root partition input, OS detection.</td></tr>
+                    <tr><td>V5</td><td data-i18n="grub-v5">Added '--removable' to fix VM/NVRAM issues, and TTY Pipeline support.</td></tr>
+                    <tr><td>V6</td><td data-i18n="grub-v6">Added Auto-Detection using lsblk FSTYPE without mounting.</td></tr>
+                    <tr><td>V7</td><td data-i18n="grub-v7">Added dynamic support for mounting custom volumes (e.g., /home, /var).</td></tr>
+                    <tr><td>V8</td><td data-i18n="grub-v8">Added Root Validation, System Logging, and Smart EFI Detection.</td></tr>
+                    <tr><td>V9</td><td data-i18n="grub-v9">Added dynamic Btrfs subvolumes support with smart routing.</td></tr>
+                    <tr><td>V10</td><td data-i18n="grub-v10">Bulletproof Btrfs loop (forced y/n), fixed Archinstall /boot vs /boot/efi trap.</td></tr>
+                    <tr><td>V11</td><td data-i18n="grub-v11">Zero-Interaction Mode (fstab parser), 3-Tier Fallback System.</td></tr>
+                    <tr><td>V12</td><td data-i18n="grub-v12">Added Legacy BIOS (i386-pc) support, auto-detection, and Target Disk extraction.</td></tr>
+                    <tr><td>V13</td><td data-i18n="grub-v13">Added OS Prober support to automatically detect dual-boot systems (e.g., Windows).</td></tr>
+                    <tr><td>V14</td><td data-i18n="grub-v14">Added Dynamic Execution Timer with gamer-style human responses (The Speedrun Update).</td></tr>
+                    <tr><td>V15</td><td data-i18n="grub-v15">Added Universal UEFI Support (32-bit/i386-efi) with dynamic bitness detection.</td></tr>
+                    <tr><td>V16</td><td data-i18n="grub-v16">Added In-Situ (Local) Mode to repair GRUB directly from the running system without Live USB/chroot.</td></tr>
+                    <tr><td>V17</td><td data-i18n="grub-v17">Deep Scan Engine, Kernel Cmdline Detection, & Unified UX Prompt.</td></tr>
+                    <tr><td>V18</td><td data-i18n="grub-v18">Added CLI Flags (--version, -env l/h, -auto) for complete Zero-Interaction Automation.</td></tr>
+                    <tr><td>V19</td><td data-i18n="grub-v19">Added universal support for RedHat/Fedora/CentOS family (dynamic grub2 commands & paths).</td></tr>
+                    <tr><td>V20</td><td data-i18n="grub-v20">Chroot Health Check - Auto-detects and installs missing GRUB/EFI packages with DNS resolv support.</td></tr>
+                    <tr><td>V21</td><td data-i18n="grub-v21">LUKS & LVM Encryption Support - Auto-detects, unlocks (visible password), and configures GRUB_ENABLE_CRYPTODISK.</td></tr>
+                    <tr><td>V22</td><td data-i18n="grub-v22">Secure Boot & Shim Integration - Auto-detects Secure Boot, handles shim-signed, and MOK Enrollment.</td></tr>
+                    <tr><td>V23</td><td data-i18n="grub-v23">Security Hardening & Bug Fixes - Dynamic MOK OTP, hidden LUKS passwords, config backups, and environment isolation.</td></tr>
+                    <tr><td>V24</td><td data-i18n="grub-v24">The "Backend API" Update - Added JSON Endpoints (--sys-info, --json-scan) and explicit mapping for GUI integration.</td></tr>
+                    <tr><td>V25</td><td data-i18n="grub-v25">The "Polishing" Update - VM/VirtIO Regex Fallback and Btrfs Hardening.</td></tr>
+                    <tr><td>V26</td><td data-i18n="grub-v26">The "Modular" Update - Completely refactored the monolith script into a modular architecture with on-the-fly loading.</td></tr>
+                    <tr><td><b>V27</b></td><td data-i18n="grub-v27"><b>Current:</b> The "Bulletproof" Update - Strict trap cleanup engine, download integrity verification, and global input validation.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+
+    <hr class="section-divider">
+
+    <h2 data-i18n="grub-req-title">📋 System Requirements</h2>
+    <ul>
+        <li data-i18n="grub-req-1"><strong>OS Families:</strong> Arch Linux, Debian/Ubuntu, RedHat/Fedora, SUSE, and derivatives.</li>
+        <li data-i18n="grub-req-2"><strong>Architecture:</strong> UEFI (x86_64/i386) or Legacy BIOS (i386-pc).</li>
+        <li data-i18n="grub-req-3"><strong>Privileges:</strong> Sudo/Root access required.</li>
+        <li data-i18n="grub-req-4"><strong>Filesystems:</strong> Ext4, Btrfs, XFS, LUKS, LVM2.</li>
+        <li data-i18n="grub-req-5"><strong>Secure Boot:</strong> Fully supported (Requires Motherboard MOK Enrollment via OTP).</li>
+    </ul>
+
+
+    <div class="action-container">
+        <a href="https://github.com/ahmed-x86/grub-fixer" target="_blank" class="btn-link" data-i18n="grub-btn-star">
+            ⭐ Star on GitHub
+        </a>
+    </div>
+
+</section>
+    </div>
+    <script src="/js/lang.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/theme.js"></script>
+</body>
+</html>
